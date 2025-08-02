@@ -1,0 +1,523 @@
+/* 
+
+  //    xxxxxxxxxxxxxx   how to solve any pattern program : https://www.youtube.com/watch?v=xzstcj3Cuso
+class square_pattern
+
+{
+    public static void main(String[] args) 
+    {
+        int n = 5;
+        for(int i = 0 ; i<=n;i++)   // rows = always use 1st loop for rows
+        {
+            for(int j = 0;j<=n;j++)  // columns = always use the 2nd loop for columns
+            {
+                System.out.print("*"+ " ");
+            }
+            System.out.println();
+
+        }
+        
+    }
+}
+
+
+class right_triangle
+{
+    public static void main(String[] args) 
+    {
+        int n =5;
+        for(int i = 0;i<=n;i++)  // rows = remember
+        {
+            for(int j = 0;j<=i;j++)          // columns = remmeber  2025-07-30-12-04-02.png <- look at this image and understand and it tells taht it will print the stars in same way the number as the no. of rows keeps increasing like 1,2,3,4 ..
+            {
+                System.out.print("*"+ " ");
+            }
+            System.out.println();
+        }
+        
+    }
+}
+
+*/
+
+
+
+class ulta_right_traingle
+{
+    public static void main(String[] args) 
+    {
+        for(int i = 0 ;i<=5;i++)   //rows
+        {
+            for(int j =i;j<=5;j++)      // columns = this logic is more efficient when tring to print ulta trianglr than the one down form here using my logic  which alters the entire thing; instead this one just increments w.r.t to i loop which is increasing <=5 which prints in descending order
+            {
+                System.out.print("*"+ " ");  // logic used: 2025-07-30-12-27-15.png
+            }
+            System.out.println();
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+class ulta_right_traingle
+{
+    public static void main(String[] args) 
+    {
+        for(int i = 0 ;i<=5;i++)   //rows
+        {
+            for(int j =5;j>=i;j--)      // columns    = exact same logic just start with 5 and >than
+            {
+                System.out.print("*"+ " ");
+            }
+            System.out.println();
+        }
+        
+    }
+}
+
+class left_traingle
+{
+    public static void main (String args [])
+    {
+        int n = 5;
+        for(int i = 0;i<=n;i++)  // rows loop : dont change ever
+        {
+            for(int j = i ; j<=n;j++)
+            {
+                System.out.print(" ");  // this loop prints the ulta space traingle first and then the k loop prints the right triangle (which in fact is the normal left triangle but gives the illusion of right triangle)
+            }
+            for(int k = 0;k<=i;k++)
+            {
+                System.out.print("*");
+            }
+            
+            System.out.println();
+        }
+    }
+}
+
+class ulta_left_triangle
+{
+    public static void main(String[] args)
+    {
+        int n = 5;
+        for(int i = 0;i<=n;i++)
+        {
+            for(int j = 0;j<=i;j++)
+            {
+                System.out.print(" ");
+            }
+            for(int k = i;k<=n;k++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+
+        }
+        
+    }
+    
+}
+
+class hill_pattern
+{
+    public static void main(String[] args) 
+    {
+        int n = 5;
+        for(int i = 0;i<=n;i++)  // rows loop : never change
+        {
+            for(int j = i;j<=n;j++)   // simple first decreasing space loop
+            {
+                System.out.print(" ");
+            }
+            for(int k = 0;k<=i;k++)    // followed by increasing * loop
+            {
+                System.out.print("*");
+            }
+            for(int z= 0;z<=i;z++)     // then again another increasing * loop
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        
+    }
+}
+
+class ulta_reverse_hill_pattern
+{
+    public static void main(String[] args) 
+    {
+        int n = 5;
+        for(int i = 0;i<=n;i++)
+        {
+            for(int j = 0;j<=i;j++)
+            {
+                System.out.print(" ");
+            }
+            for(int j = i;j<=n;j++)
+            {
+                System.out.print("*");
+            }
+            for(int k = i;k<=n;k++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+
+        }
+        
+    }
+}
+
+
+class diamond_pattern
+{
+    public static void main(String[] args) 
+    {
+        int n = 5;
+        for(int i  = 0;i<=n;i++)  // loop for straight hill
+        {
+            for(int j = i;j<=n;j++)
+            {
+                System.out.print(" ");
+            }
+            //for(int k = 0;k<=i;k++)     xxxx      here we will not use <=i since we want to print the peak * also and also stop an extra line in middle from printing when printing the ulta hill 
+            for(int k = 0;k<i;k++)
+            {
+                System.out.print("*");
+            }
+            for(int k = 0;k<=i;k++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+        for(int i =0;i<=n;i++)
+        {
+            for(int j = 0;j<=i;j++)
+            {
+                System.out.print(" ");
+            }
+            //for(int k =i;k<n;k++)         same reason as above see
+            for(int k =i;k<n;k++)   
+            {
+                System.out.print("*");
+            }
+            for(int k =i;k<=n;k++)
+            {
+                System.out.print("*");
+            }
+        }
+
+        
+    }
+}
+
+
+
+//                                  xxxxxxxxxxxxxxx    how to print number patterns in java
+
+class left_triangle_increasing_numbers
+{
+    public static void main(String[] args) 
+    {
+        for(int i = 0,p= 1;i<=n;i++,p++)    // here we are using the p instead of conventional i value for loops since its better to keep it seperate and helps in when solving upcoming complex problems
+        {
+            for(int j =0 ;j<=i;j++)
+            {
+                System.out.print(p+" ");
+            }
+            System.out.println();
+        
+        }
+        
+    }
+}
+
+
+class left_decreasing_numbers_triangle
+{
+    public static void main(String[] args) 
+    {
+        int n =5;
+        for(int i = 0,p=n;i<=n;i++,p++)
+        {
+            for(int j =0;j<=i;j++)
+            {
+                System.out.print(p);
+            }
+            System.out.println();
+
+        }
+        
+    }
+}
+
+class left_triangle_incrementing_by_2
+{
+    public static void main(String[] args) 
+    {
+        int n=5;
+        for(int i =0,p=0;i<=n;i++,p=p+2)         // since incrementing by 2 like 0 2 4 6.... we put p= p+2 
+        {
+            for(int j = 0;j<=i;j++)
+            {
+                System.out.print(p);
+            }
+            System.out.println();
+
+        }
+        
+    }
+}
+
+class alternating_even_odd_left_traingle
+{
+    public static void main(String[] args) 
+    {
+        int n = 5;
+        for(int i =1;i<=n;i++)
+        {
+            for(int j =1;j<=i;j++)
+            {
+                if(i%2 == 0)
+                {
+                    //System.out.print(i);                this is wrong since it prints just normally; pay attention in the entire left triangle it is just 1s and 2s
+                    System.out.print("2");     
+                }
+                else
+                {
+                    
+                    //System.out.print(i);                this is wrong since it prints just normally; pay attention in the entire left triangle it is just 1s and 2s
+                    System.out.print("1");
+                }
+               
+                
+            }
+             System.out.println();
+        }
+        
+    }
+}
+
+class diamond_number_pattern
+{
+    public static void main(String[] args) 
+    {
+        int n = 5;
+        for(int i = 1,p=1;i<=n;i++,p++)   // rows loop never change
+        {
+            for(int j=i;j<=n;j++)
+            {
+                System.out.print(" ");
+            }
+            for(int k=0;k<i-1;k++)
+            {
+                System.out.print(p);
+            }
+            for(int z=0;z<i;z++)
+            {
+                System.out.print(p);
+            }
+            System.out.println();
+        }
+
+        int n2 =9;
+        for(int i =6,p=6;i<=n;i++)
+        {
+            for(int j =0;j<=i;j++)
+            {
+                System.out.print(" ");
+            }
+            for(int k =i;k<n-1;k++)
+            {
+                System.out.print(p);
+            }
+            for(int z=i;z<n;z++)
+            {
+                System.out.print(p);
+            }
+        }
+        
+    }
+}
+
+
+
+
+class diamond_number_pattern                 //  see 2025-08-01-18-46-45.png
+{
+    public static void main(String[] args) 
+    {
+        int n = 5;
+        for(int i = 1,p=1;i<=n;i++,p++)   // first loop will print hill pattern up until 5
+        {
+            for(int j=i;j<=n;j++)
+            {
+                System.out.print(" ");
+            }
+            for(int k=0;k<i-1;k++)
+            {
+                System.out.print(p);
+            }
+            for(int z=0;z<i;z++)            
+            {
+                System.out.print(p);
+            }
+            System.out.println();
+        }
+
+        int n2 =9;
+        for(int i =6,p=6;i<=n2;i++,p++)   // 2nd loop is to print ulta hill decreasing starting from 6 uptil single 9 at end
+        {
+            for(int j =n;j<=i;j++)
+            {
+                System.out.print(" ");
+            }
+            for(int k =i;k<=n2-1;k++)     // we use n2-1 so that we can reduce one column in the middle so that at the end there is a single digit 9 instead of 2 9s (99)
+            {
+                System.out.print(p);
+            }
+            for(int z=i;z<=n2;z++)
+            {
+                System.out.print(p);
+            }
+            System.out.println();
+        }
+        
+    }
+}
+
+class diamond_number_pattern_2
+{
+    public static void main(String[] args) 
+    {
+        int  n = 5;
+        for(int i = 0,p=1;i<n;i++,p++)  // 1st loop prints the hill pattern upto 5s
+        {
+            for(int j = i;j<=n;j++)
+            {
+                System.out.print(" ");
+            }
+            for(int k=0;k<=i-1;k++) // i-1 since we want to delete one column in middle to
+            {
+                System.out.print(p);
+            }
+            for(int z=0;z<=i;z++)
+            {
+                 System.out.print(p);
+            }
+            System.out.println();
+        }
+
+        int n2=1;
+        for(int i =4,p1=4,x=2;i>=n2;i--,p1--,x++)   // here we re getting confused due to decreasing lower traingle logic ;  so then use a completetly fresh variable x to print the increasing space loop
+        {                                           
+                                                  // also we use x=2 so as to match the already +2 incremented 5s that end at last hill pattern
+
+            for(int j=0;j<=x;j++)       // use fresh new variable x to print increasing space loop instead of i which is used for below logics and is getting clash so we use new variable x
+            {
+                System.out.print(" ");
+            }
+            for(int j =i;j>=n2;j--)
+            {
+                System.out.print(p1);
+            }
+            for(int z=i-1;z>=n2;z--)
+            {
+                System.out.print(p1);
+            }
+            System.out.println();
+
+        }
+        
+    }
+}
+
+class diamond_number_pattern_2         //senthil sir code
+{
+    public static void main(String[] args) 
+    {
+        int  n = 5;
+        for(int i = 0,p=1;i<n;i++,p++)  // 1st loop prints the hill pattern upto 5s
+        {
+            for(int j = i;j<=n;j++)
+            {
+                System.out.print(" ");
+            }
+            for(int k=0;k<=i-1;k++) // i-1 since we want to delete one column in middle to
+            {
+                System.out.print(p);
+            }
+            for(int z=0;z<=i;z++)
+            {
+                 System.out.print(p);
+            }
+            System.out.println();
+        }
+
+        int n2=4;
+        int n3= 7;
+        for(int i =0,p1=4;i<=4;i++,p1--)
+        {
+            for(int j=0;j<i+3;j++)
+            {
+                System.out.print(" ");
+            }
+            for(int j =n3;j>0;j--)
+            {
+                System.out.print(n2);
+            }
+            // for(int z=i-1;z>=n2;z--)
+            // {
+            //     System.out.print(p1);
+            // }
+            n2--;
+            n3=n3-2;
+            System.out.println();
+
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
