@@ -488,6 +488,92 @@ class diamond_number_pattern_2         //senthil sir code
     }
 }
 
+class left_triangle_number_pattern
+{
+    public static void main(String[] args) 
+    {
+        for(int i=1;i<=5;i++)
+        {
+            int p=1;                      // her we use a p at start of 2nd loop so that at eachg j loop iteration it starts at 1 and prints to the reccuring limit ;   instead of coventinal * used before
+            for(int j =1;j<=i;j++)
+            {
+                System.out.print(p++);
+            }
+            System.out.println();
+        }
+        
+    }
+}
+
+
+class inverted_left_triangle
+{
+    public static void main(String[] args) 
+    {
+        int n =5;
+        for(int i = 1;i<=n;i++)
+        {
+            int p=1;
+            for(int j = i;j<=n;j++)
+            {
+                System.out.print(p++);
+            }
+            System.out.println();
+        }
+        
+    }
+}
+
+class inverted_right_triangle
+{
+    public static void main(String[] args) 
+    {
+        int n=5;
+        for(int i= 1;i<=n;i++)
+        {
+            for(int j=1;j<=i;j++)            // incresing space loop 
+            {
+                System.out.print(" ");
+            }
+            int p=1;
+            for(int z= i;z<=n;z++)
+            {
+                System.out.print(p++);
+            }
+            System.out.println();
+        }
+
+        
+    }
+} 
+
+class hill_number_pattern
+{
+    public static void main(String[] args) 
+    {
+        int n=5;
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=i;j<=n;j++)
+            {
+                System.out.print(" ");
+            }
+            int p=1;
+            for(int j=1;j<=i;j++)
+            {
+                System.out.print(p++);
+            }
+            //int p2=1;                       dont use any p2 or other digit here since its not recuuring no.s we're priting here ; we are printing incrementing numbers here
+            for(int z=1;z<=i-1;z++)
+            {
+                System.out.print(p++);  // instead we just put p and in this 2nd loop it starts off from the leftover i values of the 1st loop and prints the succeding incrementing no.s  
+            }
+             System.out.println();
+        }
+        
+    }
+}
+ 
 
 
 
