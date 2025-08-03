@@ -220,6 +220,57 @@ class diamond_pattern
     }
 }
 
+class butterfly_star_pattern
+{
+    public static void main(String[] args) 
+    {
+        int n = 5;
+        for(int i=0;i<=n;i++)
+        {
+            for(int j=0;j<=i;j++)
+            {
+                System.out.print("*");
+            }
+            for(int z=i;z<=n;z++)
+            {
+                System.out.print(" ");
+            }
+            for(int x=i;x<=n;x++)
+            {
+                System.out.print(" ");
+            }
+            for(int y=0;y<=i;y++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+
+        }
+
+        for(int i =0;i<=n;i++)
+        {
+            for(int j=i;j<=n;j++)
+            {
+                System.out.print("*");
+            }
+            for(int z=0;z<=i;z++)
+            {
+                System.out.print(" ");
+            }
+            for(int x=0;x<=i;x++)
+            {
+                System.out.print(" ");
+            }
+            for(int y=i;y<=n;y++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
 
 
 //                                  xxxxxxxxxxxxxxx    how to print number patterns in java
@@ -573,7 +624,211 @@ class hill_number_pattern
         
     }
 }
+
+class diamond_number_pattern_3                  //  2025-08-03-22-08-56.png
+{
+    public static void main(String[] args) 
+    {
+        int n = 5;
+        for(int i = 0;i<n;i++)
+        {
+            for(int j = i;j<=n;j++)         // this loop is the normal easy hill increasing pattern
+            {
+                System.out.print(" ");
+            }
+            int p =1;
+            for(int z= 0 ;z<=i;z++)
+            {
+                System.out.print(p++);
+            }
+            for(int x= 0;x<=i-1;x++)
+            {
+                System.out.print(p++);
+            }
+            System.out.println();
+        }
+
+        // inverted part                    (this is the hard stuff since it has to continue from the second last row of the above hill not th last row)
+        
+        int n2=4;                  // we put 4 here instead of 5 here is because we dont want the middle part repeating again we want the second last row of the upper hill to be printing inverted here (so only 4 rows in total here)
+        for(int l=1;l<=n2;l++)
+        {
+            for(int j=0;j<=l+1;j++)         // we use l+1 here since it is falling exactly one step behind in the inverted part so +1 so it can allign perfectly
+            {
+                System.out.print(" ");
+            }
+            int p2=1;
+            for(int j=l;j<=n2;j++)
+            {
+                System.out.print(p2++);
+            }
+            for(int z=l;z<=n2-1;z++)       // -1 as always to reduce the one middle column
+            {
+                System.out.print(p2++);
+            }
+            System.out.println();
+        
+    }
+}
+
+
+}
+
+
+class inverted_decresing                   // inverted part of the above problem
+{
+    public static void main(String args[])
+    {
+        int n2=5;
+        for(int l=1;l<=n2;l++)
+        {                                      // incomplete java editor
+            for(int j=0;j<=l;j++)
+            {
+                System.out.print(" ");
+            }
+            int p2=1;
+            for(int j=l;j<=n2;j++)
+            {
+                System.out.print(p2--);
+            }
+            for(int z=l;z<=n2-1;z++)
+            {
+                System.out.print(p2--);
+            }
+            System.out.println();
+        }
+      
+         // inverted part
+        int n2=4;                   
+        for(int l=1;l<=n2;l++)
+        {
+            for(int j=0;j<=l;j++)
+            {
+                System.out.print(" ");
+            }
+            int p2=1;
+            for(int j=l;j<=n2;j++)
+            {
+                System.out.print(p2++);
+            }
+            for(int z=l;z<=n2-1;z++)
+            {
+                System.out.print(p2++);
+            }
+            System.out.println();
+        }
+    }
+}
  
+
+
+class butterfly_star_pattern               // better little late than never
+{
+    public static void main(String[] args) 
+    {
+        int n = 5;
+        for(int i=0;i<=n;i++)
+        {
+            for(int j=0;j<=i;j++)
+            {
+                System.out.print("*");
+            }
+            for(int z=i;z<=n;z++)
+            {
+                System.out.print(" ");
+            }
+            for(int x=i;x<=n;x++)
+            {
+                System.out.print(" ");
+            }
+            for(int y=0;y<=i;y++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+
+        }
+
+        for(int i =0;i<=n;i++)
+        {
+            for(int j=i;j<=n;j++)
+            {
+                System.out.print("*");
+            }
+            for(int z=0;z<=i;z++)
+            {
+                System.out.print(" ");
+            }
+            for(int x=0;x<=i;x++)
+            {
+                System.out.print(" ");
+            }
+            for(int y=i;y<=n;y++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+class butterfly_number_pattern
+{
+    public static void main(String[] args) 
+    {
+        int n=5;
+        for(int i=0;i<=n;i++)
+        {
+            int p=1;
+            for(int j=0;j<=i;j++)
+            {
+                System.out.print(p++);
+            }
+            for(int z=i;z<=n;z++)
+            {
+                System.out.print(" ");
+            }
+            for(int x=i;x<=n;x++)
+            {
+                System.out.print(" ");
+            }
+            int p2=1;
+            for(int y=0;y<=i;y++)
+            {
+                System.out.print(p2++);
+            }
+            System.out.println();
+
+        }
+        // inverted part of butterfly
+        
+        int n2=4;               // we put 4 here instead of 5 here is because we dont want the middle part repeating again we want the second last row of the upper hill to be printing inverted here (so only 4 rows in total here)
+        
+        for(int l=0;l<=n2;l++)
+        {
+            int p2=1;
+            for(int j=l;j<=n2;j++)
+            {
+                System.out.print(p2++);
+            }
+            for(int z=0;z<=l;z++)
+            {
+                System.out.print(" ");
+            }
+            for(int x=0;x<=l+2;x++)
+            {
+                System.out.print(" ");
+            }
+            int p3=1;
+            for(int y=l;y<=n2;y++)
+            {
+                System.out.print(p3++);
+            }
+            System.out.println();
+        }
+        
+    }
+}
 
 
 
