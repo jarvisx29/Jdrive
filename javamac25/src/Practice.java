@@ -918,7 +918,155 @@ class floyd_traingle
 }
 
 
+//                        box patterns fro here 
 
+
+class box
+{
+    public static void main(String[] args) 
+    {
+        for(int i=0;i<=5;i++)
+        {
+            for(int j=0;j<=5;j++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        
+    }
+}
+
+class number_box
+{
+    public static void main(String[] args)
+    {
+        for(int i=0;i<=5;i++)
+        {
+            int p=1;
+            for(int j=0;j<=5;j++)
+            {
+                System.out.print(p++);
+            }
+            System.out.println();
+        }
+
+        
+    }
+}
+class number_box_2
+{
+    public static void main(String[] args)
+    {
+        int p=1;
+        for(int i=1;i<=5;i++)
+        {
+            
+            for(int j=1;j<=5;j++)
+            {
+                System.out.print(p);
+                
+            }
+            p++;
+            System.out.println();
+        }
+
+        
+    }
+}
+
+
+class box_hollow
+{
+    public static void main(String[] args) 
+    {
+        int n=5;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                if(i==0 || i==4 || j==0 ||j==4)
+                {
+                    System.out.print("*");
+                }
+                else
+                {
+                    System.out.print(" ");
+                }
+                
+            }
+            System.out.println();       // we place println() here instead of inside of 2nd loop like we normally do in triangles is because thats how squares or rectangles work they need to print one full row before moving to the next line 
+                 
+            
+           // Golden Rule:  alaways put println() outside 2nd loop in square or rectangle problems
+        }
+        
+    }
+}
+
+
+class pattern_number_28
+{
+    public static void main(String[] args) 
+    {
+        int n=5;
+        for(int i=0;i<=n;i++)
+        {
+            for(int j =i;j<=n;j++)
+            {
+                System.out.print(" ");
+            }
+            int p=1;
+            for(int z=0;z<=i-1;z++)
+            {
+                System.out.print(p--);
+            }
+            for(int x=0;x<=i;x++)
+            {
+                System.out.print(p++);
+            }
+            System.out.println();
+
+        }
+        
+    }
+}
+
+
+
+class incresing_alternate
+{
+    public static void main(String args[])
+    {
+        int n=5;
+        //int q = 1;
+        for(int i=0,k=65,k2=1;i<=n;i++,k++,k2++)
+        {
+            for(int j=i;j<=n;j++)
+            {
+                System.out.print(" ");
+            }
+            int p=k;
+            for(int z=0;z<=i;z++)
+            {
+                System.out.print((char)p--);
+            }
+            // int p2=k2;
+            // for(int j=0;j<=i;j++)
+            // {
+            //     System.out.print(p2++);
+            // }
+            // System.out.println();
+            int p2=66;
+            for(int x=0;x<i;x++)
+            {
+                System.out.print((char)p2++);
+            }
+            System.out.println();
+            
+        }
+    }
+}
 
 
 
