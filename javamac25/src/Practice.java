@@ -830,6 +830,93 @@ class butterfly_number_pattern
     }
 }
 
+class left_triangle_decreasing_from5
+{
+    public static void main(String[] args) 
+    {
+        int n =5;
+        
+        for(int i = 1;i<=n;i++)
+        {
+            int p=5;
+            for(int j =1;j<=i;j++)
+            {
+                System.out.print(p--);
+            }
+            System.out.println();
+
+        }
+    }
+}
+
+class right_triangle_decreasing_from5     // xxxxxxxxxxxxxxxx  easy but important logic xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
+{
+    public static void main(String[] args)         // 2025-08-04-12-51-03.png
+    {
+        int n =5;
+        for(int i = 1,k=n;i<=n;i++,k--)    // here since at each iteration the 1st element is decreasing or removed ;  so we use another variable which will remove the qst element of n and assign it to p so it can put it in decreasing loop(j=i;j<=n;j++) type loop and print that iteration
+        {
+            for(int j=0;j<=i;j++)
+            {
+                System.out.print(" ");
+            }
+            int p=k;
+            for(int z=i;z<=n;z++)
+            {
+                System.out.print(p--);
+            }
+            System.out.println();
+
+        }
+        
+    }
+}
+
+class hill_pattern_increasing_then_decresing      //xxxxxxxxxxxxxxxx simple but important logic xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+{
+    public static void main(String[] args)        //2025-08-04-13-21-49.png
+    {
+        int n =5;
+        for(int i=0;i<=n;i++)
+        {
+            for(int j=i;j<=n;j++)
+            {
+                System.out.print(" ");
+            }
+            int p=1;
+            for(int z=0;z<=i;z++)
+            {
+                System.out.print(p++);      // here p++ to print normal incrementing traingle
+            }
+            for(int x=0;x<=i-1;x++)
+            {
+                System.out.print(p--);      // but here p-- to print the same triangle but decresing
+            }
+            System.out.println();
+        }
+        
+    }
+}
+
+class floyd_traingle
+{
+    public static void main(String[] args) 
+    {
+        int n =5;
+        for(int i=0,p=1;i<=n && p<=10;i++)
+        {
+            //int p=1;
+            for(int j=0;j<=i;j++)           // super simple logic just print till 10 but put them at increasing logic and put println()
+            {
+                System.out.print(p++);
+            }
+            System.out.println();
+        }
+        
+        
+    }
+}
+
 
 
 
