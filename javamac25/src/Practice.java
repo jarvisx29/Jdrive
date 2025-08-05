@@ -1068,6 +1068,26 @@ class incresing_alternate
     }
 }
 
+class question_30
+{
+    public static void main (String args[])
+    {
+        int matrix[][] = new int[10][10];
+        for(int i=0;i<=9;i++)  //rows
+        {
+            for(int j=0;j<=9;j++)   //columns
+            {
+                int digit =1;
+                if(i % 2==0)
+                {
+                    matrix[i][j] = digit++;
+                }
+                else
+            }
+        }
+    }
+}
+
 
 
 
