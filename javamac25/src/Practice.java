@@ -1125,6 +1125,73 @@ class question_30
     }
 }
 
+class question_spiral_pattern_30 
+{
+    public static void main (String args [])
+    {
+        int n=10;
+        int matrix[][]= new int[n][n];   // matrix[i][j] == rows then column always
+        
+        int digit=1;
+        
+        int left=0;                // use these two for only horizontal (left ->right || right -> left)
+        int right = n-1;  //=9  
+        
+        int top=0;                // use these for only vertical (top to bottom || bottom to top)
+        int bottom =n-1;  //=9
+        
+        while(left<=right && top<=bottom)    // this loop will run up untill the whole spiral is printed
+        {
+            for(int i=left;i<=right;i++)
+            {
+                matrix[top][i]=digit;
+                digit++;                 
+            }
+            top++;                       // top++ so that the boundary moves inward ; and dorsnt overwrite the no.s on the next iteration
+            for(int j=top;j<=bottom;j++)
+            {
+                matrix[j][right]=digit;
+                digit++;
+            }
+            right--;                     // right-- so that it decreses each iteration and moves inward and doesnt overwrite in next iteration
+            
+            for(int z=right;z>=left;z--)
+            {
+                matrix[bottom][z]=digit;        // bottom first here in row bracke[] because watch closely row is same but columns are changing
+                digit++;
+            }
+            bottom--;
+            
+            for(int x=bottom;x>=top;x--)
+            {
+                matrix[x][left]=digit;        // do understand these steps see respective images
+                digit++;
+            }
+            left++;
+        }
+        
+        for(int h=0;h<n;h++)     // to print matrix
+        {
+            for(int l=0;l<n;l++)
+            {
+                System.out.print(matrix[h][l]+ " ");
+                
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1161,6 +1228,7 @@ class question_15
         
     }
 }
+
 
 
 
