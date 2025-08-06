@@ -1068,7 +1068,7 @@ class incresing_alternate
     }
 }
 
-class question_30
+class question_30                            // incomplete wait finish basic box q first 
 {
     public static void main (String args[])
     {
@@ -1085,6 +1085,80 @@ class question_30
                 else
             }
         }
+    }
+}
+
+class question_30
+{
+    public static void main(String args[])
+    {
+        int n=10;
+        int matrix[][] = new int[n][n];   // matrix[i][j] == rows then column always
+
+        int digit=1;
+        int left =0;         // use these two for only horizontal (left ->right || right -> left)
+        int right =n-1;  // =9
+
+        int top =0;         // use these for only vertical (top to bottom || bottom to top)
+        int bottom = n-1;  // =9
+
+        for(int i=left;i<=right;i++)  //this loop goes left->right 
+        {
+            matrix[top][i]=digit;  // notice here that the 
+            digit++;
+        }
+        top++;  // top++ so that the boundary moves inward ; and dorsnt overwrite the no.s on the next iteration
+
+        for(int j=top;top<=bottom;j++)
+        {
+            matrix[j][bottom]=digit;
+            digit++;
+        }
+        right--;
+
+        for(int z=right;z>=left;z--)  // why >= figure out gpt
+        {
+            matrix[right][z]=digit;
+            digit++;
+        }
+        bottom--;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+class question_15
+{
+    public static void main(String[] args) 
+    {
+        for(int i=0;i<=9;i++)
+        {
+            for(int j=0;j<=9;j++)
+            {
+                if(i==0 || i==9 ||j==0 ||j==9 )
+                {
+                    System.out.print("*");
+                }
+                else if(i==1&&j==1 || i==2&&j==2 || i==3&&j==3||i==4&&j==4 || i==5&&j==5 || i==6&&j==6 || i==7&&j==7 || i==8&&j==8)    // notice that its alternating * in the hollow part lile 1,1 2,2 3,3 and so on 
+                {
+                    System.out.print("*");
+                }
+                else
+                {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+        
     }
 }
 
