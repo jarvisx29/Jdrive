@@ -1068,6 +1068,34 @@ class incresing_alternate
     }
 }
 
+class question_15
+{
+    public static void main(String[] args) 
+    {
+        for(int i=0;i<=9;i++)
+        {
+            for(int j=0;j<=9;j++)
+            {
+                if(i==0 || i==9 ||j==0 ||j==9 )
+                {
+                    System.out.print("*");
+                }
+                else if(i==1&&j==1 || i==2&&j==2 || i==3&&j==3||i==4&&j==4 || i==5&&j==5 || i==6&&j==6 || i==7&&j==7 || i==8&&j==8)    // notice that its alternating * in the hollow part lile 1,1 2,2 3,3 and so on 
+                {
+                    System.out.print("*");
+                }
+                else
+                {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+        
+    }
+}
+
+
 class question_30                            // incomplete wait finish basic box q first 
 {
     public static void main (String args[])
@@ -1125,11 +1153,11 @@ class question_30
     }
 }
 
-class question_spiral_pattern_30 
+class question_spiral_pattern_30          // Golden rule question  : 2025-08-07-20-47-20.png
 {
-    public static void main (String args [])
+    public static void main (String args [])     
     {
-        int n=10;
+        int n=10;          // 2025-08-07-20-56-54.png
         int matrix[][]= new int[n][n];   // matrix[i][j] == rows then column always
         
         int digit=1;
@@ -1182,52 +1210,84 @@ class question_spiral_pattern_30
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-class question_15
+class question_spiral_pattern_but_right_to_left_reverse   // same logic as the normal spiral but here we switch directions
 {
-    public static void main(String[] args) 
+    public static void main(String[] args)            //2025-08-07-20-56-31.png
     {
-        for(int i=0;i<=9;i++)
+        int n=10;
+        int matrix[][] = new int[n][n];
+        int digit =1;
+
+        int top = 0;
+        int bottom =n-1;
+
+        int left=0;
+        int right=n-1;
+
+        while(left<=right && top<=bottom)
         {
-            for(int j=0;j<=9;j++)
+            for(int i=right;i>=left;i--)       // in this loop starts  from right to left;but here we will uselogic from like the bottom part of the normal spiral (see above for reference)
             {
-                if(i==0 || i==9 ||j==0 ||j==9 )
-                {
-                    System.out.print("*");
-                }
-                else if(i==1&&j==1 || i==2&&j==2 || i==3&&j==3||i==4&&j==4 || i==5&&j==5 || i==6&&j==6 || i==7&&j==7 || i==8&&j==8)    // notice that its alternating * in the hollow part lile 1,1 2,2 3,3 and so on 
-                {
-                    System.out.print("*");
-                }
-                else
-                {
-                    System.out.print(" ");
-                }
+                matrix[top][i]=digit;
+                digit++;
+            }
+            top++;                            // but top ++ since we are still moving inwards    (same as for others)
+            
+            for(int j=top;j<=bottom;j++)     // in this loop moving from top to bottom but 
+            {
+                matrix[j][left]=digit;
+                digit++;
+            }
+            left++;
+            
+            for(int z=left;z<=right;z++)     
+            {
+                matrix[bottom][z]=digit;
+                digit++;
+            }
+            bottom--;
+            
+            for(int j=bottom;j>=top;j--)
+            {
+                matrix[j][right]=digit;
+                digit++;
+            }
+            right--;
+        }
+        
+        
+        for(int h=0;h<n;h++)     // to print matrix
+        {
+            for(int l=0;l<n;l++)
+            {
+                System.out.print(matrix[h][l]+ " ");
+                
             }
             System.out.println();
         }
         
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
