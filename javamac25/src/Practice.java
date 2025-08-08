@@ -1269,6 +1269,8 @@ class question_spiral_pattern_but_right_to_left_reverse   // same logic as the n
     }
 }
 
+//   xxxxxxxxxxxx   for loop advanced INSIDE OUT (questions from   5B. forLoop.pdf  ,Pattern_Programs-combined.pdf,  5C. NestedLoop.pdf)   xxxxxxxxxxxxx
+
 
 
 
