@@ -1708,6 +1708,67 @@ class merge_two_arrays
 
 
 
+class merge_sort_practice                              // follow this one better explained by me
+{
+    public static void main(String[] args)         // explanation 2025-08-08-20-48-14.png
+    {
+        int arr_1[] = {1,3};
+        int arr_2[] ={2,8};
+
+        int arr_3[] = new int[arr_1.length+arr_2.length];
+
+        int beg_1=0;        // starting indexes for arr_1 & arr_2
+        int beg_2 =0;
+
+        int last_1 =1;      // ending indexes for arr_1 & arr_2
+        int last_2 =1;
+
+        int current_3=0;    // starting index for arr_3
+
+        while(beg_1<=last_1 && beg_2<=last_2)
+        {
+            if(arr_1[beg_1] < arr_2[beg_2])         // if element from arr_1 is smallest then puts it in arr_3
+            {
+                arr_3[current_3]=arr_1[beg_1];
+                beg_1++;
+                current_3++;
+            }
+            else 
+            {
+                arr_3[current_3]=arr_2[beg_2];   // if element from arr_2 is smallest then puts it in arr_3
+                beg_2++;
+                current_3++;
+            }
+
+        }
+
+        if(beg_1<=last_1)               // this loop will run when there zrent any more elements left to  compare i.e only a single element is remaining so nothing to compare with here this will include these leftover values to arr_3
+        {
+            while(beg_1<=last_1)
+            {
+                arr_3[current_3]=arr_1[beg_1];
+                beg_1++;
+                current_3++;
+            }
+        }
+        else if(beg_2<=last_2)
+        {
+            arr_3[current_3] =arr_2[beg_2];
+            beg_2++;
+            current_3++;
+        }
+
+        System.out.print("The Sorted list :");
+        for(int z=0;z<arr_3.length-1;z++)
+        {
+            System.out.print(arr_3[z]+" ");
+        }
+
+        
+    }
+}
+
+
 
 
 
@@ -2674,7 +2735,7 @@ class right_triangle
     }
 }
 
-*/
+
 
 
 
@@ -3907,7 +3968,65 @@ class question_spiral_pattern_but_right_to_left_reverse   // same logic as the n
 
 */
 
+class merge_sort_practice
+{
+    public static void main(String[] args) 
+    {
+        int arr_1[] = {1,3};
+        int arr_2[] ={2,8};
 
+        int arr_3[] = new int[arr_1.length+arr_2.length];
+
+        int beg_1=0;        // starting indexes for arr_1 & arr_2
+        int beg_2 =0;
+
+        int last_1 =1;      // ending indexes for arr_1 & arr_2
+        int last_2 =1;
+
+        int current_3=0;    // starting index for arr_3
+
+        while(beg_1<=last_1 && beg_2<=last_2)
+        {
+            if(arr_1[beg_1] < arr_2[beg_2])         // if element from arr_1 is smallest then puts it in arr_3
+            {
+                arr_3[current_3]=arr_1[beg_1];
+                beg_1++;
+                current_3++;
+            }
+            else 
+            {
+                arr_3[current_3]=arr_2[beg_2];   // if element from arr_2 is smallest then puts it in arr_3
+                beg_2++;
+                current_3++;
+            }
+
+        }
+
+        if(beg_1<=last_1)               // this loop will run when there zrent any more elements left to  compare i.e only a single element is remaining so nothing to compare with here this will include these leftover values to arr_3
+        {
+            while(beg_1<=last_1)
+            {
+                arr_3[current_3]=arr_1[beg_1];
+                beg_1++;
+                current_3++;
+            }
+        }
+        else if(beg_2<=last_2)
+        {
+            arr_3[current_3] =arr_2[beg_2];
+            beg_2++;
+            current_3++;
+        }
+
+        System.out.print("The Sorted list :");
+        for(int z=0;z<arr_3.length-1;z++)
+        {
+            System.out.print(arr_3[z]+" ");
+        }
+
+        
+    }
+}
 
 
 
