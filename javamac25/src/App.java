@@ -1,4 +1,5 @@
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 
@@ -4057,6 +4058,65 @@ class selection_sort_practice
 
     }
 }
+
+import java.util.Arrays;
+class bubble_sort                            // little bit same as selection sort but difference here is that instead of checking one element with every other element it check xurrent and current+1 ; like (1,2) (2,3) ....
+{
+    public static void main(String[] args) 
+    {
+        int arr[] ={2,3,6,8,4,1};
+
+        for(int i=0;i<arr.length;i++)
+        {
+            for(int j=0;j<arr.length-i-1;j++)
+            {
+                if(arr[j]>arr[j+1])
+                {
+                    int temp =arr[j];
+                    arr[j]=arr[j+1];
+                    arr[j+1] =temp;
+                }
+            }
+        }
+        System.out.print("the sorted list using bubble sort: ");
+
+        System.out.print(Arrays.toString(arr));
+        
+}
+}
+
+
+import java.util.Arrays; 
+class insertion_sort
+{
+    public static void main(String[] args)
+    {
+        int arr []= {5,7,9,1,8,2};
+
+        for(int i=0;i<arr.length;i++)
+        {
+            for(int j=i+1;j<arr.length;j++)
+            {
+                if(arr[i]>arr[j])
+                {
+                    int temp = arr[j];   // smallest element
+                    
+                    for(int z=j;z>i;z--)  // this loop shifts 1 space right side so we can place the smallest element at the start
+                    {
+                        arr[z]=arr[z-1];  // shifts the current elment(i) to the current+1(j) place uptil one place is left at the start
+                    }
+                    arr[i]=temp;  // now that the after shifting the 1st element is free put the smallest element here
+                    
+                }
+            }
+        }
+
+        System.out.print("the sorted list using insertion sort :");
+        System.out.print(Arrays.toString(arr));
+        
+    }
+}
+
 
 
 
