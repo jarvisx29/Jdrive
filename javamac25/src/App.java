@@ -1,6 +1,6 @@
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
+
+
 
 
 
@@ -4032,7 +4032,7 @@ class merge_sort_practice
     }
 }
 
-*/
+
 
 import java.util.Arrays;
 class selection_sort_practice
@@ -4117,6 +4117,57 @@ class insertion_sort
     }
 }
 
+
+
+import java.util.Arrays;
+
+class sort_elements_in_descending_order_q12
+{
+    public static void main(String args[])
+    {
+        
+   
+    int arr[] ={2,3,9,8,1,4};
+    
+    for(int i=0;i<arr.length;i++)
+    {
+        for(int j=i+1;j<arr.length;j++)
+        {
+            if(arr[i]<arr[j])
+            {
+                int temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
+            
+        }
+        
+    }
+    System.out.print("Descending sorted list using selection sort");
+        System.out.print(Arrays.toString(arr));
+    }
+}
+
+
+*/
+
+class binary_search
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,2,3,4,8,10,15,22,25,26,29,30,40,45};
+
+        int beg=0;
+        int last=arr.length-1;
+
+        int mid = arr.length-1/2;  
+        int num=25;
+        
+        if(num>arr[mid])
+        
+        
+    }
+}
 
 
 
