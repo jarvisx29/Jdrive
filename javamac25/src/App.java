@@ -1,4 +1,7 @@
 
+import java.util.Arrays;
+
+
 
 
 
@@ -3966,7 +3969,7 @@ class question_spiral_pattern_but_right_to_left_reverse   // same logic as the n
     }
 }
 
-*/
+
 
 class merge_sort_practice
 {
@@ -4028,6 +4031,32 @@ class merge_sort_practice
     }
 }
 
+*/
+
+import java.util.Arrays;
+class selection_sort_practice
+{
+    public static void main(String[] args) 
+    {
+        int arr[]={6,7,8,4,3,1,9,2};
+        for(int i=0;i<arr.length;i++)
+        {
+            for(int j=i+1;j<arr.length;j++)
+            {
+                if(arr[i]>arr[j])
+                {
+                    int temp =arr[i];
+                    arr[i] = arr[j];
+                    arr[j] =temp;
+                }
+            }
+        }
+        System.out.println("the sorted list using selection sort");
+
+        System.out.print(Arrays.toString(arr)+" ");
+
+    }
+}
 
 
 
