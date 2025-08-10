@@ -4160,11 +4160,28 @@ class binary_search
         int beg=0;
         int last=arr.length-1;
 
-        int mid = arr.length-1/2;  
+        
         int num=25;
-        
+        while(beg<=last)
+        {
+            int mid = (beg+last)/2;
+
         if(num>arr[mid])
-        
+        {
+            beg =mid;
+            mid++;
+        }
+        else if(num<arr[mid])
+        {
+            last=mid ;
+            mid--;
+        }
+        else
+        {
+            System.out.print("num found at index: "+ mid);
+            break;
+        }
+    }
         
     }
 }
