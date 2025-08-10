@@ -4153,7 +4153,7 @@ class sort_elements_in_descending_order_q12
 
 class binary_search
 {
-    public static void main(String[] args) 
+    public static void main(String[] args)      // explanation : 2025-08-10-11-48-58.png
     {
         int arr[] = {1,2,3,4,8,10,15,22,25,26,29,30,40,45};
 
@@ -4164,17 +4164,17 @@ class binary_search
         int num=25;
         while(beg<=last)
         {
-            int mid = (beg+last)/2;
+            int mid = (beg+last)/2;   //
 
         if(num>arr[mid])
         {
             beg =mid;
-            mid++;
+           // mid++;           // this step is useless we are not incrementing or decrementing based on if (noooo) we are manually reducing the indexes based on if and else if conditions  ; THIS IS  BINARY SEARCH !!!!!! 
         }
         else if(num<arr[mid])
         {
             last=mid ;
-            mid--;
+            //mid--;
         }
         else
         {
