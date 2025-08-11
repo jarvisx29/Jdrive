@@ -4149,7 +4149,7 @@ class sort_elements_in_descending_order_q12
 }
 
 
-*/
+
 
 class binary_search
 {
@@ -4185,6 +4185,172 @@ class binary_search
         
     }
 }
+
+import java.util.Arrays;
+class delete_element_at_desired_postion
+{
+    public static void main(String[] args) 
+    {
+        int arr[] ={1,2,3,4,5};
+        int del_element =2;;
+
+        for(int i=0;i<arr.length-1;i++)
+        {
+            if(arr[i] == del_element)
+            {
+                for(int j=i;j<arr.length-1;j++)
+                {
+                //int temp =arr[i];
+                arr[j] =arr[j+1];
+                }
+                arr[arr.length-1]=0;;
+                    break;
+            }
+            
+        }
+        
+        System.out.print(Arrays.toString(arr));
+        
+    }
+}
+
+class second_largest_element_in_array
+{
+    public static void main(String[] args) 
+    {
+        int arr[]={1,3,6,8,4};
+        int largest =1;
+        int second_largest =3;
+
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]>largest)      // finding largest then seocond largest
+            {
+               //largest = second_largest;    this is wrong since you are assigning two different values to largest at the same time see properly
+                second_largest =largest;
+                largest =arr[i];
+            }
+            else if(arr[i]>second_largest && arr[i]<largest)   // now finding new second largest if it exists
+            {
+                second_largest =arr[i];
+
+            }
+        }
+         System.out.println("the largest element is : "+ largest);
+
+
+        System.out.print("the second largest element is : "+second_largest);
+
+        
+    }
+}
+
+class second_smallest 
+{
+    public static void main(String[] args) 
+    {
+        int arr[] ={3,4,8,1,9};
+        int smallest = 3;
+        int second_smallest = 4;
+
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]<smallest)
+            {
+                second_smallest = smallest;
+                smallest =arr[i];
+            }
+            else if(arr[i]>second_smallest && arr[i]<smallest)
+            {
+                second_smallest =arr[i];
+            }
+        }
+
+        System.out.println("the smallest element is : "+smallest);
+
+        System.out.print("the second smallest element is: "+ second_smallest);
+        
+    }
+}
+
+*/
+import java.util.Arrays;
+class transpose_of_given_matrix
+{
+    public static void main(String[] args) 
+    {
+        int matrix[][] ={ {1,2,3},
+                          {4,5,6}
+
+        };
+        
+        int matrix_transpose [][]= new int[3][2];
+
+        for(int i=0;i<matrix.length;i++)
+        {
+            for(int j=0;j<matrix[0].length;j++)
+            {
+                matrix_transpose[j][i]= matrix[i][j];
+            }
+        }
+
+        // System.out.print("the transpose matrix : "+ Arrays.toString(matrix_transpose));  // dont us this for matrixes it will give gibberish
+        for(int z=0;z<matrix_transpose.length;z++)
+        {
+            for(int x=0; x<matrix_transpose[0].length;x++)
+            {
+                System.out.print(matrix_transpose[z][x]+ " ");
+            }
+            System.out.println();
+        }
+
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
