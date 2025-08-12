@@ -4440,6 +4440,34 @@ class identity_matrix            // identity matrix is the matrix in which the t
     }
 }
 
+class pair_with_given_pair_in_array
+{
+    public static void main(String[] args) 
+    {
+        int arr[] ={1,2,3,4,5,7};
+        int sum =9;
+
+        for(int i=0;i<arr.length;i++)
+        {
+            int k=0;
+            for(int j=k;j<arr.length;j++)
+            {
+                if(arr[i] != arr[j])
+                {
+                    if(arr[i]+arr[j] == sum)
+                {
+                    System.out.println("the pair are :"+arr[i]+ " ,"+arr[j]);
+                }
+                    
+                }
+                
+
+            }
+        }
+        
+    }
+}
+
 
 
 
