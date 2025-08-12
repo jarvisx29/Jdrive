@@ -4355,6 +4355,91 @@ class upper_triangulr_matrix           //explanation :2025-08-12-17-03-30.png
 }
 
 
+class sparse_matrix
+{
+    public static void main(String[] args) 
+    {
+        int matrix[][] ={{0,0,7},
+                         {0,0,0},
+                         {4,0,0,}
+                        
+    };
+
+        int count =0; 
+        for(int i=0;i<matrix.length;i++) 
+        {
+            for(int j=0;j<matrix.length;j++)
+            {
+            if(matrix[i][j]== 0)
+            {
+                count++;
+            }
+        }
+            
+        }  
+        
+        if(count >= 5)
+        {
+            System.out.print("it is a sparse matrix");
+        }
+        else
+        {
+            System.out.print("it is a not sparse matrix");
+        }
+                
+    }
+}
+
+class identity_matrix            // identity matrix is the matrix in which the the diagonals should be only 1s and the upper and lower traingular matrices should be 0s
+{
+    public static void main(String[] args) 
+    {
+        int matrix [][] ={{1,0,0},
+                          {0,1,0},
+                          {0,0,1}
+    };
+        
+        int count =0;
+        int count_upper =0;
+        int count_lower=0;
+        for(int i=0;i<matrix.length;i++)    // loop to calculate the diagonals 1s
+        {
+            if(matrix[i][i] ==1)
+            {
+                count ++;
+            }
+        }
+        for(int i=0;i<=3;i++)        // loop to calculate the upper trianglar matrix
+        {
+            for(int j=i+1;j<=2;j++)
+            {
+                if(matrix[i][j]==0)
+                {count_upper++;}
+            }
+        }
+        for(int i=0;i<=2;i++)       // loop to calculate the lower triangular matrix
+        {
+            for(int j=0;j+1<=i;j++)
+            {
+                if(matrix[i][j]==0)
+                {count_lower++;}
+            }
+        }
+
+        if(count==3 && count_upper==3 && count_lower==3)
+        {
+            System.out.print("it is an identity matrix");
+        }
+        else
+        {
+            System.out.print("it is not an identity matrix");
+        }
+        
+
+        
+    }
+}
+
 
 
 
