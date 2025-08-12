@@ -4273,7 +4273,7 @@ class second_smallest
     }
 }
 
-*/
+
 import java.util.Arrays;
 class transpose_of_given_matrix
 {
@@ -4307,6 +4307,51 @@ class transpose_of_given_matrix
 
     }
 
+}
+
+*/
+
+class lower_triangular_matrix        // explantion : 2025-08-12-16-53-33.png
+{
+    public static void main(String[] args) 
+    {
+        int matrix [][] ={ {1,2,3},
+                           {4,5,6},
+                           {7,8,9}
+        };
+
+        for(int i=0;i<=2;i++)
+        {
+          //for(int j=i;j<=2;j++)              normally this would work here but in here its matrix and we need the even smaller part of the decresing right traingle (see image for explantion)
+            for(int j=i+1;j<=2;j++)   
+            {
+                System.out.print(matrix[i][j]);
+            }
+            System.out.println();
+        }
+        
+    }
+}
+class upper_triangulr_matrix           //explanation :2025-08-12-17-03-30.png
+{
+    public static void main(String[] args) 
+    {
+        int matrix [][] ={ {1,2,3},
+                           {4,5,6},
+                           {7,8,9}
+        };
+
+        for(int i=0;i<=2;i++)
+        {
+          //for(int j=0;j<i;j++)       // again like the above one this gives the bigger left traingle and we want the smaller inner left traingle so +1 to not include the 0 parts (see image for explanation)
+            for(int j=0;j+1<=i;j++)
+            {
+                System.out.print(matrix[i][j]);
+            }
+            System.out.println();
+        }
+        
+    }
 }
 
 
