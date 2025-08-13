@@ -12,6 +12,8 @@
 
 
 
+
+
    /* 
     public static void main (String [] args)       // vowel program
     {
@@ -601,7 +603,7 @@ class Reverse
     for(int i=0;i<arr.length/2;i++)    // /2 used here because we will swap elements using mid element as pivot like 1st element will last , second element with second last etc
     {
         int t= arr[i];
-        arr[i]=arr[arr.length - 1 - i];     // swapping element with its adjacent postion on other side ogf middle element
+        arr[i]=arr[arr.length - 1 - i];     // swapping element with its adjacent postion on other side ogf middle element  (-1 since its starting from 0 so decrease that extra from we use -1)
         arr[arr.length-1-i] = t;
     }
 
@@ -4468,6 +4470,107 @@ class pair_with_given_pair_in_array
     }
 }
 
+class majority_element_of_an_array
+{
+    public static void main(String[] args) 
+    {
+        int arr[] ={4 ,8 ,4, 6, 7, 4, 4, 8};
+
+        int max_count=0;
+        int majority_element =-1;
+        for(int i=0;i<arr.length;i++)
+        {
+            //int k=0;
+            //int max_count=0;
+
+             int count =0;
+            for(int j=0;j<arr.length;j++)
+            {
+               
+                
+                //if(arr[i] != arr[j])
+                
+                    if(arr[i] == arr[j])
+                    {
+                        count++;
+                    }
+                    else if(count>max_count)
+                    {
+                        max_count =count;
+                        majority_element=arr[i];
+                    }
+                    //majority_element=arr[i];
+                
+
+            }
+            
+        }
+        System.out.print("the majority element is: "+ majority_element);
+        
+    }
+}
+
+class palindrome_sentence_or_not
+{
+    public static void main(String[] args) 
+    {
+        String palindrome ="malayalam is the wow language";
+
+        String split_words[] = palindrome.split(" "); // this will split the string into an array of strings to be used like arr[i]
+
+        for(int i=0;i<split_words.length;i++)      // this will iterate through each value of String like a array like arr[i]
+        {
+            String one_word = split_words[i];
+
+            int left =0;
+            int right = one_word.length()-1;
+
+            while(left <= right)                // normal palindrome logic
+            {
+                if(one_word.charAt(left) != one_word.charAt(right))
+                {
+                    System.out.println(one_word+ " is not a palindrome");
+                    break;
+                }
+                left++;
+                right--;
+            }
+
+            if(left>right)
+            {
+                System.out.println(one_word+" is a palindrome");
+            }
+        }
+
+        
+    }
+}
+
+class reverse_each_word_of_string
+{
+    public static void main(String[] args) 
+    {
+        String word ="The distance between dream and reality is action";
+
+        String split_words[] = word.split(" ");
+
+        for(int i=0;i<split_words.length;i++)
+        {
+            String one_word = split_words[i];
+
+            for(int j=0;j<one_word.length()/2;j++)
+            {
+                char temp = one_word.charAt(j);
+                one_word.charAt(j) = one_word.charAt(one_word.length() -1 -j);
+                one_word.charAt(one_word.length() -1 -j) =temp;
+
+
+            }
+
+        }
+        
+    }
+}
 
 
 
