@@ -4553,7 +4553,7 @@ class reverse_each_word_of_string
         String word ="The distance between dream and reality is action";
 
         String split_words[] = word.split(" ");
-
+                                                         // wrong logic here
         for(int i=0;i<split_words.length;i++)
         {
             String one_word = split_words[i];
@@ -4568,6 +4568,64 @@ class reverse_each_word_of_string
             }
 
         }
+        
+    }
+}
+
+class reverse_each_word_of_string
+{
+    public static void main(String[] args) 
+    {
+        String word ="The distance between dream and reality is action";
+
+        String split_words[] = word.split(" ");
+
+        for(int i=0;i<split_words.length;i++)
+        {
+            String one_word = split_words[i];
+            
+            //System.out.println(one_word+"     length:"+one_word.length());
+            
+            for(int j=one_word.length()-1;j>=0;j--)
+            {
+                System.out.print(one_word.charAt(j));
+            }
+            
+            System.out.print(" ");
+            //System.out.print(one_word)
+            // for(int j=0;j<one_word.length()/2;j++)
+            // {
+            //     char temp = one_word.charAt(j);
+            //     one_word.charAt(j) = one_word.charAt(one_word.length() -1 -j);
+            //     one_word.charAt(one_word.length() -1 -j) =temp;
+
+
+            // }
+
+        }
+        
+    }
+}
+
+class first_and_last_capital_letter
+{
+    public static void main(String[] args) 
+    {
+        String str = "The distance between dream and reality is action";
+
+        String split_words [] =str.split(" ");
+
+
+        for(int i=0;i<split_words.length;i++)
+        {
+            String one_word = split_words[i];
+
+            for(int j=one_word.length()-1;j>=0;j--)
+            {
+                
+            }
+        }
+
         
     }
 }
