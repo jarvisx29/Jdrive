@@ -4607,7 +4607,7 @@ class reverse_each_word_of_string
     }
 }
 
-class first_and_last_capital_letter
+class first_and_last_capital_letter         // incomplete come bacj later
 {
     public static void main(String[] args) 
     {
@@ -4622,7 +4622,11 @@ class first_and_last_capital_letter
 
             for(int j=one_word.length()-1;j>=0;j--)
             {
-                
+                if(one_word.charAt(j) == one_word.length()-1 || one_word.charAt(j) == one_word.charAt(0))
+                {
+                    one_word.toUpperCase(one_word.charAt(j));
+
+                }
             }
         }
 
@@ -4631,6 +4635,55 @@ class first_and_last_capital_letter
 }
 
 
+//              xxxxxxxxxxxxxxx   String and String manipulation basics (Stringbuffer and Stringbuilder)
+
+
+class string_buffer_basics
+{
+    public static void main(String[] args) 
+    {
+        StringBuffer str = new StringBuffer("Hello");
+
+        //str.append(",world");                //append : it will put the value to inserted (or appended) at the end of the String 
+
+        str.insert(5," , world");  // insert: it will put the value at the specific index provided (like here it inserts world at index 5)
+ 
+       //str.delete(5,12)            this will only delete worl  not d because in delete the last index ois not included you have to go one more index (even out of bounds to delete the wanted index)
+        str.delete(5,13);
+        System.out.print(str);
+        
+    }
+}
+
+class string_upper_lowercase_basics_also_immutable_basics
+{
+    public static void main(String[] args) 
+    {
+        String original = "java";
+        
+        String another_modified = original.concat("programming");
+
+        System.out.println(original); 
+        System.out.println(another_modified);
+        
+        System.out.println("orginal string after concat used :  (remains unchanged) : "+original);
+        
+        original.toUpperCase();
+        System.out.println("attempt to modify original (will not change) : "+original);
+        
+        another_modified.toUpperCase(); // this will not work since again it is not the original so create a new string then uppercase it 
+        
+        // System.out.print("attempt to modify the modified_string (will change since it is not the original) : "+ another_modified);
+        
+        String another_modified_UpperCase = another_modified.toUpperCase();  
+        
+          System.out.print("attempt to modify the modified_string (will change since it is not the original) : "+ another_modified_UpperCase);
+
+
+        
+    }
+
+}
 
 
 
