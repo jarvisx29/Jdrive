@@ -4638,9 +4638,9 @@ class first_and_last_capital_letter         // incomplete come bacj later
 //              xxxxxxxxxxxxxxx   String and String manipulation basics (Stringbuffer and Stringbuilder)
 
 
-class string_buffer_basics
+class string_buffer_basics       // more on this down   
 {
-    public static void main(String[] args) 
+    public static void main(String[] args)     // String_methods_uses explained
     {
         StringBuffer str = new StringBuffer("Hello");
 
@@ -4678,6 +4678,136 @@ class string_upper_lowercase_basics_also_immutable_basics
         String another_modified_UpperCase = another_modified.toUpperCase();  
         
           System.out.print("attempt to modify the modified_string (will change since it is not the original) : "+ another_modified_UpperCase);
+
+
+        
+    }
+
+}
+
+class comparison_using_equals_method     //equals() method : comapres the content inside the strings (ex: mano =mano || Mano != mano )
+{
+    public static void main(String[] args) 
+    {
+        String str1 = "mano"; 
+        String str2 = "mano";
+        String str3 = "Mano";
+
+        boolean compare = str1.equals(str2);      // this will be true since mano and mano are equal 
+        
+        boolean compare_2 = str2.equals(str3);  // this will be false since the Mano != mano (because M != m) remember equals compares the content inside the String 
+
+        System.out.println("str1 & str2 equal or not :"+compare);     // output : true
+        System.out.println("str2 & str3 equal or not :"+compare_2);   // output : false
+
+
+        
+    }
+}
+
+class comparison_using_equal_to_equal_to_operator     // comparing using == operator 
+{
+    public static void main(String[] args) 
+    {
+        String str1 = "kohli";
+        String str2 = "kohli";
+
+        String str3 = new String("kohli");
+
+        boolean compare_str1_str2 = str1 == str2;     // this is TRUE because when we create str2 with the same String content it sees that there is already a String "kohli" in the string pool and instead of creating a new one it just points to the str1 content int the String pool
+
+        boolean compare_str2_str3 = str2 == str3;     // this is FALSE because when we create using "new" then we are creating in a new String pool then it doesnt matter if there is already a same String content ;  it will still create a new String pool for "kohli"
+
+        System.out.println("comparing str1 and str 2 : "+compare_str1_str2);   
+
+        System.out.println("comparing str2 and str 3 : "+compare_str2_str3);
+
+
+
+        
+    }
+}
+
+class comparisom_using_CompareTo_operators      // using compareTo() operator
+{
+    public static void main(String[] args) 
+    {
+        String str1 = "ratan";      
+        String str2 = "ratata";   // the differing 1st element is n and t :   (n=110) & (t = 116) so (110-116) = -6
+
+        System.out.print(str1.compareTo(str2));  // output = -6  ;  the compareTo method will always find and compare the ascii values of the first differing element only 
+
+
+        
+    }
+}
+
+class comparison_using_Startswith_endswith_methods     // using startsWith() and endsWith() methods
+{
+    public static void main(String[] args) 
+    {
+        String str1 ="Hello World";
+
+      //String start = str1.startsWith(("Hello"));           xxxxxx Golden rule : startsWith() and endsWith() methods  always can only be used with boolean  
+        
+        boolean start = str1.startsWith(("Hello"));
+
+        boolean end = str1.endsWith("World");
+
+        System.out.println("str1 starts with Hello : "+ start);
+
+        System.out.println("str1 ends with Hello : "+ end); 
+    }
+} 
+
+
+
+//              xxxxxxxxxxxxxxxxxxxxxxxx   Different ways to concatenate  xxxxxxxxxxxxx 
+
+class comparison_using_plus   // using + operator 
+{
+    public static void main(String[] args) 
+    {
+        String str1  = "virat" + "kohli" + 19;
+        System.out.println(str1);      // the most rudimentart way to add strings    (although this is just initialization adding its pretty useless to be honest)
+        
+    }
+
+}
+
+class using_concat_method     // using concat() method
+{
+    public static void main(String[] args) 
+    {
+        String str1 = "Virat";
+
+        String str2 = "Kohli ";
+
+        String str_concat = str1.concat(str2);      // always remember this is not like arrays you always need to create a new instance every time you want to use these methods like concat you need to create a new string or use Stringbuilder(see down for this)
+
+        System.out.println(str_concat);
+        
+    }
+}
+
+class using_stringBuilder
+{
+    public static void main(String[] args) 
+    {
+        String str1 = "Hello";
+        String str2 ="World";
+
+        StringBuilder str3 = new StringBuilder();
+        //str3.concat(str1); // Golden rule cannot use concat() with StringBuilder or StringBuffer ( only for String exclusively)
+        
+        str3.append(str1);
+        str3.append(str2);
+        
+        str3.insert(0,"18");  // insert: puts itn at the particular index
+
+        str3.append(18);  // append : puts it at last of the string
+
+        System.out.println(str3);
 
 
         
