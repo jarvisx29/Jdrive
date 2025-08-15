@@ -4815,6 +4815,103 @@ class using_stringBuilder
 
 }
 
+class using_split_method
+{
+    public static void main(String[] args) 
+    {
+        String str1 ="Hello";
+        String str2 = "World";
+
+        String combine = String.join(" ",str1,str2);   // delimeter : its the differentiating element used like we do in split(" ")
+        System.out.println(combine);
+        
+    }
+}
+
+
+
+
+
+//           how to use substrings in java
+
+class using_substring_method
+{
+    public static void main(String[] args) 
+    {
+        String str1 = "Hello World";
+    //                                                  now you might be thinking how can this work since strings are immmutable (or you need to use StringBuilder)  but here we are not changing the string or anything here we are simply printing the String indexes
+    System.out.println(str1.substring(2));
+    System.out.print(str1.substring(0,5));    // remember start index is includes(inclusive)  but the end index is not included(exclusive)  so use index_wanted +1
+        
+    }
+}
+
+
+//   some java methods used (which we havent done already or just done for practice)
+
+class using_Uppercase_lowercase
+{
+    public static void main(String[] args) 
+    {
+        String str1 = "hello";       
+                     //   Golden rule: Methods like substring(), toUpperCase(), toLowerCase(), trim() replace() , startsWith() , endsWith() all return a new String instead of changing the original.  (basically these have immunity )
+
+        System.out.println(str1.toUpperCase());  // see this works because we are not putting  new content inside the String inside ; we are only using or manipulating data that is already there
+        
+    }
+}
+
+class using_trim_method
+{
+    public static void main(String[] args) 
+    {
+        String str1 ="            sachin";
+
+        System.out.print(str1.trim());    // trim() : it will remove all the spaces before and after the String
+        
+    }
+}
+
+class using_starts_With_and_endsWith
+{
+    public static void main(String[] args) 
+    {
+        String str1 = "Hello World";
+
+        System.out.println(str1.startsWith("Hello"));   // output: true
+        System.out.println(str1.endsWith("World"));    // output: true 
+
+
+        
+    }
+}
+
+class using_valueOf_method
+{
+    public static void main(String[] args) 
+    {
+        int a=10;
+        String convert_to_String = String.valueOf(a);   // put it into another string like normally
+
+        //System.out.print(valueOf(a));         this wont work since valueOf doesnt have immunity like the others
+        System.out.println(convert_to_String);
+    
+        
+    }
+}
+
+class using_replace_method
+{
+    public static void main(String[] args) 
+    {
+        String str1 = " java is language , java is platform independent";
+
+        String replace_String = str1.replace("java", "kava");  // replace: replaces the first element with the second element
+
+        System.out.println(replace_String);
+        
+    }
+}
 
 
 
