@@ -1,4 +1,7 @@
 
+import java.util.Scanner;
+
+
 
 
 
@@ -4907,13 +4910,284 @@ class using_replace_method
         String str1 = " java is language , java is platform independent";
 
         String replace_String = str1.replace("java", "kava");  // replace: replaces the first element with the second element
-
+        
+        //String replace_string_at_index = str1.replace(6,7," java"); // this works just  not in normal string use Stringbuilder it will work
+        
+        
         System.out.println(replace_String);
         
     }
 }
 
 
+
+
+
+//                xxxxxxxxxxxxxx  StringBuilder (fully explained) xxxxxxxxxxxx
+
+class using_stringBuilder
+{
+    public static void main(String[] args) 
+    {
+        StringBuilder str1 = new StringBuilder();
+      //StringBuilder str1 = new StringBuilder("java");       you can even initilaize like this in the declaration itself 
+
+        str1.append("Hello");
+        str1.insert(5,"World");
+
+        str1.replace(1,2,"java");     // use can use replace() with indexes too but ONLY with Stringbuilder class
+
+        str1.reverse();
+
+        System.err.println(str1);
+        
+    }
+}
+//               xxxxxxxx     thats it       xxxxxxxxx
+
+
+class splitting_string           // Golden rule question : how to simply manipulate Strings 
+{
+    public static void main(String[] args) 
+    {
+        String str1 = "java is platform independent";
+
+        String split_words[] = str1.split(" ");
+
+        for(int i=0;i<split_words.length;i++)
+        {
+            System.out.println(split_words[i]);
+        }
+        
+        for(int i=split_words.length-1 ;i>=0;i--)
+        {
+            System.out.print(split_words[i] + " ");
+        }
+        
+    }
+}
+
+// ASCII values (a-Z) and 1-9
+
+// a = 97
+// b = 98
+// c = 99
+// d = 100
+// e = 101
+// f = 102
+// g = 103
+// h = 104
+// i = 105
+// j = 106
+// k = 107
+// l = 108
+// m = 109
+// n = 110
+// o = 111
+// p = 112
+// q = 113
+// r = 114
+// s = 115
+// t = 116
+// u = 117
+// v = 118
+// w = 119
+// x = 120
+// y = 121
+// z = 122
+
+// Uppercase letters (A-Z)
+// A = 65
+// B = 66
+// C = 67
+// D = 68
+// E = 69
+// F = 70
+// G = 71
+// H = 72
+// I = 73
+// J = 74
+// K = 75
+// L = 76
+// M = 77
+// N = 78
+// O = 79
+// P = 80
+// Q = 81
+// R = 82
+// S = 83
+// T = 84
+// U = 85
+// V = 86
+// W = 87
+// X = 88
+// Y = 89
+// Z = 90
+
+// 0 = 48
+// 1 = 49
+// 2 = 50
+// 3 = 51
+// 4 = 52
+// 5 = 53
+// 6 = 54
+// 7 = 55
+// 8 = 56
+// 9 = 57
+
+import java.util.Scanner;
+class split_alphabets_and_numbers       // Golden rule question
+{
+    public static void main(String[] args) 
+    {
+        System.out.println("enter string : ");
+        Scanner str = new Scanner(System.in);
+
+        String str1= str.nextLine();
+
+        String str2 = "";
+        String str3 = "";
+
+        for(int i=0;i<str1.length();i++)
+        {
+            char split_into_char = str1.charAt(i); 
+
+            // String split_string []= str1.split(" ");       use this only when you need to split entire Strings full of words (ex: java is platform independent) but in this sum there is only one string (ex: xyz456)  ; so when one string is there use char
+
+            
+            
+            
+            if(split_into_char >=97  && split_into_char <=122)   // loop for alphabets
+            {
+                str2 = str2 + split_into_char;     // you can even add like normal int or arrays
+            }
+
+            else if(split_into_char >= 48  &&  split_into_char<=57)
+            {
+                str3 = str3 + split_into_char;
+            }
+        }
+
+        System.out.println("the alphabets: "+str2);
+
+        System.out.println("the numbers: "+ str3);
+        
+    }
+}
+
+class convert_to_upper_if_lower_and_vice_verca
+{
+    public static void main(String[] args) 
+    {
+        String str = "Sachin Best Batsman in the World";
+
+        for(int i=0;i<str1.length();i++)
+        {
+            char str1 = str.charAt(i);                  // isUpperCase() : ONLY checks if uppercase or not (this is only for checking whether uppercase or not )
+                                       
+                                                       //  toUpperCase() : converts to uppercase
+            if(Character.isUpperCase(str1))
+            {
+                System.out.println(Character.toUpperCase(i));
+            }
+            else if(Character.isLowerCase(i))
+            {
+                System.out.println(Character.toUpperCase(i));
+            }
+        }
+        
+    }
+}
+
+class convert_to_upper_if_lower_and_vice_verca_using_ascii
+
+{
+    public static void main(String[] args) 
+    {
+        String str = "Sachin Best Batsman in the World";
+
+        for(int i=0;i<str.length();i++)
+        {
+            char str1 = str.charAt(i);   // using char here instead of String since we need to check each letter of string in this q ; not the full word 
+
+            if(str1 >=65 && str1<=90)   // loop for capital letters (A-Z)
+            {
+                System.out.println(Character.toLowerCase(str1));
+            }
+            else if(str1>=97 && str1<=122) // loop for smaller letters (a-z)
+            {
+                System.out.println(Character.toUpperCase(str1));  // Golden rule: always whilst referencing single characters we use Character keyword (since char doesnt have built in keywords like str1.Uppercase() or str1.Lowercase() ) that is why we use Character keyword (otherwise for string normal Str1.UpperCase would work fine) 
+            }
+
+
+        }        
+    }
+}
+
+class convert_first_and_last_letter_to_capital  // Golden rule question  (very very very important) 
+{
+    public static void main(String[] args) 
+    {
+        String str = "The distance between dream and reality is action";
+
+        //for(int i=0;i<str.length();i++)   just split once that is plenty
+        
+            String split_words[] = str.split(" ");
+
+            for(int i=0;i<=split_words.length-1;i++) // this loop for iterating through words
+            {
+                String one_word = split_words[i];
+                //if(one_word.charAt(j)== 0 && one_word.charAt(j) == one_word.length()-1)
+                
+                for(int j=0;j<=one_word.length()-1;j++) // this loop for iterating through each letter of word
+                {
+                if(j==0 || j==one_word.length()-1)
+                {
+                    //System.out.print(one_word.toUppercase());
+                    System.out.print(Character.toUpperCase(one_word.charAt(j)));
+                }
+                else
+                {
+                    System.out.print(one_word.charAt(j));
+                }
+                }
+                
+                System.out.print(" ");  // for printing space in between the words
+            }
+
+    
+        
+    }
+}
+
+class convert_first_and_last_letter_to_capital    //   xxxxxxxxx wrong logic xxxxxxxxxxxxxxxxxxxxxxxxxxxx   (kept for reference of what went wrong)
+{
+    public static void main(String[] args) 
+    {
+        String str = "The distance between dream and reality is action";
+
+        //for(int i=0;i<str.length();i++)   just split once that is plenty
+        
+            String split_words[] = str.split(" ");
+
+            for(int j=0;j<=split_words.length;j++)
+            {
+                String one_word = split_words[j];
+                //if(one_word.charAt(j)== 0 && one_word.charAt(j) == one_word.length()-1)
+                if(j==0 || j==one_word.length()-1)
+                {
+                    //System.out.print(one_word.toUppercase());
+                    System.out.print(Character.toUpperCase(one_word.charAt(j)));
+                }
+                else
+                {
+                    System.out.print(one_word.charAt(j));
+                }
+            }
+            
+            
+    }
+}
 
 
 
