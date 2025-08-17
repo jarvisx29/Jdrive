@@ -4850,7 +4850,16 @@ class using_substring_method
 }
 
 
-//   some java methods used (which we havent done already or just done for practice)
+
+
+
+
+
+
+//                xxxxxxxxxxxxxxxxxxxxxxxxxxx   some java methods used (which we havent done already or just done for practice)       xxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
 
 class using_Uppercase_lowercase
 {
@@ -5188,6 +5197,238 @@ class convert_first_and_last_letter_to_capital    //   xxxxxxxxx wrong logic xxx
             
     }
 }
+
+
+//          xxxxxxxxxxxxxx     char methods()   [isDigit(), isLetter(), isLetterOrDigit(), isWhitespace(), isUpperCase(), isLowerCase(), toUpperCase(), toLowerCase(), getNumericValue(), isAlphabetic() , toString()]        xxxxxxxxxxx
+
+class using_isDigit_method        // Golden rule question
+{
+    public static void main(String[] args) 
+    {
+        char chr = '7';
+
+        System.out.println(Character.isDigit(chr));    // remember for all char related stuff YOU ALWAYS NEED TO USE   xxxxxxxxxx  "Character" xxxxxxxxxx
+        
+    }
+}
+
+class using_isLetter_method
+{
+    public static void main(String[] args) 
+    {
+        char chr = 's';
+
+        System.out.println(Character.isLetter(chr));
+        
+    }
+}
+
+class using_isLetterOr_digit_method
+{
+    public static void main(String[] args) 
+    {
+        char chr = 'L';
+        char chr1 = ' ';   // false : since it comes true only for letters or digits (not even whitespaces)
+        char chr2 = '-';   // false  : even whitespaces are invalid only those two 
+
+        System.out.println(Character.isLetterOrDigit(chr));
+
+
+        
+    }
+}
+
+class using_isWhitespace_method
+{
+    public static void main(String[] args) 
+    {
+        char chr = ' ';
+        char chr1 = '-';  // false: since it will only work for Whitespaces and nothing else
+
+        System.out.println(Character.isWhitespace(chr));
+        
+    }
+}
+
+class using_isUpperCase_isLowerCase
+{
+    public static void main(String[] args) 
+    {
+        char chr = 'h';
+                                                        // is_Whatever is always ONLY checks whether is UpperCase or LowerCase (never changes it or anything it is there to only check)
+        System.out.println(Character.isLowerCase(chr));   
+        System.out.println(Character.isUpperCase(chr));  // false
+        
+    }
+}
+
+class using_toUpperCase_toLowercase
+{
+    public static void main(String[] args) 
+    {
+        char chr = 's';
+                                                    // to_Whatever is always used to convert to respective UpperCase or LowerCase 
+        System.out.println(Character.toUpperCase(chr));
+        System.out.println(Character.toLowerCase(chr));  // even if already lowercase it will still work and print 
+        
+    }
+}
+class using_getNumericValue_method    // getNumericValue() converts the char to int format    (ex '5' to 5 (int format))
+{
+    public static void main(String[] args) 
+    {
+        char chr = '9';
+
+        System.out.println(Character.getNumericValue(chr));   
+        
+    }
+}
+
+class using_int_explicitly          // although not a method but this is a cheeky(explicitly) way to get ascii values
+{
+    public static void main(String[] args) 
+    {
+        char chr = 'a';
+        System.out.println((int)chr);
+        
+    }
+}
+
+class using_isAlphabetic        // checks whether alphabet or not
+{
+    public static void main(String[] args) 
+    {
+        char chr = 'a';
+        char chr1 = '1';   // false : isAlphabetic only check if the char is alphabet or not (doesnt matter small or capital)
+
+        System.out.println(Character.isAlphabetic(chr));
+        
+    }
+}
+
+class  using_toString_method          // .toString() method converts the char to String
+{
+    public static void main(String[] args) 
+    {
+        char chr = 'a';
+        System.out.println(Character.toString(chr));
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+//   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   questions from 5_string manipulation-26-27.pdf      xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+import java.util.Scanner;
+class prompts_phone_number_check_valid_or_not_q1
+{
+    public static void main(String[] args) 
+    {
+        System.out.println("please enter no. in string in format 017-555-1212: ");
+        Scanner sc = new Scanner(System.in);
+
+        String str1 = sc.nextLine();
+
+        //String split_words[] = str1.split("-");   
+
+        // for(int i=0;i<str1.length();i++)        // no need to split each part into characters (can do but lengthy) ; here only need to confirm at indexes 3 & 7 whether they are '-' to be valid ( so just use str.charAt == index   ; thats it done)
+        // {
+        //     char chr = str1.charAt(i);
+
+        //     System.out.print(chr);
+
+        // }   
+
+        if(str1.charAt(3) == '-' && str1.charAt(7) == '-')
+        {
+            System.out.print(" the no. is valid");
+        }
+        else
+        {
+            System.out.println("the no. is not valid");
+
+        }
+
+        
+    }
+}
+
+import java.util.Scanner;
+class extract_all_digits_from_String
+{
+    public static void main(String[] args) 
+    {
+    
+        System.out.println("enter string : ");
+        Scanner sc = new Scanner(System.in);
+
+        String str1 = sc.nextLine();
+
+        String str2= "";      // string for storing alphabets
+        String str3 = "";      // string for storing digits
+        String str4 = "";      // string for storing the sum
+        
+        int sum =0;
+
+        for(int i=0;i<str1.length();i++)
+        {
+            char chr = str1.charAt(i);
+
+            if(Character.isAlphabetic(chr))       // this loop check and puts the alphabets in the str2
+            {
+                 //str2 = chr;
+
+                 str2 = str2 + Character.toString(chr);  //      Golden rule:    toString : used to convert char stuff to String
+            }
+            else                                  // this loop puts the numbers in the str3 for digits
+            {
+                str3 = str3+ Character.toString(chr);
+            }
+            if(Character.isDigit(chr))             // this loop is used to put the digits in sum part and add them 
+            
+                //str4 = str4 + Character.to(chr);
+                //str4 =str4 + Character.getNumericValue(chr);  // this wont work this will just put the numbers in the string (not add them)
+                 
+                
+                
+                sum = sum + Character.getNumericValue(chr);   // we use .getNumericValue() func to convert the digit char ('5') to actual integers (int 5)    
+            
+        }
+        
+        System.out.print("the Alphabets :");
+        for(int z=0;z<=str2.length()-1;z++)
+        {
+            System.out.print(str2.charAt(z));
+
+        }
+        System.out.println();
+        System.out.print("the numbers: ");
+        for(int x=0;x<=str3.length()-1;x++)~
+        {
+            System.out.print(str3.charAt(x));
+        }
+        System.out.println();
+
+        System.out.print("the sum is:"+ sum);
+        // for(int y=0;y<=str4.length()-1;y++)
+        // {
+        //     System.out.print(str4.charAt(y));
+        // }
+}
+}
+
+
+
+
 
 
 
