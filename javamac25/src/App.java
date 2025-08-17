@@ -5316,6 +5316,29 @@ class  using_toString_method          // .toString() method converts the char to
     }
 }
 
+class to_find_alphanumeric       // Alphanumeric : = Letters + Digits (alphanumeric is the part of the String that is either a letter or digit and nothing else)
+{
+    public static void main(String[] args) 
+    {
+        String str1 = "Hello123!@#";
+
+        for(int i=0;i<str1.length();i++)
+        {
+            char chr = str1.charAt(i);
+
+            if(Character.isLetterOrDigit(chr))
+            {
+                System.out.println("this is alphanumeric "+chr);
+            }
+            else
+            {
+                System.out.println("this is not alphanumeric: "+chr);
+            }
+        }
+        
+    }
+}
+
 
 
 
@@ -5427,6 +5450,60 @@ class extract_all_digits_from_String
 }
 
 
+import java.util.Scanner;
+class find_no_of_words_characters_alphanumeric_percentage_q3
+{
+    public static void main(String[] args) 
+    {
+        System.out.println("enter String: ");
+        Scanner sc = new Scanner(System.in);
+
+        String str = sc.nextLine();
+
+        //int count =0;
+        //int count_alphanumeric =0;   // we used this initially but we needed to get percentages for the alphanumeic so we went with double since it gives in decimals
+        
+        double count =0;
+        double count_alphanumeric =0;
+        
+        String split_words [] = str.split(" ");
+        
+        System.out.println("the number of words: "+ split_words.length);
+
+        for(int i =0;i<str.length();i++)
+        {
+            // char chr  = split_words.charAt(i);  wont work explain once sum is over
+
+            char chr = str.charAt(i);
+            
+            //System.out.println(chr);
+
+            if(Character.isAlphabetic(chr))
+            {
+                count++;
+            }
+            else if(Character.isWhitespace(chr))
+            {
+                count++;
+            }
+            if(Character.isLetterOrDigit(chr))
+            {
+                count_alphanumeric++;
+            }
+            
+        }
+
+        System.out.println("the no. of characters including whitespaces and punctuation  : "+ count);
+
+        System.out.println("the number of alphanumeric part: " + count_alphanumeric);
+        
+        double percentage = (count_alphanumeric/count)*100;
+        
+        System.out.println("the percentage of alphanumeric parts : "+ percentage);
+        
+        
+    }
+}
 
 
 
