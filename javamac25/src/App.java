@@ -5505,16 +5505,97 @@ class find_no_of_words_characters_alphanumeric_percentage_q3
     }
 }
 
+import java.util.Scanner;
+class LowerCase_to_UpperCase_repeatedly_prompt_q_to_quit_q4
+{
+    public static void main(String[] args) 
+    {
+        
+        
+            for(int j=0;j<=10;j++)   // this loop will keep on printing up until q is given to give in if loop
+            {
+                System.out.println("enter the String or 'q' to quit");
+                Scanner sc = new Scanner(System.in);
+
+                String str1 = sc.nextLine();
+
+                String str2 = "";
+                //Char chr2 = '';
+                String quit = "q";
+                if(str1.equals(quit))  // if q comes it will leave the program 
+                {
+                    break;
+                }
+                else
+                {
+                    for(int i=0;i<str1.length();i++)
+                    {
+                        char chr = str1.charAt(i);
+
+                        if(Character.isUpperCase(chr))
+                        {
+                            //Char chr2 = '';
+                            //str2 =str + Character.toString 
+                            char chr2 = Character.toLowerCase(chr);
+                            str2 =str2 + Character.toString(chr2);
+                        }
+                        else
+                        {
+                            char chr3 = Character.toUpperCase(chr);
+                            str2 = str2 + Character.toString(chr3);
+                        }
+                    }
+                    System.out.print(str2);
+                    
+                }
+
+        }
+
+    }
+
+}
 
 
+import java.util.Scanner;
+class extract_digits_from_string_and_add_with_integer_q5
+{
+    public static void main(String[] args) 
+    {
+        System.out.println("enter the string : ");
+        Scanner sc = new Scanner(System.in);
+
+        String str1 = sc.nextLine();
+
+        System.out.println("enter the integer : ");
+        Scanner sc2 = new Scanner(System.in);
+
+        int int1 = sc2.nextInt();
+
+        int sum = 0; // integers taken from String will be added here
+
+        int total_sum = 0;  // sum of digits from String and integer given by user
+
+        for(int i=0;i<str1.length();i++)
+        {
+            char chr = str1.charAt(i);
+
+            if(Character.isDigit(chr))
+            {
+                sum = sum + Character.getNumericValue(chr);
+            }
+
+        }
+        total_sum = sum +int1;
+
+        System.out.println("the sum of digits from String: "+sum);
+        System.out.println("the integer from user : "+int1);
+        
+        System.out.println("total sum = "+total_sum);
 
 
-
-
-
-
-
-
+        
+    }
+}
 
 
 
