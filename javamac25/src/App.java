@@ -2178,7 +2178,7 @@ class right_diagonal_elements
     }
 }
 
-class right_diagonal_elements 
+class left_diagonal_elements 
 {
     public static void main(String[] args) 
     {
@@ -5592,6 +5592,267 @@ class extract_digits_from_string_and_add_with_integer_q5
         
         System.out.println("total sum = "+total_sum);
 
+
+        
+    }
+}
+
+
+import java.util.Scanner;
+class compare_String_and_print_in_left_right_triangle
+{
+    public static void main(String[] args)            // wrong logic code kept for reference
+    {
+        System.out.println("enter String one");
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("enter String two : ");
+
+        Scanner sc2 = new Scanner(System.in);
+
+        String str1 = sc.nextLine();
+
+        String str2 = sc2.nextLine();
+        
+        String str1_container ="";   // stores the first half
+        String str2_container ="";
+
+        if(str1.length()>str2.length())
+        {
+            for(int i=0;i<str1.length()/2 ;i++)
+            {
+                char chr1 = str1.charAt(i);
+                str1_container = str1_container + Character.toString(chr1);
+            }
+            for(int j = str1.length()/2 ; j<=str1.length()-1;j++)
+            {
+                char chr2 = str1.charAt(j);
+                str2_container = str2_container + Character.toString(chr2);
+            }
+        }
+
+        String matrix1[][] ={{" "," "," "," ",""},
+        {" "," "," ",""," "},
+        {" "," ",""," "," "},
+        {" ",""," "," "," "},
+        {""," "," "," "," "}
+                         
+        };
+
+
+        for(int x=0;x<str1_container.length();x++)
+        {
+            
+        for(int i =0; i<=matrix1.length;i++)
+        {
+            for(int  j =0;j<=matrix1.length;j++)
+            {
+                if(i+j == 4)
+                {
+                       matrix1[i][j] = String.valueOf(str1_container.charAt(x));
+                   
+                }
+            }
+        }
+    }
+        for(int x=0;x<matrix1.length;x++)
+        {
+            for(int y = 0;y<matrix1.length;y++)
+            {
+                System.out.print(matrix1[x][y]);
+            }
+            System.out.println();
+        }    
+
+        
+    }
+}
+
+
+
+
+
+import java.util.Scanner;
+class compare_String_and_print_in_left_right_triangle
+{
+    public static void main(String[] args) 
+    {
+        System.out.println("enter String one");
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("enter String two : ");
+
+        Scanner sc2 = new Scanner(System.in);
+
+        String str1 = sc.nextLine();
+
+        String str2 = sc2.nextLine();
+        
+        String str1_container ="";   // stores the first half
+        String str2_container ="";
+
+        if(str1.length()>str2.length())
+        {
+            for(int i=0;i<str1.length()/2;i++)
+            {
+                char chr1 = str1.charAt(i);
+                str1_container = str1_container + Character.toString(chr1);
+            }
+            for(int j = str1.length()/2 ; j<=str1.length() -1;j++)
+            {
+                char chr2 = str1.charAt(j);
+                str2_container = str2_container + Character.toString(chr2);
+            }
+        }
+
+        String matrix1[][] ={{" "," "," "," ",""},
+        {" "," "," ",""," "},
+        {" "," ",""," "," "},
+        {" ",""," "," "," "},
+        {""," "," "," "," "}
+                         
+        };
+
+
+        //for(int x=0;x<str1_container.length();x++)
+        
+            int k =0;
+        for(int i =0; i<matrix1.length;i++)
+        {
+            for(int  j =0;j<matrix1[0].length;j++)
+            {
+                if(i+j == 4 && k < str1_container.length()) 
+                {
+                       matrix1[i][j] = String.valueOf(str1_container.charAt(k));
+                       k++;
+                   
+                }
+                
+            }
+        }
+    
+        for(int x=0;x<matrix1.length;x++)
+        {
+            for(int y = 0;y<matrix1.length;y++)
+            {
+                System.out.print(matrix1[x][y]);
+            }
+            System.out.println();
+        }    
+
+        
+    }
+}
+
+
+import java.util.Scanner;
+class compare_String_and_print_in_left_right_triangle
+{
+    public static void main(String[] args)          // this logic too long
+    {
+        System.out.println("enter String one");
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("enter String two : ");
+
+        Scanner sc2 = new Scanner(System.in);
+
+        String str1 = sc.nextLine();
+
+        String str2 = sc2.nextLine();
+        
+        String str1_container ="";   // stores the first half
+        String str2_container ="";
+        
+        String str2_container_reversed = "";
+
+        if(str1.length()>str2.length())
+        {
+            for(int i=0;i<str1.length()/2;i++)
+            {
+                //char chr1 = str1.charAt(i);
+                //str1_container = str1_container + Character.toString(chr1);
+                str1_container =str1_container + str1.charAt(i);
+            }
+            for(int j = str1.length()/2 ; j<str1.length() ;j++)
+            {
+                // char chr2 = str1.charAt(j);
+                // str2_container = str2_container + Character.toString(chr2);
+                str2_container = str2_container + str1.charAt(j);
+            }
+        }
+        
+        for(int p=str2_container.length() -1;p>=0;p--)
+        {
+            str2_container_reversed = str2_container_reversed + str2_container.charAt(p);
+        }
+        //System.out.println(str2_container_reversed );
+
+        String matrix1[][] ={{" "," "," "," ",""},
+        {" "," "," ",""," "},
+        {" "," ",""," "," "},
+        {" ",""," "," "," "},
+        {""," "," "," "," "}
+                         
+        };
+        // System.out.println(str1_container);
+        // System.out.println(str2_container);
+ 
+
+        //for(int x=0;x<str1_container.length();x++)
+        
+            //int k =str2_container.length();
+            int k=0;
+            //System.out.print(k);
+        for(int i =0; i<matrix1.length;i++)
+        {
+            for(int  j =0;j<matrix1[0].length;j++)
+            {
+                if(i+j == 4 && k <= str2_container_reversed.length()-1) 
+                {
+                      matrix1[i][j] = String.valueOf(str2_container_reversed.charAt(k));
+                      k++;
+                   
+                }
+                
+            }
+        }
+    
+        for(int x=0;x<matrix1.length;x++)
+        {
+            for(int y = 0;y<matrix1.length;y++)
+            {
+                System.out.print(matrix1[x][y]);
+            }
+            System.out.println();
+        }    
+
+        
+    }
+}
+
+
+
+
+class one_line
+{
+    public static void main(String[] args) 
+    {
+        String str1 = "python";
+
+        for(int j=0;j<=2;j++)
+        {
+
+        for(int i =0;i<str1.length();i++)
+        {
+            char chr  = str1.charAt(i);
+            System.out.print(chr);
+        }
+        System.out.print(" ");
+    }
 
         
     }
