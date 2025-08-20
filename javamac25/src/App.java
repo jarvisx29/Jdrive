@@ -5837,27 +5837,130 @@ class compare_String_and_print_in_left_right_triangle
 
 
 
-class one_line
+class print_greater_string_in_diagonal_q6 {
+    public static void main(String[] args) {
+        String str1 = "python";
+        int n = str1.length();
+
+        for (int i = 0; i < n / 2 ; i++) {    // only till middle
+            for (int j = 0; j < n; j++) {
+                if (j == i) {
+                    System.out.print(str1.charAt(i));  // left diagonal
+                } else if (j == n - 1 - i) {
+                    System.out.print(str1.charAt(j));  // right diagonal
+                } else {
+                    System.out.print(" ");             // fill with spaces
+                }
+            }
+            System.out.println(); // next line
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   STL JAVA COLLECTIONS (FOR LEETCODE)       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+
+
+import java.util.*;     // needed for vector libraries
+class vectors
 {
     public static void main(String[] args) 
     {
-        String str1 = "python";
+        Vector <String> vec1 = new Vector <String>();
 
-        for(int j=0;j<=2;j++)
-        {
+        vec1.add("mon");
+        vec1.add("tue");
+        vec1.add("wed");
+        vec1.add("thu");
+        vec1.add("fri");
+        vec1.add("sat");
+        vec1.add("sun");
 
-        for(int i =0;i<str1.length();i++)
+        for(String i : vec1)
         {
-            char chr  = str1.charAt(i);
-            System.out.print(chr);
+            System.out.print(vec1 + " ");
         }
-        System.out.print(" ");
-    }
-
+        
         
     }
 }
 
+class vector_int
+{
+    public static void main(String[] args) 
+    {
+        //Vector <int> vec2  = new Vector <int>();    // in java collections we cannot declare like java primitives  ; so we print EXPLICITLY like Integer , Double , Character
+
+        Vector <Integer> vec2  = new Vector <Integer>();
+
+        vec2.add(1);
+        vec2.add(2);
+        vec2.add(3);
+        vec2.add(4);
+        
+    }
+}
+
+
+
+
+//         xxxxxxxxxxxxxxxxxxxxxxxxx     ArrayList BASICS       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+import java.util.*;
+class Arrays_list
+{
+    public static void main(String[] args) 
+    {
+        ArrayList <String> l1 = new ArrayList<String>();
+
+        l1.add("mon");
+        l1.add("tue");
+        l1.add("wed");
+        l1.add("thu");
+        l1.add("fri");
+        l1.add("sat");
+        l1.add("sun");
+        
+        Iterator it1 = l1.iterator();
+
+        while(it1.hasNext())
+        {
+            System.out.println(it1.next());
+        }
+    }
+}
+
+//          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  LinkedList BASICS   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+
+class LinkedList
+{
+    public static void main(String[] args) 
+    {
+        LinkedList <String> l1 = new LinkedList() <String>();
+
+        l1.add("one");
+        l1.add("two");
+        l1.add("three");
+        l1.add("four");
+        l1.add("five");
+        l1.add("six");
+
+        System.out.println(l1);
+
+        
+    }
+}
 
 
 
