@@ -5940,27 +5940,134 @@ class Arrays_list
     }
 }
 
-//          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  LinkedList BASICS   xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+//          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  LinkedList BASICS   and LinkedList methods too    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 
-class LinkedList
+import java.util.LinkedList;     // always need this import header if you want to use LinkedList
+class Linkedlistt  // try your best to not name the class same as the java collection youre using can lead to conflicts
 {
     public static void main(String[] args) 
     {
-        LinkedList <String> l1 = new LinkedList() <String>();
+        LinkedList<String> l1 = new LinkedList<String>();
 
-        l1.add("one");
+        l1.add("mon");
         l1.add("two");
-        l1.add("three");
-        l1.add("four");
-        l1.add("five");
-        l1.add("six");
+        l1.add("wed");
+        l1.add("thu");
+        l1.add("fri");
+        l1.add("sat");
 
         System.out.println(l1);
+
+        System.out.println("for each ");
+
+        System.out.println("---------");
+
+        for(String i : l1)
+        {
+            //System.out.println(l1);  // so when you put l1 instead of i it prints the entire list again and again for the times of (length of the linkedlist)
+            System.out.println(i);
+        }
+
+        l1.addFirst("start of the week");  //  addFirst : adds element to the start of the LinkedList  
+        l1.addLast("end of the week");    //  addLast : adds element to the end of the LinkedList
+
+        
+        
+        
+        for(int i=0;i<l1.size();i++)    // size()  : we use size here instead of length for LinkedList
+        {
+            System.out.println(l1.get(i));  // get() : get method to access the elements of the LinkedList
+        }
+
+        
 
         
     }
 }
+
+import java.util.LinkedList;
+
+class all_LinkedList_methods_explanation
+{
+    public static void main(String[] args) 
+    {
+        LinkedList <String> l1 = new LinkedList <String>();
+
+        l1.add("1");
+        l1.add("2");
+        l1.add("3");
+        l1.add("4");
+        l1.add("5");
+
+        
+        
+        
+        l1.addFirst("1.1");  //  addFirst : adds element to the start of the LinkedList  
+        l1.addLast("5.5");    //  addLast : adds element to the end of the LinkedList
+
+        l1.removeFirst();   // removeFirst() : it removes only the first element of the LL
+        l1.removeLast();    // removeLast() :  it removes only the lastt element of the LL
+
+        System.out.println(l1.getFirst()); // getFirst() : only gets the first element not changes
+        System.out.println(l1.getLast());  // getLast() :  only gets the last element not changes
+
+
+
+        l1.remove(2);    // remove(int index) : it removes the element at the desired index
+
+        l1.set(2,"2.2"); // set(int index , value) : it updates the values at the desiresd index
+
+        
+        l1.contains(3);
+        System.out.println(l1.contains(3)); // containes() : checks whether the element is there in the entire LL (if true returns true)
+
+
+
+        for(int i = 0;i<l1.size();i++)
+        {
+            System.out.println(l1.get(i));
+        }
+
+        
+    }
+}
+
+
+
+class find_largest_element_in_an_array   // leetcode question 
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {2,5,1,3,0};
+
+        int largest = 2;
+        int second_largest = 5;
+
+        for(int i = 0;i<arr.length;i++)
+        {
+            if(arr[i] > largest)    // loop to check new largest element
+            {
+                second_largest = largest;
+                largest = arr[i];
+            }
+
+            else if(arr[i]>second_largest && arr[i]< largest) // loop to check new second_largest element
+            {
+                second_largest = arr[i];
+            }
+        }
+
+
+        System.out.print("the largest element is : "+ largest);
+
+    
+
+        
+    }
+}
+
+
 
 
 
