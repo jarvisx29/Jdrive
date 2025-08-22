@@ -6065,6 +6065,81 @@ class find_largest_element_in_an_array   // leetcode question
 
         
     }
+
+}
+
+
+
+
+import java.util.Arrays; 
+class check_sorted_or_not_leetcode    // we are using insertion sort here
+{
+    public static void main(String[] args)
+    {
+        int arr []= {3,4,5,1,2};
+
+        for(int i=0;i<arr.length;i++)
+        {
+            for(int j=i+1;j<arr.length;j++)
+            {
+                if(arr[i]>arr[j])
+                {
+                    int temp = arr[j];   
+                    
+                    for(int z=j;z>i;z--)  
+                    {
+                        arr[z]=arr[z-1];  
+                    }
+                    arr[i]=temp;  
+                    
+                }
+            }
+        }
+
+        System.out.print("the sorted list  :");
+        System.out.print(Arrays.toString(arr));
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+import java.util.Arrays; 
+class check_sorted_or_not_leetcode    // we are using insertion sort here
+{
+    public static void main(String[] args)
+    {
+        int arr []= {3,4,5,1,2};
+
+        for(int i=0;i<2;i++)
+        {
+            // for(int j=i+1;j<arr.length;j++)
+            // { 
+            //     if(arr[i]>arr[j])
+                    int j = arr.length -1;
+                    int temp = arr[j];   
+                    
+                    for(int z=j;z>0;z--)  
+                    {
+                        arr[z]=arr[z-1];  
+                    }
+                    arr[0]=temp;  
+                    
+                
+            
+        }
+
+        System.out.print("the sorted list  :");
+        System.out.print(Arrays.toString(arr));
+        
+    }
 }
 
 
