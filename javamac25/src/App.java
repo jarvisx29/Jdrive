@@ -6114,7 +6114,7 @@ class check_sorted_or_not_leetcode    // we are using insertion sort here
 import java.util.Arrays; 
 class check_sorted_or_not_leetcode    // we are using insertion sort here
 {
-    public static void main(String[] args)
+    public static void main(String[] args)             // kinda ok but incomplete logic 
     {
         int arr []= {3,4,5,1,2};
 
@@ -6144,6 +6144,43 @@ class check_sorted_or_not_leetcode    // we are using insertion sort here
 
 
 
+class check_sorted_or_not_leetcode
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {3,4,5,1,2};
+
+        int rotation= 0;
+        for(int i=0;i<arr.length -1;i++)
+        {
+            //for(int j=i+1;j<arr.length-1;j++)
+            
+                if(arr[i]>arr[i+1])    // lopp to check whether current and current +1 element (if it current is greater possibility of rotation point)
+                {
+                    rotation++;
+                }
+                
+            
+        }
+                 if(arr[0] < arr[arr.length -1 ])  // loop to check if last and 1st element on rotation will result in proper array 
+                {
+                    rotation++;
+                }
+        
+       
+
+        if(rotation == 1)
+        {
+            System.out.println("sorted and then rotated");
+        }
+        else
+        {
+            System.out.println("it is neither");
+
+        }
+        
+    }
+}
 
 
 
