@@ -6073,8 +6073,8 @@ class find_largest_element_in_an_array   // leetcode question
 
 import java.util.Arrays; 
 class check_sorted_or_not_leetcode    // we are using insertion sort here
-{
-    public static void main(String[] args)
+{                                       // wrong logic
+    public static void main(String[] args)   // wrong we dont need to actually sort this (this is kept for reference )
     {
         int arr []= {3,4,5,1,2};
 
@@ -6144,7 +6144,7 @@ class check_sorted_or_not_leetcode    // we are using insertion sort here
 
 
 
-class check_sorted_or_not_leetcode
+class check_sorted_or_not_leetcode   // leetcode question : 1752 : check if array is sorted and rotated
 {
     public static void main(String[] args) 
     {
@@ -6153,7 +6153,7 @@ class check_sorted_or_not_leetcode
         int rotation= 0;
         for(int i=0;i<arr.length -1;i++)
         {
-            //for(int j=i+1;j<arr.length-1;j++)
+            //for(int j=i+1;j<arr.length-1;j++)  dont use this loop it is uneccessary it will just repeat again and again (not needed)
             
                 if(arr[i]>arr[i+1])    // lopp to check whether current and current +1 element (if it current is greater possibility of rotation point)
                 {
@@ -6162,14 +6162,14 @@ class check_sorted_or_not_leetcode
                 
             
         }
-                 if(arr[0] < arr[arr.length -1 ])  // loop to check if last and 1st element on rotation will result in proper array 
+                 if(arr[0] < arr[arr.length -1 ])  // loop to check if last and 1st element on rotation will result in PROPER array
                 {
                     rotation++;
                 }
         
        
 
-        if(rotation == 1)
+        if(rotation == 1 && rotation ==0) // ==0 since if it is already proper array then no need to do anything (ex [1,1,1,] no rotation or checking needed)
         {
             System.out.println("sorted and then rotated");
         }
@@ -6178,6 +6178,69 @@ class check_sorted_or_not_leetcode
             System.out.println("it is neither");
 
         }
+        
+    }
+}
+
+
+
+
+class second_largest_and_second_smallest_elements_in_an_array
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,2,4,7,7,5};
+
+        int largest = 1;
+        int second_largest =2;
+        int smallest  = 4;
+        int second_smallest = 7;
+
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr.length > 1)
+            {
+            if(arr[i] > largest)  // loop to find largest element
+            {
+                second_largest = largest ;
+                largest = arr[i];
+            }
+
+            else if (arr[i]>second_largest && arr[i] < largest)
+            {
+                second_largest = arr[i];
+            }
+            
+            // else if (arr[i] < smallest)   this is the reason the code was not running because of successive else if parts ; (so just split into two if else if's for largest and smallest)
+
+             if(arr[i] < smallest)
+            {
+                second_smallest = smallest;
+                smallest  = arr[i];
+            }
+            else if(arr[i] >smallest && arr[i] <second_smallest && arr[i] != smallest)
+            {
+                second_smallest = arr[i];
+            }
+        }
+         else
+        {
+            largest = -1;
+            second_largest = -1;
+            smallest = -1;
+            second_smallest =-1;
+            break;
+        }
+        }
+       
+
+        System.out.println("largest element : "+largest);
+
+        System.out.println("the second largest element : " + second_largest);
+
+        System.out.println("the smallest element : "+smallest);
+        
+        System.out.println("the second smallest element : "+ second_smallest);
         
     }
 }

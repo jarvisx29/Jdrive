@@ -62,15 +62,75 @@ class Solution {                                     // leetcode sum 2: palindro
     }
 }
 
-class main 
+class find_largest_element_in_an_array   // leetcode question 
 {
-    public static void main(String args [])
+    public static void main(String[] args) 
     {
-    Solution s1 = new Solution ();
-    int mynum = 121;
+        int arr [] = {2,5,1,3,0};
 
-    s1.isPalindrome(mynum);
+        int largest = 2;
+        int second_largest = 5;
+
+        for(int i = 0;i<arr.length;i++)
+        {
+            if(arr[i] > largest)    // loop to check new largest element
+            {
+                second_largest = largest;
+                largest = arr[i];
+            }
+
+            else if(arr[i]>second_largest && arr[i]< largest) // loop to check new second_largest element
+            {
+                second_largest = arr[i];
+            }
+        }
+
+
+        System.out.print("the largest element is : "+ largest);
+
+    
+
+        
     }
+
 }
 
+
+class check_sorted_or_not_leetcode   // leetcode question : 1752 : check if array is sorted and rotated
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {3,4,5,1,2};
+
+        int rotation= 0;
+        for(int i=0;i<arr.length -1;i++)
+        {
+            //for(int j=i+1;j<arr.length-1;j++)  dont use this loop it is uneccessary it will just repeat again and again (not needed)
+            
+                if(arr[i]>arr[i+1])    // lopp to check whether current and current +1 element (if it current is greater possibility of rotation point)
+                {
+                    rotation++;
+                }
+                
+            
+        }
+                 if(arr[0] < arr[arr.length -1 ])  // loop to check if last and 1st element on rotation will result in PROPER array
+                {
+                    rotation++;
+                }
+        
+       
+
+        if(rotation == 1 && rotation ==0) // ==0 since if it is already proper array then no need to do anything (ex [1,1,1,] no rotation or checking needed)
+        {
+            System.out.println("sorted and then rotated");
+        }
+        else
+        {
+            System.out.println("it is neither");
+
+        }
+        
+    }
+}
 
