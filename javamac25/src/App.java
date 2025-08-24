@@ -6241,6 +6241,12 @@ class second_largest_and_second_smallest_elements_in_an_array
         System.out.println("the smallest element : "+smallest);
         
         System.out.println("the second smallest element : "+ second_smallest);
+
+
+
+
+
+        dddsdsdsdssdsdsdsdsdsdsdsddsdsdsdsdsd
         
     }
 }
