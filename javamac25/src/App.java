@@ -6245,8 +6245,98 @@ class second_largest_and_second_smallest_elements_in_an_array
 
 
 
+        
+    }
+}
 
-        dddsdsdsdssdsdsdsdsdsdsdsddsdsdsdsdsd
+class check_array_element_and_return_index
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {5,4,3,2,1};
+
+        int num = 5;
+        int count =0;
+
+        for(int i = 0;i<arr.length;i++)
+        {
+            if(arr[i] == num)
+            {
+                System.out.println(i);
+                count++;
+                break;
+                
+                
+            }
+        }
+        
+        if(count < 1)
+        {
+            System.out.println("-1");
+        }
+        
+    }
+}
+
+import java.util.Arrays;
+class rotate_array_at_k_position   // leetcode problem : 189 Rotate an array
+{
+    public static void main(String[] args) 
+    {
+        int arr[] {1,2,3,4,5,6,7};         // incomplete come back to this
+
+        int k = 3;  // no. of switches
+
+        for(int i = k;i<arr.length;i++)
+        {
+            int t = arr[i];
+            arr[i] = arr[0];
+            arr[0] = t;
+
+        }
+
+        System.out.println(Arrays.toString(arr));
+        
+    }
+}
+
+
+
+
+
+
+
+class max_consecutive_ones_in_an_array  // leetcode 485. Max Consecutive Ones
+{                                      // simple question 
+    public static void main(String[] args) 
+    {
+        
+        int arr []= {1,1,0,1,1,1};
+        int count =0;
+        int present_max = 0;
+        for(int i = 0;i<arr.length;i++)
+        {
+            if(arr[i] == 1)   // if it is =1 then count++
+            {
+                count++;
+            }
+            else      // when it hits 0 then it hits reset so as to close the first set of consecutives
+            {
+                count = 0;
+
+            }
+
+            if(present_max < count) // if present set of consecutives have higher count then put it in present_max
+            {
+                present_max = count;
+            }
+
+            
+
+        }
+
+        System.out.println("the longest consecutive ones are : "+present_max);
+            
         
     }
 }
