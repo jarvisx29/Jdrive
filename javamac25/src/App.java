@@ -6376,9 +6376,53 @@ class rotate_array_at_k_position     // leetcode 189. Rotate Array (38/39 test c
 class reverse_words_in_a_String
 {
     public static void main(String[] args) 
+    {              
+        String word  = "the sky is blue";      // this code logic will work only if no spaces are there in String (WILL NOT WORK FOR THIS   "a good   example")
+
+        String split_words [] = word.split(" ");
+
+        for(int i = 0;i<split_words.length;i++)
+        {
+            String one_word = split_words[i];
+
+            for(int j=one_word.length();j>=0;j++)
+            {
+                System.out.println(one_word);
+
+            }
+        }
+
+        
+    }
+}
+
+class reverse_words_in_a_String       // leetcode 151. Reverse Words in a String
+
+{
+    public String reverseWords(String s) 
     {
-        
-        
+         //String s  = "the sky is blue";
+
+        String split_words [] = s.split(" ");
+        String result = "";
+        int j;
+        for(j=split_words.length-1;j>=0;j--)
+        {
+            //System.out.print(split_words[j] + " ");
+
+
+            if(split_words[j].equals(""))    // this will remove all the spaces in between the first and last words
+            {
+                result = result + split_words[j];
+
+            }
+            //result = result + split_words[j];
+            else
+            {
+                result = result + split_words[j] + " ";
+            }  
+        }
+        return result.trim();   // this will remove all spaces before and after the 1st and last word
     }
 }
 
