@@ -6278,27 +6278,7 @@ class check_array_element_and_return_index
     }
 }
 
-import java.util.Arrays;
-class rotate_array_at_k_position   // leetcode problem : 189 Rotate an array
-{
-    public static void main(String[] args) 
-    {
-        int arr[] {1,2,3,4,5,6,7};         // incomplete come back to this
 
-        int k = 3;  // no. of switches
-
-        for(int i = k;i<arr.length;i++)
-        {
-            int t = arr[i];
-            arr[i] = arr[0];
-            arr[0] = t;
-
-        }
-
-        System.out.println(Arrays.toString(arr));
-        
-    }
-}
 
 
 
@@ -6341,6 +6321,66 @@ class max_consecutive_ones_in_an_array  // leetcode 485. Max Consecutive Ones
     }
 }
 
+
+import java.util.Arrays;
+class rotate_array_at_k_position   // leetcode problem : 189 Rotate an array
+{
+    public static void main(String[] args) 
+    {
+        int arr[] {1,2,3,4,5,6,7};         // incomplete wrong logic coma back and explain this
+
+        int k = 3;  // no. of switches
+
+        for(int i = k;i<arr.length;i++)
+        {
+            int t = arr[i];
+            arr[i] = arr[0];
+            arr[0] = t;
+
+        }
+
+        System.out.println(Arrays.toString(arr));
+        
+    }
+}
+
+import java.util.Arrays;
+class rotate_array_at_k_position     // leetcode 189. Rotate Array (38/39 test cases run properly but last test case is crazy)
+
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {1,2,3,4,5,6,7};
+
+        int k=3;
+
+        for(int i=0;i<k;i++)
+        {
+            int temp = arr[arr.length-1];   // last element stuff
+
+            for(int z =arr.length -1;z>0;z--)
+            {
+                arr[z] = arr[z-1];
+            }
+            arr[0] = temp;  // assign the last element of array to 1st to rotate
+
+            System.out.println(Arrays.toString(arr));
+
+        }
+
+        
+        
+    }
+}
+
+class reverse_words_in_a_String
+{
+    public static void main(String[] args) 
+    {
+        
+        
+    }
+}
 
 
 
