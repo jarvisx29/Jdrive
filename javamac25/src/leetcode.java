@@ -134,3 +134,75 @@ class check_sorted_or_not_leetcode   // leetcode question : 1752 : check if arra
     }
 }
 
+
+class String_to_integer_atoi_but_using_simple_logic
+{
+    public static void main(String[] args) 
+    {
+        String s = "-042";
+
+        String str1 = s.trim();
+
+        String  result ="";
+
+        for(int i = 0;i<str1.length();i++)
+        {
+            char chr = str1.charAt(i);
+
+            if(!Character.isAlphabetic(chr))
+            {
+                result = result + Character.toString(chr);
+            }
+            else if(Character.isLetter('-') || (Character.isLetter('+')))
+            {
+
+
+            }
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+class String_to_integer_atoi_but_using_simple_logic
+{
+    public static void main(String[] args) 
+    {
+        String s = "-1337c0d3";
+
+        String str1 = s.trim();
+
+        String  result ="";
+
+        for(int i = 0;i<str1.length();i++)
+        {
+            char chr = str1.charAt(i);
+            
+            
+            if(chr == '-'|| chr == '+' || Character.isDigit(chr))
+            {
+                result = result + Character.toString(chr);
+            }
+            else
+            {
+                break;
+            }
+        }
+        
+        System.out.print(result);
+            
+    }
+}
+
+
+
+
+
+
+

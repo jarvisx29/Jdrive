@@ -5277,7 +5277,7 @@ class using_getNumericValue_method    // getNumericValue() converts the char to 
 {
     public static void main(String[] args) 
     {
-        char chr = '9';
+        char chr = '9';    // will convert String num to Interger int ( '5' -> int 5)
 
         System.out.println(Character.getNumericValue(chr));   
         
@@ -6423,6 +6423,62 @@ class reverse_words_in_a_String       // leetcode 151. Reverse Words in a String
             }  
         }
         return result.trim();   // this will remove all spaces before and after the 1st and last word
+    }
+}
+
+
+class missing_number_in_an_array 
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {3,0,1};
+
+        int range = arr.length;
+
+        int series_length = range * (range+1)/2;    // using simple n(n+1)/2 formula t
+
+        int sum_of_arr_elements = 0 ;
+
+        for(int i = 0;i<arr.length;i++)
+        {
+            sum_of_arr_elements = sum_of_arr_elements + arr[i];      
+        }
+        int missing_digit = series_length-sum_of_arr_elements; //to get the missing digit : if we subtract the given elments from the entire series then (the missing digit should be left out and that would be the ans)
+
+        System.out.println("the missing element is : " + missing_digit);
+
+        
+    }
+}
+
+
+class String_to_integer_atoi_but_using_simple_logic  // leetcode: 8. String to Integer (atoi)
+{
+    public static void main(String[] args)   // this code works fine with all the test cases but will not work on leetcode since it expects everything in return ; and my answer is in string and i cannot convert it to int (since it has - + signs in it (so im just leaving it))
+    {
+        String s = "-1123u3761867";
+
+        String str1 = s.trim();
+
+        String  result ="";
+
+        for(int i = 0;i<str1.length();i++)  // this question was solved with my logic and not atoi
+        {
+            char chr = str1.charAt(i);
+            
+            
+            if(chr == '-'|| chr == '+' || Character.isDigit(chr))
+            {
+                result = result + Character.toString(chr);
+            }
+            else
+            {
+                break;
+            }
+        }
+        
+        System.out.print(result);
+            
     }
 }
 
