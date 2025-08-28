@@ -6491,6 +6491,51 @@ class String_to_integer_atoi_but_using_simple_logic  // leetcode: 8. String to I
 
 
 
+class single_number   // leetcode : 136. Single Number 
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {4,1,2,1,2};
+        int max_count = 1;
+
+        int single_element = 0; //  stores the single occuring element 
+
+        for(int i = 0;i<arr.length;i++)
+        {
+            int count =0;
+            //int j =0;
+            for(int j = 0;j<arr.length;j++)
+                if(arr[i] == arr[j])
+                {
+                    count++;
+                }
+                
+            
+            //System.out.println(count);
+
+            if(max_count == count)
+            {
+                single_element = arr[i];
+            }
+        }
+        System.out.print("the single occuring element is : "+single_element);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
