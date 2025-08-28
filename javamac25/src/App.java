@@ -6522,6 +6522,55 @@ class single_number   // leetcode : 136. Single Number
     }
 }
 
+class Find_the_Index_of_the_First_Occurrence_in_a_string
+{
+    public static void main(String[] args) 
+    {
+        String haystack = "sadbutsad";
+        String needle = "dada";
+        int count = 0;
+        int needle_length = needle.length();
+
+        int first_index = 0;
+
+        for(int i = 0;i<haystack.length();i++)
+        {
+            char chr1 = needle.charAt(i);
+            char chr2 = haystack.charAt(i);
+
+            if(chr1 == chr2)
+            {
+                first_index = i;
+            }
+            
+            
+            // if(chr1 == (chr2))
+            // {
+            //     count++;
+            //     //System.out.println(count);
+            // }
+        }
+        System.out.println("the index of first occurence : "+ first_index);
+
+        // if(count == needle_length)
+        // {
+        //     System.out.println("the String needle was found at index : 0");
+        // }
+        // else
+        // {
+        //     System.out.println("-1");
+        // }  
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 
