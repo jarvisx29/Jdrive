@@ -1717,9 +1717,9 @@ class merge_two_arrays
 
 
 
-class merge_sort_practice                              // follow this one better explained by me
+class merge_sort_practice    // follow this one better explained by me
 {
-    public static void main(String[] args)         // explanation 2025-08-08-20-48-14.png
+    public static void main(String[] args)                   // explanation 2025-08-08-20-48-14.png
     {
         int arr_1[] = {1,3};
         int arr_2[] ={2,8};
@@ -4314,7 +4314,7 @@ class transpose_of_given_matrix
 
 }
 
-*/
+
 
 class lower_triangular_matrix        // explantion : 2025-08-12-16-53-33.png
 {
@@ -6213,12 +6213,12 @@ class second_largest_and_second_smallest_elements_in_an_array
             
             // else if (arr[i] < smallest)   this is the reason the code was not running because of successive else if parts ; (so just split into two if else if's for largest and smallest)
 
-             if(arr[i] < smallest)
+             if(arr[i] < smallest)    // loop to find smallest  
             {
                 second_smallest = smallest;
                 smallest  = arr[i];
             }
-            else if(arr[i] >smallest && arr[i] <second_smallest && arr[i] != smallest)
+            else if(arr[i] >smallest && arr[i] <second_smallest && arr[i] != smallest) // loop to find second smallest
             {
                 second_smallest = arr[i];
             }
@@ -6524,44 +6524,175 @@ class single_number   // leetcode : 136. Single Number
 
 class Find_the_Index_of_the_First_Occurrence_in_a_string
 {
-    public static void main(String[] args) 
+    public static void main(String[] args)     // wrong logic (almost right)    (kept for reference)
     {
-        String haystack = "sadbutsad";
-        String needle = "dada";
+        //String haystack = "sadbutsad";
+        //String needle = "sad";              // the logic is almost there but this logic will only run for cases where the needle part is included first in the haystack part(meaning ex: sad starts from the 1st index of haystack so this will work not for other cases where it may start in the middle )
         int count = 0;
-        int needle_length = needle.length();
+        int needle_length = needle.length();   // for correct logic look down 
 
-        int first_index = 0;
-
-        for(int i = 0;i<haystack.length();i++)
+        for(int i = 0;i<needle.length();i++)
         {
             char chr1 = needle.charAt(i);
             char chr2 = haystack.charAt(i);
 
-            if(chr1 == chr2)
+            if(chr1 == (chr2))
             {
-                first_index = i;
+                count++;
+                //System.out.println(count);
             }
-            
-            
-            // if(chr1 == (chr2))
-            // {
-            //     count++;
-            //     //System.out.println(count);
-            // }
         }
-        System.out.println("the index of first occurence : "+ first_index);
 
-        // if(count == needle_length)
+        if(count == needle_length)
+        {
+            //System.out.println("the String needle was found at index : 0");
+            return 0;
+        }
+        else
+        {
+            //System.out.println("-1");
+            return -1;
+    }
+}
+}
+
+class Find_the_Index_of_the_First_Occurrence_in_a_string  // leetcode: 28. Find the Index of the First Occurrence in a String
+
+{                                      // Golden rule question : very very very important qs
+    public static void main(String[] args) 
+    {
+        //String haystack = "Hello";
+
+        //String needle = "ll";
+
+        int haystack_length = haystack.length();
+
+        int needle_length = needle.length();
+        int result =0;
+
+        if(haystack_length >= 1 && needle_length >=1)
+        {
+        for(int i = 0 ;i<= haystack_length - needle_length;i++)
+        {
+            int count =0;
+            
+            for(int j = 0,k=i ;j<needle.length();j++,k++)   // each time the j part(needle) will start from first index of it again and again for each index of of haystack ; and if it matches then IT GOES INTO IF LOOP 
+            {
+                if(haystack.charAt(k) == needle.charAt(j))  
+                {
+                    count++;
+
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            if(count == needle.length())
+            {
+                //System.out.println("first occurence at index : "+ count);
+                //result = count;  // xxxxx NO dont put equal to count (put the correct index i in here ; cause at times the count may not be accurate)
+                result = i;
+                return result;  // once this prints (dont worry it will not go into return -1 )
+                
+            }
+        }
+        //System.out.println("-1 not found");
+        // if(result != needle.length())      // works only on vs code 
         // {
-        //     System.out.println("the String needle was found at index : 0");
+        //     //System.out.println("-1 not found");
+        //     //return -1;
+        // }
+        
+        
+        return -1;   // YES this works only when you cannot find the index then it prints -1
+        }
+
+        else  // this loop is only for and works when the string lengths are less than one in either haystack or needle
+        {
+            return 0;
+        }
+        
+    }
+}
+
+
+class Longest_Consecutive_Sequence   // leetcode 128. Longest Consecutive Sequence
+{
+    public int longestConsecutive(int[] nums)    // little complex question 
+    {
+        //int nums [] = {0,3,7,2,5,8,4,6,0,1};
+
+        Arrays.sort(nums);  // now nums = {1,2,3,4,100,200}
+
+        //int min_element = 20;
+        //int count =0; this is wromg giving error
+        int count =1;  // since lots of conflicts downstairs just include the count++ stuff here itself
+        int max_count =1;  // will store the longest sequence yet
+        
+        if(nums.length != 0)
+        {
+        for(int i=0;i<nums.length-1;i++)
+        {
+            if(  nums[i] != nums [i+1] && nums[i] +1 == nums[i+1]  )
+            {
+                count++;
+                if(count>max_count) // if current streak is larger put it in max_count so that if new streak is found then we could put that in
+                {
+                    max_count = count;
+                }
+        
+            }
+            else if(nums[i] != nums[i+1]) // if the streak is broken 
+                {
+                    count = 1;  // reset count so that we could find new streak if any
+                }
+        }
+        //count++;
+        // if(count > max_count)
+        // {
+        //     return count; // old streak is biggest
         // }
         // else
         // {
-        //     System.out.println("-1");
-        // }  
+        //     return max_count;  // new streak is biggest
+        // }
+        // }
+        
+            return max_count;
+        }
+        else
+        {
+            return 0;
+        }
+}
+}
+
+*/
+
+class Sort_Matrix_by_Diagonals
+{
+    public static void main(String[] args) 
+    {
+        int matrix [][] = {{1,7,3},
+                        {9,8,2},
+                        {4,5,1}
+    
+    };
+        for(int i = 0;i<3;i++)
+        {
+            System.out.print(matrix[i][i]+" ");
+        }
+        
     }
 }
+
+
+
+
+
+
 
 
 
