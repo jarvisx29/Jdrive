@@ -6671,19 +6671,137 @@ class Longest_Consecutive_Sequence   // leetcode 128. Longest Consecutive Sequen
 
 */
 
+
+
 class Sort_Matrix_by_Diagonals
 {
     public static void main(String[] args) 
     {
         int matrix [][] = {{1,7,3},
-                        {9,8,2},
-                        {4,5,1}
-    
-    };
-        for(int i = 0;i<3;i++)
+                       {9,8,2},
+                       {4,5,6}
+        };
+
+
+        int i =0 ;
+
+        if(i<=1)
         {
-            System.out.print(matrix[i][i]+" ");
+            if(matrix[i][i+1] > matrix[i+1][i+2])
+            {
+                int temp = matrix[i][i+1];
+                matrix[i][i+1] = matrix[i+1][i+2];
+            }
+            i++;
         }
+        System.out.print(matrix[0][1] + " ");
+        System.out.print(matrix[1][2] + " ");
+
+    
+    }
+}
+
+
+
+
+
+
+
+
+class Sort_Matrix_by_Diagonals    // this code right but will only work for positive matrixes ;not fot -ve values 
+{
+    public static void main(String[] args)   //see downstairs for correct logic
+    {
+        int matrix [][] = {{1,7,3},
+                          {9,8,2},
+                          {4,5,6}
+        };
+        //int matrix[][] = {{0,1}, {1,2}};
+
+        int n = matrix.length; // we use this so that all matrices of >=3 length will work
+        int i =0 ;
+
+        //if(i<=1) // this will only work for 3x3 matrix since its harcoded to work only for that
+        if(n>2 && i<=n-2)
+        {
+            if(matrix[i][i+1] > matrix[i+1][i+2])
+            {
+                int temp = matrix[i][i+1];
+                matrix[i][i+1] = matrix[i+1][i+2];
+                matrix[i+1][i+2] = temp;
+            }
+            i++;
+        }
+        // System.out.print(matrix[0][1] + " ");
+        // System.out.print(matrix[1][2] + " ");
+        int j=0;
+        
+        //if(j<2). // wont work because it only runs once 
+        //while(j<2). // this will only work for 3x3 matrix since i harcoded it initially for that only
+        while(j<n-1)
+        {
+        if(matrix[j][j] < matrix[j+1][j+1])
+        {
+            int temp_1 = matrix[j][j];
+            matrix[j][j] = matrix[j+1][j+1];
+            matrix[j+1][j+1] = temp_1;
+            
+        }
+        j++;
+        }
+        // System.out.print(matrix[0][0] + " ");
+        // System.out.print(matrix[1][1] + " ");
+        // System.out.print(matrix[2][2] + " ");
+        
+        int z=0;
+        //int temp_3 = 0;
+        
+            //if(matrix[z+1][z] < matrix[z+2][z+1])  // again will work only for 3x3 (just need to include n part thats all)
+            if(n>2 && matrix[z+1][z] < matrix[z+2][z+1])
+            {
+                int temp_3 = matrix[z+1][z];
+                matrix[z+1][z] = matrix[z+2][z+1];
+                matrix[z+2][z+1] = temp_3;
+            }
+        
+        
+        // System.out.print(matrix[1][0] + " ");
+        // System.out.print(matrix[2][1] + " ");
+        
+        for(int k=0;k<matrix.length;k++)
+        {
+            for(int l=0;l<matrix.length;l++)
+            {
+                System.out.print(matrix[k][l] + " ");
+            }
+            System.out.println();
+        }
+        
+    
+    }
+}
+
+
+class Sort_Matrix_by_Diagonals 
+{
+    public static void main(String[] args) 
+    {
+        int matrix [][] = {{1,7,3},
+                          {9,8,2},
+                          {4,5,6}
+        };
+
+        int arr_1[] = new int[3];
+        for(int i =0;i<=2;i++)
+        {
+            arr_1[i] = matrix[i][i] ;
+        }
+        Arrays.sort(arr_1);
+        for(int j=0;j<arr_1.length;j++)
+        {
+            System.out.print(arr_1[i]);
+        }
+        
         
     }
 }
