@@ -6782,7 +6782,7 @@ class Sort_Matrix_by_Diagonals    // this code right but will only work for posi
 }
 
 
-class Sort_Matrix_by_Diagonals 
+class Sort_Matrix_by_Diagonals   // incomplete comeback later stronger
 {
     public static void main(String[] args) 
     {
@@ -6809,11 +6809,264 @@ class Sort_Matrix_by_Diagonals
 
 
 
+class Length_of_the_Longest_Alphabetical_Continuous_Substring
+{
+    public static void main(String[] args) 
+    {
+        String str = "abacaba";
+
+        int count =0;
+        int max_count = 0;
+
+        for(int i =0;i<str.length();i++)
+        {
+            if(str.charAt(i+1) - str.charAt(i) == 1)
+            {
+                count++;
+            }
+            else
+            {
+                count =0; // reset
+            }
+
+            if(count > max_count)
+            {
+                max_count = count;
+            }
+        }
+
+        System.out.print(" length of longest substring : "+ max_count);
+        
+    }
+}
 
 
 
 
 
+
+
+
+class Length_of_the_Longest_Alphabetical_Continuous_Substring
+{
+    public static void main(String[] args) 
+    {
+        String s = "abacaba";
+        int count = 1;
+        int max_count = 1;
+        for(int i =0;i<s.length() ;i++)
+        {
+            if(s.charAt(i+1) - s.charAt(i) == 1)
+            {
+                count++;
+            }
+            else
+            {
+                count = 1;
+            }
+        }
+        System.out.println("the length of the longest sequence : "+count);
+        
+    }
+}
+
+
+
+
+
+import java.util.Arrays;
+class Sort_Matrix_by_Diagonals 
+{
+    public static void main(String[] args) 
+    {
+        int matrix [][] = {{1,7,3},
+                          {9,8,2},
+                          {4,5,6}
+        };
+
+        int arr_1[] = new int[3];
+        int arr_2 [] = new int[3];
+        for(int i =0;i<=2;i++)
+        {
+            arr_1[i] = matrix[i][i] ;
+        }
+        Arrays.sort(arr_1);
+        
+        //int arr_2 []= new int [3];
+        int l=0;
+        for(int j=arr_1.length-1;j>=0;j--)
+        {
+            arr_2[l] = arr_1[j];
+            l++;
+        }
+        int k=0;
+        for(int i =0;i<=2;i++)
+        {
+            arr_1[i] = arr_2[k] ;
+            k++;
+        }
+        int p=0;
+        for(int i =0;i<=2;i++)
+        {
+            matrix[i][i] = arr_1[p];
+            p++;
+        }
+        int u=0;
+        int arr_3 [] = new int[2];
+        for(int i=0;i<2;i++)
+        {
+             arr_3[u] = matrix[i][i+1]  ;
+            u++;
+        }
+        
+        Arrays.sort(arr_3);
+        int y=0;
+        for(int i=0;i<2;i++)
+        {
+            matrix[i][i+1] = arr_3[y];
+            y++;
+        }
+        
+        
+        // for(int i =0;i<arr_3.length;i++) // print arrays
+        // {
+        //     System.out.print(arr_3[i]);
+        // }
+        
+        
+        // for(int e=0;e<matrix.length;e++) // print matrix
+        // {
+        //     for(int g=0;g<matrix[0].length;g++)
+        //     {
+        //         System.out.print(matrix[e][g]+ " " );
+        //     }
+        //     System.out.println();
+        // }
+        
+        
+        
+            
+        }
+}
+        
+        
+
+
+
+import java.util.Arrays;
+class Sort_Matrix_by_Diagonals    // 100 % correct code for any 3x3 value (just need to configure for any length n matrix)
+{
+    public static void main(String[] args) 
+    {
+        // int matrix [][] = {{1,7,3},
+        //                   {9,8,2},
+        //                   {4,5,6}
+        // };
+        int matrix[][] ={{-1,-2,-3},{-3,-3,-2},{-4,-4,0}
+        };
+
+        int arr_1[] = new int[3];
+        int arr_2 [] = new int[3];
+        for(int i =0;i<=2;i++) // loop for main diagonal
+        {
+            arr_1[i] = matrix[i][i] ;// feeding to be sorted 
+        }
+        Arrays.sort(arr_1);
+        
+        //int arr_2 []= new int [3];
+        int l=0;
+        for(int j=arr_1.length-1;j>=0;j--)
+        {
+            arr_2[l] = arr_1[j];//feeding sorted array backwards for descending in main diagonal
+            l++;
+        }
+        int k=0;
+        for(int i =0;i<=2;i++)
+        {
+            arr_1[i] = arr_2[k] ;//feeding descending into arr_1 back so that it could be transfered to main diagonal( unncessary fixcc this later)
+            k++;
+        }
+        int p=0;
+        for(int i =0;i<=2;i++)
+        {
+            matrix[i][i] = arr_1[p];//feeding des sorted to main
+            p++;
+        }
+        int u=0;
+        int arr_3 [] = new int[2];
+        for(int i=0;i<2;i++)//feeding upper dia into arr_3
+        {
+             arr_3[u] = matrix[i][i+1];
+            u++;
+        }
+        
+        Arrays.sort(arr_3); // sort arr_3(here it alredy wants ascending only so just put it directly in upper matrix)
+        int y=0;
+        for(int i=0;i<2;i++)
+        {
+            matrix[i][i+1] = arr_3[y];//feed ascen values into upper matrix
+            y++;
+        }
+        
+        int arr_4 [] = new int[2];
+        int q=0;
+        for(int i =1;i<3;i++)
+        {
+            arr_4[q] = matrix[i][i-1];//feed lower matrix values for sorting
+            q++;
+        }
+        Arrays.sort(arr_4);
+        
+        int v= 0;
+        int arr_5 [] = new int[2];
+        for(int i=arr_4.length-1;i>=0;i--)
+        {
+            arr_5[v] = arr_4[i];
+            v++;
+        }
+        
+        
+        
+        
+        // for(int i =0;i<arr_3.length;i++) // print arrays
+        // {
+        //     System.out.print(arr_5[i]);
+        // }
+        
+        
+        for(int e=0;e<matrix.length;e++) // print matrix
+        {
+            for(int g=0;g<matrix[0].length;g++)
+            {
+                System.out.print(matrix[e][g]+ " " );
+            }
+            System.out.println();
+        }
+        
+        
+        
+            
+        }
+}
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+
+        
+        
+        
+        
+        
+        
+        
+    
 
 
 
