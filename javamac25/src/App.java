@@ -7041,7 +7041,7 @@ class Sort_Matrix_by_Diagonals    // 100 % correct code for any 3x3 value (just 
                 System.out.print(matrix[e][g]+ " " );
             }
             System.out.println();
-        }
+        } // just 
         
         
         
