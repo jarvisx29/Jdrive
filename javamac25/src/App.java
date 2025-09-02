@@ -7041,13 +7041,142 @@ class Sort_Matrix_by_Diagonals    // 100 % correct code for any 3x3 value (just 
                 System.out.print(matrix[e][g]+ " " );
             }
             System.out.println();
-        } // just 
+        } 
         
         
         
             
         }
 }
+
+
+
+import java.util.Arrays;
+class Sort_Matrix_by_Diagonals   // 100 % working for any n length matrix (any +ve or -ve values)      !!!!!!!!!!!!!!!!1
+{
+    public static void main(String[] args) 
+    {
+        // int matrix [][] = {{1,7,3},
+        //                   {9,8,2},
+        //                   {4,5,6}
+        // };
+        int matrix[][] ={
+            { -1, -2, -3, -4 },
+            { -3, -3, -2, -1 },
+            { -4, -4,  0,  5 },
+            {  9,  8,  7,  6 }
+        };
+        int n = matrix.length;
+        
+        // int arr_1[] = new int[3];
+        int arr_1[] = new int[n];
+        //for(int i =0;i<=2;i++) // loop for main diagonal
+        for(int i =0;i<n;i++)
+        {
+            arr_1[i] = matrix[i][i] ;// feeding to be sorted 
+        }
+        Arrays.sort(arr_1);
+        
+        //int arr_2 []= new int [3];
+        int arr_2 []= new int [n];
+        int l=0;
+        for(int j=arr_1.length-1;j>=0;j--)
+        {
+            arr_2[l] = arr_1[j];//feeding sorted array backwards for descending in main diagonal
+            l++;
+        }
+        // int k=0;
+        // for(int i =0;i<=n;i++)
+        // {
+        //     arr_1[i] = arr_2[k] ;//feeding descending into arr_1 back so that it could be transfered to main diagonal( unncessary fixcc this later)
+        //     k++;
+        // }
+        int p=0;
+        for(int i =0;i<n2;i++)
+        {
+            matrix[i][i] = arr_2[p];//feeding des sorted to main   ( the above loop is useless so directly we do this)
+            p++;
+        }
+        int u=0;
+        // int arr_3 [] = new int[2];
+         // upper diagonal always has (n-1) elements
+        int arr_3 [] = new int[n-1];
+        // for(int i=0;i<2;i++)//feeding upper dia into arr_3
+        for(int i=0;i<n-1;i++)
+        {
+             arr_3[u] = matrix[i][i+1];
+            u++;
+        }
+        
+        Arrays.sort(arr_3); // sort arr_3(here it alredy wants ascending only so just put it directly in upper matrix)
+        int y=0;
+        // for(int i=0;i<2;i++)
+        for(int i=0;i<n-1;i++)
+        {
+            matrix[i][i+1] = arr_3[y];//feed ascen values into upper matrix
+            y++;
+        }
+        // lower diagonal also has (n-1) elements
+        // int arr_4 [] = new int[2];
+         int arr_4 [] = new int[n-1];
+        int q=0;
+        // for(int i =1;i<3;i++)
+        for(int i =1;i<n;i++)
+        {
+            arr_4[q] = matrix[i][i-1];//feed lower matrix values for sorting
+            q++;
+        }
+        Arrays.sort(arr_4);
+        
+        int v= 0;
+        // int arr_5 [] = new int[2];
+        int arr_5 [] = new int[n-1];
+        for(int i=arr_4.length-1;i>=0;i--)
+        {
+            arr_5[v] = arr_4[i];
+            v++;
+        }
+        
+        //loop to update lower matrix from sorted arr_5
+        for(int i =1;i<n;i++)
+        {
+            matrix[i][i-1] = arr_5[i-1];
+        }
+        
+        
+        
+        
+        // for(int i =0;i<arr_3.length;i++) // print arrays
+        // {
+        //     System.out.print(arr_5[i]);
+        // }
+        
+        
+        // for(int e=0;e<matrix.length;e++) // print matrix
+        for(int e=0;e<n;e++)
+        {
+            // for(int g=0;g<matrix[0].length;g++)
+            for(int g=0;g<n;g++)
+            {
+                System.out.print(matrix[e][g]+ " " );
+            }
+            System.out.println();
+        }
+             
+        }
+}
+
+// this comment is for daily login only please delete after    xxxxxxxxxxxxxxxxxxxxxxxxxxx
+        
+        
+        
+        
+        
+        
+        
+        
+    
+
         
         
         
