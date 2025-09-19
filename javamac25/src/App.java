@@ -7166,10 +7166,6 @@ class Sort_Matrix_by_Diagonals   // 100 % working for any n length matrix (any +
         }
 }
 
-// this comment is for daily login only please delete after    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-
 
 class Shortest_Palindrome
 {
@@ -7198,65 +7194,64 @@ class Shortest_Palindrome
             left++;
             right--;
         } 
-
-
-
         }
         
     }
 }
 
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
+class Shortest_Palindrome
+{
+    public static void main(String[] args) 
+    {
+        String str = "aabba";
+        
+         String max_string = ""; // used to get the shortest mini palindrome
+         String str2 = "";
 
+        int s_length = str.length()-1;
 
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
+        for(int i =str.length()-1;i>=0;i--)
+        {
+            str2 = str.substring(0,s_length);
+            s_length--;
+            //System.out.println(str2);
+            
+            if(str2.isEmpty())
+            {
+                break;
+            }
 
+        int left = 0;
+        int right = str2.length() - 1;
 
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-
-
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
-// this comment is for daily login only please delete after1    xxxxxxxxxxxxxxxxxxxxxxxxxxx
+        for(int j = 0;j<str2.length();j++)
+        {
+            if(str2.charAt(left) != str2.charAt(right))
+            {
+              break;
+                
+            }
+            left++;
+            right--;
+        }
+        
+       
+        if(left >right)
+        {
+            //System.out.println("it is a palindrome : "+ str2);
+            //String str3 = str2.substring()
+            //break;
+            max_string = str2;
+            
+        }
+        }
+        System.out.println(max_string);
+        
+        int l=0;
+        if(str.charAt(l) != max_)
+    }
+}
 
 
 
