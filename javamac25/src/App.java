@@ -7227,7 +7227,7 @@ class Shortest_Palindrome
 
         for(int j = 0;j<str2.length();j++)
         {
-            if(str2.charAt(left) != str2.charAt(right))
+            if(str2.charAt(left) != str2.charAt(right))    // DELETE THIS CODE NOT NEEDED ANYMORE !!!!!!11
             {
               break;
                 
@@ -7253,11 +7253,109 @@ class Shortest_Palindrome
     }
 }
 
-// hello delete this
+class Shortest_Palindrome
+{
+    public static void main(String[] args) 
+    {
+        String str = "abcbaba";
+        
+         String max_string = ""; // used to get the shortest mini palindrome (right to left)
+         String max_string_2 =""; // used to get the shortest mini palindrome (left to right)
+         String str2 = ""; // to store right to left shortest palindrome
+         String str3 = "";// to store left to right shortest palindrome
+         
 
-// hello delete this
-// hello delete this
-// hello delete this
+        int s_length = str.length()-1;
+
+//      ********** right to left part ************
+
+        //for(int i =s_length;i>=0;i--)
+        for(int i =str.length();i>0;i--)
+        {
+            //str2 = str.substring(0,s_length);
+            str2 = str.substring(0,i);
+            
+           // s_length--;
+           
+            
+            if(str2.isEmpty()) // see if needed
+            {
+                break;
+            }
+
+        int left = 0;
+        int right = str2.length() - 1;
+
+        for(int j = 0;j<str2.length();j++)
+        {
+            if(str2.charAt(left) != str2.charAt(right))
+            {
+              break;
+                
+            }
+            left++;
+            right--;
+        }
+       
+        if(left >=right)
+        {
+            max_string = str2;
+            System.out.println(max_string);
+        }
+        
+        }
+        
+//       ********** right to left part   **********   
+        
+        for(int x= 0;x<str.length();x++)
+        {
+            str3 = str.substring(x);
+            
+            if(str3.isEmpty())
+            {
+                break;
+            }
+            
+            int left1 = 0;
+            int right1 = str3.length()-1;
+            
+            for(int y = 0;y<str3.length();y++)
+        {
+            if(str3.charAt(left1) != str3.charAt(right1))
+            {
+              break;
+                
+            }
+            left1++;
+            right1--;
+        }
+        
+         if(left1 >=right1)
+        {
+            max_string_2 = str3;
+            
+             if(!max_string_2.equals(max_string))
+        {
+            System.out.println(max_string_2);
+        }
+            
+        }
+        //System.out.println(str3);
+        
+       
+        //System.out.println(max_string_2);
+        }
+        
+      
+        
+        
+        
+    }
+    
+    
+}
+
+
 
 
 
