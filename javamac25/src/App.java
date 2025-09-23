@@ -7167,95 +7167,10 @@ class Sort_Matrix_by_Diagonals   // 100 % working for any n length matrix (any +
 }
 
 
-class Shortest_Palindrome
+
+class Shortest_Palindrome       // this code works for 100% for every test case does all (left to right) & (right to left) but leetcode particularly doesnt ask for left to right (so see down for correct version without it)
 {
-    public static void main(String[] args) 
-    {
-        String str = "abcd";
-
-        int s_length = str.length()-1;
-
-        for(int i =str.length()-1;i>=0;i--)
-        {
-            String str2 = str.substring(0,s_length);
-            s_length--;
-            //System.out.println(str2);
-
-        int left = 0;
-        int right = str2.length() - 1;
-
-        for(int j = 0;j<str2.length();j++)
-        {
-            if(str2.charAt(left) != str2.charAt(right))
-            {
-               break;
-                
-            }
-            left++;
-            right--;
-        } 
-        }
-        
-    }
-}
-
-
-class Shortest_Palindrome
-{
-    public static void main(String[] args) 
-    {
-        String str = "aabba";
-        
-         String max_string = ""; // used to get the shortest mini palindrome
-         String str2 = "";
-
-        int s_length = str.length()-1;
-
-        for(int i =str.length()-1;i>=0;i--)
-        {
-            str2 = str.substring(0,s_length);
-            s_length--;
-            //System.out.println(str2);
-            
-            if(str2.isEmpty())
-            {
-                break;
-            }
-
-        int left = 0;
-        int right = str2.length() - 1;
-
-        for(int j = 0;j<str2.length();j++)
-        {
-            if(str2.charAt(left) != str2.charAt(right))    // DELETE THIS CODE NOT NEEDED ANYMORE !!!!!!11
-            {
-              break;
-                
-            }
-            left++;
-            right--;
-        }
-        
-       
-        if(left >right)
-        {
-            //System.out.println("it is a palindrome : "+ str2);
-            //String str3 = str2.substring()
-            //break;
-            max_string = str2;
-            
-        }
-        }
-        System.out.println(max_string);
-        
-        int l=0;
-        if(str.charAt(l) != max_)
-    }
-}
-
-class Shortest_Palindrome
-{
-    public static void main(String[] args) 
+    public static void main(String[] args) // SEE DOWN FOR CORRECT VERSION !!!!
     {
         String str = "abcbaba";
         
@@ -7354,6 +7269,162 @@ class Shortest_Palindrome
     
     
 }
+
+
+class Shortest_Palindrome   // 100 % working in leetcode (just last 2 testcases ran out of time limit) but working !!!!
+{
+    public static void main(String[] args) 
+    {
+        String str = "aabba";
+        
+         String max_string = ""; // used to get the shortest mini palindrome (right to left)
+         String max_string_2 =""; // used to get the shortest mini palindrome (left to right)
+         String str2 = ""; // to store right to left shortest palindrome
+         String str3 = "";// to store left to right shortest palindrome
+         
+
+        int s_length = str.length()-1;
+
+//      ********** right to left part ************
+
+        //for(int i =s_length;i>=0;i--)
+        for(int i =str.length();i>0;i--)
+        {
+            //str2 = str.substring(0,s_length);
+            str2 = str.substring(0,i);
+            
+           // s_length--;
+           
+            
+            if(str2.isEmpty()) // see if needed
+            {
+                break;
+            }
+
+        int left = 0;
+        int right = str2.length() - 1;
+
+        // for(int j = 0;j<str2.length();j++) //error giving explain later(not really)
+        while(left<right)
+        {
+            if(str2.charAt(left) != str2.charAt(right))
+            {
+              break;
+                
+            }
+            left++;
+            right--;
+        }
+       
+        if(left >=right)
+        {
+            max_string = str2;
+            break;
+            //System.out.println(max_string);
+        }
+        
+        }
+        
+        String non_palindrome = "";
+        for(int k = max_string.length();k<str.length();k++)
+        {
+            non_palindrome = non_palindrome + str.charAt(k);
+        }
+        
+        String reverse_non ="";
+        for(int p=non_palindrome.length()-1;p>=0;p--)
+        {
+            reverse_non = reverse_non + non_palindrome.charAt(p);
+        }
+        
+        String shortest_palindrome = reverse_non + str;
+        System.out.println(shortest_palindrome);
+//       ********** left to right part   **********   
+
+// THIS PART WAS ADDED ONLY BECAUSE SENTHIL SIR ASKED ; NOT NEEDED NOR ASKED IN LEETCODE !!!!!!!!!!!!!!!
+        
+        // for(int x= 0;x<str.length();x++)
+        // {
+        //     str3 = str.substring(x);
+            
+        //     if(str3.isEmpty())
+        //     {
+        //         break;
+        //     }
+            
+        //     int left1 = 0;
+        //     int right1 = str3.length()-1;
+            
+        //     for(int y = 0;y<str3.length();y++)
+        // {
+        //     if(str3.charAt(left1) != str3.charAt(right1))
+        //     {
+        //       break;
+                
+        //     }
+        //     left1++;
+        //     right1--;
+        // }
+        
+        //  if(left1 >=right1)
+        // {
+        //     max_string_2 = str3;
+            
+        //      if(!max_string_2.equals(max_string))
+        // {
+        //     System.out.println(max_string_2);
+        // }
+            
+        // }
+        // //System.out.println(str3);
+        
+       
+        // //System.out.println(max_string_2);
+        // }
+        
+      
+        
+        
+        
+    }
+    
+}
+
+
+class longest_subarray_length 
+{
+    public static void main(String[] args) 
+    {
+        int arr []= {2,3,5,1,9};
+
+        int k = 10;
+        int sum =0;
+        int count =2;
+
+        for(int i=0;i<arr.length;i++)
+        {
+            for(int j =i+1;j<arr.length;j++)
+            {
+                sum = sum + arr[i]+ arr[j];
+                count++;
+                
+                if(sum == k)
+                {
+                    break;
+
+                }
+                
+            }
+        }
+
+        System.out.println("the length of the longest subarray is : "+count);
+
+        
+    }
+
+}
+
+
 
 
 
