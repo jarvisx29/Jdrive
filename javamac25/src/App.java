@@ -7441,7 +7441,7 @@ class longest_subarray_length     //  Problem Statement: Given an array and a su
 
 }
 
-class Majority_Element
+class Majority_Element    // leetcode question 
 {
     public static void main(String[] args) 
     {
@@ -7473,7 +7473,53 @@ class Majority_Element
     }
 }
 
-//heloo delete
+
+class Longest_Palindromic_Substring
+{
+    public static void main(String[] args) 
+    {
+        String str = "babad";
+        String str2 = "";
+
+        String max_string = "";  // the string which will store the the longest substring
+
+        for(int i =0;i<str.length();i++)
+        {
+            str2 = str.substring(i);
+
+            if(str2.isEmpty())
+            {
+                break;
+            }
+
+            int left = 0;
+            int right = str2.length();
+
+            for(int j=0;j<str2.length();j++)
+            {
+                if(str2.charAt(left) != str2.charAt(right))
+                {
+                    break;
+                }
+                left++;
+                right--;
+
+                if(left >= right)
+                {
+                    max_string = str2;
+                }
+            }
+
+        }
+
+        System.out.println("the longest substring is : "+ max_string);
+
+        
+    }
+}
+
+
+
 
 
 
