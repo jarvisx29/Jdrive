@@ -7474,9 +7474,9 @@ class Majority_Element    // leetcode question
 }
 
 
-class Longest_Palindromic_Substring
+class Longest_Palindromic_Substring  // 100% right logicv but time limit exceeded (95/142)  
 {
-    public static void main(String[] args) 
+    public static void main(String[] args)     // COME BACK TO THIS AND OPTIMIZE TIME COMPLEXITY ; IM GOING TO LEARN HOW TO OPTIMIZE DOWNSTAIRS SEEEEEE !!!!!!!!!!!!
     {
         String str = "babad";
         String str2 = "";
@@ -7519,9 +7519,116 @@ class Longest_Palindromic_Substring
 }
 
 
+      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+//         ****************XXXXXXXXXX    HOW TO OPTIMIZE TIME COMPLEXITIES !!!!!!!!   ********************XXXXXXXXXXXXXXXX
 
 
 
+
+//                      INSTEAD OF BFS  FROM NOW ON USE THESE CONCEPTS THEY WILL AUTOMATICALLY REDUCE COMPLEXITIES !!!!!!!!!!!!!!!!1
+
+
+
+//           XXXXXXXXXXXXXXXXXXXXXX      VECTOR BASICS       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+import java.util.*;
+class vector_basics
+{
+    public static void main(String[] args) 
+    {
+        Vector <String> vec = new Vector <String>();
+
+        vec.add("mano");
+        vec.add("bruno");
+        vec.add("trueno");
+
+        vec.addElement("suno"); // addElement : will append at last of the vector 
+        
+        vec.insertElementAt("kruno",1); // insertElementAt : will insert at specific index given 
+
+
+
+        for(String i : vec)    // Golden rule : THIS IS THE EASIEST WAY TO PRINT VECTORS 
+        {
+            System.out.println(i);
+        }
+
+
+        
+        Vector <Vector<String>> vec2 = new Vector<Vector<String>>(); //this is like putting a container inside another container ; (so like putting a vector inside another vector) when trying to import a prexisting vector inside a new one  
+        
+        vec2.addElement(vec);
+
+
+
+
+
+
+
+
+
+
+        //  same but with int data type 
+
+
+         // Vector <Vector<String>> vec2 = new Vector<Vector<String>>(); //this is like putting a container inside another container ; (so like putting a vector inside another vector) when trying to import a prexisting vector inside a new one  
+        
+        // vec2.addElement(vec);
+        
+        
+        Vector <Integer> vec = new Vector<Integer>();
+        vec.add(1);
+        vec.add(2);
+        vec.add(3);
+        
+        // for(int i : vec)
+        // {
+        //     System.out.println(i);
+        // }
+        
+        System.out.println(vec.get(0)); // get() : is used to fetch the values at the desired indexes 
+        
+        
+        vec.sort(null); // whilst sorting we need to put null inside to make it work 
+        
+        for(int i : vec)
+        {
+            System.out.println(i);
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+//                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX VECTOR BASICS    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+class vector_basics
+{
+    public static void main(String[] args) 
+    {
+        Stack <String> st = new Stack <String>();
+
+        st.add("mon");
+        st.add("tue");
+        st.add("wed");
+
+        for( String i : st)
+        {
+            System.out.println(i);
+        }
+        
+    }
+}
 
 
 
