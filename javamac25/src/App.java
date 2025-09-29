@@ -7608,11 +7608,12 @@ class vector_basics
 
 
 
-//                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX VECTOR BASICS    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+//                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX STACK BASICS    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
 
-class vector_basics
+import java.util.*;
+class stack_basics
 {
     public static void main(String[] args) 
     {
@@ -7621,17 +7622,142 @@ class vector_basics
         st.add("mon");
         st.add("tue");
         st.add("wed");
-
-        for( String i : st)
+        
+    
+        // for( String i : st)
+        // {
+        //     System.out.println(i);  // you can print it like this too (NO PROBLEM)
+        // }
+        
+        
+        XXXXXXX     THIS IS WIDELY PRACTICED WAY BUT LETS NOT USE THIS STICK TO THE ABOVE ONE         XXXXXXXXXXXXXXX
+        
+        
+        Iterator <String> it = st.iterator();
+        
+        while(it.hasNext())
         {
-            System.out.println(i);
+            System.out.println(it.next());
         }
+        
         
     }
 }
 
-// delte after this 
 
+
+
+
+
+
+
+ //       XXXXXXXXXXXXXXXXXXXXXXXXXXX    PRIORITY QUEUE basics      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+ import java.util.*;
+ class priority_queue_basics
+ {
+    public static void main(String[] args) 
+    {
+        Queue<String> pq = new PriorityQueue <String>();
+
+        pq.add("2");
+        pq.add("1");
+        pq.add("3");
+        
+        // pq.add("delhi");  // for non number parts it organizes based on the first letter of the words
+        // pq.add("chennai");
+        // pq.add("mumbai");
+
+        for(String i : pq)    // used this always ITS VERY EASY COMPARED TO USING iterator !!!!!!!!!!!1
+        {
+            System.out.println(i);
+        }
+        
+        
+        System.out.println("------");
+        // String str = pq.peek();  // peek() : used to show only the 1st index value of the priority queue 
+        // System.out.println(str);
+        
+        
+        Iterator <String> it = pq.iterator();  // basically we use iterator so that to just know that we can use by this method too ; but its not that important
+        
+        while(it.hasNext())
+        {
+            System.out.println(it.next());
+        }
+        
+        
+    }
+ }
+
+
+
+
+
+
+
+ //           XXXXXXXXXXXXXXXXXXXXX   ArrayDeque basics XXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+  import java.util.*;
+ class ArrayDeque_basics    // the difference between priority queue and Deque is that PQ will sort things automatically whereas Deque is just manual (which will print as it is )  otherwise syntax wise they both are the same
+ {
+    public static void main(String[] args) 
+    {
+        Deque <String> dq = new ArrayDeque <String> ();
+
+        dq.add("2");
+        dq.add("1");
+        dq.add("3");
+
+        for(String i : dq)
+        {
+            System.out.println(i);
+        }
+        
+        System.out.println("-------");
+        
+        Iterator <String> it = dq.iterator();
+        
+        while(it.hasNext())
+        {
+            System.out.println(it.next());
+        }
+        
+    }
+ }
+
+
+
+
+
+
+
+
+
+
+ //         XXXXXXXXXXXXXXXXXXXXXXXXXXX     HASHMAP basics    XXXXXXXXXXXXXXXXXXXXXXXXX
+
+ class Hashmap_basics 
+ {
+    public static void main(String[] args) 
+    {
+        HashMap <Integer,String> hm = new HashMap<Integer,String>();
+
+        hm.put(1,"mano");
+        hm.put(2,"bruno");
+        hm.put(3,"kruno");
+
+        //for(String,Integer : hq)  // like we normally did using for loopp it wont work for these ; (since they have dual values )
+
+        System.out.println(hm.get("mano"));
+
+        
+    }
+ }
 
 
 
