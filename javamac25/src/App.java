@@ -7741,6 +7741,7 @@ class stack_basics
 
  //         XXXXXXXXXXXXXXXXXXXXXXXXXXX     HASHMAP basics    XXXXXXXXXXXXXXXXXXXXXXXXX
 
+  import java.util.*;
  class Hashmap_basics 
  {
     public static void main(String[] args) 
@@ -7753,8 +7754,55 @@ class stack_basics
 
         //for(String,Integer : hq)  // like we normally did using for loopp it wont work for these ; (since they have dual values )
 
-        System.out.println(hm.get("mano"));
+        System.out.println(hm.get(1));
+        System.out.println(hm.get("mano")); //--> this will give null since get() func is only used to get values NOT KEY VALUE !!!!!!!!!!!
+        
+       // map.entry : is like an iterator for hashmap 
+        
+        //e: is the object with which we will use functions inside the hashmap
+        
+        // entryset() : will give us access to the contents of the hashmap
+        
+        for(Map.Entry<Integer,String> e : hm.entrySet() )
+        {
+            System.out.println("key : "+ e.getKey()+ " Value : "+e.getValue());
+        }
+        
 
+        
+    }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+ //          XXXXXXXXXXXXXXXXXXXXXXXXXXX   JAVA COLLECTIONS      XXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+ 
+ //          XXXXXXXXXXXXXXXXXXXXXX using collections (itself)  XXXXXXXXXXXXXXXXXXX
+
+import java.uitl.*;
+ class using_collections
+ {
+    public static void main(String[] args) 
+    {
+        Collection <String> cl = new ArrayList<>();
+
+        cl.add("2");
+        cl.add("1");
+        cl.add("3");
+
+        System.out.println("collections : "+cl);
         
     }
  }
