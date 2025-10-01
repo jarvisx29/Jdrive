@@ -7741,6 +7741,9 @@ class stack_basics
 
  //         XXXXXXXXXXXXXXXXXXXXXXXXXXX     HASHMAP basics    XXXXXXXXXXXXXXXXXXXXXXXXX
 
+
+
+
   import java.util.*;
  class Hashmap_basics 
  {
@@ -7786,12 +7789,20 @@ class stack_basics
 
  //          XXXXXXXXXXXXXXXXXXXXXXXXXXX   JAVA COLLECTIONS      XXXXXXXXXXXXXXXXXXXXXXXXXXX
 
+ArrayList<> : is like a linked list 
 
+collection : its like a super class which contains all of these functions like (list,set,SortedSet etc)
 
  
  //          XXXXXXXXXXXXXXXXXXXXXX using collections (itself)  XXXXXXXXXXXXXXXXXXX
 
-import java.uitl.*;
+AT TIMES WE CAN LIKE DIRECTLY PUT Collections KEYWORD AT THE START AND JUST PUT THE DESIRED FUNC YOU WANT TO USE LIKE SET ETC AT THE END 
+        (ok this only works for a selected few (also if it is already a java collection then it wont work))
+
+
+
+        //collections : normal (no sorting , all duplicates allowed)
+import java.util.*;
  class using_collections
  {
     public static void main(String[] args) 
@@ -7804,10 +7815,75 @@ import java.uitl.*;
 
         System.out.println("collections : "+cl);
         
+
     }
  }
 
 
+
+ //       XXXXXXXXXXXXXXXXXXXXXXXX    LIST JAVA COLLECTION     XXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+             //LIST : no sorting ; duplicates allowed 
+import java.util.*;
+ class using_list_in_java_collections
+ {
+    public static void main(String[] args) 
+    {
+        List <String> li = new ArrayList<>();
+
+        li.add("2");
+        li.add("1");
+        li.add("3");
+
+        System.out.println("list : "+li);
+
+
+        
+    }
+ }
+
+
+
+ 
+
+
+
+
+
+
+ //        XXXXXXXXXXXXXXXXXXXXXXXXX    SET AND SORTEDSET  JAVA COLLECTION      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+               // Set : sorted  , removes duplicates as well
+               //SortedSet : does the same as set ig ; check with sir and update
+  import java.util.*;
+ class using_set_and_SortedSet_in_java_collections
+ {
+    public static void main(String[] args) 
+    {
+        Set <String> se = new HashSet<>();
+
+        se.add("2");
+        se.add("1");
+        se.add("3");
+        se.add("3");
+
+        System.out.println("Set : "+se);
+        
+        SortedSet <String> ss = new TreeSet<>();      // does the same as the above one ; check with sir and tell me
+        
+        ss.add("2");
+        ss.add("1");
+        ss.add("3");
+        ss.add("3");
+        
+        System.out.println("SortedSet : "+ss);
+        
+    }
+ }
 
 
 
