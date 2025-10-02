@@ -7519,6 +7519,11 @@ class Longest_Palindromic_Substring  // 100% right logicv but time limit exceede
 }
 
 
+
+
+
+
+
       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
@@ -7884,6 +7889,39 @@ import java.util.*;
         
     }
  }
+
+
+ class Longest_Common_Subsequence
+{
+    public static void main(String[] args) 
+    {
+        String str = "abcde";
+
+        String match = "ace";
+        int count =0;
+
+        for(int i =0;i<match.length();i++)
+        {
+            char match2 = match.charAt(i);
+
+            for(int j =0;j<str.length();j++)
+            {
+                char str2 = str.charAt(j);
+
+                if(str2 == match2)
+                {
+                    System.out.println(str2);
+                    count++;
+                }
+            }
+        }
+        System.out.println("count : "+count);
+        
+    }
+}
+
+
+
 
 
 
