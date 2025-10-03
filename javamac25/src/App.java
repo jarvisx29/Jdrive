@@ -7891,20 +7891,21 @@ import java.util.*;
  }
 
 
- class Longest_Common_Subsequence
+ class Longest_Common_Subsequence       // incomplete ; COME BACK AND SOLVE THIS !!!!!!!!!
 {
     public static void main(String[] args) 
     {
-        String str = "abcde";
+        String str = "ezupkr";
 
-        String match = "ace";
+        String match = "ubmrapg";
         int count =0;
+        int last_index = -1;
 
         for(int i =0;i<match.length();i++)
         {
             char match2 = match.charAt(i);
 
-            for(int j =0;j<str.length();j++)
+            for(int j =last_index+1 ;j<str.length();j++)
             {
                 char str2 = str.charAt(j);
 
@@ -7912,6 +7913,7 @@ import java.util.*;
                 {
                     System.out.println(str2);
                     count++;
+                    last_index= j;
                 }
             }
         }
@@ -7920,6 +7922,31 @@ import java.util.*;
     }
 }
 
+
+
+class _3Sum
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {-1,0,1,2,-1,-4};
+
+
+        for(int i=0;i<arr.length;i++)
+        {
+            for(int j=0;j<arr.length;j++)
+            {
+                for(int k =0;k<arr.length;k++)
+                {
+                    if(arr[i]+arr[j]+arr[k]  == 0)
+                    {
+                        System.out.println("i : "+arr[i] + " j : "+arr[j] + " k : "+arr[k]);
+                    }
+                }
+            }
+        }
+        
+    }
+}
 
 
 
