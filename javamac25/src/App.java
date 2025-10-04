@@ -960,6 +960,12 @@ class Solution {                                    // leetcode sum 1: two sum
 }
 
 
+
+
+
+
+
+
 class main 
 {
     public static void main(String args [])
@@ -7613,6 +7619,9 @@ class vector_basics
 
 
 
+
+
+
 //                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX STACK BASICS    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
@@ -7937,10 +7946,13 @@ class _3Sum
             {
                 for(int k =0;k<arr.length;k++)
                 {
+                    if(i != j && j != k && i != k)
+                    {
                     if(arr[i]+arr[j]+arr[k]  == 0)
                     {
                         System.out.println("i : "+arr[i] + " j : "+arr[j] + " k : "+arr[k]);
                     }
+                }
                 }
             }
         }
@@ -7949,6 +7961,73 @@ class _3Sum
 }
 
 
+
+
+import java.util.*;
+class _3Sum
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6};
+
+//My Output : [[-4,-2,6],[-4,0,4],[-4,1,3],[-4,2,2],[-2,-2,4],[-2,0,2]] 
+
+        for(int i=0;i<arr.length;i++)
+        {
+            for(int j=0;j<arr.length;j++)
+            {
+                for(int k =0;k<arr.length;k++)
+                {
+                    if(i != j && j!=k && i != k)
+                    {
+                    if(arr[i] != arr[j] && arr[j] != arr[k] && arr[i] != arr[k])
+                    {
+                        if(i<j && j<k)
+                        {
+                    
+                    if(arr[i]+arr[j]+arr[k]  == 0)
+                    {
+                        System.out.println(arr[i] +" "+ arr[j] +" "+ arr[k]);
+                        break;
+                    
+                    }
+                    }
+                    }
+                    }
+                
+                }
+            }
+        }
+        
+        // List<List<<Integer>> li = new  List<List<Integer>>();
+        
+        
+        
+    }
+}
+
+
+
+class Two_Sum
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {2,7,11,15};
+
+        int target = 9;
+
+        for(int i =0;i<arr.length;i++)
+        {
+            for(int j=1;j<arr.length;j++)
+            {
+                if(arr[i] +arr[j] == target)
+                {
+                    System.out.println(i+" "+j);
+                }
+            }
+        }
+}
+}
 
 
 
