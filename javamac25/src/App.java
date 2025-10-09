@@ -7931,150 +7931,8 @@ import java.util.*;
     }
 }
 
-
-
-class _3Sum
-{
-    public static void main(String[] args) 
-    {
-        int arr [] = {-1,0,1,2,-1,-4};
-
-
-        for(int i=0;i<arr.length;i++)
-        {
-            for(int j=0;j<arr.length;j++)
-            {
-                for(int k =0;k<arr.length;k++)
-                {
-                    if(i != j && j != k && i != k)
-                    {
-                    if(arr[i]+arr[j]+arr[k]  == 0)
-                    {
-                        System.out.println("i : "+arr[i] + " j : "+arr[j] + " k : "+arr[k]);
-                    }
-                }
-                }
-            }
-        }
-        
-    }
-}
-
-
-
-
-import java.util.*;
-class _3Sum
-{
-    public static void main(String[] args) 
-    {
-        int arr [] = {-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6};
-
-//My Output : [[-4,-2,6],[-4,0,4],[-4,1,3],[-4,2,2],[-2,-2,4],[-2,0,2]] 
-
-        for(int i=0;i<arr.length;i++)
-        {
-            for(int j=0;j<arr.length;j++)
-            {
-                for(int k =0;k<arr.length;k++)
-                {
-                    if(i != j && j!=k && i != k)
-                    {
-                    if(arr[i] != arr[j] && arr[j] != arr[k] && arr[i] != arr[k])
-                    {
-                        if(i<j && j<k)
-                        {
-                    
-                    if(arr[i]+arr[j]+arr[k]  == 0)
-                    {
-                        System.out.println(arr[i] +" "+ arr[j] +" "+ arr[k]);
-                        break;
-                    
-                    }
-                    }
-                    }
-                    }
-                
-                }
-            }
-        }
-        
-        // List<List<<Integer>> li = new  List<List<Integer>>();
-        
-        
-        
-    }
-}
-
-
-
-class Two_Sum
-{
-    public static void main(String[] args) 
-    {
-        int arr[] = {2,7,11,15};
-
-        int target = 9;
-
-        for(int i =0;i<arr.length;i++)
-        {
-            for(int j=1;j<arr.length;j++)
-            {
-                if(arr[i] +arr[j] == target)
-                {
-                    System.out.println(i+" "+j);
-                }
-            }
-        }
-}
-}
-
-
-
-
-
-delete these after restart 
-
-//1st page 
-
- class Longest_Common_Subsequence
-{
-    public static void main(String[] args) 
-    {
-        String str = "ezupkr";
-
-        String match = "ubmrapg";
-        int count =0;
-        int last_index = 0;
-
-        for(int i =0;i<match.length();i++)
-        {
-            char match2 = match.charAt(i);
-
-            for(int j =last_index;j<str.length();j++)
-            {
-                char str2 = str.charAt(j);
-
-                if(str2 == match2)
-                {
-                    System.out.println(str2);
-                    count++;
-                    last_index = j+1;
-                }
-            }
-        }
-        System.out.println("count : "+count);
-        
-    }
-}
-
-
-
-
-//2nd page 
-
-import java.util.*;
-class _3Sum
+import java.util.*;//kept for reference
+class _3Sum                  // this logic is wrong!!! ; i mean the 3_sum logic is fine but the list logic is wrong ; the check internet and gpt they all told me you need two diff list (list inside list to pull this sum off)
 {
     public static void main(String[] args) 
     {
@@ -8124,24 +7982,77 @@ class _3Sum
 }
 
 
-//3rd sum 
+
+import java.util.*;
+class _3Sum          // leetcode question :   100% working but time limit exceeded at last testcase (to be optimised later)  
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6};
+        List <List<Integer>> outer = new ArrayList<>();
+
+//My Output : [[-4,-2,6],[-4,0,4],[-4,1,3],[-4,2,2],[-2,-2,4],[-2,0,2]] 
+
+        for(int i=0;i<arr.length;i++)
+        {
+            for(int j=0;j<arr.length;j++)
+            {
+                for(int k =0;k<arr.length;k++)
+                {
+                    if(i != j && j!=k && i != k)
+                    {
+                    // if(arr[i] != arr[j] && arr[j] != arr[k] && arr[i] != arr[k])
+                    // {
+                        if(i<j && j<k)
+                        {
+                    
+                    if(arr[i]+arr[j]+arr[k]  == 0)
+                    {
+                       List<Integer> inner = Arrays.asList(arr[i],arr[j],arr[k]);
+                       
+                       Collections.sort(inner);
+                       if(!outer.contains(inner))
+                       {
+                           outer.add(inner);
+                       }
+                        
+                    
+                    }
+                    }
+                   // }
+                    }
+                
+                }
+            }
+        }
+        
+        //  List<List<<Integer>> li = new  List<List<Integer>>();
+         
+         
+        
+        System.out.println(outer);
+        
+    }
+}
+
+
+
 
 class Two_Sum
 {
     public static void main(String[] args) 
     {
-        int arr[] = {3,3};
+        int arr[] = {2,7,11,15};
 
-        int target = 6;
+        int target = 9;
 
         for(int i =0;i<arr.length;i++)
         {
-            for(int j=i+1;j<arr.length;j++)
+            for(int j=1;j<arr.length;j++)
             {
                 if(arr[i] +arr[j] == target)
                 {
                     System.out.println(i+" "+j);
-                    break;
                 }
             }
         }
@@ -8149,12 +8060,10 @@ class Two_Sum
 }
 
 
-//hello delete this later
-//hello delete this later
-//hello delete this later
-//hello delete this later//hello delete this later
-//hello delete this later//hello delete this later
-//hello delete this later
+
+
+
+
 
 
 
