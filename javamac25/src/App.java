@@ -8038,7 +8038,7 @@ class _3Sum          // leetcode question :   100% working but time limit exceed
 
 
 
-class Two_Sum
+class Two_Sum   // leetcode question : PS this was the first sum i ever did in leetcode ; which i failed ; now i did it by myself and i succeded
 {
     public static void main(String[] args) 
     {
@@ -8057,6 +8057,42 @@ class Two_Sum
             }
         }
 }
+}
+
+
+class _3Sum_Closest
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {-1,2,1,-4};
+        int target = 1;
+        int current_small =0;
+        int current_big =0;
+
+        for(int i =0;i<arr.length;i++)
+        {
+            for(int j=0;j<arr.length;j++)
+            {
+                if(arr[i] + arr[j] <target)
+                {
+                    if(current_small <arr[i] +arr[j])
+                    {
+                        current_small = arr[i]+arr[j];
+                    }
+                }
+
+                if(arr[i] +arr[j] >target)
+                {
+                    if(current_big >arr[i]+arr[j])
+                    {
+                        current_big = arr[i] +arr[j];
+                    }
+                }
+
+            }
+        }
+        
+    }
 }
 
 
