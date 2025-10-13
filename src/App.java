@@ -8150,6 +8150,37 @@ class Number_of_Arithmetic_Triplets  // leetcode question
 }
 
 
+class Number_of_Unequal_Triplets_in_Array  // leetcode question 
+
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {4,4,2,4,3};
+
+        int diff = 3;
+
+        for(int i =0;i<arr.length;i++)
+        {
+            for(int j = i+1;j<arr.length;j++)
+            {
+                for(int k=j+1;k<arr.length;k++)
+                {
+                    //if(i!=j && j!= k && i !=k)
+                    
+                        if( arr[i]!=arr[j] && arr[j]!=arr[k] && arr[i] != arr[k])
+                        {
+                            System.out.println("the triplet : "+arr[i]+" "+arr[j]+" "+arr[k] );
+                        }
+                    
+                }
+
+            }
+        }
+         
+    }
+}
+
+
 
 
 
