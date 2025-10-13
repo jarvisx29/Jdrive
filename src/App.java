@@ -8120,6 +8120,36 @@ class _3Sum_Closest   // leetcode question
 }
 
 
+class Number_of_Arithmetic_Triplets  // leetcode question 
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {0,1,4,6,7,10};
+
+        int diff = 3;
+
+        for(int i =0;i<arr.length;i++)
+        {
+            for(int j = i+1;j<arr.length;j++)
+            {
+                for(int k=j+1;k<arr.length;k++)
+                {
+                    //if(i!=j && j!= k && i !=k)
+                    
+                        if(arr[j] - arr[i] == diff && arr[k] - arr[j] == diff)
+                        {
+                            System.out.println("the indexes: "+i+" "+j+" "+k );
+                        }
+                    
+                }
+
+            }
+        }
+         
+    }
+}
+
+
 
 
 
