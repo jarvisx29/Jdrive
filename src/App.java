@@ -8157,7 +8157,7 @@ class Number_of_Unequal_Triplets_in_Array  // leetcode question
     {
         int arr [] = {4,4,2,4,3};
 
-        int diff = 3;
+        //int diff = 3;
 
         for(int i =0;i<arr.length;i++)
         {
@@ -8165,7 +8165,7 @@ class Number_of_Unequal_Triplets_in_Array  // leetcode question
             {
                 for(int k=j+1;k<arr.length;k++)
                 {
-                    //if(i!=j && j!= k && i !=k)
+                    //if(i!=j && j!= k && i !=k) // this is not needed since we need to be comparing the arr[i i.e values not their indexes]
                     
                         if( arr[i]!=arr[j] && arr[j]!=arr[k] && arr[i] != arr[k])
                         {
@@ -8179,9 +8179,7 @@ class Number_of_Unequal_Triplets_in_Array  // leetcode question
          
     }
 }
-//its working !!
 
-// please work
 
 
 
