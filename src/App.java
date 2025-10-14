@@ -8181,6 +8181,37 @@ class Number_of_Unequal_Triplets_in_Array  // leetcode question
 }
 
 
+class Count_Good_Triplets
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {3,0,1,1,9,7};
+        int a=7;
+        int b=2;
+        int c=3;
+
+        for(int i =0;i<arr.length;i++)
+        {
+            for(int j=i+1;j<arr.length;j++)
+            {
+                for(int k=j+1;k<arr.length;k++)
+                {
+                    if((arr[i]-arr[j] <=a && arr[i]-arr[j]>= -a) &&
+                        (arr[j]-arr[k] <=b && arr[j]-arr[k]>=-b )&&
+                        (arr[i]-arr[k]<=c) && arr[i]-arr[k]>=-c)
+                    {
+                        System.out.println("the triplets : "+arr[i]+" "+arr[j]+" "+arr[k]);
+                    }
+                }
+            }
+
+        }
+        
+    }
+}
+
+
+
 
 
 
