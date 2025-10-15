@@ -8038,7 +8038,7 @@ class _3Sum          // leetcode question :   100% working but time limit exceed
 
 
 
-class Two_Sum   // leetcode question : PS this was the first sum i ever did in leetcode ; which i failed ; now i did it by myself and i succeded
+class Two_Sum   // leetcode question : PS this was the first sum i ever did in leetcode ; which i failed ; now i did it by myself and i succeded  (woww MANO BE PROUD OF YOURSELF !!!!!)
 {
     public static void main(String[] args) 
     {
@@ -8181,7 +8181,7 @@ class Number_of_Unequal_Triplets_in_Array  // leetcode question
 }
 
 
-class Count_Good_Triplets
+class Count_Good_Triplets   // leetcode question
 {
     public static void main(String[] args) 
     {
@@ -8210,7 +8210,7 @@ class Count_Good_Triplets
     }
 }
 
-class Count_Special_Quadruplets
+class Count_Special_Quadruplets   // leetcode question
 {
     public static void main(String[] args) 
     {
