@@ -8210,6 +8210,65 @@ class Count_Good_Triplets
     }
 }
 
+class Count_Special_Quadruplets
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {1,2,3,6};
+
+        for(int a=0;a<arr.length;a++)
+        {
+            for(int b=a+1;b<arr.length;b++)
+            {
+                for(int c=b+1;c<arr.length;c++)
+                {
+                    for(int d=c+1;d<arr.length;d++)
+                    {
+                        if(arr[a]+arr[b]+arr[c] == arr[d])
+                        {
+                            System.out.println("the quadruplet indexes : "+a+" "+b+" "+c);
+                        }
+
+                    }
+                    
+                }
+            }
+        }
+        
+    }
+}
+
+class Count_Increasing_Quadruplets   // leetcode quwstion (time limit exceeded)
+{
+    public static void main(String[] args) 
+    {
+        int arr [] ={1,3,2,4,5};
+
+        for(int i=0;i<arr.length;i++)
+        {
+            for(int k=i+1;k<arr.length;k++)
+            {
+                for(int j=k+1 ;j<arr.length;j++)
+                {
+                    for(int l=j+1;l<arr.length;l++)
+                    {
+                        if(arr[i]<arr[j] && arr[j]<arr[k] && arr[k]<arr[l])
+                        {
+                            System.out.println("the indexes of triplets : "+i+" "+k+" "+j+" "+l);
+                        }
+
+                    }
+                    
+
+                }
+            }
+        }
+        
+    }
+}
+
+
+
 
 
 
