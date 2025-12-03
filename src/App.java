@@ -2738,9 +2738,9 @@ class right_triangle
     public static void main(String[] args) 
     {
         int n =5;
-        for(int i = 0;i<=n;i++)  // rows = remember
+        for(int i = 0;i<=n;i++)  // rows = remember  (outer loop for no. of rows)
         {
-            for(int j = 0;j<=i;j++)          // columns = remmeber  2025-07-30-12-04-02.png <- look at this image and understand and it tells taht it will print the stars in same way the number as the no. of rows keeps increasing like 1,2,3,4 ..
+            for(int j = 0;j<=i;j++)       // inner loop (columns) = remmeber  2025-07-30-12-04-02.png <- look at this image and understand and it tells taht it will print the stars in same way the number as the no. of rows keeps increasing like 1,2,3,4 ..
             {
                 System.out.print("*"+ " ");
             }
@@ -8297,52 +8297,45 @@ class Increasing_Triplet_Subsequence
     }
 }
 
-//delete this //
-//delete this ////delete this //
-//delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
-//deletegit this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this ////delete this //
 
+import java.util.*;
+class Search_a_2D_Matrix
+{
+    public static void main(String[] args) 
+    {
+        int matrix[][] = { {1,3,5,7},
+                        {10,11,16,20},
+                        {23,30,34,60}
+
+        };
+        int target = 3;
+
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+        int matrix_length = rows*cols;
+
+        int flat_mat[] = new int [matrix_length];
+        int arr_start =0;
+
+
+        for(int i = 0;i<rows;i++)
+        {
+            for(int j=0;j<cols;j++)
+            {
+                flat_mat[arr_start] = matrix[i][j];
+                arr_start++;
+            }
+        }
+
+        //System.out.print(Arrays.toString(flat_mat));
+
+        int beg = 0;
+        int last = flat_mat.length-1;
+
+
+        
+    }
+}
 
 
 

@@ -1269,11 +1269,115 @@ class question_spiral_pattern_but_right_to_left_reverse   // same logic as the n
     }
 }
 
+
+//(upper part contains this not bellow)
 //   xxxxxxxxxxxx   for loop advanced INSIDE OUT (questions from   5B. forLoop.pdf  ,Pattern_Programs-combined.pdf,  5C. NestedLoop.pdf)   xxxxxxxxxxxxx
 
 
+class right_triangle
+{
+    public static void main(String[] args) 
+    {
+        int n = 5;
+
+        for(int i = 0 ;i<=n ;i++)
+        {
+            for(int j = 0 ; j<=i;j++)
+            {
+                System.out.print("*"+" ");
+            }
+             System.out.println();
+        }
+       
+        
+    }
+}
+
+class right_sided_traingle
+{
+    public static void main(String[] args) 
+    {
+        int n= 5;
+
+        for(int i = 0 )
+        
+    }
+}
 
 
+class right_traingle_first_ulta traingle
+{
+    public static void main(String[] args) 
+    {
+        int n = 5;
+        for(int i = 0;i<=n ;i++)
+        {
+            for(int j = i ; j<=n;j++)
+            {
+                System.out.println(" ");
+            }
+
+            for(int k = 0;k<=i;k++)
+            {
+                System.out.println("*");
+            }
+
+            System.out.println();
+        }
+        
+    }
+
+}
+
+class ulta_right_traingle
+{
+    public static void main(String[] args) 
+    {
+        int n = 5;
+
+        for(int i=0;i<=n;i++)
+        {
+            for(int k=0 ; k<=i;k++)
+            {
+                System.out.print(" ");
+            }
+            for(int j=i;j<=n;j++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        
+    }
+}
+
+
+class hill_pattern
+{
+    public static void main(String[] args) 
+    {
+        int n= 5;
+
+        for(int i = 0; i<=n;i++)
+        {
+            for(int j=i;j<=n;j++)
+            {
+                System.out.print(" ");
+            }
+            for(int k = 0;k<=i;k++)
+            {
+                System.out.print("*");
+            }
+            for(int l =0;l<=i;l++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        
+    }
+
+}
 
 
 
