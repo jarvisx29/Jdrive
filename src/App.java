@@ -8299,7 +8299,7 @@ class Increasing_Triplet_Subsequence
 
 
 import java.util.*;
-class Search_a_2D_Matrix
+class Search_a_2D_Matrix         //leetcode question : 100% works but time limit exceeded ask sir later 
 {
     public static void main(String[] args) 
     {
@@ -8332,6 +8332,86 @@ class Search_a_2D_Matrix
         int beg = 0;
         int last = flat_mat.length-1;
 
+        while(beg<=last)
+        {
+            int mid = (beg + last)/2;
+
+            if(target>flat_mat[mid])
+            {
+                beg=mid;
+
+            }
+            else if(target<flat_mat[mid])
+            {
+                last=mid;
+            }
+            else
+            {
+                System.out.println("target found at : "+mid);
+                break;
+            }
+        }
+
+
+        
+    }
+}
+
+
+import java.util.*;
+class Set_Matrix_Zeroes   //  leetcode question : 100% working completed all testcases
+{
+    public static void main(String[] args) 
+    {
+        int matrix[][] = {
+            {1,1,1},
+            {1,0,1},
+            {1,1,1}};
+
+
+
+
+        int rows  = matrix.length;
+        int cols = matrix[0].length;
+        
+        int rowmaker[] = new int [rows];  // this will store all the rows that has zeroes and flags them with '1' so that they could be zeroed later (ex: the rowmaker[] = {0,0,0} intially and when it has encountered a zero at that place it will replace that whole rows index as 1 {0,1,0})
+        int colmaker[] = new int[cols];    // this will store the cols which need to be zeroed
+
+        for(int i=0;i<matrix.length;i++)
+        {
+            for(int j=0;j<matrix[0].length;j++)
+            {
+                if(matrix[i][j] ==0)
+                {
+                    rowmaker[i] =1;
+                    colmaker[j] = 1;
+                }
+            }
+        }
+
+            for(int k=0;k<matrix.length;k++)
+            {
+                for(int l=0;l<matrix[0].length;l++)
+                {
+                    if(rowmaker[k]==1 || colmaker[l]==1) // if even one of the cols or rows comes up with a 1 (in which we flaged in previous loop as 1 i.e the whole row or cols needes to go )
+                    {
+                        matrix[k][l] ==0;
+                    }
+                }
+            }
+
+
+            //System.out.println(Arrays.toString(matrix));
+
+               for(int i=0;i<matrix.length;i++)
+           {
+               for(int j=0;j<matrix.length;j++)
+               {
+                   System.out.print(matrix[i][j]);
+               }
+               System.out.println();
+           }
+      
 
         
     }
@@ -8339,8 +8419,86 @@ class Search_a_2D_Matrix
 
 
 
+class Determine_if_Two_Events_Have_Conflict    // incomplete do this with sirr
+{
+    public static void main(String[] args) 
+    {
+       // String str1 [] = {{"01:15"},{"01:15"}};     this is wrong put the braces after String
+          String []str1  = {"01:15","01:15"};
+          String [] str2  = {"02:00","03:00"};
+
+        
+
+          char chr = Character.getNumericValue(str1);
+        
+        
+        
+        }
+}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Search_Insert_Position
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {1,3,5,6};
+
+        int beg =0;
+        int last = arr.length-1;
+
+        int num =5;
+
+        while(beg<=last)
+        {
+            int mid= (beg +last)/2;
+
+            if(num>arr[mid])
+            {
+                beg = mid;
+            }
+
+            else if(num<mid)
+            {
+                last=mid;
+            }
+
+            else
+            {
+                System.out.println("found at index : "+mid);
+                return;
+            }
+
+            System.out.println("not found but closest index is "+beg);
+
+          
+
+        }
+        
+    }
+}
 
 
 

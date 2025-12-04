@@ -1352,31 +1352,45 @@ class ulta_right_traingle
 }
 
 
-class hill_pattern
+import java.util.Scanner;
+class extract_digits_from_string_and_add_with_integer_q5
 {
     public static void main(String[] args) 
     {
-        int n= 5;
+        System.out.println("enter the string : ");
+        Scanner sc = new Scanner(System.in);
 
-        for(int i = 0; i<=n;i++)
+        String str1 = sc.nextLine();
+
+        System.out.println("enter the integer : ");
+        Scanner sc2 = new Scanner(System.in);
+
+        int int1 = sc2.nextInt();
+
+        int sum = 0; // integers taken from String will be added here
+
+        int total_sum = 0;  // sum of digits from String and integer given by user
+
+        for(int i=0;i<str1.length();i++)
         {
-            for(int j=i;j<=n;j++)
+            char chr = str1.charAt(i);
+
+            if(Character.isDigit(chr)) 
             {
-                System.out.print(" ");
+                sum = sum + Character.getNumericValue(chr);
             }
-            for(int k = 0;k<=i;k++)
-            {
-                System.out.print("*");
-            }
-            for(int l =0;l<=i;l++)
-            {
-                System.out.print("*");
-            }
-            System.out.println();
+
         }
+        total_sum = sum +int1;
+
+        System.out.println("the sum of digits from String: "+sum);
+        System.out.println("the integer from user : "+int1);
+        
+        System.out.println("total sum = "+total_sum);
+
+
         
     }
-
 }
 
 
