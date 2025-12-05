@@ -1440,7 +1440,16 @@ class Determine_if_Two_Events_Have_Conflict  // leetcode question 100% working  
         }
 }
 
+class Non_overlapping_Intervals
+{
+    public static void main(String[] args) 
+    {
+        int arr[][] = {{1,2},{2,3},{3,4},{1,3}};
 
+        
+        
+    }
+}
 
 
 

@@ -8419,48 +8419,7 @@ class Set_Matrix_Zeroes   //  leetcode question : 100% working completed all tes
 
 
 
-class Determine_if_Two_Events_Have_Conflict    // incomplete do this with sirr
-{
-    public static void main(String[] args) 
-    {
-       // String str1 [] = {{"01:15"},{"01:15"}};     this is wrong put the braces after String
-          String []str1  = {"01:15","01:15"};
-          String [] str2  = {"02:00","03:00"};
-
-        
-
-          char chr = Character.getNumericValue(str1);
-        
-        
-        
-        }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-class Search_Insert_Position
+class Search_Insert_Position   // leetcode question 100 % working 
 {
     public static void main(String[] args) 
     {
@@ -8471,18 +8430,18 @@ class Search_Insert_Position
 
         int num =5;
 
-        while(beg<=last)
+        while(beg<=last)         // simple binary search 
         {
             int mid= (beg +last)/2;
 
             if(num>arr[mid])
             {
-                beg = mid;
+                beg = mid+1;  // usually dont need this +1 -1 stuff ; its to avoid infinite loops ; usually dont need im doing it since this is leetcode q
             }
 
-            else if(num<mid)
+            else if(num<arr[mid])
             {
-                last=mid;
+                last=mid-1;
             }
 
             else
@@ -8491,11 +8450,71 @@ class Search_Insert_Position
                 return;
             }
 
-            System.out.println("not found but closest index is "+beg);
+            System.out.println("not found but closest index is "+beg);  // we are putting beg here ;(since if no element is found then the closest possible index would be beg since like its a while loop (beg<=last)    so the closest one done up until the last step would be beg )
 
           
 
         }
+        
+    }
+}
+
+
+
+
+class Determine_if_Two_Events_Have_Conflict  // leetcode question 100% working  (paste the image from college rough copy DONT FORGET !!!!!!!!!!)
+{
+    public static void main(String[] args) 
+    {
+       //String str1 [] = {{"01:15"},{"01:15"}};     this is wrong put the braces after String
+        String []event1  = {"01:00","02:00"};
+         String [] event2  = {"01:20","03:00"};
+        //  String str1 = "01:15";
+        //  String str2 = "02:00";
+
+
+          //System.out.println(str1.compareTo(str2));
+
+         String start1 = event1[0];
+         String end1 = event1[1];
+
+         String start2 = event2[0];
+         String end2 = event2[1];
+
+         int count=0;
+
+
+         if(start2.compareTo(end1)<=0)
+         {
+            count++;
+         }
+         if(start1.compareTo(end2)<=0)    // 2025-12-05-10-27-22.png  see this one it tells why i used this one (even though it went opposite to my thinking ; since it eliminates the scenarious where there may be fake overlaps i.e it might go round the clock sometimes)
+         {
+            count++;
+         }
+
+
+         if(count==2)
+         {
+            System.out.println("overlap");
+         }
+         else
+         {
+            System.out.println("no overlap");
+         }
+
+
+            
+        }
+}
+
+class Non_overlapping_Intervals
+{
+    public static void main(String[] args) 
+    {
+        int arr[][] = {{1,2},{2,3},{3,4},{1,3}};
+
+        
         
     }
 }
