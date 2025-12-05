@@ -8508,14 +8508,145 @@ class Determine_if_Two_Events_Have_Conflict  // leetcode question 100% working  
         }
 }
 
-class Non_overlapping_Intervals
+class Non_overlapping_Intervals    // incomplete im tired refresh on this later
 {
     public static void main(String[] args) 
     {
-        int arr[][] = {{1,2},{2,3},{3,4},{1,3}};
+        int matrix[][] = {{1,2},{2,3},{3,4},{1,3}};
 
+
+        for(int i=0;i<matrix.length;i++)
+        {
+            for(int j=0;j<matrix.length;j++)
+            {
+                int start = arr[];
+            }
+        }
+    }
+}
+
+
+
+
+class Contains_Duplicate  //100 working but time limit exceeded (use the one below this )
+{
+    public static void main(String[] args)  // KEPT FOR REFERENCE !!!!!!!!!!!!!11
+    {
+        int arr[] = {1,2,3,1};
+        int final_count=0;
+
+        for(int i=0;i<arr.length;i++)
+        {
+            int count = 0;
+
+            for(int j =0 ;j<arr.length;j++)
+            {
+                if(arr[i] == arr[j])
+                {
+                    count++;
+                }
+
+            }
+
+            if(count>1)
+            {
+                final_count++;
+            }
+
+        }
+
+        if(final_count>0)
+        {
+            System.out.println("contains duplicates ");
+        }
+        else
+        {
+            System.out.println("distinct");
+        }
         
+    }
+}
+
+
+class Contains_Duplicate   // leetcode question 100% working for all testcases
+{
+    public static void main(String[] args) 
+    {
+        int arr[] ={1,2,3,1};
+        int count =0;
+
+        java.util.Arrays.sort(arr);  // instea of many loops ; just sort it so that all the duplicates cometogether then just perform simple single loop i == i+1 stuff (easy)
+
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]==arr[i+1])
+            {
+                count++;
+            }
+        }
+
+        if(count >0)
+        {
+            System.out.println("contains duplicates");
+        }
+        else
+        {
+            System.out.println("distict");
+        }
         
+    }
+}
+
+
+class Contains_Duplicate_II          // doesnt work it seems ; need to use hashset apparently ; REVISIT LATER !!!!!!!!!
+{
+    public static void main(String[] args) 
+    {
+        int arr [] ={1,2,3,1};
+
+        int k =3;
+
+        java.util.Arrays.sort(arr);
+
+        for(int i =0;i<arr.length;i++)
+        {
+            if(arr[i]==arr[i+1]  && (i-i+1)<=k)
+            {
+                System.out.println("duplciates found");
+            }
+            else
+            {
+                System.out.println("distinct");
+            }
+        }
+        
+    }
+}
+
+
+
+
+class Ugly_Number
+{
+    public static void main(String[] args) 
+    {
+        int n = 6;
+
+        int count =0;
+
+        if(n%2 == 0 ||n%3==0 || n%5==0)
+        {
+            count++;
+        }
+        
+        if(count>0)
+        {
+            System.out.println("ugly number");
+        }
+        else
+        {
+            System.out.println("not ugly number");
+        }
     }
 }
 
