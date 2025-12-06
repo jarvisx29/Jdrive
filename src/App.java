@@ -7670,15 +7670,20 @@ class stack_basics
 
 
  import java.util.*;
- class priority_queue_basics
+ class priority_queue_basics     // THIS DOES NOT GIVE SORTED ORDER !!!!!!!!!!!! (only guarantees that the smallest item is at the head, not that all items are stored or iterated in sorted order.)
  {
     public static void main(String[] args) 
     {
         Queue<String> pq = new PriorityQueue <String>();
 
-        pq.add("2");
+        pq.add("2");    
         pq.add("1");
         pq.add("3");
+
+
+        // pq.add("1");      // for this input it will not be 0,1,47 like you may have thought ; since this is String not int ; it comapares lexicographically i.e it compares the first differing character in case of '1' (ASCII 49)  '4' (ASCII 52)  Since 49 < 52, **"1" comes before "47" lexicographically**.
+        // pq.add("47");
+        // pq.add("0");
         
         // pq.add("delhi");  // for non number parts it organizes based on the first letter of the words
         // pq.add("chennai");
@@ -7717,7 +7722,7 @@ class stack_basics
 
 
   import java.util.*;
- class ArrayDeque_basics    // the difference between priority queue and Deque is that PQ will sort things automatically whereas Deque is just manual (which will print as it is )  otherwise syntax wise they both are the same
+ class ArrayDeque_basics    // Deque is just manual (which will print as it is )  otherwise syntax wise they PQ are the same
  {
     public static void main(String[] args) 
     {
@@ -7758,7 +7763,7 @@ class stack_basics
 
 
 
-  import java.util.*;
+ import java.util.*;
  class Hashmap_basics 
  {
     public static void main(String[] args) 
@@ -8626,7 +8631,7 @@ class Contains_Duplicate_II          // doesnt work it seems ; need to use hashs
 
 
 
-class Ugly_Number
+class Ugly_Number       // incompete COME BACK LATER !!!!
 {
     public static void main(String[] args) 
     {
@@ -8649,6 +8654,88 @@ class Ugly_Number
         }
     }
 }
+
+
+class Two_Sum_II_Input_Array_Is_Sorted    //leetcode question : 100 % working but failed last 4 testcases(20/24)   NEED TO OMPTIMIZE !!!!!!!! (USE HASHSET OR HASHMAP APPARENTLY !!!!!!) 
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {2,7,11,15};
+
+        int target = 9;
+
+        int first_index =0;
+        int second_index =0;
+
+        for(int i=0;i<arr.length;i++)
+        {
+            for(int j=0;j<arr.length;j++)
+            {
+                if(arr[i]+arr[j] == target)
+                {
+                    first_index = i+1;
+                    second_index = j;
+                }
+            }
+        }
+
+        System.out.println("1st index : "+first_index+"2nd index : "+ second_index);
+        
+    }
+}
+
+
+class Find_Subarrays_With_Equal_Sum
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {4,2,4};
+
+        for(int i = 0;i<arr.length;i++)
+        {
+            for(int j= i+1;j<arr.length;j++)
+            {
+                
+            }
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// SENTHIL SIR QUESTIONS HASHMAP !!
+
+import java.util.*;
+class  Count_Character_Frequencies
+{
+    public static void main(String[] args) 
+    {
+        HashMap <Character,Integer> hm = new HashMap<Character,Integer>();
+
+        hm.
+
+
+        
+    }
+}
+
 
 
 

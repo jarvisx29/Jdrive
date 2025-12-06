@@ -1352,22 +1352,7 @@ class ulta_right_traingle
 }
 
 
-import java.util.Scanner;
-class extract_digits_from_string_and_add_with_integer_q5
-{
-    public static void main(String[] args) 
-    {
-        System.out.println("enter the string : ");
-        Scanner sc = new Scanner(System.in);
-
-        String str1 = sc.nextLine();
-
-        System.out.println("enter the integer : ");
-        Scanner sc2 = new Scanner(System.in);
-
-        int int1 = sc2.nextInt();
-
-        int sum = 0; // integers taken from String will be added here
+// integers taken from String will be added here
 
         int total_sum = 0;  // sum of digits from String and integer given by user
 
@@ -1446,12 +1431,94 @@ class Non_overlapping_Intervals
     {
         int arr[][] = {{1,2},{2,3},{3,4},{1,3}};
 
-        
+
         
     }
 }
 
 
+import java.util.*;
+class vector_basics 
+{
+    public static void main(String[] args) 
+    {
+        Vector <String> vec = new Vector <String>();
+
+        vec.add("mano");
+        vec.add("bruno");
+        vec.add("kruno");
+
+        vec.addElement("suno")
+
+        for(String i : vec)
+        {
+            System.out.println(i);
+        }
+    }
+}
+
+import java.util.*;
+class stack_basics 
+{
+    public static void main(String[] args) 
+    {
+        Stack <String> st = new Stack <String>();
+
+        st.add("mano");
+        st.add("bruno");
+        st.add("kruno");
+
+        for(String i : st)
+        {
+            System.out.println(i);
+
+        }
+        
+    }
+}
+
+import java.util.*;
+class PriorityQueue_basics
+{
+    public static void main(String[] args) 
+    {
+        Queue <String> pq = new PriorityQueue <String>();
+
+        pq.add("2");
+        pq.add("1");
+        pq.add("3");
+
+        for(String i : pq)
+        {
+            System.out.println(i);
+        }
+        
+    }
+}
+
+
+
+import java.util.*;
+class Hashmap_basics
+{
+    public static void main(String[] args) 
+    {
+        HashMap <Integer,String> hm =  new HashMap<Integer,String>();
+
+        hm.put(1,"mano");
+        hm.put(2,"bruno");
+
+
+        System.out.println(hm.get(1));
+        System.out.println(hm.get("mano"))
+
+        for(Map.Entry<Integer,String> e : hm.entrySet())
+        {
+            System.out.println("key : " + e.getKey()+"value : "+ e.getValue());
+
+        }  
+    }
+}
 
 
 
