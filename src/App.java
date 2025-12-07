@@ -7789,11 +7789,33 @@ class stack_basics
         {
             System.out.println("key : "+ e.getKey()+ " Value : "+e.getValue());
         }
-        
-
-        
     }
  }
+
+
+ example : 
+
+ import java.util.*;
+
+class FrequencyMap_Using_getOrDefault    // to find frequency of each element
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {1,4,1,7,8,9};
+        
+        HashMap <Integer,Integer> hm = new HashMap <Integer, Integer>();
+        
+        for(int num : arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);  // getOrDefault : used to count how many times something has occured ; and +1 to increment each time you get
+        }
+        
+        System.out.println(hm);
+
+       
+    }
+}
+
 
 
 
@@ -8695,7 +8717,7 @@ class Find_Subarrays_With_Equal_Sum
         {
             for(int j= i+1;j<arr.length;j++)
             {
-                
+                if(arr[i]+arr[j] == target)   // NOO USE HASHSET MANO THIS AINT GONNA WORK until we learn hash stuff!!!!
             }
         }
         
@@ -8714,27 +8736,144 @@ class Find_Subarrays_With_Equal_Sum
 
 
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   HASHMAP PRACICE QUESTIONS     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+                            paste these bellow intial hashmap stuff above from back in the day
 
 
 
-
-
-
-// SENTHIL SIR QUESTIONS HASHMAP !!
 
 import java.util.*;
-class  Count_Character_Frequencies
+class FrequencyMap_UsingGetOrDefault       // used to increment everytime a digit appears (to count frequency basically)
 {
     public static void main(String[] args) 
     {
-        HashMap <Character,Integer> hm = new HashMap<Character,Integer>();
+        int arr [] = {1,4,1,7,8,9};
+        
+        HashMap <Integer,Integer> hm = new HashMap <Integer, Integer>();
+        
+        for(int num : arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+        
+        System.out.println
 
-        hm.
+       
+    }
+}
+
+
+XXXXXXXXXXXXX SOME SIMPLE GPT INTIAL HashMap QUESTIONS
+
+
+//what all we'll be using today 
+
+import java.util.*;
+class using_get_method       // how to use get() method
+{
+    public static void main(String[] args) 
+    {
+        HashMap <Integer,String> hm = new HashMap<Integer,String>();
+
+        hm.put(20,"plane");
+
+        System.out.println("value using key : "+ hm.get(20));   // get() : only takes key as parameter and returns its respective value
+
 
 
         
     }
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    ContainsKey() problems basics     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 
+
+import java.util.*;
+class using_containsKey_method       // how to use the containsKey() method (simple one)
+{
+    public static void main(String[] args) 
+    {
+
+        HashMap <Integer ,String > hm = new HashMap <Integer , String > ();
+
+        hm.put(1,"mano ");
+        hm.put(2,"bruno");
+        
+
+        if(hm.containsKey(2))      // containskey() : will check if the key is there in hashmap or not ; and then you could perform operations accordingly
+        {
+            System.out.println("key found");
+        }
+        else
+        {
+            System.out.println("not found");
+        }
+        
+        
+    }
 }
+
+import java.util.*;
+class Count_frequency_of_each_number // using containskey() : (NO +1 HERE)  : THIS IS USED FOR : 1. TO check  duplicates , 2.Find unique elements  3. Check if a number appeared at least once
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {2, 3, 2, 5};
+
+        HashMap <Integer , Integer > hm = new HashMap <Integer,Integer>();
+
+        for(int num :arr)
+        {
+            if(!hm.containsKey(num))
+            {
+                hm.put(num,1);
+            }
+        }
+        
+        System.out.println(hm);
+    }
+}
+
+
+import java.util.*;
+class Count_frequency_of_each_number_in_array_and_increment_count  // using containskey() (WITH +1 HERE ) THIS IS USED FOR : Count how many times a number appears
+
+// Find majority element
+
+// Count pairs
+
+// Count anagrams
+git a
+// Count characters
+
+// Compare two arrays by frequencies
+
+// Sliding window problems
+
+// Subarray sum problems
+
+// Hashmap-based DP/greedy
+
+//Counting occurrences of words/strings
+
+
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {2,2, 3, 2, 5};
+        
+        HashMap <Integer, Integer> hm = new HashMap<Integer,Integer>();
+
+        for(int num : arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+        System.out.println(hm);
+        
+    }
+}
+
+
 
 
 
