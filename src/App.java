@@ -7818,6 +7818,457 @@ class FrequencyMap_Using_getOrDefault    // to find frequency of each element
 
 
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   HASHMAP PRACICE QUESTIONS     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+                            paste these bellow intial hashmap stuff above from back in the day
+
+
+
+
+
+
+
+
+import java.util.*;
+class FrequencyMap_UsingGetOrDefault       // used to increment everytime a digit appears (to count frequency basically)
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {1,4,1,7,8,9};
+        
+        HashMap <Integer,Integer> hm = new HashMap <Integer, Integer>();
+        
+        for(int num : arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);  // 0 is the default value that will be returned if nothing is found and +1 to increment the count if found
+        }
+        
+        System.out.println
+
+       
+    }
+}
+
+
+XXXXXXXXXXXXX SOME SIMPLE GPT INTIAL HashMap QUESTIONS XXXXXXXXXXXXXXXXXXXXXX
+
+check the hashmap gpt simple starter questions.txt file for the q and ans for these programs
+
+
+//what all we'll be using today 
+
+import java.util.*;
+class using_get_method       // how to use get() method
+{
+    public static void main(String[] args) 
+    {
+        HashMap <Integer,String> hm = new HashMap<Integer,String>();
+
+        hm.put(20,"plane");
+
+        System.out.println("value using key : "+ hm.get(20));   // get() : only takes key as parameter and returns its respective value
+
+
+
+        
+    }
+}
+
+
+//question 2
+class Most_frequent_element
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1, 2, 1, 3, 2, 1};
+
+        HashMap <Integer,Integer> hm = new HashMap <Integer ,Integer>();
+
+        for(int num : arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+
+       
+            int max_freq = 0;
+            int max_element =0;
+        for(int key : hm.keySet())
+        {
+            int freq = hm.get(key);
+
+            if(freq > max_freq)
+            {
+                max_freq = freq;
+                max_element = key;
+            }
+        }
+        
+    }
+}
+
+//question 3
+
+import java.util.*;
+class Check_if_array_has_any_duplicate
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1, 2, 3, 4, 2};
+
+        HashMap<Integer,Integer> hm = new HashMap<Integer,Integer>();
+
+
+        for(int num : arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+        //int Contains_Duplicate=0;
+        for(int key : hm.keySet())
+        {
+            int Contains_Duplicate = hm.get(key);
+            {
+                if(Contains_Duplicate>1)
+                {
+                    System.out.println("arr contains duplicates ; duplicate element is : "+key);
+
+                }
+            }
+        }
+        
+    }
+}
+
+
+//question 4
+
+import java.util.*;
+class Count_pairs_with_sum_equal_to_k
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1, 2, 3, 2, 3};
+
+        int k = 5;
+        int count =0;
+
+        HashMap <Integer,Integer> hm = new HashMap <Integer,Integer>();
+
+        for(int num : arr)
+        {
+            hm.put(num,getOrDefault(num,0)+1);
+        }
+
+        //int num+need = k     [WHERE num = the current element , need = the number added to num to get k]
+        int need = k-num;
+
+        for(int key : hm.keySet())
+        {
+            if(hm.contains(need))
+            {
+                count++;
+
+            }
+        }
+
+        System.out.println("pairs where sum = k : "+count)
+    }
+}
+
+
+//question 5          IMPORTANT QUESTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   
+
+import java.util.*;
+class Character_frequency_in_String  //Golden rule question : how to use char in HashMap 
+{
+    public static void main(String[] args) 
+    {
+        String s = "aabbbc";
+
+        HashMap <Character,Integer> hm = new HashMap <Character,Integer>();
+
+        for(char ch : s.toCharArray())    // to convert String to char and do stuff ; (simply use s.toCharArray() function to split the string into multiple single characters and append them into the hashmap)
+        {
+            hm.put(ch,hm.getOrDefault(ch,0)+1);
+        }
+
+        for(char key : hm.keySet())
+        {
+            System.out.println(key+" : "+hm.get(key));
+        }
+    }
+}
+
+//question 6
+
+import java.util.*;
+
+class First_repeating_element_by_index  // important question : need to append array elements into the the hashmap and store the index of the first repeating element (even if the all the elements in the array havent been fully appended in the hashamap) 
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {4, 5, 1, 2, 5, 3, 1};
+
+        HashMap <Integer,Integer> hm = new HashMap<Integer,Integer>();
+        int first_index = 0;
+
+        for(int i = 0;i<arr.length;i++)
+        {
+            int num = arr[i];
+
+            if(hm.containsKey(num))
+            {
+                first_index = i;
+                break;
+            }
+            else
+            {
+                hm.put(num,i);
+            }
+        }
+
+        System.out.println("the first repeating index is : "+first_index);
+        
+    }
+}
+
+//extra question (GPT tests me and tells me to use only one loop for everything ; which is how hashmaps are used mainly )
+
+class find_pair_equal_to_sum_k_using_only_one_loop
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1, 4, 2, 3};
+
+        HashMap <Integer,Integer> hm = new HashMap<>()
+        
+        for(int num :arr)
+        {
+           // hm.put(num,hm.getOrDefault(num,0)+1);
+
+            int need = k-num;
+            if(hm.containsKey(need))
+            {
+                System.out.println("true");
+                break;
+            }
+
+            hm.put(num,hm.getOrDefault(num,0)+1); // the reason append here and not above if loop is beacuse at times this may give false trues ; thats why this only appends once its checked in the hashmap that this element
+
+            // Example:
+            //         arr = {3}
+            //         k = 6
+
+            //     Step:
+            //         num = 3
+            //         You put 3 into hm
+            //         need = 6 - 3 = 3
+            //         hm.containsKey(3) is TRUE
+
+            else
+            {
+                System.out.println("false");
+
+            }
+        }
+    }
+}
+
+
+
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    ContainsKey() problems basics     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX 
+
+
+import java.util.*;
+class using_containsKey_method       // how to use the containsKey() method (simple one)
+{
+    public static void main(String[] args) 
+    {
+
+        HashMap <Integer ,String > hm = new HashMap <Integer , String > ();
+
+        hm.put(1,"mano ");
+        hm.put(2,"bruno");
+        
+
+        if(hm.containsKey(2))      // containskey() : will check if the key is there in hashmap or not ; and then you could perform operations accordingly
+        {
+            System.out.println("key found");
+        }
+        else
+        {
+            System.out.println("not found");
+        }
+        
+        
+    }
+}
+
+import java.util.*;
+class Count_frequency_of_each_number // using containskey() : (NO +1 HERE)  : THIS IS USED FOR : 1. TO check  duplicates , 2.Find unique elements  3. Check if a number appeared at least once
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {2, 3, 2, 5};
+
+        HashMap <Integer , Integer > hm = new HashMap <Integer,Integer>();
+
+        for(int num :arr)
+        {
+            if(!hm.containsKey(num))
+            {
+                hm.put(num,1);
+            }
+        }
+        
+        System.out.println(hm);
+    }
+}
+
+
+import java.util.*;
+class Count_frequency_of_each_number_in_array_and_increment_count  // using containskey() (WITH +1 HERE ) THIS IS USED FOR : Count how many times a number appears
+
+// Find majority element
+
+// Count pairs
+
+// Count anagrams
+
+// Count characters
+
+// Compare two arrays by frequencies
+
+// Sliding window problems
+
+// Subarray sum problems
+
+// Hashmap-based DP/greedy
+
+//Counting occurrences of words/strings
+
+
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {2,2, 3, 2, 5};
+        
+        HashMap <Integer, Integer> hm = new HashMap<Integer,Integer>();
+
+        for(int num : arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+        System.out.println(hm);
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  TRAVERSAL METHODS IN HASHMAP (3 METHODS)  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+hm.keySet()	All keys only (but can access values too using hm.get(key)   see line 8923)
+hm.values()	All values only
+hm.entrySet()	Both key + value together
+
+
+
+
+
+//method 1
+
+import java.util.*;
+class Traverse_USING_keySet_method
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,1,2,3,4,9};
+
+        HashMap <Integer,Integer> hm = new HashMap <Integer, Integer>();
+        
+        for(int num : arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+        for(int key : hm.keySet())   //keySet() : for all Keys
+        {
+            System.out.print(key+" ");    //output : 1 2 3 4 9 (this the key values i.e it is the disntict arr elements itself (keys))
+ 
+            //System.out.print(hm.get(key));   // output : 21111  ( this is the count we stored here ; since we did (num,0+1)
+        }
+ 
+    }
+}
+
+
+//method 2
+import java.util.*;
+class Traverse_USING_values_method
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,1,2,3,4,9};
+
+        HashMap <Integer,Integer> hm = new HashMap <Integer, Integer>();
+        
+        for(int num : arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+        for(int key : hm.values())
+        {
+            System.out.print(key+" ");        //output : 2 1 1 1 1   here it will return the values (i.e the count here) ; since we used hm.values directly ; unlike keySet() in above one whereit will return the keys directly
+            //System.out.print(hm.get(key));
+        }
+ 
+    }
+}
+
+
+
+//method 3
+
+
+import java.util.*;
+class Traverse_USING_entrySet_method
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,1,2,3,4,9};
+
+        HashMap <Integer,Integer> hm = new HashMap <Integer, Integer>();
+        
+        for(int num : arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+       for(Map.Entry <Integer,Integer> e : hm.entrySet())
+       {
+           System.out.println("Key : "+e.getKey()+" values : "+e.getValue());
+       }
+ 
+    }
+}
+
+
+
+
 
 
 
@@ -8922,22 +9373,76 @@ class Character_frequency_in_String  //Golden rule question : how to use char in
 
 import java.util.*;
 
-class First_repeating_element_by_index
+class First_repeating_element_by_index  // important question : need to append array elements into the the hashmap and store the index of the first repeating element (even if the all the elements in the array havent been fully appended in the hashamap) 
 {
     public static void main(String[] args) 
     {
         int arr[] = {4, 5, 1, 2, 5, 3, 1};
 
         HashMap <Integer,Integer> hm = new HashMap<Integer,Integer>();
+        int first_index = 0;
 
         for(int i = 0;i<arr.length;i++)
         {
-            
+            int num = arr[i];
+
+            if(hm.containsKey(num))
+            {
+                first_index = i;
+                break;
+            }
+            else
+            {
+                hm.put(num,i);
+            }
         }
+
+        System.out.println("the first repeating index is : "+first_index);
         
     }
 }
 
+//extra question (GPT tests me and tells me to use only one loop for everything ; which is how hashmaps are used mainly )
+
+class find_pair_equal_to_sum_k_using_only_one_loop
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1, 4, 2, 3};
+
+        HashMap <Integer,Integer> hm = new HashMap<>()
+        
+        for(int num :arr)
+        {
+           // hm.put(num,hm.getOrDefault(num,0)+1);
+
+            int need = k-num;
+            if(hm.containsKey(need))
+            {
+                System.out.println("true");
+                break;
+            }
+
+            hm.put(num,hm.getOrDefault(num,0)+1); // the reason append here and not above if loop is beacuse at times this may give false trues ; thats why this only appends once its checked in the hashmap that this element
+
+            // Example:
+            //         arr = {3}
+            //         k = 6
+
+            //     Step:
+            //         num = 3
+            //         You put 3 into hm
+            //         need = 6 - 3 = 3
+            //         hm.containsKey(3) is TRUE
+
+            else
+            {
+                System.out.println("false");
+
+            }
+        }
+    }
+}
 
 
 
@@ -9127,6 +9632,32 @@ class Traverse_USING_entrySet_method
            System.out.println("Key : "+e.getKey()+" values : "+e.getValue());
        }
  
+    }~~
+}
+
+
+
+//senthil sir questions whatsapp 
+
+
+//question 1
+
+import java.util.*;
+class Count_Character_Frequencies
+{
+    public static void main(String[] args) 
+    {
+        String s = "hello world";
+
+        HashMap <Character,Integer> hm = new HashMap <Character,Integer>();
+
+        for(char num : hm.toCharArray())
+        {
+            hm.put(ch,hm.getOrDefault(ch,0+1));
+        }
+
+        System.out.println(hm);
+        
     }
 }
 
