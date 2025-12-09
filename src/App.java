@@ -9207,12 +9207,18 @@ class FrequencyMap_UsingGetOrDefault       // used to increment everytime a digi
         
         HashMap <Integer,Integer> hm = new HashMap <Integer, Integer>();
         
-        for(int num : arr)
+        for(int num : arr)  // use this (enhanced loop) this is easier and better !!!!!!!!!!!!!!!!!!!!!!!
         {
             hm.put(num,hm.getOrDefault(num,0)+1);  // 0 is the default value that will be returned if nothing is found and +1 to increment the count if found
         }
+
+        // for(int i=0;i<arr.length;i++)  // you can use the normal loops too ; but enhanced one is preferred in hm
+        // {
+        //     int num = arr[i];
+        //     hm.put(num,hm.getOrDefault(num,0)+1);
+        // }
         
-        System.out.println
+        System.out.println(hm);
 
        
     }
@@ -9647,21 +9653,138 @@ class Count_Character_Frequencies
 {
     public static void main(String[] args) 
     {
-        String s = "hello world";
+        String s = "hello world".replace(" ",""); // replace : basically a delimeter thay changes (i.e it means first parameter switched with 2nd parameter)
 
         HashMap <Character,Integer> hm = new HashMap <Character,Integer>();
 
-        for(char num : hm.toCharArray())
+
+        for(char ch : s.toCharArray())
         {
-            hm.put(ch,hm.getOrDefault(ch,0+1));
+            hm.put(ch,hm.getOrDefault(ch,0)+1);
         }
 
-        System.out.println(hm);
+        //System.out.println(hm);
+        
+        for(Map.Entry <Character,Integer> e :hm.entrySet())
+        {
+            System.out.println(e.getKey()+"="+e.getValue());
+        }
+        
+    }
+}
+
+//question 2
+
+
+import java.util.*;
+class First_Non_Repeating_Character
+{
+    public static void main(String[] args) 
+    {
+        String s = "swiss";
+
+        HashMap <Character,Integer> hm = new HashMap <Character,Integer> ();
+
+        for(char ch : s.toCharArray())
+        {
+            hm.put(ch,hm.getOrDefault(ch,0)+1);
+            
+            // if(hm.get(ch)==1)          // the thing is you cannot do of this in the same list ; since entire string ahsnt yet been appended to the hm ; so we will do in a different loop
+            // {
+            //     System.out.println()
+            // }
+
+        }
+
+
+        for(int i =0;i<s.length();i++)   // Golden rule : always when indexes are involved mostly try or try to think using like a array loop ; since they work on index values
+        {
+            char ch = s.charAt(i);
+
+            if(hm.get(ch)==1)    // REMEMBER !!!!!! : get(key) : will fetch you the values !!!!!!!!!!!!!
+            {
+                System.out.println("the index of first non repeating char is : "+i);
+                return;
+            }
+        }
+        System.out.println("-1");
         
     }
 }
 
 
+//question 3
+
+import java.util.*;
+class Two_Sum_with_Indices
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {2, 7, 11, 15};
+
+        int k = 9;
+
+        HashMap <Integer,Integer> hm = new HashMap <Integer,Integer>();
+
+        for(int i=0;i<arr.length;i++)
+        {
+            int num = arr[i];
+
+            hm.put(num,hm.getOrDefault(num,i)+1);  // IMPORTANT !!!!!!!!!!!!! (instead of 0 as the default value like we normally do ; i used i here which is also the index i ; since in this question they have asked us the index ; we use i insetad of conventional 0)
+
+            int need = k-num;
+            
+            if(hm.containsKey(need))
+            {
+                System.out.println("index 1 : "+hm.get(need)+" index 2 : "+hm.get(num));
+            }
+        }
+        
+    }
+}
+
+
+// anagram basics (doing this before question 4)
+
+import java.util.*;
+class Group_Anagrams  // the basic funda is that we use this kinda of like a stacdk ; where in ch1 we add all the element inside the hm and in ch2 will see if it is in hm or not ;if not return end ; if yes then itr will reduce the count-1 ; (also is it went less than 0 i.e it didnt have even 1 element common to begin with then return end)
+{
+    public static void main(String[] args) 
+    {
+        String str1 = "listen";
+        String str2 = "silent";
+
+        HashMap <Character,Integer> hm = new HashMap<Character,Integer>();
+
+        for(char ch : str1.toCharArray())
+        {
+            hm.put(ch,hm.getOrDefault(ch,0)+1);
+        }
+
+        for(char ch2 : str2.toCharArray())
+        {
+            if(!hm.containsKey(ch2))
+            {
+                System.out.println("not anagram");
+                return;
+            }
+            else
+            {
+                hm.put(ch2,hm.get(ch2)-1); //  yes this is how to reduce count (count--) in hm ; (we use hm.get() the value and do -1 to reduce count)
+            }
+
+            if(hm.get(ch2)<0)
+            {
+                System.out.println("not anagram");
+                return;
+
+            }
+        }
+
+        System.out.println("anagram");
+        
+    }
+}
 
 
 
