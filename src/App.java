@@ -9787,6 +9787,41 @@ class Group_Anagrams  // the basic funda is that we use this kinda of like a sta
 }
 
 
+//question 6
+
+import java.util.*;
+class Top_K_Elements
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,1,1,2,2,3};
+
+        HashMap <Integer,Integer> hm = new HashMap<Integer,Integer>();
+
+        int current_max =0;
+        int max =0;
+        int freq_element=0;
+
+        for(int num :arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+
+            //for(int key : hm.keySet())
+            //{
+                if(current_max>max)
+                {
+                    max = current_max;
+                    freq_element =num; 
+                    System.out.println(num+" ");
+                }
+
+           // }
+            hm.remove(num);
+        }
+    }
+}
+
+
 
 
 
