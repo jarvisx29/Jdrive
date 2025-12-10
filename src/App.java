@@ -9076,7 +9076,7 @@ class Contains_Duplicate   // leetcode question 100% working for all testcases
 }
 
 
-class Contains_Duplicate_II          // doesnt work it seems ; need to use hashset apparently ; REVISIT LATER !!!!!!!!!
+class Contains_Duplicate_II          //  need to use hashset !!!! ;
 {
     public static void main(String[] args) 
     {
@@ -9104,7 +9104,7 @@ class Contains_Duplicate_II          // doesnt work it seems ; need to use hashs
 
 
 
-class Ugly_Number       // incompete COME BACK LATER !!!!
+class Ugly_Number       // this logic is wrong !!!!!!!1
 {
     public static void main(String[] args) 
     {
@@ -9112,14 +9112,9 @@ class Ugly_Number       // incompete COME BACK LATER !!!!
 
         int count =0;
 
-        if(n%2 == 0 ||n%3==0 || n%5==0)
+        if(n%2 == 0 && n%3==0 && n%5==0)
         {
-            count++;
-        }
-        
-        if(count>0)
-        {
-            System.out.println("ugly number");
+            System.out.println("ugly no.");
         }
         else
         {
@@ -9127,6 +9122,46 @@ class Ugly_Number       // incompete COME BACK LATER !!!!
         }
     }
 }
+
+class Ugly_Number         // leetcode question : 100 % working for all testcases 
+{
+    public static void main(String[] args)  //ugly no. means that if you keep dividing by 2,3 or 5 until you cannot anymore it should be 1 meaning no remainders ;(not that it should be divisble by 2,3 or 5 like most definitions mislead us to think )
+    {
+       //int n= 120;
+
+        if(n<=0)
+        {
+            //System.out.println("not ugly number");
+            return false;
+        }
+        // if(n%2 == 0 && n%3==0 && n%5==0)
+        // {
+        //     System.out.println("ugly no.");    // THIS LOGIC IS WRONG 
+        // }
+
+        while(n%2 ==0)
+        {
+            n=n/2;
+        }
+        while(n%3==0)
+        {
+            n= n/3;
+        }
+        while(n%5==0)
+        {
+            n= n/5;
+        }
+
+        if(n==1)
+        {
+           //System.out.println("yes its a ugly number");
+           return true;
+        }
+       return false;
+    }
+}
+
+
 
 
 class Two_Sum_II_Input_Array_Is_Sorted    //leetcode question : 100 % working but failed last 4 testcases(20/24)   NEED TO OMPTIMIZE !!!!!!!! (USE HASHSET OR HASHMAP APPARENTLY !!!!!!) 
@@ -9171,6 +9206,25 @@ class Find_Subarrays_With_Equal_Sum
                 if(arr[i]+arr[j] == target)   // NOO USE HASHSET MANO THIS AINT GONNA WORK until we learn hash stuff!!!!
             }
         }
+        
+    }
+}
+
+import java.util.*;
+class Find_Subarrays_With_Equal_Sum
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,2,3,1};
+
+        HashMap<Integer,Integer> hm = new HashMap <Integer,Integer>();
+
+        for(int num : arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+
         
     }
 }
@@ -9747,7 +9801,7 @@ class Two_Sum_with_Indices
 // anagram basics (doing this before question 4)
 
 import java.util.*;
-class Group_Anagrams  // the basic funda is that we use this kinda of like a stacdk ; where in ch1 we add all the element inside the hm and in ch2 will see if it is in hm or not ;if not return end ; if yes then itr will reduce the count-1 ; (also is it went less than 0 i.e it didnt have even 1 element common to begin with then return end)
+class Group_Anagrams  // the basic funda is that we use this kinda of like a stack ; where in ch1 we add all the element inside the hm and in ch2 will see if it is in hm or not ;if not return end ; if yes then itr will reduce the count-1 ; (also is it went less than 0 i.e it didnt have even 1 element common to begin with then return end)
 {
     public static void main(String[] args) 
     {
@@ -9790,42 +9844,184 @@ class Group_Anagrams  // the basic funda is that we use this kinda of like a sta
 //question 6
 
 import java.util.*;
-class Top_K_Elements
+class Top_K_Elements       // IMPORTANT QUESTION !!!!!!!!!!!!!!!!!!!
 {
     public static void main(String[] args) 
     {
         int arr[] = {1,1,1,2,2,3};
+        
+        int k =2;
 
         HashMap <Integer,Integer> hm = new HashMap<Integer,Integer>();
 
-        int current_max =0;
-        int max =0;
-        int freq_element=0;
-
-        for(int num :arr)
+       
+        for(int num : arr)
         {
             hm.put(num,hm.getOrDefault(num,0)+1);
+        }
 
-            //for(int key : hm.keySet())
-            //{
-                if(current_max>max)
+        for(int i =0;i<k;i++)
+        {
+            int max_element = 0;
+            int max_freq =0;
+
+            for(int key : hm.keySet())
+            {
+                if(hm.get(key)>max_freq)
                 {
-                    max = current_max;
-                    freq_element =num; 
-                    System.out.println(num+" ");
+                    max_freq = hm.get(key);
+                    max_element = key;
                 }
+            }
 
-           // }
-            hm.remove(num);
+            System.out.println("the max element is : "+max_element); // we use max_element instead of the key because it is inside the for loop and we need something that is final 
+
+            hm.remove(max_element); // remove this here so that we may we may find the next k max elment for the next iteration 
         }
     }
 }
 
 
+//how to use replaceAll() function (with ex)
+
+class using_replaceAll_function
+{
+    public static void main(String[] args) // ^(NOT) : keeps only the ones that match within braces []
+    {
+        String s = "abc123def45";
+
+       // s= s.replaceAll("[0-9]",""); // abcdef  (removes all no.s from 0-9)
+       //s=s.replaceAll("[^0-9]","");  // 12345  (only keeps matches inside braces [])
+       s=s.replaceAll("[^a-z]",""); //abcdef (only keeps what matches the braces []) 
+
+        System.out.println(s);
+        
+    }
+}
+
+//question 7
+
+import java.util.*;
+class Word_Frequency_with_Case_Normalization_and_Removal
+{
+    public static void main(String[] args) 
+    {
+        String s = "Hello, hello! World.";
+
+        int k =2;
+
+        s=s.toLowerCase();
+        s=s.replaceAll("[^a-z ]",""); // notice how here we put space after z ([^a-z ]) ; this puts spaces in between the elements kinda of likea delimeter ig ( IMPORTANT !!!!!!!!!!!!!!!)
+        s=s.trim();
+
+        //s=s.toLowerCase().replaceAll("[^a-z]","").trim();   // you can put all of these in the same line like this !!!!!!!!
+
+        //System.out.println(s);
+
+        String split_words[] = s.split(" ");
+
+        HashMap <String,Integer> hm = new HashMap <String,Integer> ();
+
+        for(String s1 : split_words)
+        {
+            hm.put(s1,hm.getOrDefault(s1,0)+1);
+        }
+        
+
+        for(int i = 0;i<k;i++)
+        {
+            String max_element = "";
+            int max_freq = 0;
+
+            for(String key : hm.keySet())
+            {
+                if(hm.get(key) >max_freq)
+                {
+                    max_freq = hm.get(key);
+                    max_element = key;
+                }
+            }
+
+            System.out.println(max_element+" : "+max_freq);
+            hm.remove(max_element);
+        }
+        
+       
 
 
+        
+    }
+}
+
+//question 8 
+
+import java.util.*;
+class find_Duplicate_Subarrays_of_Fixed_Length
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,2,3,1,2,3,4};
+
+        int k =3;
+        int count=0;
+
+        HashMap <Integer,Integer> hm = new HashMap <Integer,Integer>();
+
+        for(int num : arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+        //System.out.println(hm);
+
+            for(int key : hm.keySet())
+            {
+                if(hm.get(key)>1)
+                {
+                    count++;
+                }
+            }
+    
+        if(count==k)
+        {
+            System.out.println("true");
+        }
+        else
+        {
+            System.out.println("false");
+        }
+        System.out.println(count);
+        
+    }
+}
 
 
+class contains_duplicate_II
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,2,3,1};
+
+        int k =3;
+
+        for(int i =0;i<arr.length;i++)
+        {
+            for(int j =i+1;j<arr.length;j++)
+            {
+                if(arr[i] ==arr[j] && abs(i-j)<=k)
+                {
+                    System.out.println("contains duplicate");
+                }
+
+                else
+                {
+                    System.out.println("no duplcates");
+
+                }
+            }
+        }
+        
+    }
+}
 
 
 
