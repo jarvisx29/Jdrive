@@ -10044,15 +10044,14 @@ class Contains_Duplicate_II  // leetcode question : 100% working for all testcas
 // This is the HEART of HashMap thinking.
 
 
-            if(hm.containsKey(num) && i- hm.get(num)<=k)
-                if((i- hm.get(num))<=k)
+            if(hm.containsKey(num) && i- hm.get(num)<=k)  // we see if the hashmap contains the element in the key part ; if so in the same line we evaluate if it satifies the abs(i-j)<=k and if true the prints yes
             {
                 System.out.println("contains duplicates");
                 return;
             }
                 
 
-        hm.put(num,i);
+        hm.put(num,i);  // remember this is not an array but a simple funda of have i seen this element before or not ; and if so store it in hashmap 
             
         }
      System.out.println("no duplicates");
@@ -10062,7 +10061,145 @@ class Contains_Duplicate_II  // leetcode question : 100% working for all testcas
 
 
 
+import java.util.*;
+class learnsquare_question // Beautiful numbers  : it means the combionations that are (arr[i]-arr[j] !=k && arr[j]-arr[i] != k  ; REMEMBER YOU NEED TO INCLUDE THE SINGLE ELEMENTS TOO !!!!!!!!!! ; that is why count = arr.length)
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1};
 
+        int count = arr.length; // we use arr.length because we need to include the single elements of the arr too !!!!!! ; THAT IS BEAUTIFUL NO. !!!!!!!1
+        int k =2;
+
+        for(int i =0;i<arr.length;i++)
+        {
+            for(int j = i+1;j<arr.length;j++)
+            {
+                if(i!=j)
+                {
+                if(Math.abs(arr[i]-arr[j]) !=k  || Math.abs(arr[j]-arr[i]) != k)
+                {
+                    count++;
+                }
+            }
+            }
+        }
+        System.out.println(count);
+
+        
+    }
+}
+
+
+import java.util.*;
+class Contains_Duplicate_III     // leetcode question : 27/54 test cases passed ; (need to learn SLIDING WINDOW FOR THIS !!!!!!!!!!!!!)
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {1,2,3,1};
+
+        int indexDiff = 3;
+        int int valueDiff = 0;
+
+        HashMap <Integer,Integer> hm = new HashMap<Integer,Integer>();
+
+        for(int i = 0;i<arr.length;i++)
+        {
+            int num = arr[i];
+
+            //for(int j =i+1;j<arr.length;j++)
+            
+                if(hm.containsKey(num) && i!=hm.get(num) && Math.abs(i-hm.get(num))<=indexDiff && Math.abs(arr[i]- num)<=valueDiff)
+                {
+                    System.out.println("contains duplicate");
+                    return ;
+                }
+
+                hm.put(num,i);   
+        }
+        System.out.println("no duplicates");  
+    }
+
+}
+
+
+
+import java.util.*;
+class Valid_Anagram   // leetcode question : 100 % working 
+{
+    public static void main(String[] args) 
+    {
+        String s1 = "ab";
+        String s2 = "a";
+
+        HashMap<Character,Integer> hm = new HashMap<Character,Integer>();
+        //System.out.println(s1.length()+" "+s2.length());
+        if(s1.length()!= s2.length())
+        {
+            System.out.println("not anagram");
+            return;
+        }
+
+        for(char ch : s1.toCharArray())
+        {
+            hm.put(ch,hm.getOrDefault(ch,0)+1);
+        }
+
+        for(char ch2 : s2.toCharArray())
+        {
+            if(!hm.containsKey(ch2) && s1.length()==s2.length())
+            {
+                System.out.println("not anagram");
+                return;
+            }
+            else
+            {
+                hm.put(ch2,hm.get(ch2)-1);
+            }
+            if(hm.get(ch2)<0)
+            {
+                System.out.println("not anagram");
+                return;
+            }
+        }
+
+        System.out.println("anagram");
+        
+    }
+}
+
+
+import java.util.*;
+class Top_K_Frequent_Elements
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,1,1,2,2,3};
+
+        int k =2;
+
+        HashMap <Integer,Integer> hm = new HashMap<Integer,Integer>();
+
+        for(int num : arr)
+        {
+            hm.put(num,hm.getOrdefault(num,0)+1);
+        }
+
+        for(int i =0;i<k;i++)
+        {
+            int max_element = 0;
+            int max_freq=0;
+
+            if(hm.get(key)>max_freq)
+            {
+                max_freq = hm.get(key);
+                max_element = key;
+                System.out.println("top k elments are : "+key);
+            }
+            hm.remove(key);
+        } 
+    }
+}
 
 
 
