@@ -9995,33 +9995,70 @@ class find_Duplicate_Subarrays_of_Fixed_Length
 }
 
 
-class contains_duplicate_II
+class contains_duplicate_II // leetcode question 100 % working ; but failed last 10 testcases !!!! (to optimize use hashmap)
 {
     public static void main(String[] args) 
     {
-        int arr[] = {1,2,3,1};
+        //int arr[] = {1,2,3,1,2,3};         // SEE DOWN 100 % WORKING WITH HASHMAP !!!!!1
+        //int k =2;
 
-        int k =3;
-
-        for(int i =0;i<arr.length;i++)
+        for(int i =0;i<nums.length;i++)
         {
-            for(int j =i+1;j<arr.length;j++)
+            for(int j =i+1;j<nums.length;j++)
             {
-                if(arr[i] ==arr[j] && abs(i-j)<=k)
+                if(nums[i] ==nums[j] && Math.abs(i-j)<=k)
                 {
                     System.out.println("contains duplicate");
-                }
-
-                else
-                {
-                    System.out.println("no duplcates");
-
+                    return;
                 }
             }
         }
-        
+        System.out.println("no duplicates");
     }
 }
+
+
+import java.util.*;
+class Contains_Duplicate_II  // leetcode question : 100% working for all testcases !  
+{                           // Golden rule question : (since we finally understood the correct way of hm usage and concept)
+    public static void main(String[] args) 
+    {
+        int arr [] = {1,2,3,1,2,3};
+        int k = 2;
+
+        HashMap <Integer,Integer> hm = new HashMap <Integer,Integer>();
+
+        for(int i = 0;i<arr.length;i++)
+        {
+            int num = arr[i];
+
+            //hm.put(num,i);  // dont append right here itself ; MANO ! this is the wrong way of doing this !!!! ; (stop thinking hm like an array which must be filled 1st and then we will perform operations !!  ; noo hm is dynamically where it uses the concept of if seen then then ONLY PUT INSIDE THE hm !!!!11 ) 
+
+            //HashMap is NOT a storage container.
+// HashMap is a TOOL that answers questions instantly.
+
+// Correct mindset:
+
+// ✔ HashMap is used to remember useful information while you are scanning the array/string only ONCE.
+
+// This is the HEART of HashMap thinking.
+
+
+            if(hm.containsKey(num) && i- hm.get(num)<=k)
+                if((i- hm.get(num))<=k)
+            {
+                System.out.println("contains duplicates");
+                return;
+            }
+                
+
+        hm.put(num,i);
+            
+        }
+     System.out.println("no duplicates");
+}
+}
+
 
 
 
