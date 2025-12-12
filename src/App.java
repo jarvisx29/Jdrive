@@ -10253,34 +10253,36 @@ class Sort_Characters_By_Frequency   // leetcode question : 100 % working for al
     }
 }
 
-class First_Unique_Character_in_a_String
+
+
+
+import java.util.*;
+class First_Unique_Character_in_a_String  // leetcode question : 100 % working for all testcases
 {
-    public static void main(String[] args)  // using bfs incomplete try later
+    public static void main(String[] args) 
     {
         String s = "leetcode";
 
-        for(int i=0;i<s.length();i++)
+        HashMap <Character,Integer> hm = new HashMap<Character,Integer>();
+        
+        for(char ch : hm.toCharArray())
         {
-            for(int j=i+1;j<s.length();j++)
-            {
-                if(s.charAt(i) == s.charAt(j))
-                {
-                    //System.out.println("index of 1st non repeating character : "+i);
-                    break;
-                }
-                else
-                {
-                    System.out.println("the index is : "+i);
-                }
-            }   
+            hm.put(ch,hm.getOrDefault(ch,0)+1);
         }
+        int need = 1;
+
+        for(int i =0;i<s.length();i++)
+        {
+            //int element = s
+            int need= 1;
+            
+            if(hm.get(key)==need)
+            {
+                System.out.println("the index is : "+i);
+            }
+        }    
     }
 }
-
-
-
-
-class 
 
 
 
