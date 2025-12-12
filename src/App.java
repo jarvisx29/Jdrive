@@ -10170,9 +10170,9 @@ class Valid_Anagram   // leetcode question : 100 % working
 
 
 import java.util.*;
-class Top_K_Frequent_Elements
+class Top_K_Frequent_Elements   // leetcode question : 100 % working for all testcases
 {
-    public static void main(String[] args) 
+    public static void main(String[] args) // we have done this before in senthil sir whatsapp questions
     {
         int arr[] = {1,1,1,2,2,3};
 
@@ -10182,24 +10182,35 @@ class Top_K_Frequent_Elements
 
         for(int num : arr)
         {
-            hm.put(num,hm.getOrdefault(num,0)+1);
+            hm.put(num,hm.getOrDefault(num,0)+1);
         }
 
+        int result[] = new int[k];
         for(int i =0;i<k;i++)
         {
             int max_element = 0;
             int max_freq=0;
+            
+            
+            for(int key : hm.keySet())
+            {
 
             if(hm.get(key)>max_freq)
             {
                 max_freq = hm.get(key);
                 max_element = key;
-                System.out.println("top k elments are : "+key);
+                
             }
-            hm.remove(key);
+            }
+             //System.out.println("top k elments are : "+max_element);
+             result[i]=max_element;
+            
+            hm.remove(max_element);
         } 
+        System.out.println("the top elements : "+ Arrays.toString(result));
     }
 }
+
 
 
 
