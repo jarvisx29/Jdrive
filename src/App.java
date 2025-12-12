@@ -10213,6 +10213,77 @@ class Top_K_Frequent_Elements   // leetcode question : 100 % working for all tes
 
 
 
+import java.util.*;
+class Sort_Characters_By_Frequency   // leetcode question : 100 % working for all testcases 
+{
+    public static void main(String[] args) 
+    {
+        String s = "tree";
+
+        HashMap <Character,Integer> hm = new HashMap<Character,Integer> ();
+
+        for(char ch : s.toCharArray())
+        {
+            hm.put(ch,hm.getOrDefault(ch,0)+1);
+        }
+
+
+        String sum ="";
+        
+        //for(char key : hm.keySet()) // not using this since due to this its giving O(n^2) complexity ; so we use while for less complexity !
+        while(hm.size()>0)  
+        {                         // Golden rule :  TO REDUCE COMPLEXITY YOU CAN USE WHILE LOOPS !!!!!!!!!!!!!!!!!
+            int max_freq = 0;
+            char max_element = ' ';
+        for(char key : hm.keySet())
+        {
+            if(hm.get(key)>max_freq)
+            {
+                max_freq = hm.get(key);
+                max_element = key;
+            }
+        }
+        for(int i=0;i<max_freq;i++)  // we putting this loop outside the above loop as to get all the elements to 
+                {
+                    sum = sum + Character.toString(max_element); 
+                     hm.remove(max_element);
+                }
+    }
+    System.out.println(sum);    
+    }
+}
+
+class First_Unique_Character_in_a_String
+{
+    public static void main(String[] args)  // using bfs incomplete try later
+    {
+        String s = "leetcode";
+
+        for(int i=0;i<s.length();i++)
+        {
+            for(int j=i+1;j<s.length();j++)
+            {
+                if(s.charAt(i) == s.charAt(j))
+                {
+                    //System.out.println("index of 1st non repeating character : "+i);
+                    break;
+                }
+                else
+                {
+                    System.out.println("the index is : "+i);
+                }
+            }   
+        }
+    }
+}
+
+
+
+
+class 
+
+
+
 
 
 
