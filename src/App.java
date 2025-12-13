@@ -10314,8 +10314,12 @@ class Percentage_of_Letter_in_String   // 100 % working for all testcases
     }
 }
 
+
+
+
+
 import java.util.*;
-class Sort_Array_by_Increasing_Frequency
+class Sort_Array_by_Increasing_Frequency  // im taking a break from this my head hurts shitt !!! haha
 {
     public static void main(String[] args) 
     {
@@ -10328,28 +10332,74 @@ class Sort_Array_by_Increasing_Frequency
             hm.put(num,hm.getOrDefault(num,0)+1);
         }
         int index  = 0;
+        int arr_final [] = new int [arr.length];
 
         for(int key : hm.keySet())
         {
             int max_freq = 0;
             int max_element = 0;
+            int k=0;
 
             if(hm.get(key) >max_freq)
             {
                 max_freq = hm.get(key);
-                max_element = max_element;
+                max_element = key;
 
-                for(int i =0;i<arr.length();i++)
+                for(int i =0;i<max_freq;i++)
                 {
-                    
+                    arr_final[k]=max_element;
+                    k++;
                 }
-
-
             }
         }
+
+        System.out.println(Arrays.toString(arr_final));
         
     }
 }
+
+
+import java.util.*;
+class Maximum_Number_of_Pairs_in_Array
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,3,2,1,3,2,2};
+        int count_1 =0;
+        int count_2 =0;
+
+        HashMap<Integer,Integer> hm = new HashMap<Integer,Integer>();
+
+        for(int num : arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+        for(int i =0;i<arr.length;i++)
+        {
+            int elment_removed = 0;
+            for(int key : hm.keySet())
+            {
+                if(hm.get(key)==2)
+                {
+                    element_removed = key;
+                    count_1++;
+                    break;
+
+                }
+                else
+                {
+                    count_2++;
+                }
+            }
+            hm.remove(element_removed);
+        
+        }
+    }
+
+
+    }
+
 
 
 
