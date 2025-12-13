@@ -10286,7 +10286,70 @@ class First_Unique_Character_in_a_String  // leetcode question : 100 % working f
 
 
 
+import java.util.*;
+class Percentage_of_Letter_in_String   // 100 % working for all testcases 
+{
+    public static void main(String[] args) 
+    {
+        String s = "foobar";
+        double s_length = s.length();
 
+        char k ='o';
+        //char ch = k.charAt(0);
+        int count =0;
+
+        for(int i =0;i<s.length();i++)
+        {
+            if(s.charAt(i) == k)
+            {
+                count++;
+            }
+        }
+       // int percentage = 0;
+        //System.out.println(count);       // we use double stuff in this problem because leetcode wants the answers rounded up to the nearest percentage 
+
+        int percentage = (int) (((double)count / s_length) * 100);  // simple question but leetcode what this and that format ; its a very simple sum basically 
+        System.out.println(percentage);
+        //return percentage;
+    }
+}
+
+import java.util.*;
+class Sort_Array_by_Increasing_Frequency
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,1,2,2,2,3};
+
+        HashMap<Integer,Integer> hm = new HashMap<Integer,Integer>();
+
+        for(int num : arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+        int index  = 0;
+
+        for(int key : hm.keySet())
+        {
+            int max_freq = 0;
+            int max_element = 0;
+
+            if(hm.get(key) >max_freq)
+            {
+                max_freq = hm.get(key);
+                max_element = max_element;
+
+                for(int i =0;i<arr.length();i++)
+                {
+                    
+                }
+
+
+            }
+        }
+        
+    }
+}
 
 
 
