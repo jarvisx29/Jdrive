@@ -10360,9 +10360,9 @@ class Sort_Array_by_Increasing_Frequency  // im taking a break from this my head
 
 
 import java.util.*;
-class Maximum_Number_of_Pairs_in_Array
+class Maximum_Number_of_Pairs_in_Array    // logic error !!!!!!! (see down for correct one !!!!!!!)
 {
-    public static void main(String[] args) 
+    public static void main(String[] args)   // kept for reference !!!!!!!!1
     {
         int arr[] = {1,3,2,1,3,2,2};
         int count_1 =0;
@@ -10398,9 +10398,91 @@ class Maximum_Number_of_Pairs_in_Array
     }
 
 
+}
+
+
+
+import java.util.*;                    //Golden rule question : weird ass question ; simple but testcases were a pain in the a
+class Maximum_Number_of_Pairs_in_Array   // leetcode question : 100 % working for all testcases !
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {48,63,80,55,20,43,36,49,67,32,30,25,0,46,39,49,95,71,44,46,50,90,75,49,0,43,96,25,34,10,27,11,92,56,37,0,75,32,71,81,92,74,55,39,70,55,48,7,13,71};
+        int count_1 =0;
+        int count_2 =0;
+
+        HashMap<Integer,Integer> hm = new HashMap<Integer,Integer>();
+
+        for(int num : arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+        for(int i =0;i<arr.length;i++)
+        {
+            int element_removed = -1; // we use -1 instead of 0 : because each time 0 as the intial was accidently removing hm.remove(0) ; so use 0 as your invalid marker !!!!
+            for(int key : hm.keySet())
+            {
+                // if(hm.get(key)>2|| hm.size()==1)  // this thing fails cases because ; we need to remove the duplicate elements each time by 2 (as given i q) ; and if another element is there then count it; not completely remove the element outright ; whenever count > 2 (wrong !!!!)
+                // {
+                //     count_2++;
+                // }
+                if(hm.get(key)>1)
+                {
+                    element_removed = key;
+                    count_1++;
+                    break;
+
+                }
+            } // we keep this loop seperate instead of generally doing it in one loop normally like we do : because : You were modifying and counting inside the search loop, so the same pair was being counted multiple times—search first, then modify once outside the loop !!!!!
+                if(element_removed != -1)
+                {
+                    hm.put(element_removed,hm.get(element_removed)-2);
+                    
+                    if(hm.get(element_removed) ==0)   // we use hm.get(element_removed) here instead of conventional one because the old one was couting its value ; NOT its frequency apparently !!!!!!
+                    {
+                        hm.remove(element_removed);
+                    }
+                    
+                }
+                // else
+                // {
+                //     //count_2++;
+                //     count_2 = hm.size();  // this is wrong logic might have worked for some not for all
+                //     break;
+                // }
+                else
+                {
+                    for(int val : hm.values())
+                    {
+                        //count_2++
+                        count_2 = count_2+val;  // this one is used instead of count_2++ beacause iot actually counts the frequency of leftovers instead of how many times we come across leftovers like it did in count_2++ !!!!!!
+                       
+                    }
+                     break;
+                }
+            
+            }
+            //hm.remove(element_removed);
+            System.out.println(count_1+" "+count_2);
+
+        
+        }
+        //System.out.println(hm);
     }
 
-//dddd
+
+
+
+
+
+
+
+
+
+    
+
+
 
 
 
