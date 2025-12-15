@@ -10588,7 +10588,7 @@ class Top_K_Frequent_Words   // leetcode question : 100 % working for all testca
         
         
         //String result[] = new int[k];
-        String result[] = new String[k];
+        String result[] = new String[k];  // this is how you declare a String arr !!!!! (not using int )
         int count =0;
 
         HashMap <String ,Integer> hm = new HashMap<>();
@@ -10628,6 +10628,49 @@ class Top_K_Frequent_Words   // leetcode question : 100 % working for all testca
     }
 }
 
+
+import java.util.*;
+class Most_Frequent_Even_Element
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {0,1,2,2,4,4,1};
+        int result[] = new int[arr.length];
+        
+        HashMap <Integer,Integer> hm = new HashMap <>();
+
+        for(int num :arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+       
+        int max_element = 0;
+        int max_freq = 0;
+        
+        for(int key : hm.keySet())
+        {
+            
+            if(key % 2 == 0  && hm.get(key)>max_freq)
+            {
+                max_freq = hm.get(key);
+                max_element = key;
+            }
+            else if(hm.get(key) == max_freq)
+            {
+                if(key<max_element)
+                {
+                    max_element = key;
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+        System.out.println(max_element);
+    }
+}
 
 
 
