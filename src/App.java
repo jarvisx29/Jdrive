@@ -10437,7 +10437,7 @@ class Maximum_Number_of_Pairs_in_Array   // leetcode question : 100 % working fo
             } // we keep this loop seperate instead of generally doing it in one loop normally like we do : because : You were modifying and counting inside the search loop, so the same pair was being counted multiple times—search first, then modify once outside the loop !!!!!
                 if(element_removed != -1)
                 {
-                    hm.put(element_removed,hm.get(element_removed)-2);
+                    hm.put(element_removed,hm.get(element_removed)-2);// also you might me wondering why we are using element_removed here instead of key like we do noramlly ; see above we cut the loop short and this is an entirelty different loop ; since due to the testacses we are using the first loop for searching and this one to see and remove ; so the key is in a diffent loop in the enhanced loop so we are using its assigned vairble (element_removed) here instead 
                     
                     if(hm.get(element_removed) ==0)   // we use hm.get(element_removed) here instead of conventional one because the old one was couting its value ; NOT its frequency apparently !!!!!!
                     {
@@ -10469,7 +10469,171 @@ class Maximum_Number_of_Pairs_in_Array   // leetcode question : 100 % working fo
         
         }
         //System.out.println(hm);
+}
+
+
+
+
+
+
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX LEXICOGRAPHICAL BASICS XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+//lexicographical basics    : 2025-12-15-13-58-14.png (explanation)
+
+// < 0	string1 comes before string2     // lexicographical : means like a dictionary (think of it like a dictionary where each thing is arranged in order like aaa,aab,abb,bbb .........) BUT HERE WE COMPARE THEIR ASCII CODES !!!!!!!!!
+// 0	strings are equal
+// > 0	string1 comes after string2
+
+
+class lexi_basics
+{
+    public static void main(String[] args) 
+    {
+        String s1 = "apple";
+        String s2 = "banana";
+                                                // before : (smaller) !!!!!!!!   like numbers
+
+        System.out.println(s1.compareTo(s2)<0);  // string 1 comes before string 2
+        System.out.println(s1.compareTo(s2)==0); // string 1 and string 2 arr equal
+        System.out.println(s1.compareTo(s2)>0); // string 1 comes after string 2     (or string 2 comes before string 1)
+
     }
+}
+
+
+class question_1         // Which is lexicographically smaller?   (smaller : means which comes before    think of it like normal no.s mano )
+{
+    public static void main(String[] args) 
+    {
+        String s1 = "bat";
+        String s2 = "ball";
+
+        if(s1.compareTo(s2)<0)
+        {
+            System.out.println(s1);
+        }
+        else
+        {
+            System.out.println(s2);   // output : ball
+        }  
+    }
+}
+
+
+class question_2          //Which comes first?    (before basically common sense)
+{
+    public static void main(String[] args) 
+    {
+        String s1 = "Zoo";
+        String s2 = "apple";
+
+        if(s1.compareTo(s2)<0)
+        {
+            System.out.println(s1);
+        }
+        else
+        {
+            System.out.println(s2);  // output : zoo
+        }
+        
+    }
+}
+
+class question_3 
+{
+    public static void main(String[] args) 
+    {
+        String s1 = "100";
+        String s2 = "20";
+
+        if(s1.compareTo(s2)<0)
+        {
+            System.out.println("true");   // output : true   (remember !!! its comparing at the 1st differing element i.e 1<2  AND not 100<20 !!!!!!1)
+        }
+        else
+        {
+            System.out.println("false");  
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import java.util.*;
+class Top_K_Frequent_Words   // leetcode question : 100 % working for all testcases !
+{
+    public static void main(String[] args) 
+    {
+         String str_words[] = {"the","day","is","sunny","the","the","the","sunny","is","is"};
+
+        int k =4;
+        
+        
+        
+        //String result[] = new int[k];
+        String result[] = new String[k];
+        int count =0;
+
+        HashMap <String ,Integer> hm = new HashMap<>();
+        
+        for(String num : words)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+        for(int i=0;i<k;i++)
+        {
+            int max_freq =0;
+            String max_element = "";
+            for(String key : hm.keySet())
+            {
+                // if(hm.get(key)==max_freq) // this works for all ; but leetcode is asking lexicographically too
+                // {
+                //     count++;
+                // }
+                
+                if(hm.get(key)>max_freq || hm.get(key)==max_freq && key.compareTo(max_element)<0) // so we put the lexicographically condition in this if itself
+                {
+                    max_freq = hm.get(key);
+                    max_element = key;
+                }
+            }
+            result[i]=max_element;
+            hm.remove(max_element);
+        }
+        // if(count>0)  // t
+        // {
+        //     Arrays.sort(result);
+        //     //System.out.println(Arrays.toString(result));
+        //     //return result;
+        // }
+        System.out.println(Arrays.toString(result));
+    }
+}
+
+
+
+
+
+
+
 
 
 
