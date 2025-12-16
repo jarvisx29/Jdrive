@@ -10630,11 +10630,11 @@ class Top_K_Frequent_Words   // leetcode question : 100 % working for all testca
 
 
 import java.util.*;
-class Most_Frequent_Even_Element
+class Most_Frequent_Even_Element   // l
 {
     public static void main(String[] args) 
     {
-        int arr[] = {0,1,2,2,4,4,1};
+        int arr[] = {8154,9139,8194,3346,5450,9190,133,8239,4606,8671,8412,6290};
         int result[] = new int[arr.length];
         
         HashMap <Integer,Integer> hm = new HashMap <>();
@@ -10643,6 +10643,7 @@ class Most_Frequent_Even_Element
         {
             hm.put(num,hm.getOrDefault(num,0)+1);
         }
+        System.out.println(hm);
 
        
         int max_element = 0;
@@ -10656,17 +10657,22 @@ class Most_Frequent_Even_Element
                 max_freq = hm.get(key);
                 max_element = key;
             }
-            else if(hm.get(key) == max_freq)
+            else if(hm.get(key) == max_freq && key%2==0) // if same freq less print smaller
             {
                 if(key<max_element)
                 {
                     max_element = key;
                 }
-                else
-                {
-                    break;
-                }
+                // else
+                // {
+                //     break;
+                // }
             }
+        }
+        if(max_freq==0)
+        {
+            System.out.println("-1");
+            return;
         }
         System.out.println(max_element);
     }
