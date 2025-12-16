@@ -10630,7 +10630,7 @@ class Top_K_Frequent_Words   // leetcode question : 100 % working for all testca
 
 
 import java.util.*;
-class Most_Frequent_Even_Element   // l
+class Most_Frequent_Even_Element   // leetcode question : 100 % working for all testcases
 {
     public static void main(String[] args) 
     {
@@ -10677,6 +10677,132 @@ class Most_Frequent_Even_Element   // l
         System.out.println(max_element);
     }
 }
+
+
+import java.util.*;
+class Majority_Element_II    // kinda ok logic ; but the question is asking there might be multiple majority elments ; but this one only finds one of them (but logic is okay !!!!)
+{                   // bfs wont work high complexity 
+
+                            // SEE DOWN FOR CORRECT WORKING ONE !!!!!!!!!!!!!!1
+    public static void main(String[] args) 
+    {
+        int nums []= {1,2};
+        int occurence = nums.length/3;   
+       
+        
+        int current_max =0;
+
+        int max_count_element=0;
+        
+        for(int i =0;i<nums.length;i++)
+        {
+             int count =1;
+            for(int j =i+1;j<nums.length;j++)
+            {
+                if(nums[i] == nums[j])
+                {
+                    count++;
+                }
+            }
+
+            if(count > occurence && count>current_max)
+            {
+                max_count_element = nums[i];
+                current_max = count;
+                break;
+            }
+        }
+
+        System.out.println("the element that appears more than n/3 times : "+max_count_element);
+        //return max_count_element;
+
+    }
+}
+
+
+
+
+
+
+
+import java.util.*;
+class Majority_Element_II // leetcode question : 100 % working for all testcases !
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {3,2,3};
+
+        int k = arr.length/3;
+        int index = 0;
+        int result[] = new int[arr.length];
+
+        HashMap <Integer,Integer> hm = new HashMap<>();
+
+        for(int num : arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+        for(int key : hm.keySet())
+        {
+            if(hm.get(key) >k)
+            {
+                result[index] = key;
+                index++;
+            }
+        }
+        int result_final[] = Arrays.copyOf(result,index);
+        
+
+        System.out.println(Arrays.toString(result_final));
+    }
+}
+
+
+
+XXXXXXXXXXXXXXX HOW TO RETURN AN ARRAY AS LIST OR NEED TO ONLY PRINT VALID ELEMENTS OF AN ARRAY (remove 0s)  XXXXXXXXXXX
+      
+                               WHEN ASKED AS LIST USE : Arrays.asList(arr_needed);  // REMEMBER !!!!!!! when they ask as list ; if there is a clash check for same data types and at times need to re-delcare stuff explicitly : ex : List<Integer> ; then you need to make all arrays or whatever as Integer explicitly 
+
+            
+
+
+// method 1 : using Arrays.copyOf(arr, idx) func
+
+import java.util.*;
+class using_copyOf_method
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,2,3,4,5};
+
+        int idx = 3;
+
+        int result [] = Arrays.copyOf(arr,idx); // here arr= startIndex ; idx = endIndex
+        
+        System.out.println(Arrays.toString(result));
+        
+        System.out.println(Arrays.asList(result));  // use this when leetcode q is asking as list 
+           
+        // REMEMBER !!!!!!! when they ask as list ; if there is a clash check for same data types and at times need to re-delcare stuff explicitly : ex : List<Integer> ; then you need to make all arrays or whatever as Integer explicitly
+    }
+}
+
+// method 2 : using Arrays.copyOfRange(arr, startIndex, endIndex) method
+
+import java.util.*;
+class using_Arrays_copyOfRange_method
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,2,3,4,5};                       // startIndex : inclusive ; endIndex : exclusive (meaning excluded need to do +1 index lkkeep in mind)
+
+        int result[] = Arrays.copyOfRange(arr,1,4);  // here it follows (arr,startIndex,endIndex)
+
+        System.out.println(Arrays.toString(result));
+    }
+}
+
 
 
 
