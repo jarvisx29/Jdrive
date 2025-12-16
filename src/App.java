@@ -10634,7 +10634,7 @@ class Most_Frequent_Even_Element   // leetcode question : 100 % working for all 
 {
     public static void main(String[] args) 
     {
-        int arr[] = {8154,9139,8194,3346,5450,9190,133,8239,4606,8671,8412,6290};
+        int arr[] = {0,1,2,2,4,4,1};
         int result[] = new int[arr.length];
         
         HashMap <Integer,Integer> hm = new HashMap <>();
@@ -10806,6 +10806,33 @@ class using_Arrays_copyOfRange_method
 
 
 
+
+
+class Split_Array_into_Consecutive_Subsequences  // incomplete and kinda wrong logic visit later at once
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,2,3,3,4,5};
+
+        for(int i =0;i<arr.length;i++)
+        {
+            if(arr[i] == (arr[i+1]+1) || arr[i]== (arr[i]-1) )
+            {
+                count++;
+            }
+            if(count >= 3)
+            {
+                System.out.println("true");
+                return;
+            }
+        }
+        System.out.println("false");
+        
+    }
+}
+
+
+class 
 
 
 
