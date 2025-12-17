@@ -10831,8 +10831,121 @@ class Split_Array_into_Consecutive_Subsequences  // incomplete and kinda wrong l
     }
 }
 
+import java.util.*;
+class Find_Most_Frequent_Vowel_and_Consonant
+{
+    public static void main(String[] args) 
+    {
+        String s = "aeiaeia";
 
-class 
+        HashMap <Character,Integer> hm = new HashMap<>();
+
+        for(char ch : s.toCharArray())
+        {
+            hm.put(ch,hm.getOrDefault(ch,0)+1);
+        }
+
+       // String vowels[] = {"a","e","i","o","u"};
+       //char vowels[] = {'a','e','i','o','u'};
+
+        //for(int i = 0;i<s.length();i++)  // dont need this loop extra unnecessary ; just directly start with for(int key : keyset) stuff this one just adds complexity 
+        
+            int max_freq = 0;
+            //Character max_element = '';  
+            Character max_element = null;  // need to declare explicit ones like Character with null ; not with '' this will only work with normal stuff like char and all ; not with explcit declarations
+
+            int max_freq_cons=0;
+            // Character max_element_cons ='';
+            Character max_element_cons =null;
+            for(Character key : hm.keySet())
+            {
+                //if(hm.containsKey(vowels[i])  && hm.get(key)>max_freq)  // THIS WILL NOT WORK !!!!!!!! (the vowels stuff)
+
+                if((key =='a' || key == 'e' || key == 'i' || key == 'o' || key == 'u') && hm.get(key)>max_freq)
+                {
+                    max_freq = hm.get(key);
+                    max_element = key;
+
+                }
+                //else if(!hm.containsKey(vowels[i]) && hm.get(key)>max_freq_cons)
+                else if(!(key =='a' || key == 'e' || key == 'i' || key == 'o' || key == 'u') && hm.get(key) > max_freq_cons)
+                {
+                    max_freq_cons = hm.get(key);
+                    max_element_cons = key;
+                }
+            }
+            // hm.remove(max_element);
+            // hm.remove(max_element_cons);
+            //if(i == s.length()-1)
+            
+                System.out.println(max_freq);
+                System.out.println(max_freq_cons);
+            
+         
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import java.util.*;
+class Sender_With_Largest_Word_Count
+{
+    public static void main(String[] args) 
+    {
+        String s1 [] = {"Hello userTwooo","Hi userThree","Wonderful day Alice","Nice day userThree"};
+        String s2 [] = {"Alice","userTwo","userThree","Alice"};
+
+        HashMap <String ,Integer> hm = new HashMap<>();
+
+       for(int i =0;i<s1.length();i++)
+       {
+        String sender = s1[i];
+
+        int count = s2.split(" ").length;
+
+        String max_element = "";
+        int max_freq =0;
+
+        for(String key : hm.getkey())
+        {
+            if(hm.get(key)>max_freq)
+            {
+                max_freq = hm.get(key);
+                max_element = key;
+            }
+            if(key == max_element)
+            {
+                hm.put(key,hm.get(key)+max_freq);
+            }
+        }
+        
+        
+       }
+    }
+}
+
 
 
 
