@@ -10832,7 +10832,7 @@ class Split_Array_into_Consecutive_Subsequences  // incomplete and kinda wrong l
 }
 
 import java.util.*;
-class Find_Most_Frequent_Vowel_and_Consonant
+class Find_Most_Frequent_Vowel_and_Consonant //  leetcode question : 100 % working for all testcases
 {
     public static void main(String[] args) 
     {
@@ -10867,14 +10867,14 @@ class Find_Most_Frequent_Vowel_and_Consonant
                     max_element = key;
 
                 }
-                //else if(!hm.containsKey(vowels[i]) && hm.get(key)>max_freq_cons)
+                //else if(!hm.containsKey(vowels[i]) && hm.get(key)>max_freq_cons) // doesnt work need to like manually do !notcontains again
                 else if(!(key =='a' || key == 'e' || key == 'i' || key == 'o' || key == 'u') && hm.get(key) > max_freq_cons)
                 {
                     max_freq_cons = hm.get(key);
                     max_element_cons = key;
                 }
             }
-            // hm.remove(max_element);
+            // hm.remove(max_element);   // dont need the remove stuff 
             // hm.remove(max_element_cons);
             //if(i == s.length()-1)
             
@@ -10887,64 +10887,190 @@ class Find_Most_Frequent_Vowel_and_Consonant
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import java.util.*;
-class Sender_With_Largest_Word_Count
+                                    //Golden rule question !!!!!!!
+class Sender_With_Largest_Word_Count // leetcode question : 100 % working for all testcases !
 {
     public static void main(String[] args) 
     {
-        String s1 [] = {"Hello userTwooo","Hi userThree","Wonderful day Alice","Nice day userThree"};
-        String s2 [] = {"Alice","userTwo","userThree","Alice"};
+        String s1 [] = {"How is leetcode for everyone","Leetcode is useful for practice"};
+        String s2 [] = {"Bob","Charlie"};
 
         HashMap <String ,Integer> hm = new HashMap<>();
 
-       for(int i =0;i<s1.length();i++)
+       for(int i =0;i<s1.length;i++)
        {
-        String sender = s1[i];
+        String sender = s2[i];
 
-        int count = s2.split(" ").length;
+        int count = s1[i].split(" ").length;
+        
+        //hm.put(sender,count);  // no you are wrong ; we need to do it like we normally do the num and getOrdefault stuff ; because this would erase the intial value if a duplicate value shows up (remember ?? there can be mutiple senders in here like leetcode told)
+        hm.put(sender,hm.getOrDefault(sender,0)+count);
+       }
 
         String max_element = "";
         int max_freq =0;
 
-        for(String key : hm.getkey())
+        for(String key : hm.keySet())
         {
             if(hm.get(key)>max_freq)
             {
                 max_freq = hm.get(key);
                 max_element = key;
             }
-            if(key == max_element)
+            //if(key == max_element)      // REMEMBER !!!!!!  in hashmap using == (in strings especially not int) can sometimes give false errors  SO ALWAYS USE equals func when using a String !!!!!!!!
+            if(key.equals(max_element))
             {
-                hm.put(key,hm.get(key)+max_freq);
+                hm.put(key,hm.get(key)+max_freq); // this loop adds the two counts if a duplicate arrives 
+            }
+            if(hm.get(key)==max_freq  && key.compareTo(max_element)>0 ) // if two elements same freq this loop returns lexi greater one as q suggests
+            {
+                max_element = key;
             }
         }
         
+            System.out.println(max_element);
+    
         
        }
+       
+       
+}
+
+
+
+import java.util.*;
+class Distribute_Elements_Into_Two_Arrays_I   // kept for reference !!!!!!!
+{
+    public static void main(String[] args)   // WRONG LOGIC !!!!!!!!!!!!
+    {
+        int arr[] = {2,1,3};                 // SEE DOWN FOR CORRECT ONE !!!!!!!!!!!!
+
+        int arr_1 [] = new int[arr.length];
+        int arr_2 [] = new int[arr.length]; 
+
+        arr_1 = arr[0];
+        arr_2 = arr[1];
+
+        for(int i = 0; i<arr.length;i++)
+        {
+            if(arr_1[i]> arr_2[i])   // see all this wont work because each different array you are putting it into will be appended differently ; so you need to have its own index variable and need to manually ++ it ; instead of loop beacuse it is how it will work ; i know this seems so right manio ; but no your thinking is wrong 
+            {
+                arr_1[i+1] = arr[i+2];
+            }
+            else
+            {
+                arr_2[i+1] = arr[i+2];
+            }
+        }
+        Arrays.sort(arr_1);
+        Arrays.sort(arr_2);
+
+        System.out.println(Arrays.toString(arr_1));
+        System.out.println(Arrays.toString(arr_2);)
+}
+}
+
+
+import java.util.*;          // Golden rule question : (not really but mano please do this once more you might have slighlty forgotten arrays due to out hashmap marathon haha ; just do it by yourself at once)
+
+class Distribute_Elements_Into_Two_Arrays_I    //leetcode question : 100% working for all testcases !!
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {2,1,3};
+
+        int arr_1 [] = new int[arr.length];
+        int arr_2 [] = new int[arr.length]; 
+
+        arr_1 [0] = arr[0];
+        arr_2 [0] = arr[1];
+        int index_1 =0;
+        int index_2 = 0;
+
+        for(int i = 0; i<arr.length-2;i++)
+        {
+            if(arr_1[index_1]> arr_2[index_2])
+            
+                index_1++;   // actually you might be thinking why we are doing ++ here at 1st and not below the statement ; the reason is it will check whether the current element index_1 is gretaer than the equivalent of the other array ; it it is then index++ ; then append the latest element to the arr_1 ; (the funda is we are trying to get check present element and if conditions are true then put it in array (which is index++))
+                arr_1[index_1] = nums[i+2];
+            
+            else
+            {
+                index_2++;
+                arr_2[index_2] = nums[i+2];
+            }
+        }
+        // Arrays.sort(arr_1); // dont need this stuff
+        // Arrays.sort(arr_2);
+
+        // System.out.println(Arrays.toString(arr_1));
+        // System.out.println(Arrays.toString(arr_2));
+        
+        int size_1 = index_1+1;
+        int size_2 = index_2+1;
+
+        int result[] = new int[size_1+size_2];
+        
+        for(int i = 0;i<size_1;i++)
+        {
+            result[i] = arr_1[i];
+        }
+        for(int j=0;j<size_2;j++)
+        {
+            result[size_1+j] = arr_2[j];
+        }
+        
+        System.out.println(Arrays.toString(result));
+        
+        
     }
 }
+
+
+import java.util.*;
+class Divide_Array_Into_Equal_Pairs
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {3,2,3,2,2,2};
+        if(arr.length %2 !=0)
+        {
+            System.out.println("false");
+            return;
+
+        }
+
+        HashMap<Integer,Integer> hm = new HashMap<>();
+
+        for(int num : arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+        for(int key : hm.keySet())
+        {
+            if(hm.get(key) != 2)
+            {
+                System.out.println("false");
+                return;
+            }
+            System.out.println("true");
+        }
+
+
+        
+    }
+}
+
+
+
+
+
+
+
+
+
 
 
 
