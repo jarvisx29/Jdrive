@@ -1521,6 +1521,82 @@ class Hashmap_basics
 }
 
 
+import java.util.*;
+class fisher_yates
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,2,3,4,5,6};
+
+        Random rand = new Random();
+
+        for(int i =arr.length-1 ; i>1;i--)
+        {
+            int j = rand.nextInt(i+1);
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+
+        for(int num : arr)
+        {
+            System.out.println(num);
+        }
+        
+    }
+}
+
+
+class Shuffle_an_Array        // leetcode question : working for 100 % testcases
+{
+    public static void main(String[] args) 
+    {
+        class Solution {
+    int arr[];
+    int original [];
+    Random rand;
+
+    public Solution (int[] nums)
+        {
+            arr = new int[nums.length];
+            original = new int[nums.length];
+
+            for(int i =0 ;i<nums.length;i++)
+            {
+                original[i] = nums[i];
+                arr[i] = nums[i];
+            }
+
+
+             rand = new Random();
+
+        }
+
+        public int[] reset()
+        {
+            for(int i =0;i<original.length;i++)
+            {
+                arr[i] = original[i];
+            }
+            return arr;
+        }
+
+        public int [] shuffle()
+        {
+            for(int i = arr.length-1;i>0;i--)
+            {
+                int j = rand.nextInt(i+1);
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j]= temp;
+            }
+            return arr;
+        }
+}
+
+        
+    }
+}
 
 
 
