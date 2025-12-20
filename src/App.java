@@ -11029,7 +11029,7 @@ class Distribute_Elements_Into_Two_Arrays_I    //leetcode question : 100% workin
 
 
 import java.util.*;
-class Divide_Array_Into_Equal_Pairs
+class Divide_Array_Into_Equal_Pairs  // leetcode question : 100 % working for all testcases !
 {
     public static void main(String[] args) 
     {
@@ -11062,6 +11062,101 @@ class Divide_Array_Into_Equal_Pairs
         
     }
 }
+
+
+
+class Shuffle_an_Array        // leetcode question : working for 100 % testcases !  (simple question only ; just weirdly uses oops otherwise simple only)
+{
+    public static void main(String[] args) // Fisher Yates problem 
+    {
+        class Solution {
+    int arr[];
+    int original [];
+    Random rand;
+
+    public Solution (int[] nums)
+        {
+            arr = new int[nums.length];
+            original = new int[nums.length];
+
+            for(int i =0 ;i<nums.length;i++)
+            {
+                original[i] = nums[i];
+                arr[i] = nums[i];
+            }
+
+
+             rand = new Random();
+
+        }
+
+        public int[] reset()
+        {
+            for(int i =0;i<original.length;i++)
+            {
+                arr[i] = original[i];
+            }
+            return arr;
+        }
+
+        public int [] shuffle()
+        {
+            for(int i = arr.length-1;i>0;i--)
+            {
+                int j = rand.nextInt(i+1);
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j]= temp;
+            }
+            return arr;
+        }
+}
+
+        
+    }
+}
+
+
+
+class Distribute_Elements_Into_Two_Arrays_II
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {2,1,3,3};
+
+        int arr_1 = new int[arr.length];
+        int arr_2 = new int[arr.length];
+
+        arr_1[0] = arr[0];
+        arr_2[0] = arr[1];
+
+        for(int i = 2;i<arr.length;i++)
+        {
+            int count_1 = 0;
+            int count_2 = 0;
+
+            for(int j = 0;j<arr.length;j++)
+            {
+                if(arr_1[j]>arr[i])
+                {
+                    count_1++;
+                }
+                else if(arr_2[j]>arr[i])
+                {
+                    count_2++;
+                }
+
+                else if(count_1 == count_2)
+                {
+
+                }
+            }
+
+        }
+        
+    }
+}
+
 
 
 
