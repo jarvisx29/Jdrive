@@ -11120,7 +11120,7 @@ class Shuffle_an_Array        // leetcode question : working for 100 % testcases
 
 class Distribute_Elements_Into_Two_Arrays_II
 {
-    public static void main(String[] args) 
+    public static void main(String[] args)    // kept for reference
     {
         int arr[] = {2,1,3,3};
 
@@ -11157,6 +11157,303 @@ class Distribute_Elements_Into_Two_Arrays_II
     }
 }
 
+
+import java.util.*;
+class Distribute_Elements_Into_Two_Arrays_II
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {2,1,3,3};
+
+        ArrayList<Integer> arr_1 = new ArrayList<>();
+        ArrayList<Integer> arr_2 = new ArrayList<>();
+
+        //arr_1.set(0,arr[0]);  // this wont work since you havent yet append anything to access it in the first place
+        
+        arr_1.add(arr[0]);
+        arr_2.add(arr[1]);
+
+        int count_1 =0;
+        int count_2 = 0;
+
+        for(int i =2;i<arr.length;i++)
+        {
+            if(arr[i]> arr_1.get(i))
+            {
+                count_1++;
+            }
+            else if(arr[i]>arr_1.get(i))
+            {
+                count_2++;
+            }
+
+        }
+        
+        
+
+
+       
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX       ARRAYLIST ADVANCED  [HASHMAP LEVEL STUFF]         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+                                     PASTE THESE ABOVE IN OG STUFF ONCE DONE !!!!!!!!!!!
+
+
+import java.util.*;
+class ArrayList_basics
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,2,3,4,5};
+
+        ArrayList <Integer> ar = new ArrayList<>();    // ArrayList declaration  (just like hm !!!!)
+
+        ar.add(10);  // rudimentary way of putting elements into the ar ; just like we use put in hm (we will use keywords and stuff like hm later !)
+        ar.add(20);
+        ar.add(30);
+
+
+        //accessing elements :
+
+        ar.get(0);  // we use get() keyword to access the array index here ; like arr[i] == ar.get(i)  (same shii)
+        ar.get(1);
+        // System.out.println(ar.get(0));
+
+
+
+        //updating elements : 
+
+        ar.set(0,69);
+
+        
+        // also arr.length == ar.size()
+
+
+        // removing elements(delete) : 
+
+        ar.remove(0);
+
+        // to see if element is there or not in the ar : 
+
+        ar.contains(20); // this is exactly like in hm 
+
+        ar.indexOf(20); // output(1) ; returns the index of the element
+        
+        for(int num : ar)
+        {
+            System.out.println(num);
+        }
+
+
+
+        
+    }
+}
+
+
+import java.util.*;
+class how_to_append_arr_to_ArrayList
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,2,3,4,5};
+
+        ArrayList<Integer> ar = new ArrayList<>();
+
+        for(int num : arr)
+        {
+            ar.add(num);   // just like we use getOrDefault stuff in hm ; (we use add() func for this !!!!!1)
+        }
+
+        int[] arr = new int[ar.size()];     // this is to do the exact opp i.e (to append the elements of the ar to array)
+        for (int i = 0; i < ar.size(); i++) 
+        {
+            arr[i] = ar.get(i);
+        }
+
+
+        
+        System.out.println(ar);
+    }
+}
+
+
+
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXX  GPT QUESTIONS BASICS TO GET STARTED  !!!! XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+import java.util.*;
+class find_sum_of_elements
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,2,3,4,5};
+
+        ArrayList <Integer> ar = new ArrayList<>();
+
+        for(int num :arr)
+        {
+            ar.add(num);
+        }
+        int sum = 0;
+
+        for(int digit : ar)
+        {
+            sum = sum +digit;
+        }
+        System.out.println(sum);
+
+
+        
+    }
+}
+
+
+import java.util.*;
+class find_maximum_element
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,2,3,4,5};
+
+        ArrayList<Integer> ar = new ArrayList<>();
+
+        for(int num : arr)
+        {
+            ar.add(num);
+        }
+
+        int max =0;
+        for(int digit : ar)
+        {
+            if(digit>max)
+            {
+                max= digit;
+            }
+        }
+        System.out.println(max);
+        
+    }
+}
+
+
+import java.util.*;
+class Count_even_numbers
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,2,3,4,5};
+
+        ArrayList<Integer> ar = new ArrayList<>();
+
+        for(int num  :arr)
+        {
+            ar.add(num);
+        }
+
+        int count =0;
+        for(int digit : ar)
+        {
+            if(digit % 2 == 0)
+            {
+                count++;
+            }
+        }
+
+        System.out.println(count);
+        
+    }
+}
+
+
+import java.util.*;
+class Remove_all_odd_numbers       // IMPORTANT QUESTION !!!!!!!!!!!!!!!!
+{
+    public static void main(String[] args) 
+    {           
+        int arr[] = {1,2,3,4,5};
+
+        ArrayList <Integer> ar = new ArrayList<>();
+
+        for(int num :arr)
+        {
+            ar.add(num);
+        }
+
+        // for(int digit :ar)    // REMEMBER !!!!!! remove() : will only use index values !!! (so dont use enhances loop whenever they ask you to remove anything !!!!!)
+        // {
+        //     if(digit % 2 != 0)
+        //     {
+        //         ar.remove(digit);
+        //     }
+        // }
+        
+        for(int i = 0;i<ar.size();i++)
+        {
+            if(ar.get(i) % 2 != 0)
+            {
+                ar.remove(i);
+            }
+        }
+
+        System.out.println(ar);
+        
+    }
+}
+
+
+import java.util.*;
+class Check_if_element_exists
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {1,2,3,4,5};
+        int k =4;
+
+        ArrayList<Integer> ar = new ArrayList<>();
+
+        for(int num : arr)
+        {
+            ar.add(num);
+        }
+        // for(int digit : ar)
+        // {
+        //     if(ar.contains(k))
+        //     {
+        //         System.out.println("yes");    // ALL THIS IS NOT NEEDED !!!!!!!!!!!!!!!!!
+        //     }
+        //     else
+        //     {
+        //         System.out.println("no");
+        //     }
+            
+        // }
+
+        // just use 
+
+        if(ar.contains(k))    // just directly use contains without any for loop (THATS HOW ITS DONE IN ar !!!!!!!!!!!!1)
+        {
+            System.out.println("yes");
+            return;
+        }
+        System.out.println("no");
+    }
+}
 
 
 
