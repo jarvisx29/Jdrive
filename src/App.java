@@ -11163,7 +11163,7 @@ class Distribute_Elements_Into_Two_Arrays_II
 {
     public static void main(String[] args) 
     {
-        int arr[] = {2,1,3,3};
+        int arr[] = {5,14,3,1,2};
 
         ArrayList<Integer> arr_1 = new ArrayList<>();
         ArrayList<Integer> arr_2 = new ArrayList<>();
@@ -11173,29 +11173,87 @@ class Distribute_Elements_Into_Two_Arrays_II
         arr_1.add(arr[0]);
         arr_2.add(arr[1]);
 
-        int count_1 =0;
-        int count_2 = 0;
+        // int count_1;
+        // int count_2;
+        // int i;
 
         for(int i =2;i<arr.length;i++)
         {
-            if(arr[i]> arr_1.get(i))
+            int count_1 =0;
+             int count_2 = 0;
+            
+            for(int j=0;j<arr_1.size();j++)
             {
-                count_1++;
+                if(arr_1.get(j)>arr[i])
+                {
+                    count_1++;
+                    // arr_1.add(arr[i]);
+                }
             }
-            else if(arr[i]>arr_1.get(i))
+            
+            for(int k=0;k<arr_2.size();k++)
             {
-                count_2++;
+                if(arr_2.get(k)>arr[i])
+                {
+                    count_2++;
+                    // arr_2.add(arr[i]);
+                }
             }
-
+            
+           if(count_1 > count_2)
+           {
+               arr_1.add(arr[i]);
+           }
+           else if(count_1 < count_2)
+           {
+               arr_2.add(arr[i]);
+           }
+           
+        //   if(count_1 == count_2)
+        //   {
+        //       arr_1.add(arr[i]);
+        //   }
+        else
+        {
+            if(arr_1.size() <=arr_2.size())
+            {
+                arr_1.add(arr[i]);
+            }
+            else
+            {
+                arr_2.add(arr[i]);
+            }
+        }
+           
+           
+            
+            
         }
         
+        // System.out.println(arr_1+" "+arr_2);
+        // arr_1.concat(arr_2);
+        arr_1.addAll(arr_2);
         
-
-
-       
+  
+        int  [] final1  = new int [arr_1.size()];
+        
+        for(int i=0;i<arr_1.size();i++)
+        {
+            final1[i] = arr_1.get(i); 
+        }
+        
+        for(int digit : final1)
+        {
+            System.out.println(digit);
+        }
         
     }
 }
+
+
+
+
+
 
 
 
@@ -11454,11 +11512,6 @@ class Check_if_element_exists
         System.out.println("no");
     }
 }
-
-
-
-
-
 
 
 
