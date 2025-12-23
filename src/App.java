@@ -11529,6 +11529,43 @@ class Check_if_element_exists
 
 
 
+import java.util.*;
+class Longest_Common_Subsequence
+{
+    public static void main(String[] args) 
+    {
+        String s1 = "abcde";
+        String s2 = "ace";
+
+        ArrayList <Character> arr_1 = new ArrayList<>();
+        ArrayList<Character> arr_2  = new ArrayList<>();
+
+        for(char num : s1.toCharArray())
+        {
+            arr_1.add(num);
+        }
+
+        for(int i=0;i<s1.length();i++)
+        {
+            
+
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
 
