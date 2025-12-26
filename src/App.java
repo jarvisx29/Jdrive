@@ -598,7 +598,7 @@ class array_sum                                     // Array sums      starting 
 
 import java.util.Arrays;
 class Reverse
-{                                                    //reversing elements of array
+{                                                    //reversing elements of array (like within the OG array itself)
     public static void main(String[] args) {
         
     
@@ -613,7 +613,7 @@ class Reverse
     System.out.print(Arrays.toString(arr));  // can use this to print reversed array by converting into string ******VERY USEFUL USE THIS ALWAYS FOR ARRAYS*****8 
 
 //    for(int j=0;j<arr.length;j++)
-//    {
+//    {r
 //     System.out.print(arr[j] +" ");  // can use conventional loop to print reversed array also
 //    }
 }
@@ -721,7 +721,8 @@ class kth_element
     {
         for(int j=0;j<matrix[0].length;j++)
         {
-            flat[index++] = matrix[i][j];
+            flat[index] = matrix[i][j];
+            index++;
         }
 
     }
@@ -11530,32 +11531,145 @@ class Check_if_element_exists
 
 
 import java.util.*;
-class Longest_Common_Subsequence
+class Longest_Common_Subsequence   // this logic works but not for alll (so ultimately forced to get a new logic !!)
 {
-    public static void main(String[] args) 
+    public static void main(String[] args)  // SEE DOWN FOR WORKING ONE !!!!!!!!!!!
     {
-        String s1 = "abcde";
-        String s2 = "ace";
+        String s1 = "psnw";
+        String s2 = "vozsh";
 
-        ArrayList <Character> arr_1 = new ArrayList<>();
-        ArrayList<Character> arr_2  = new ArrayList<>();
-
-        for(char num : s1.toCharArray())
+        // ArrayList <Character> arr_1 = new ArrayList<>();
+        // ArrayList<Character> arr_2  = new ArrayList<>();
+        
+        
+        String split_words [] = s1.split("");
+        
+        String split_s2 [] = s2.split("");
+        ArrayList <Character> result = new ArrayList<>();
+        
+        
+        
+        int j =0;
+        int count=0;
+        
+        // for(int i =0;i<split_words.length;i++)
+        // {
+        //     if(split_words[i] == split_s2[j])
+        //     {
+        //         result.add(split_words[i]);
+        //         j++;
+                
+        //         if(j == s2.length())
+        //         {
+        //             break;
+        //         }
+        //     }
+        // }
+        
+        // System.out.println(result);
+        if(s1.length()>=s2.length())
         {
-            arr_1.add(num);
-        }
-
-        for(int i=0;i<s1.length();i++)
+        for(int i=0; i<s1.length();i++)
         {
-
-
+             if(j == s2.length()) // put this here
+                {
+                    break;
+                }
+            if(s1.charAt(i) == s2.charAt(j))
+            {
+                result.add(s2.charAt(j));
+                count++;
+                j++;
+            }
+            
         }
+        }
+        
+        if(s1.length() <= s2.length())
+        {
+        for(int i=0;i<s2.length();i++)
+        {
+            if(j == s1.length())
+            {
+                break;
+            }
+            if(s2.charAt(i) ==s1.charAt(j))
+            {
+                result.add(s1.charAt(j));
+                count++;
+                j++;
+            }
+        }
+        }
+        // if(result.size() != s2.length())
+        // {
+        //     System.out.println("0");
+        //     return;
+        // }
+      
+          
+        //   if(result.size() == s2.length())
+        // System.out.println(count);
+          
+            //   for(int k=0;k<s2.length();k++)
+            //   {
+            //       if(result.get(k) != s2.charAt(k))
+            //       {
+            //           System.out.println("0");
+            //           return;
+            //       }
+               
+            //   }
+            
+          
+        //   System.out.println(s2.length());
+          System.out.println(count);
+
+        
+        
+        
+        // System.out.println(Arrays.toString(split_words));
+        // System.out.println(Arrays.toString(split_s2));
+
+        sir said insted of two loops put single loop for iteration ; where for the length you could assign a single variable length(compare > which one is greater and iterate)
+      
+    
+
+      
         
     }
 }
 
-//dd  dddd
 
+class Longest_Common_Subsequence
+{
+    public static void main(String[] args) 
+    {
+        String s1 = "psnw";
+        String s2 = "vozsh";
+        
+        int count =0;
+        int last_index = -1;
+        
+        for(int i=0;i<s1.length();i++)
+        {
+            for(int j = last_index +1;j<s2.length();j++)
+            {
+                if(s1.charAt(i) == s2.charAt(j))
+                {
+                    count++;
+                    last_index = j;
+                    break; // break the full j loop iteration
+                }
+            }
+        }
+        
+        System.out.println(count);
+
+     
+        
+    }
+}
 
 
 
