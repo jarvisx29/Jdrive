@@ -819,8 +819,6 @@ class palindrome           //       to find palindrome or not        (lol palind
         System.out.println(" it is  a palindrome");
     } 
     }
-    
-
     }
 }
 
@@ -9903,7 +9901,7 @@ class using_replaceAll_function
 //question 7
 
 import java.util.*;
-class Word_Frequency_with_Case_Normalization_and_Removal
+class Word_Frequency_with_Case_Normalization_and_Removal  // Golden rule : not the question (but for using replaceAll !!!!!!)
 {
     public static void main(String[] args) 
     {
@@ -9911,7 +9909,7 @@ class Word_Frequency_with_Case_Normalization_and_Removal
 
         int k =2;
 
-        s=s.toLowerCase();
+        s=s.toLowerCase();     // ^ means NOT (i.e except this)
         s=s.replaceAll("[^a-z ]",""); // notice how here we put space after z ([^a-z ]) ; this puts spaces in between the elements kinda of likea delimeter ig ( IMPORTANT !!!!!!!!!!!!!!!)
         s=s.trim();
 
@@ -11639,6 +11637,39 @@ class Longest_Common_Subsequence   // this logic works but not for alll (so ulti
         
     }
 }
+
+class Valid_Palindrome
+{
+    public static void main(String[] args) 
+    {
+        String s = "A man, a plan, a canal: Panama";
+
+        s= s.toLowerCase().replaceAll("[^a-z]","").trim();
+
+        int left = 0
+        int right = arr.length-1;
+
+        while(left <=right)
+        {
+            if(arr[left] != arr[right])
+            {
+                System,out.println("palindrome");
+                return ;
+            }
+            left++;
+            right--;
+        }
+
+        if(left>right)
+        {
+            System.out.println("palindrome");
+        }
+        
+    }
+}
+
+
+
 
 
 class Longest_Common_Subsequence
