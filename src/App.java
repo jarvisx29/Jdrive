@@ -11638,22 +11638,23 @@ class Longest_Common_Subsequence   // this logic works but not for alll (so ulti
     }
 }
 
-class Valid_Palindrome
+class Valid_Palindrome      // leetcode question : 100 % working for all testcases !
 {
     public static void main(String[] args) 
     {
-        String s = "A man, a plan, a canal: Panama";
+        String s = "0P";
 
-        s= s.toLowerCase().replaceAll("[^a-z]","").trim();
+        s= s.toLowerCase().replaceAll("[^a-z0-9]","").trim();
 
-        int left = 0
-        int right = arr.length-1;
+        int left = 0;
+        int right = s.length()-1;
+        System.out.println(s);
 
         while(left <=right)
         {
-            if(arr[left] != arr[right])
+            if(s.charAt(left) != s.charAt(right))
             {
-                System,out.println("palindrome");
+                System.out.println("not palindrome");
                 return ;
             }
             left++;
@@ -11703,7 +11704,7 @@ class Longest_Common_Subsequence
 }
 
 
-//dd
+
 
 
 
