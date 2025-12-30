@@ -817,9 +817,9 @@ class palindrome           //       to find palindrome or not        (lol palind
         if(left>right)                              //finally is the they have gone past the midpoint with left-- and right ++ they have overreached which means all the elements are equal in whole array
     {
         System.out.println(" it is  a palindrome");
-    } 
-    }
-    }
+}
+}
+}
 }
 
 
@@ -7173,6 +7173,7 @@ class Sort_Matrix_by_Diagonals   // 100 % working for any n length matrix (any +
 
 
 
+
 class Shortest_Palindrome       // this code works for 100% for every test case does all (left to right) & (right to left) but leetcode particularly doesnt ask for left to right (so see down for correct version without it)
 {
     public static void main(String[] args) // SEE DOWN FOR CORRECT VERSION !!!!
@@ -7275,6 +7276,8 @@ class Shortest_Palindrome       // this code works for 100% for every test case 
     
 }
 
+
+                               // Golden rule question
 
 class Shortest_Palindrome   // 100 % working in leetcode (just last 2 testcases ran out of time limit) but working !!!!
 {
@@ -11290,11 +11293,17 @@ class ArrayList_basics
 
 
 
-        //updating elements : 
+        //updating elements (basically replace ; and for that you need have existing indexes): 
 
         ar.set(0,69);
 
+
+        // to insert : elements at given index ana shift elements to the right accordingly
+
+        ar.add(1, 99);
         
+
+
         // also arr.length == ar.size()
 
 
@@ -11302,12 +11311,16 @@ class ArrayList_basics
 
         ar.remove(0);
 
+
+
         // to see if element is there or not in the ar : 
 
         ar.contains(20); // this is exactly like in hm 
 
         ar.indexOf(20); // output(1) ; returns the index of the element
         
+
+
         for(int num : ar)
         {
             System.out.println(num);
@@ -11670,10 +11683,50 @@ class Valid_Palindrome      // leetcode question : 100 % working for all testcas
 }
 
 
+import java.util.*;
+class Valid_Palindrome_II
+{
+    public static void main(String[] args) 
+    {
+        String s = "aba";
+
+        ArrayList <Character> ar = new ArrayList<>();
+
+        for(int i=0;i<s.length();i++)
+        {
+            ar.add(s.charAt(i));
+        }
+        System.out.println();
+        
+    }
+}
 
 
 
-class Longest_Common_Subsequence
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Longest_Common_Subsequence   // incomplete i gave up and gave it to senthil sir ; we'll wait for his response
 {
     public static void main(String[] args) 
     {
@@ -11704,6 +11757,29 @@ class Longest_Common_Subsequence
 }
 
 
+import java.util.*;
+class using_replaceAll
+{
+    public static void main(String[] args) 
+    {
+        String s = "163x^5 + 123x^4 - 65x^3";
+
+        String s_words[] = s.split("+");
+        String s_words_2[] = s_words.split("-");
+
+        System.out.println(Arrays.toString(s_words_2));
+
+        // for(int i=0;i<s.length;i++)
+        // {
+        //     char chr = s.charAt(i);
+
+            
+        // }
+
+
+        
+    }
+}
 
 
 
