@@ -11688,15 +11688,51 @@ class Valid_Palindrome_II
 {
     public static void main(String[] args) 
     {
-        String s = "aba";
+        String s = "a";
 
         ArrayList <Character> ar = new ArrayList<>();
+         if(s.length() ==1)
+        {
+            System.out.println("true");
+            return;
+        }
+        
+
 
         for(int i=0;i<s.length();i++)
         {
             ar.add(s.charAt(i));
         }
-        System.out.println();
+        // System.out.println(ar);
+        
+        for(int i=0;i<s.length();i++)
+        {
+            char temp = s.charAt(i);
+            ar.remove(i);
+            
+            int left =0;
+            int right = ar.size()-1;
+            
+            while(left<=right)
+            {
+                if(ar.get(left) != ar.get(right))
+                {
+                    break;
+                }
+                left++;
+                right--;
+                
+                if(left>right || s.length() == 1)
+                {
+                    System.out.println("true");
+                    return;
+                    
+                }
+            }
+            ar.add(i,temp);
+        }
+       
+        System.out.println("false");
         
     }
 }
@@ -11781,7 +11817,7 @@ class using_replaceAll
     }
 }
 
-//dd dd dd
+//dd dd dd dd
 
 
 
