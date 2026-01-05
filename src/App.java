@@ -11793,6 +11793,72 @@ class Longest_Common_Subsequence   // incomplete i gave up and gave it to senthi
 }
 
 
+
+import java.util.*;
+class Most_Frequent_Number_Following_Key_In_an_Array   // leetcode question : 100% working for all testcases
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,100,200,1,100};
+
+        int k = 1;
+
+        HashMap <Integer,Integer> hm = new HashMap<>();
+
+        for(int i=0;i<arr.length-1;i++)
+        {
+            int num = arr[i];
+            if(arr[i] == k)
+            {
+                // int num = arr[i+1]; // you can do this too ; but lets go with how we normally do with num
+                hm.put(arr[i+1],hm.getOrDefault(arr[i+1],0)+1);
+            }
+
+        }
+        System.out.println(hm);
+
+
+        int max_element = 0;
+        int max_freq = 0;
+        for(int key : hm.keySet())
+        {
+            int freq = hm.get(key);
+
+            if(freq >max_freq)
+            {
+                max_freq = freq;
+                max_element =key;
+            }
+        }
+
+        System.out.println(max_element);
+        
+    }
+}
+
+import java.util.*;
+class Sort_the_People
+{
+    public static void main(String[] args) 
+    {
+        String names[] = {"Mary","John","Emma"};
+
+        int heights [] = {180,165,170};
+
+        HashMap <String,Integer> hm = new HashMap<>();
+
+        for(int i=0;i<names.length;i++)
+        {
+            hm.put(names[i],heights[i]);
+        }
+        System.out.println(hm);
+    }
+}
+
+
+
+
+
 import java.util.*;
 class using_replaceAll
 {
@@ -11816,44 +11882,6 @@ class using_replaceAll
         
     }
 }
-
-//dd dd dd dd dd 
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
