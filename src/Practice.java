@@ -1604,6 +1604,48 @@ class Shuffle_an_Array        // leetcode question : working for 100 % testcases
 
 
 
+import java.util.*;
+class Check_if_element_exists
+{
+    public static void main(String[] args) 
+    {
+        int arr [] = {1,2,3,4,5};
+        int k =4;
+
+        ArrayList<Integer> ar = new ArrayList<>();
+
+        for(int num : arr)
+        {
+            ar.add(num);
+        }
+        // for(int digit : ar)
+        // {
+        //     if(ar.contains(k))
+        //     {
+        //         System.out.println("yes");    // ALL THIS IS NOT NEEDED !!!!!!!!!!!!!!!!!
+        //     }
+        //     else
+        //     {
+        //         System.out.println("no");
+        //     }
+            
+        // }
+
+        // just use 
+
+        if(ar.contains(k))    // just directly use contains without any for loop (THATS HOW ITS DONE IN ar !!!!!!!!!!!!1)
+        {
+            System.out.println("yes");
+            return;
+        }
+        System.out.println("no");
+    }
+}
+
+
+
+
+
 
 
 

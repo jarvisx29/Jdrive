@@ -11883,5 +11883,36 @@ class using_replaceAll
     }
 }
 
-//dd dd dd dd dd 
+
+import java.util.*;
+class Count_the_Number_of_Consistent_Strings
+{
+    public static void main(String[] args) 
+    {
+        String allowed = "ab";
+
+        String words [] = {"ad","bd","aaab","baa","badab"};
+
+
+        int count =0;
+        for(int i=0;i<words.length;i++)
+        {
+            String single_word = words[i];
+
+            for(int j=0;j<allowed.length;j++)
+            {
+                for(int k=0;k<words.length;k++)
+                {
+                    if(single_word.charAt(k) != allowed.charAt(j))
+                    {
+                        count++;
+                    }
+                }
+
+            }
+
+        }
+    }
+}
+
 
