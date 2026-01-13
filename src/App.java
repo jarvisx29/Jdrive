@@ -11885,34 +11885,105 @@ class using_replaceAll
 
 
 import java.util.*;
-class Count_the_Number_of_Consistent_Strings
+class Count_the_Number_of_Consistent_Strings   // leetcode question : 100 % working for all testcases ! 
 {
-    public static void main(String[] args) 
+    public static void main(String[] args)  // i used brute force here ; but they tell me to use hashmap or something (see later using this)
     {
-        String allowed = "ab";
+        String allowed = "abc";
 
-        String words [] = {"ad","bd","aaab","baa","badab"};
+        String words [] = {"a","b","c","ab","ac","bc","abc"};
+        ArrayList <String> ar = new ArrayList<>();
 
-
-        int count =0;
+        int count;
         for(int i=0;i<words.length;i++)
         {
             String single_word = words[i];
+             count =0;
 
-            for(int j=0;j<allowed.length;j++)
+            for(int j=0;j<allowed.length();j++)
             {
-                for(int k=0;k<words.length;k++)
+                for(int k=0;k<single_word.length();k++)
                 {
-                    if(single_word.charAt(k) != allowed.charAt(j))
+                    if(single_word.charAt(k) == allowed.charAt(j))
                     {
                         count++;
+                        //ar.add(single_word);
+                        //break;
                     }
+                    
+                    
                 }
-
             }
+             if(count==single_word.length())
+                    {
+                        ar.add(single_word);
+                    }
 
         }
+        
+        //System.out.println(count);
+        for(String num : ar)
+        {
+            System.out.println(num);
+        }
+        System.out.println(ar.size());
     }
 }
 
 
+
+class Count_Pairs_Of_Similar_Strings
+{
+    public static void main(String[] args) 
+    {
+        String words [] = {"aba","aabb","abcd","bac","aabc"};
+
+        for(int i=0;i<words.length;i++)
+        {
+            String single_word = words[i];
+
+            for(int j=i+1;j<words.length();j++)
+            {
+                String next_word = words[j];
+
+                for(int y=0;y<single_word.length();y++)
+                {
+                    for(int z=0;z<next_word.length();z++)
+                    {
+
+                    }
+                }
+
+
+
+            }
+        }
+        
+    }
+}
+
+class find_unique_for_two
+{
+    public static void main(String[] args) 
+    {
+        String s1 = "aba";
+        String s2 = "aabb";
+
+        for(int i=0;i<s1.length();i++)
+        {
+            for(int j=i+1;j<s1.length();j++)
+            {
+                if(s1.charAt(i) == s2.chaAt(j))
+                {
+                    count++;
+                }
+            }
+            if(count == 1)
+            {
+                System.out.println(s1.charAt(i));
+            }
+
+        }
+        
+    }
+}
