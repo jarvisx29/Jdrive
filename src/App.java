@@ -11988,4 +11988,112 @@ class find_unique_for_two
     }
 }
 
-// dd dd  dd dd dd
+import java.util.*;
+class find_unique_for_two
+{
+    public static void main(String[] args) 
+    {
+        String s1 = "aabb";
+        String s2 = "aabbccdd";
+        
+        ArrayList<Character> ar = new ArrayList<>();
+        
+        int count =0;
+
+        // for(int i=0;i<s1.length();i++)
+        // {
+        //     for(int j=i+1;j<s1.length();j++)
+        //     {
+        //         if(s1.charAt(i) == s2.charAt(j))
+        //         {
+        //             count++;
+        //         }
+        //     }
+        //     if(count == 1)
+        //     {
+        //         System.out.println(s1.charAt(i));
+        //     }
+
+        // }
+        
+        for(int i=0;i<s1.length();i++)
+        {
+            if(!ar.contains(s1.charAt(i)))
+            {
+                ar.add(s1.charAt(i));
+            }
+        }
+        
+        for(int i=0;i<ar.size();i++)
+        {
+            for(int j =0;j<s2.length();j++)
+            {
+                if(ar.get(i) == s2.charAt(j))
+                {
+                    count++;
+                    break;
+                }
+            }
+        }
+         for(char num : ar)
+        {
+            System.out.println(num);
+        }
+        
+        if(count == ar.size())
+        {
+            System.out.println("true");
+        }
+        else
+        {
+            System.out.println("false");
+        }
+        
+       
+        
+        
+    }
+}
+
+
+import java.util.*;
+class Count_Pairs_Of_Similar_Strings
+{
+    public static void main(String[] args) 
+    {
+        String words [] = {"aba","aabb","abcd","bac","aabc"};
+
+        ArrayList <String> ar = new ArrayList<>();
+        ArraysList <String> ar_2 = new ArrayList<>();
+
+        // for(String num : words)
+        // {
+        //     ar.add(num);
+        // }
+
+        for(int i=0;i<words.length;i++)
+        {
+            String single_word = words[i];
+            for(int j=0;j<single_word.length;j++)
+            {
+                if(!ar.contains(single_word[j]))
+                {
+                    ar.add(single_word[j]);
+                }
+
+                StringBuilder sb = new StringBuilder();
+
+                for(char ch : ar)
+                {
+                    sb.append(ch);
+                }
+                String result = sb.toString();
+
+                ar_2.append(result);
+
+            }
+            ar.remove(i);
+            
+        }
+    }
+}
