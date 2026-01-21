@@ -12075,7 +12075,7 @@ class Count_Pairs_Of_Similar_Strings
         {
             String single_word = words[i];
             for(int j=0;j<single_word.length;j++)
-            {
+            { 
                 if(!ar.contains(single_word[j]))
                 {
                     ar.add(single_word[j]);
@@ -12097,3 +12097,49 @@ class Count_Pairs_Of_Similar_Strings
         }
     }
 }
+
+
+import java.util.*;
+class Count_Pairs_Of_Similar_Strings
+{
+    public static void main(String[] args) 
+    {
+        String words [] = {"aba","aabb","abcd","bac","aabc"};
+
+        ArrayList<Character> ar = new ArrayList<>();
+        ArrayList<String> ar_2 = new ArrayList<>();
+
+        for(int i = 0; i < words.length; i++)
+        {
+            String s = "";
+            String single_word = words[i];
+
+          
+            ar.clear();  
+            for(int j = 0; j < single_word.length(); j++)
+            {
+                if(!ar.contains(single_word.charAt(j)))
+                {
+                    ar.add(single_word.charAt(j));
+                    s= s+ single_word.charAt(j);
+                }
+            }
+
+            
+            // StringBuilder sb = new StringBuilder();
+            // for(char ch : ar)
+            // {
+            //     sb.append(ch);
+            // }
+
+            // String result = sb.toString();
+           // ar_2.add(result);
+           ar_2.add(s);
+           
+        }
+
+        System.out.println(ar_2);
+    }
+}
+
+
