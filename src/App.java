@@ -12143,3 +12143,16 @@ class Count_Pairs_Of_Similar_Strings
 }
 
 
+class First_Missing_Positive
+{
+    public static void main (String args []) // n(n-1); this woulf not work 
+    {
+        int arr[] = {3,4,-1,1};
+
+        for(int i=0;i<arr.length;i++)
+        {
+
+        }
+        
+    }
+}
