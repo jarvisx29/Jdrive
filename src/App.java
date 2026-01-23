@@ -12156,3 +12156,109 @@ class First_Missing_Positive
         
     }
 }
+
+
+
+import java.util.*;
+class Count_Pairs_Of_Similar_Strings 
+{
+    public static void main(String[] args) 
+    {
+        String words [] = {"dcedceadceceaeddcedc","dddcebcedcdbaeaaaeab","eecbeddbddeadcbbbdbb","decbcbebbddceacdeadd","ccbddbaedcadedbcaaae","dddcaadaceaedcdceedd","bbeddbcbbccddcaceeea","bdabacbbdadabbbddaea"};
+
+        ArrayList<Character> ar = new ArrayList<>();
+        ArrayList<String> ar_2 = new ArrayList<>();
+        
+        Queue<Character> pq = new PriorityQueue <Character>();
+        
+
+        for(int i = 0; i < words.length; i++)
+        {
+            String s = "";
+            String single_word = words[i];
+
+          
+            ar.clear();  
+            pq.clear();
+            
+            for(int j = 0; j < single_word.length(); j++)
+            {
+                if(!ar.contains(single_word.charAt(j)))
+                {
+                    pq.add(single_word.charAt(j));
+                    ar.add(single_word.charAt(j));
+                    //s= s+ single_word.charAt(j);
+                }
+            }
+        //   for(char ch : pq)
+        //   {
+        //       s = s + ch; 
+        //   }
+         while(!pq.isEmpty())
+        {
+            s = s+pq.poll();
+        }
+           
+           ar_2.add(s);
+        }
+        
+        System.out.println(ar_2);
+        
+        
+        
+        int count =0;
+        
+        for(int l=0;l<ar_2.size();l++)
+        {
+            String final_single = ar_2.get(l);
+            
+            for(int h=l+1;h<ar_2.size();h++)
+            {
+                System.out.println(ar_2.get(h));
+                if(ar_2.get(h).equals(final_single))
+                {
+                    count++;
+                }
+            }
+            
+        }
+        
+        // for(int l=0;l<ar_2.size();l++)
+        // {
+        //     String final_single = ar_2.get(l);
+        //     if(ar_2.contains(ar_2.get(l)))
+        //     {
+        //         ar_2.remove(l);
+        //     }
+            
+        //     if(ar_2.contains(final_single))
+        //     {
+        //         count++;
+        //     }
+        //     ar_2.add(final_single);
+        // }
+        
+        
+        System.out.println(count);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
