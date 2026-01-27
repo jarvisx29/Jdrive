@@ -11932,36 +11932,6 @@ class Count_the_Number_of_Consistent_Strings   // leetcode question : 100 % work
 
 
 
-class Count_Pairs_Of_Similar_Strings
-{
-    public static void main(String[] args) 
-    {
-        String words [] = {"aba","aabb","abcd","bac","aabc"};
-
-        for(int i=0;i<words.length;i++)
-        {
-            String single_word = words[i];
-
-            for(int j=i+1;j<words.length();j++)
-            {
-                String next_word = words[j];
-
-                for(int y=0;y<single_word.length();y++)
-                {
-                    for(int z=0;z<next_word.length();z++)
-                    {
-
-                    }
-                }
-
-
-
-            }
-        }
-        
-    }
-}
-
 class find_unique_for_two
 {
     public static void main(String[] args) 
@@ -12056,111 +12026,15 @@ class find_unique_for_two
 }
 
 
-import java.util.*;
-class Count_Pairs_Of_Similar_Strings
-{
-    public static void main(String[] args) 
-    {
-        String words [] = {"aba","aabb","abcd","bac","aabc"};
-
-        ArrayList <String> ar = new ArrayList<>();
-        ArraysList <String> ar_2 = new ArrayList<>();
-
-        // for(String num : words)
-        // {
-        //     ar.add(num);
-        // }
-
-        for(int i=0;i<words.length;i++)
-        {
-            String single_word = words[i];
-            for(int j=0;j<single_word.length;j++)
-            { 
-                if(!ar.contains(single_word[j]))
-                {
-                    ar.add(single_word[j]);
-                }
-
-                StringBuilder sb = new StringBuilder();
-
-                for(char ch : ar)
-                {
-                    sb.append(ch);
-                }
-                String result = sb.toString();
-
-                ar_2.append(result);
-
-            }
-            ar.remove(i);
-            
-        }
-    }
-}
 
 
-import java.util.*;
-class Count_Pairs_Of_Similar_Strings
-{
-    public static void main(String[] args) 
-    {
-        String words [] = {"aba","aabb","abcd","bac","aabc"};
-
-        ArrayList<Character> ar = new ArrayList<>();
-        ArrayList<String> ar_2 = new ArrayList<>();
-
-        for(int i = 0; i < words.length; i++)
-        {
-            String s = "";
-            String single_word = words[i];
-
-          
-            ar.clear();  
-            for(int j = 0; j < single_word.length(); j++)
-            {
-                if(!ar.contains(single_word.charAt(j)))
-                {
-                    ar.add(single_word.charAt(j));
-                    s= s+ single_word.charAt(j);
-                }
-            }
-
-            
-            // StringBuilder sb = new StringBuilder();
-            // for(char ch : ar)
-            // {
-            //     sb.append(ch);
-            // }
-
-            // String result = sb.toString();
-           // ar_2.add(result);
-           ar_2.add(s);
-           
-        }
-
-        System.out.println(ar_2);
-    }
-}
 
 
-class First_Missing_Positive
-{
-    public static void main (String args []) // n(n-1); this woulf not work 
-    {
-        int arr[] = {3,4,-1,1};
-
-        for(int i=0;i<arr.length;i++)
-        {
-
-        }
-        
-    }
-}
 
 
 
 import java.util.*;
-class Count_Pairs_Of_Similar_Strings 
+class Count_Pairs_Of_Similar_Strings    // leetcode question : 100 % working for all testcases !    ( EXPLAIN LATER !!!!!!!)
 {
     public static void main(String[] args) 
     {
@@ -12243,7 +12117,110 @@ class Count_Pairs_Of_Similar_Strings
     }
 }
 
-//dd dd dd 
+
+
+
+
+
+
+
+
+import java.util.*;
+class Intersection of Two Arrays
+{
+    public static void main (String args [] )
+    {
+        int arr_1 = {1,2,2,1};
+        
+        int arr_2 = {2,2};
+
+        ArrayList <Integer> ar = new ArrayList<>();
+        ArrayList<Integer> ar_2 = new ArrayLsit<>();
+
+
+        // if(arr_1.length < arr_2.length)
+        // {
+        //     for(int num : arr_2)
+        //     {
+        //         ar.add(num);
+        //         needed_length = arr_2.length;
+        //     }
+
+
+        // }
+        // else
+        // {
+        //     for(int num : arr_1)
+        //     {
+        //         ar.add(num);
+        //         needed_length = arr_1.length;
+        //     }
+
+        //     for(int i=0;i<needed_length;i++)
+        //     {
+
+        //     }
+        // }
+
+        for(int num :arr_1)
+        {
+            ar.add(num);
+        }
+
+        for(int i=0;i<arr_2.length;i++)
+        {
+            if(ar.contains(arr_2[i]))
+            {
+                ar_2.add(arr_2[i]);
+            }
+        }
+
+        System.out.println(ar_2);
+
+
+    }
+}
+
+
+
+
+import java.util.*;
+class First_Missing_Positive
+{
+    public static void main (String args []) // n(n-1); this would not work 
+    {
+        int arr[] = {3,4,-1,1};
+        
+        Arrays.sort(arr);
+
+        ArrayList<Integer> ar = new ArrayList<>();
+
+        for(int i=0;i<arr.length;i++)
+        {
+
+            if(arr[i] > 0)
+            {
+                ar.add(arr[i]);
+            }
+
+        }
+        System.out.println(ar);
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
