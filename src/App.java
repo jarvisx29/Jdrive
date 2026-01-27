@@ -12210,6 +12210,36 @@ class First_Missing_Positive
 }
 
 
+class series_problem 
+{
+    public static void main (String args [])
+    {
+        //int arr [] = {-11,-12,-14,-18,-26,-42};
+
+        int num = -11;
+
+        int n = 6;
+
+        for(int i=0;i<n;i++)
+        {
+            if(i==0)
+            {
+                num-1;
+                System.out.println(num);
+            }
+            else
+            {
+                for(int j=1;j<n-2;j++)
+                {
+                    int digit = num-(2^j);
+                    System.out.println(digit);
+                }
+
+            }
+        }
+    }
+}
+
 
 
 
