@@ -12130,54 +12130,56 @@ class Intersection of Two Arrays
 {
     public static void main (String args [] )
     {
-        int arr_1 = {1,2,2,1};
+        // int nums1[] = {1,2,2,1};
         
-        int arr_2 = {2,2};
+        // int nums2[] = {2,2};
 
         ArrayList <Integer> ar = new ArrayList<>();
-        ArrayList<Integer> ar_2 = new ArrayLsit<>();
+        ArrayList<Integer> ar_2 = new ArrayList<>();
 
-
-        // if(arr_1.length < arr_2.length)
-        // {
-        //     for(int num : arr_2)
-        //     {
-        //         ar.add(num);
-        //         needed_length = arr_2.length;
-        //     }
-
-
-        // }
-        // else
-        // {
-        //     for(int num : arr_1)
-        //     {
-        //         ar.add(num);
-        //         needed_length = arr_1.length;
-        //     }
-
-        //     for(int i=0;i<needed_length;i++)
-        //     {
-
-        //     }
-        // }
-
-        for(int num :arr_1)
+        for(int num :nums1)
         {
             ar.add(num);
         }
 
-        for(int i=0;i<arr_2.length;i++)
+        for(int i=0;i<nums2.length;i++)
         {
-            if(ar.contains(arr_2[i]))
+            if(ar.contains(nums2[i]))
             {
-                ar_2.add(arr_2[i]);
+                ar_2.add(nums2[i]);
             }
         }
 
-        System.out.println(ar_2);
+        
+        for(int k =0;k<ar_2.size();k++)
+        {
+            int current_element = ar_2.get(k);
+            
+            for(int l=k+1;l<ar_2.size();l++)
+            {
+                if(ar_2.get(l) == current_element)
+                {
+                    ar_2.remove(l);
+                    l--;
+                }
+                
+            }
+        }
 
+        ////System.out.println(ar_2); 
+        // return ar_2;
 
+        int final_arr[] = new int[ar_2.size()];
+        
+        for(int p=0;p<ar_2.size();p++)
+        {
+            final_arr[p] = ar_2.get(p);
+        }
+        // for(int numm : final_arr)
+        // {
+        //     System.out.println(numm);
+        // }
+        return final_arr;
     }
 }
 
