@@ -12126,7 +12126,7 @@ class Count_Pairs_Of_Similar_Strings    // leetcode question : 100 % working for
 
 
 import java.util.*;
-class Intersection of Two Arrays
+class Intersection of Two Arrays 
 {
     public static void main (String args [] )
     {
@@ -12191,28 +12191,70 @@ class First_Missing_Positive
 {
     public static void main (String args []) // n(n-1); this would not work 
     {
-        int arr[] = {3,4,-1,1};
+        int arr[] = {1,2,2,1,3,1,0,4,0};
         
         Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr));
+        
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr.length<2 && arr[i] !=1)
+            {
+                System.out.println("1");
+                return;
+            }
+            if(arr[i] ==0 && arr[i+1] !=1)
+            {
+                System.out.println("1");
+                return;
+            }
+        }
 
         ArrayList<Integer> ar = new ArrayList<>();
 
         for(int i=0;i<arr.length;i++)
         {
 
-            if(arr[i] > 0)
+            if(arr[i] > 0 && !ar.contains(arr[i]))
             {
                 ar.add(arr[i]);
             }
 
         }
+        if(!ar.contains(1))
+        {
+            System.out.println("1");
+            return;
+        }
+        
         System.out.println(ar);
+        
+        int digit=0; ;
+        
+        for(int i=0;i<ar.size()-1;i++)
+        {
+            int j=i+1;
+            int current_element = ar.get(i);
+            if(current_element+1 != ar.get(j))
+            {
+                digit = current_element;
+                break;
+            }
+            //j++;
+        }
+        
+        if(digit == 0)
+        {
+            digit = ar.get(ar.size()-1);
+        }
+        
+        System.out.println(digit+1);
         
     }
 }
 
 
-class series_problem 
+class series_problem  // the proper old one was delted due to mac crash fix this at once
 {
     public static void main (String args [])
     {
@@ -12243,6 +12285,26 @@ class series_problem
 }
 
 
+import java.util.*;
+class Count_Common_Words_With_One_Occurrence
+{
+    public static void main (String args[])
+    {
+        String s1 [] = {"leetcode","is","amazing","as","is"};
+        
+        String s2 [] = {"amazing","leetcode","is"};
+
+        HashMap <String> hm = new HashMap <>();
+
+        for(String num : s1)
+        {
+            s1.put(num);
+        }
+        System.out.println(num);
+
+        
+    }
+}
 
 
 
