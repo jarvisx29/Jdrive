@@ -12286,7 +12286,7 @@ class series_problem  // the proper old one was delted due to mac crash fix this
 
 
 import java.util.*;
-class Count_Common_Words_With_One_Occurrence
+class Count_Common_Words_With_One_Occurrence  // leetcode question : 100 % working for all testcases !
 {
     public static void main (String args[])
     {
@@ -12294,19 +12294,72 @@ class Count_Common_Words_With_One_Occurrence
         
         String s2 [] = {"amazing","leetcode","is"};
 
-        HashMap <String> hm = new HashMap <>();
+        HashMap <String,Integer> hm = new HashMap <>();
+        HashMap<String,Integer> hm_2 = new HashMap<>();
+        
 
         for(String num : s1)
         {
-            s1.put(num);
+            hm.put(num,hm.getOrDefault(num,0)+1);
         }
-        System.out.println(num);
+        for(String numm : s2)
+        {
+            hm_2.put(numm,hm_2.getOrDefault(numm,0)+1);
+        }
+        System.out.println(hm);
+        System.out.println(hm_2);
+        
+        int count =0;
+        
+        for(String key : hm.keySet())
+        {
+            if(hm_2.containsKey(key) && hm.get(key) == 1 && hm_2.get(key) ==1)
+            {
+                count++;
+            }
+        }
+        
+        System.out.println(count);
 
         
     }
 }
 
 
+
+
+
+import java.util.*;
+class Uncommon_Words_from_Two_Sentences
+{
+    public static void main (String args[])
+    {
+        String s1 = "this apple is sweet";
+
+        String s2 = "this apple is sour";
+
+        String s1_arr = s1.split("");
+        String s2_arr = s2.split("");
+
+        HashMap <String,Integer> hm = new HashMap<>();
+
+        HashMap<String,Integer> hm_2 = new HashMap<>();
+
+        for(String num : s1_arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+        for(String numm : s2_arr)
+        {
+            hm_2.put(numm,hm_2.getOrDefault(numm,0)+1);
+        }
+
+        System.out.println(hm);
+        System.out.println(hm_2);
+
+    }
+}
 
 
 
