@@ -12361,7 +12361,30 @@ class Uncommon_Words_from_Two_Sentences
     }
 }
 
-// dd 
+
+
+import java.util.*;
+class Maximum_Size_of_a_Set_After_Removals
+{
+    public static void main (String args [])
+    {
+        int arr_1 = {1,2,1,2};
+        int arr_2 = {1,1,1,1};
+
+        ArrayList<Integer> ar = new ArrayList<>();
+        ArrayList<Integer> ar_2 = new ArrayList<>();
+
+        for(int i=0;i<arr_1.length/2;i++)
+        {
+            ar.add(arr_1[i]);
+            ar.add(arr_2[i]);
+        }
+
+        System.out.println(ar.size());
+    }
+}
+
+
 
 
 
