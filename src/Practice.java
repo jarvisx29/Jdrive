@@ -1651,6 +1651,51 @@ class priority_stuff
 
 
 
+import java.util.*;
+class stack_basics_again
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,2,3,4,5};
+
+        Stack <Integer> st = new Stack <>();
+
+        for(int num :arr)
+        {
+            st.push(num);
+        }
+        System.out.println(st);
+        
+        System.out.println(st.peek());
+        
+        System.out.println(st.pop());
+        
+        System.out.println("after pop "+st);
+        
+        if(st.isEmpty())
+        {
+            System.out.println("true");
+            return;
+        }
+        System.out.println("false");
+        
+    }
+}
+
+
+// push pop peek isempty implement 
+
+
+class stack
+{
+    int arr[] = {1,2,3,4,5};
+
+}
+
+void insert()
+
+
+
 
 
 

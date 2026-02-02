@@ -7626,7 +7626,7 @@ class vector_basics
 
 //                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX STACK BASICS    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-
+// push pop peek isempty implement 
 
 import java.util.*;
 class stack_basics
@@ -11864,7 +11864,7 @@ class using_replaceAll
 {
     public static void main(String[] args) 
     {
-        String s = "163x^5 + 123x^4 - 65x^3";
+        String s = "163x^5 + 123x^4 - 65x^3";    // question sir gave for fun to test us ; kinda succeeded ig 
 
         String s_words[] = s.split("+");
         String s_words_2[] = s_words.split("-");
@@ -12125,8 +12125,9 @@ class Count_Pairs_Of_Similar_Strings    // leetcode question : 100 % working for
 
 
 
-import java.util.*;
-class Intersection of Two Arrays 
+import java.util.*;   // Golden rule question : (not really but important step revealed in ar towards our mastering journey)
+
+class Intersection_of_Two_Arrays  // leetcode question : 100 % working for all testcases !
 {
     public static void main (String args [] )
     {
@@ -12157,10 +12158,11 @@ class Intersection of Two Arrays
             
             for(int l=k+1;l<ar_2.size();l++)
             {
+                // if(ar_2.contains(current_element))  // this is wrong because if you use contains here ; then arraylist contains the present index k itself ; so no matter what it will alaways be true(flase true). so use == here
                 if(ar_2.get(l) == current_element)
                 {
                     ar_2.remove(l);
-                    l--;
+                    l--;   // we do this since if you dont do this ; when you remove the current_element the current+1 element shifted -1 index left to make up ; so in the next iteration ++ ; it will skip the actuall current+1 element which shifted left ; (so l-- so that it could also count it without skipping it)
                 }
                 
             }
@@ -12187,7 +12189,7 @@ class Intersection of Two Arrays
 
 
 import java.util.*;
-class First_Missing_Positive
+class First_Missing_Positive.   // incomplete ; we are still doing update once done
 {
     public static void main (String args []) // n(n-1); this would not work 
     {
@@ -12330,7 +12332,7 @@ class Count_Common_Words_With_One_Occurrence  // leetcode question : 100 % worki
 
 
 import java.util.*;
-class Uncommon_Words_from_Two_Sentences
+class Uncommon_Words_from_Two_Sentences // leetcode question : 100% working for all testcases
 {
     public static void main (String args[])
     {
@@ -12338,28 +12340,63 @@ class Uncommon_Words_from_Two_Sentences
 
         String s2 = "this apple is sour";
 
-        String s1_arr = s1.split("");
-        String s2_arr = s2.split("");
+      
+        
+        String s_3 = s1+" "+s2;
+        System.out.println(s_3);
 
         HashMap <String,Integer> hm = new HashMap<>();
 
-        HashMap<String,Integer> hm_2 = new HashMap<>();
+        // HashMap<String,Integer> hm_2 = new HashMap<>();
+        ArrayList <String> ar = new ArrayList<>();
 
-        for(String num : s1_arr)
+        for(String num : s_new)
         {
             hm.put(num,hm.getOrDefault(num,0)+1);
         }
-
-        for(String numm : s2_arr)
-        {
-            hm_2.put(numm,hm_2.getOrDefault(numm,0)+1);
-        }
-
         System.out.println(hm);
-        System.out.println(hm_2);
+
+     
+        
+        
+        for(String key : hm.keySet())
+        {
+            if(hm.get(key) ==1)
+            {
+                System.out.println(key);
+                ar.add(key);
+            }
+        }
+        
 
     }
 }
+
+
+import java.util.*;
+class Kth_Distinct_String_in_an_Array
+{
+    public static void main(String args [])
+    {
+        String s1 = {"d","b","c","b","c","a"};
+
+        int k =2;
+
+        HashMap<String> hm = new HashMap<>();
+
+        for(String num : s1)
+        {
+            System.out.println(num,hm.getOrDefault(num,0)+1);
+        }
+        System.out.println(hm);
+    }
+}
+
+
+
+
+
+
 
 
 
@@ -12383,6 +12420,8 @@ class Maximum_Size_of_a_Set_After_Removals
         System.out.println(ar.size());
     }
 }
+
+
 
 
 
