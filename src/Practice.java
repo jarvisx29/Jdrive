@@ -1696,12 +1696,280 @@ void insert()
 
 
 
+//1st page 
+
+import java.util.*;
+class First_Missing_Positive
+{
+    public static void main (String args []) // n(n-1); this would not work 
+    {
+        int arr[] = {1,2,2,1,3,1,0,4,0};
+        
+        Arrays.sort(arr);
+        System.out.println(Arrays.toString(arr));
+        
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr.length<2 && arr[i] !=1)
+            {
+                System.out.println("1");
+                return;
+            }
+            if(arr[i] ==0 && arr[i+1] !=1)
+            {
+                System.out.println("1");
+                return;
+            }
+        }
+
+        ArrayList<Integer> ar = new ArrayList<>();
+
+        for(int i=0;i<arr.length;i++)
+        {
+
+            if(arr[i] > 0 && !ar.contains(arr[i]))
+            {
+                ar.add(arr[i]);
+            }
+
+        }
+        if(!ar.contains(1))
+        {
+            System.out.println("1");
+            return;
+        }
+        
+        System.out.println(ar);
+        
+        int digit=0; ;
+        
+        for(int i=0;i<ar.size()-1;i++)
+        {
+            int j=i+1;
+            int current_element = ar.get(i);
+            if(current_element+1 != ar.get(j))
+            {
+                digit = current_element;
+                break;
+            }
+            //j++;
+        }
+        
+        if(digit == 0)
+        {
+            digit = ar.get(ar.size()-1);
+        }
+        
+        System.out.println(digit+1);
+        
+    }
+}
+
+
+
+//2nd page 
+
+
+import java.util.*;
+class Intersection_of_Two_Arrays_II
+{
+    public static void main (String args [] )
+    {
+        int nums1[] = {1,2,2,1};
+        
+        int nums2[] = {2,2};
+
+        ArrayList <Integer> ar = new ArrayList<>();
+        ArrayList<Integer> ar_2 = new ArrayList<>();
+
+        for(int num :nums1)
+        {
+            ar.add(num);
+        }
+
+        for(int i=0;i<nums2.length;i++)
+        {
+            if(ar.contains(nums2[i]) && !ar_2.contains(nums2[i]))
+            {
+                ar_2.add(nums2[i]);
+            }
+        }
+
+        int l;
+        int count =0;
+        for(int k =0;k<ar_2.size();k++)
+        {
+            int current_element = ar_2.get(k);
+            
+            for( l=k+1;l<ar_2.size();l++)
+            {
+                if(ar_2.get(l) == current_element)
+                {
+                    //ar_2.remove(l);
+                    count++;
+                    //l--;
+                }
+                
+            }
+            if(count >2 && ar_2.size()<3)
+            {
+                ar_2.remove(l);
+                l--;
+            }
+        }
+
+        System.out.println(ar_2); 
+        // return ar_2;
+
+        int final_arr[] = new int[ar_2.size()];
+        
+        for(int p=0;p<ar_2.size();p++)
+        {
+            final_arr[p] = ar_2.get(p);
+        }
+        for(int numm : final_arr)
+        {
+            System.out.println(numm);
+        }
+        // return final_arr;
+        //System.out.println(final_arr);
+       
+    }
+}
+
+
+
+//3rd page
+
+
+import java.util.*;
+class Maximum_Size_of_a_Set_After_Removals
+{
+    public static void main (String args [])
+    {
+        int arr_1 []= {1,2,3,4,5,6};
+        int arr_2 []= {2,3,2,3,2,3};
+        
+        ArrayList<Integer> ar = new ArrayList<>();
+        ArrayList<Integer> ar_2 = new ArrayList<>();
+        
+        for(int num : arr_1)
+        {
+            if(!ar.contains(num))
+            {
+              ar.add(num);  
+            }
+        }
+        for(int numm : arr_2)
+        {
+            if(!ar.contains(numm))
+            {
+                ar.add(numm);
+            }
+            
+        }
+
+        // for(int i=0;i<arr_1.length/2;i++)
+        // {
+        //     if(!ar.contains(arr_1[i]) && (!ar.contains(arr_2[i])))
+        //     {
+        //         ar.add(arr_1[i]);
+        //         ar.add(arr_2[i]);
+                
+        //     }
+            
+        // }
+        
+        System.out.println(ar);
+        System.out.println(ar.size());
+    }
+}
 
 
 
 
+//4th page
+
+import java.util.*;
+class Kth_Distinct_String_in_an_Array
+{
+    public static void main(String args [])
+    {
+        String s1 [] = {"d","b","c","b","c","a"};
+
+        int k =2;
+
+        LinkedHashMap<String,Integer> hm = new LinkedHashMap<>();
+        ArrayList<String> ar = new ArrayList<>();
+
+        for(int i=0;i<s1.length;i++)
+        {
+            String s1_single = s1[i];
+            hm.put(s1_single,hm.getOrDefault(s1_single,0)+1);
+        }
+        System.out.println(hm);
+        
+        int count =0;
+        for(String key : hm.keySet())
+        {
+            if(hm.get(key) == 1)
+            {
+                ar.add(key);
+                count++;
+            }
+        }
+        System.out.println(ar);
+        // System.out.println(count);
+        
+        
+        if(count <k)
+        {
+            System.out.println("empty");
+        }
+        else
+        {
+            String result = ar.get(k-1);
+            System.out.println(result);
+        }
+        
+        
+    }
+}
 
 
+//5th 
+
+import java.util.*;
+class stack_basics_again
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,2,3,4,5};
+
+        Stack <Integer> st = new Stack <>();
+
+        // for(int num :arr)
+        // {
+        //     st.push(num);
+        // }
+        // System.out.println(st);
+        
+        // System.out.println(st.peek());
+        
+        // System.out.println(st.pop());
+        
+        // System.out.println("after pop "+st);
+        
+        // if(st.isEmpty())
+        // {
+        //     System.out.println("true");
+        //     return;
+        // }
+        // System.out.println("false");
+        
+    }
+}
+// dd 
 
 
 
