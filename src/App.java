@@ -12429,6 +12429,44 @@ class Maximum_Size_of_a_Set_After_Removals
 
 
 
+import java.util.*;
+class Set_Mismatch
+{
+    public static void main (String args [])
+    {
+        int arr [] = {1,2,2,4};
+
+        HashMap <Integer,Integer> hm = new HashMap <>();
+
+        for(int num : arr)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+        int dup_element =0;
+        for(int key : hm.keySet())
+        {
+            if(hm.get(key)> 1)
+            {
+                dup_element = key;
+            }
+        }
+
+        System.out.println(dup_element);
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
