@@ -12430,11 +12430,11 @@ class Maximum_Size_of_a_Set_After_Removals
 
 
 import java.util.*;
-class Set_Mismatch
+class Set_Mismatch    // leetcode question : 100 % working for all testcases !
 {
     public static void main (String args [])
     {
-        int arr [] = {1,2,2,4};
+        int arr [] = {1,3,3};
 
         HashMap <Integer,Integer> hm = new HashMap <>();
 
@@ -12442,23 +12442,87 @@ class Set_Mismatch
         {
             hm.put(num,hm.getOrDefault(num,0)+1);
         }
+        System.out.println(hm);
 
         int dup_element =0;
-        for(int key : hm.keySet())
+        // int final_arr [] = new int[2];
+        
+        // for(int key : hm.keySet())
+        // {
+            // if(hm.containsKey(1))
+            // {
+            //     if(hm.get(key) ==2 && key <3) 
+            // {
+            //     dup_element = key;
+            //     final_arr[0] = key;
+            //     final_arr[1] = key+1;
+            // }
+                
+            // }
+            
+            // else if(hm.get(key) ==2)
+            // {
+            //     final_arr[0] = key;
+            //     final_arr[1] = 1;
+            // }
+        // }
+        int missing_element =0;
+        
+        for(int i=1;i<=arr.length;i++)
         {
-            if(hm.get(key)> 1)
+            if(!hm.containsKey(i))
             {
-                dup_element = key;
+                missing_element = i;
+            }
+            else if(hm.get(i) ==2)
+            {
+                dup_element = i;
+                
             }
         }
-
+        System.out.println(missing_element);
         System.out.println(dup_element);
+        
+        int final_arr [] = {dup_element,missing_element};
+
+        System.out.println(Arrays.toString(final_arr));
 
 
     }
 }
 
-// dd dd dd dd 
+
+
+import java.util.*;
+class Find_the_Difference_of_Two_Arrays
+{
+    public static void main (String args [])
+    {
+        int arr_1 []= {1,2,3};
+        int arr_2 []= {2,4,6};
+
+        HashMap<Integer,Integer> hm = new HashMap<>();
+        HashMap<Integer,Integer> hm_2 = new HashMap <>();
+
+        for(int num : arr_1)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+        for(int numm : arr_2)
+        {
+            hm_2.put(numm,hm.getOrDefault(numm,0)+1);
+        }
+
+        for(int key : hm.keySet())
+        {
+            if(!hm_2.contains(key))
+            {
+                System.out.println(key);
+            }
+        }
+    }
+}
 
 
 
