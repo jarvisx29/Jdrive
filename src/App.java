@@ -12493,13 +12493,14 @@ class Set_Mismatch    // leetcode question : 100 % working for all testcases !
 
 
 
+
 import java.util.*;
-class Find_the_Difference_of_Two_Arrays
+class Find_the_Difference_of_Two_Arrays. // leetcode question : 100 % working for all testcases !
 {
     public static void main (String args [])
     {
-        int arr_1 []= {1,2,3};
-        int arr_2 []= {2,4,6};
+        int arr_1 []= {1,2,3,3};        
+        int arr_2 []= {1,1,2,2};
 
         HashMap<Integer,Integer> hm = new HashMap<>();
         HashMap<Integer,Integer> hm_2 = new HashMap <>();
@@ -12513,20 +12514,167 @@ class Find_the_Difference_of_Two_Arrays
         {
             hm_2.put(numm,hm.getOrDefault(numm,0)+1);
         }
+        List<Integer> l1 = new ArrayList<>();
+        List<Integer> l2 = new ArrayList<>();
 
         for(int key : hm.keySet())
         {
-            if(!hm_2.contains(key))
+            if(!hm_2.containsKey(key))
             {
                 System.out.println(key);
+                l1.add(key);
             }
         }
+        
+        for(int keyy : hm_2.keySet())
+        {
+            if(!hm.containsKey(keyy))
+            {
+                System.out.println(keyy);
+                l2.add(keyy);
+            }
+        }
+        
+        List<List<Integer>> final_ans = new ArrayList<>();
+        
+        final_ans.add(l1);
+        final_ans.add(l2);
+        
+        System.out.println(final_ans);
     }
 }
 
 
-//dd 
 
+// Online C++ compiler to run C++ program online
+#include <iostream>
+
+    struct node 
+    {
+        int data;
+        node * next;
+        
+    };
+    
+int main() 
+{
+
+        // node * head = NULL;
+        
+        // node *ptr;
+        // ptr = (node *)malloc(sizeof(node));
+        // (*ptr).data =100;
+        // (*ptr).next = NULL;
+        
+        // node* temp ;
+        // temp = (node *)malloc(sizeof(node));
+        // temp->data = 200;
+        // temp->next = NULL;
+        // ptr->next = temp;
+        
+        // node * temp2 ;
+        // temp2 = (node *)malloc(sizeof(node));
+        // temp2->data = 300;
+        // temp2->next=NULL;
+        // temp->next =temp2;
+        
+        // node * temp3 ;
+        // temp3 = (node *)malloc(sizeof(node));
+        // temp3->data = 400;
+        // temp3->next = NULL;
+        // temp2->next = temp3;
+        
+        // for(int i=0;i<5;i++) this is wrong ; NO WORRIES !! WE ALL START SOMEWHERE JUST LIKE WE DID WITH PROGRAMMING FEW MONTHS BACK !! ; LOOK HOW FAR WE HAVE COME!! KEPP GOING !
+        // {
+        //     node * head = NULL;
+        //     node * ptr ;
+        //     ptr->data = i;
+        //     ptr->next = NULL;
+            
+        //     node * temp ;
+        //     temp = (node *)malloc(sizeof(node));
+        //     temp->data = i+1;
+        //     ptr->next = temp;
+        // }
+        
+          node* head = NULL;
+          
+          node* previous ;
+          
+          for(int i=0;i<5;i++) // for loop on how to assign LinkedLIst through loop
+          {
+              node* temp;
+              temp = (node*)malloc(sizeof(node));
+              temp->data = 200+i;
+              temp->next = NULL;
+              
+              if(head == NULL)
+              {
+                  head = temp;
+                  previous = temp;
+              }
+              
+              else
+              {
+                  previous->next = temp;
+                  previous = temp;
+              }
+          }
+          
+       
+        
+        
+        
+        while(head != NULL)
+        {
+            printf("%d \n",head->data);
+            head = head->next;
+        }
+        
+        
+            // printf("%d \n",head->data);
+            // printf("%d \n",previous->data);
+            
+            // while(previous != NULL)
+            // {
+                
+            // }
+        
+        
+    }
+    
+
+
+
+import java.util.*;
+class Sort_Array_By_Parity
+{
+    public static void main (String args [])
+    {
+        int arr [] = {3,1,2,4};
+
+        ArrayList<Integer> ar = new ArrayList<>();
+        ArrayList<Integer> ar_2 = new ArrayList<>();
+
+        for(int num : arr)
+        {
+            if(num % 2 ==0)
+            {
+                ar.add(num);
+            }
+
+            else
+            {
+                ar_2.add(num);
+            }
+        }
+
+        System.out.println(ar);
+        System.out.println(ar_2);
+
+
+    }
+}
 
 
 
