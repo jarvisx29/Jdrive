@@ -12604,19 +12604,19 @@ int main()
           for(int i=0;i<5;i++) // for loop on how to assign LinkedLIst through loop
           {
               node* temp;
-              temp = (node*)malloc(sizeof(node));
+              temp = (node *)malloc(sizeof(node));
               temp->data = 200+i;
               temp->next = NULL;
               
               if(head == NULL)
               {
-                  head = temp;
+                  head = temp;     // we put head = temp and previous = temp beacuse nothing else exits. so the this temp node alone only exists
                   previous = temp;
               }
               
               else
               {
-                  previous->next = temp;
+                  previous->next = temp;  // we put previous->next = temp (to link it to the last iterartion of temp and then in the next line we update it to the current latest temp)
                   previous = temp;
               }
           }
