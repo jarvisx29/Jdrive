@@ -12645,13 +12645,85 @@ int main()
     
 
 
+// Online C++ compiler to run C++ program online
+#include <iostream>
+
+    struct node 
+    {
+        int data;
+        node * next;
+        
+    };
+    
+int main() 
+{
+
+        node * head = NULL;
+        
+        node *ptr;
+        ptr = (node *)malloc(sizeof(node));
+        (*ptr).data =100;
+        (*ptr).next = NULL;
+        
+        node* temp ;
+        temp = (node *)malloc(sizeof(node));
+        temp->data = 200;
+        temp->next = NULL;
+        ptr->next = temp;
+        
+        node * temp2 ;
+        temp2 = (node *)malloc(sizeof(node));
+        temp2->data = 300;
+        temp2->next=NULL;
+        temp->next =temp2;
+        
+        // while(ptr != NULL)
+        // {
+        //     printf("%d \n",ptr->data);
+        //     ptr  = ptr->next;
+            
+        // }
+       
+        // printf("XXXXXX");
+        
+        // XXXXXXXXXXXXXXXXXXXXXXXXX
+        
+        temp->next = ptr;
+        ptr->next = temp2;
+        temp2->next = NULL;
+        
+        // ptr->next = 300;
+        // temp2->next = 100;
+        
+        // ptr->next = temp2->data;
+        // temp2->next = ptr->data;
+        
+       
+        
+         
+        
+        while(temp != NULL)
+        {
+            printf("%d \n",temp->data);
+            temp  = temp ->next;
+        }
+        
+        
+            // printf("%d \n",head->data);
+            // printf("%d \n",previous->data);
+            
+            
+        
+    }
+    
+
 
 import java.util.*;
-class Sort_Array_By_Parity
+class Sort_Array_By_Parity // leetcode question : 100 % working for all testcases !
 {
     public static void main (String args [])
     {
-        int arr [] = {3,1,2,4};
+        int arr [] = {0};
 
         ArrayList<Integer> ar = new ArrayList<>();
         ArrayList<Integer> ar_2 = new ArrayList<>();
@@ -12671,6 +12743,19 @@ class Sort_Array_By_Parity
 
         System.out.println(ar);
         System.out.println(ar_2);
+        
+        ar.addAll(ar_2);
+        System.out.println(ar);
+        
+        int final_arr [] = new int[ar.size()];
+        
+        for(int i=0;i<ar.size();i++)
+        {
+            final_arr[i] = ar.get(i);
+        }
+        
+        System.out.println(Arrays.toString(final_arr));
+        
 
 
     }
@@ -12679,10 +12764,142 @@ class Sort_Array_By_Parity
 
 
 
+import java.util.*;
+class Sort_Array_By_Parity_II  // leetcode question : 100 % working for all testcases !
+{
+    public static void main (String args [])
+    {
+        int arr [] = {2,3};
+
+        ArrayList<Integer> ar = new ArrayList<>();  // even
+        ArrayList<Integer> ar_2 = new ArrayList<>();// odd
+
+        ArrayList<Integer> ar_3 = new ArrayList<>(); // final_arr thing
+
+
+        for(int num : arr)
+        {
+            if(num % 2 == 0)
+            {
+                ar.add(num);
+            }
+            else
+            {
+                ar_2.add(num);
+            }    
+        }
+        System.out.println(ar);
+        System.out.println(ar_2);
+        
+        int idx_1 =0;
+        int idx_2 =0;
+
+        for(int i=0;i<arr.length;i++)
+        {
+            if(i% 2 == 0)
+            {
+                ar_3.add(ar.get(idx_1));
+                idx_1++;
+            }
+            else
+            {
+                ar_3.add(ar_2.get(idx_2));
+                idx_2++;
+            }
+        }
+        System.out.println(ar_3);
+        
+        int final_arr [] = new int[ar_3.size()];
+        
+        for(int j=0;j<ar_3.size();j++)
+        {
+            final_arr[j] = ar_3.get(j);
+        }
+        System.out.println(Arrays.toString(final_arr));
+    }
+}
 
 
 
+ 
+// linkedlist basics BASELINE (senthil sir basics see down for proper LinkedList start)
 
+
+
+// Online C++ compiler to run C++ program online
+#include <iostream>
+
+    struct node 
+    {
+        int data;
+        node * next;
+        
+    };
+    
+int main() 
+{
+
+        node * head = NULL;
+        
+        node *ptr;
+        ptr = (node *)malloc(sizeof(node));
+        (*ptr).data =100;
+        (*ptr).next = NULL;
+        
+        node* temp ;
+        temp = (node *)malloc(sizeof(node));
+        temp->data = 200;
+        temp->next = NULL;
+        ptr->next = temp;
+        
+        node * temp2 ;
+        temp2 = (node *)malloc(sizeof(node));
+        temp2->data = 300;
+        temp2->next=NULL;
+        temp->next =temp2;
+        
+        // while(ptr != NULL)
+        // {
+        //     printf("%d \n",ptr->data);
+        //     ptr  = ptr->next;
+            
+        // }
+       
+        // printf("XXXXXX");
+        
+        // XXXXXXXXXXXXXXXXXXXXXXXXX
+        
+        temp->next = ptr;
+        ptr->next = temp2;
+        temp2->next = NULL;
+        
+        // ptr->next = 300;
+        // temp2->next = 100;
+        
+        // ptr->next = temp2->data;
+        // temp2->next = ptr->data;
+        
+       
+        
+         
+        
+        while(temp != NULL)
+        {
+            printf("%d \n",temp->data);
+            temp  = temp ->next;
+        }
+        
+        
+            // printf("%d \n",head->data);
+            // printf("%d \n",previous->data);
+            
+            
+        
+    }
+    
+
+
+    
 
 
 
