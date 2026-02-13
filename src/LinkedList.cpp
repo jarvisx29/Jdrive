@@ -190,6 +190,10 @@ int main()
 }
 
 
+
+
+
+
 // TO INSERT AT END 
 
 #include <iostream>
@@ -258,6 +262,83 @@ int main()
 
 
 
+
+// DELETE at start(head)
+
+#include <iostream>
+
+struct node
+{
+    int data;
+    node *next;
+};
+
+int main() 
+{
+    
+    node *head = NULL;
+    
+    node *previous;
+    
+    for(int i=0;i<5;i++)
+    {
+        node *temp;
+        temp = (node *)malloc(sizeof(node));
+        temp->data = 200+i;
+        temp->next = NULL;
+        
+        if(head == NULL)
+        {
+            head = temp; 
+            previous = temp;
+        }
+        else
+        {
+            previous->next=temp;
+            previous = temp;
+        }
+    }
+
+                       // IMPORTANT !!!!!! THIS IS HOW YOU TRAVESE !!!!!!!!(you should be using head = head->next and that is why two consecutive while loops werent moving ; you need to always use a temporary variable to traverse REMEMBER !!!!!!!!)
+    node *trav = head;       
+    while(trav != NULL)
+    {
+        
+        printf("%d \n",trav->data);
+        trav = trav->next;
+    }
+    
+    
+
+    // printf("%d \n",head->data);
+    
+    node *new_temp;
+    
+    // new_temp = head->next; // this is alright but sir told just do it in one line easy 
+    // head = new_temp;
+    
+    new_temp = head;
+    head = head->next;
+    
+    
+    free(new_temp);
+    // printf("%d \n",new_temp->data);
+    
+    node *previous_temp; 
+    
+
+  
+    
+    printf("XXXXXXXX \n");
+    
+    while(head != NULL)
+    {
+        printf("%d \n",head->data);
+        head = head->next;
+    }
+    
+    
+}
 
 
 
