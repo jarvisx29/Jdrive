@@ -12897,7 +12897,38 @@ int main()
         
     }
     
-// dd dd
+}
+
+
+import java.util.*;
+class Sort_Even_and_Odd_Indices_Independently
+{
+    public static void main (String args [])
+    {
+        int arr[] = {4,1,2,3};
+
+        ArrayList<Integer> ar = new ArrayList<>(); //  even (sort ascending) 0 2 ...
+        ArrayList<Integer> ar_2 = new ArrayList<>();// odd (odd descending). 1 3 ...
+ 
+        for(int i=0;i<arr.length;i++)
+        {
+            if(i % 2 == 0)
+            {
+                ar.add(arr[i]);
+            }
+            else
+            {
+                ar_2.add(arr[i]);
+            }
+        }
+
+        System.out.println(ar);
+        System.out.println(ar_2);
+    }
+}
+
+
+
 
     
 
