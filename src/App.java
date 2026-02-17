@@ -12901,14 +12901,17 @@ int main()
 
 
 import java.util.*;
-class Sort_Even_and_Odd_Indices_Independently
+class Sort_Even_and_Odd_Indices_Independently // leetcode question : 100 % working for all testcases !
 {
     public static void main (String args [])
     {
-        int arr[] = {4,1,2,3};
+        int arr[] = {2,1};
 
         ArrayList<Integer> ar = new ArrayList<>(); //  even (sort ascending) 0 2 ...
         ArrayList<Integer> ar_2 = new ArrayList<>();// odd (odd descending). 1 3 ...
+        ArrayList<Integer> ar_3 = new ArrayList<>();
+        
+        ArrayList<Integer> ar_4 = new ArrayList<>();
  
         for(int i=0;i<arr.length;i++)
         {
@@ -12924,8 +12927,76 @@ class Sort_Even_and_Odd_Indices_Independently
 
         System.out.println(ar);
         System.out.println(ar_2);
+        
+        ar.sort(null);
+        
+        ar_2.sort(null);
+        
+        for(int j=ar_2.size()-1;j>=0;j--)
+        {
+            ar_3.add(ar_2.get(j));
+        }
+        
+        System.out.println(ar_3);
+        
+        // even = 
+        
+        int idx=0;
+        int idx_2 =0;
+        for(int k=0;k<arr.length;k++) 
+        {
+            if(k % 2 == 0)
+            {
+                ar_4.add(ar.get(idx));
+                idx++;
+            }
+            else
+            {
+                ar_4.add(ar_3.get(idx_2));
+                idx_2++;
+            }
+            
+        }
+        
+        System.out.println(ar_4);
+        
+        int final_arr [] = new int [ar_4.size()];
+        
+        for(int l=0;l<ar_4.size();l++)
+        {
+            final_arr[l] = ar_4.get(l);
+        }
+        System.out.println(Arrays.toString(final_arr));
+        
+        
     }
 }
+
+
+
+import java.util.*;
+class Check_if_Numbers_Are_Ascending_in_a_Sentence
+{
+    public static void main (String args [])
+    {
+        String s = "1 box has 3 blue 4 red 6 green and 12 yellow marbles";
+
+        ArrayList<Integer> ar = new ArrayList<>();
+
+        for(int i=0;i<s.length();i++)
+        {
+            char chr = s.charAt(i);
+
+            if(Character.isDigit(chr))
+            {
+                ar.add(Character.getNumericValue(chr));
+            }
+        }
+
+        System.out.println(ar);
+    }
+}
+
 
 
 

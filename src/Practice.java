@@ -1969,12 +1969,65 @@ class stack_basics_again
         
     }
 }
-// dd 
 
 
 
 
+    for(int i=0;i<str1.length();i++)
+        {
+            char chr = str1.charAt(i);
 
+            if(Character.isAlphabetic(chr))       // this loop check and puts the alphabets in the str2
+            {
+                 //str2 = chr;
+
+                 str2 = str2 + Character.toString(chr);  //      Golden rule:    toString : used to convert char stuff to String
+            }
+            else                                  // this loop puts the numbers in the str3 for digits
+            {
+                str3 = str3+ Character.toString(chr);
+            }
+            if(Character.isDigit(chr))             // this loop is used to put the digits in sum part and add them 
+            
+                //str4 = str4 + Character.to(chr);
+                //str4 =str4 + Character.getNumericValue(chr);  // this wont work this will just put the numbers in the string (not add them)
+                 
+                
+                
+                sum = sum + Character.getNumericValue(chr);   // we use .getNumericValue() func to convert the digit char ('5') to actual integers (int 5)    
+            
+        }
+
+
+
+        System.out.println("enter the string : ");
+        Scanner sc = new Scanner(System.in);
+
+        String str1 = sc.nextLine();
+
+        System.out.println("enter the integer : ");
+        Scanner sc2 = new Scanner(System.in);
+
+        int int1 = sc2.nextInt();
+
+        int sum = 0; // integers taken from String will be added here
+
+        int total_sum = 0;  // sum of digits from String and integer given by user
+
+        for(int i=0;i<str1.length();i++)
+        {
+            char chr = str1.charAt(i);
+
+            if(Character.isDigit(chr))
+            {
+                sum = sum + Character.getNumericValue(chr);
+            }
+
+        }
+
+
+
+        
 
 
 
