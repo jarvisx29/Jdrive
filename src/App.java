@@ -12974,29 +12974,113 @@ class Sort_Even_and_Odd_Indices_Independently // leetcode question : 100 % worki
 
 
 
-import java.util.*;
-class Check_if_Numbers_Are_Ascending_in_a_Sentence
+import java.util.*;          // Golden rule Question : seems simple and kinda is but due to diffrent strings it can misbehave so pain in a; 
+class Check_if_Numbers_Are_Ascending_in_a_Sentence // leetcode question ": 100 % working for all testcases
 {
     public static void main (String args [])
     {
-        String s = "1 box has 3 blue 4 red 6 green and 12 yellow marbles";
+        String s = "sunset is at 7 51 pm overnight lows will be in the low 50 and 60 s";
 
         ArrayList<Integer> ar = new ArrayList<>();
+        String temp = "";
+        String temp2 = "";
 
         for(int i=0;i<s.length();i++)
         {
             char chr = s.charAt(i);
-
-            if(Character.isDigit(chr))
+                                    // we put i+2 check here so that we dont go out of bounds here 
+             if( i+2<s.length() && Character.isDigit(s.charAt(i)) && Character.isDigit(s.charAt(i+1)) && Character.isDigit(s.charAt(i+2)))
+            {
+                System.out.println(s.charAt(i)+" "+s.charAt(i+1) +" "+s.charAt(i+2));
+                 temp2 = temp2 + s.charAt(i) + s.charAt(i+1) + s.charAt(i+2);
+                 
+                int num2 = Integer.parseInt(temp2);
+                System.out.println(temp2);
+                
+                // i++;
+                
+                ar.add(num2);
+                
+                i=i+2;    // we put i+2 here itself so thatit will skip this index ; and not again biforcate it accidently on next itration
+                
+                temp2 =""; // reset for next digit
+                
+                
+                // System.out.println()
+            }
+            
+           else if(i+1<s.length() && Character.isDigit(s.charAt(i)) && Character.isDigit(s.charAt(i+1)) )
+            {
+                // System.out.println(s.charAt(i) +" "+s.charAt(i+1));
+                temp = temp + s.charAt(i) + s.charAt(i+1);
+                // System.out.println(temp);
+                int num = Integer.parseInt(temp);
+                
+                // System.out.println(num);
+                // i++;
+                ar.add(num);
+                
+                i=i+1;
+                temp ="";
+            }
+           
+            
+            else if(Character.isDigit(chr) && (i+1>=s.length()|| !Character.isDigit(s.charAt(i+1))))
             {
                 ar.add(Character.getNumericValue(chr));
             }
         }
 
         System.out.println(ar);
+        
+        for(int k=0;k<ar.size()-1;k++)
+        {
+            if(ar.get(k) < ar.get(k+1))
+            {
+                
+            }
+            else
+            {
+                System.out.println("false");
+                return;
+            }
+        }
+        System.out.println("true");
     }
 }
 
+
+import java.util.*;
+class Sorting_the_Sentence
+{
+    public static void main (String args [])
+    {
+        String s = "is2 sentence4 This1 a3";
+
+        String s_split [] = s.split(" ");
+
+        String single = "";
+
+        for(int i=0;i<s_split.length;i++)
+        {
+            String s_word = s_split[i];
+
+            for(int j=0;j<s_word;j++)
+            {
+                char chr = s_word.charAt(j);
+
+                if(!Character.isDigit(chr))
+                {
+
+                    single = single + chr;
+                }
+
+                System.out.println(single);
+                single = "";
+            }
+        }
+    }
+}
 
 
 

@@ -426,6 +426,101 @@ int main()
 }
 
 
+// DELETE AT MIDDLE 
+
+#include <iostream>
+
+struct node
+{
+    int data;
+    node *next;
+};
+
+int main() 
+{
+    
+    node *head = NULL;
+    
+    node *previous;
+    int count =0;
+    
+    for(int i=0;i<4;i++)
+    {
+        node *temp;
+        temp = (node *)malloc(sizeof(node));
+        temp->data = 200+i;
+        temp->next = NULL;
+        
+        if(head == NULL)
+        {
+            head = temp; 
+            previous = temp;
+        }
+        else
+        {
+            previous->next=temp;
+            previous = temp;
+        }
+        count++;
+    }
+    printf("before removal \n");
+    
+    node *trav = head;
+    while(trav != NULL)
+    {
+        
+        printf("%d \n",trav->data);
+        trav = trav->next;
+    }
+    
+    // node *previous_temp; 
+    
+    // node * current = head;
+    
+    // while(current->next != NULL)
+    // {
+    //     previous_temp = current;
+    //     // printf("%d \n",previous_temp->data);
+    //     current = current->next;
+    // }
+    
+    // // printf("%d \n",previous_temp->data);
+    
+    // previous_temp->next = NULL;
+    
+
+  
+    
+    printf("XXXXXXXX \n");
+    
+    printf("count : %d \n",count);
+      node *previous_temp;
+    node * current = head;
+    node * next_temp;
+    
+    for(int i=0;i<(count/2)-1;i++)
+    {
+        previous_temp = current;
+         current = current->next;
+    }
+    printf("previous :%d \n",previous_temp->data);
+    printf("current :%d \n",current->data);
+    
+    previous_temp->next = current->next;
+    
+    free(current);
+    
+    printf("after removal \n");
+    
+    while(head != NULL)
+    {
+        printf("%d \n",head->data);
+        head = head->next;
+    }
+    
+    
+}
+
 
 
 
