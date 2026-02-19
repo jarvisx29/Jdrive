@@ -11658,6 +11658,7 @@ class Valid_Palindrome      // leetcode question : 100 % working for all testcas
         String s = "0P";
 
         s= s.toLowerCase().replaceAll("[^a-z0-9]","").trim();
+        final_arr.stripLeading(); // to remove namespace at start of string
 
         int left = 0;
         int right = s.length()-1;
@@ -13050,35 +13051,92 @@ class Check_if_Numbers_Are_Ascending_in_a_Sentence // leetcode question ": 100 %
 }
 
 
+
 import java.util.*;
-class Sorting_the_Sentence
+class Sorting_the_Sentence // leetcode question : 100 % working for all testcases !
 {
     public static void main (String args [])
     {
-        String s = "is2 sentence4 This1 a3";
+        String s = "Myself2 Me1 I4 and3";
 
         String s_split [] = s.split(" ");
 
         String single = "";
+        int digit =0;
+        
+        HashMap<Integer,String> hm = new HashMap <>();
+        ArrayList<String> ar = new ArrayList<>();
 
         for(int i=0;i<s_split.length;i++)
         {
             String s_word = s_split[i];
 
-            for(int j=0;j<s_word;j++)
+            for(int j=0;j<s_word.length();j++)
             {
                 char chr = s_word.charAt(j);
-
+                
                 if(!Character.isDigit(chr))
                 {
 
                     single = single + chr;
                 }
-
-                System.out.println(single);
-                single = "";
+                
+                else if(Character.isDigit(chr))
+                {
+                    digit = Character.getNumericValue(chr);
+                    System.out.println(digit);
+                    
+                    // ar.add(digit);
+                    
+                     hm.put(digit,single);
+                     System.out.print(single);
+                     single = "";
+                }
             }
+            digit =0;
         }
+        
+        System.out.println(hm);
+        
+        int k=1;
+        
+        for(int key : hm.keySet())
+        {
+            if(hm.containsKey(k))
+            {
+                // final_arr[k] = hm.get(key);
+                ar.add(hm.get(key));
+                System.out.println(key);
+                k++;
+            }
+            
+        }
+        // ar.sort(null);
+        // System.out.println(ar);
+        
+        // for(int num : ar)
+        // {
+        //     System.out.println(hm.get(num));
+        // }
+        
+        
+        
+        System.out.println(ar);
+        // String final_arr [] = new String [ar.size()];
+        String final_arr = "";
+        
+        for(int i=0;i<ar.size();i++)
+        {
+            // final_arr[i] = ar.get(i);
+            final_arr = final_arr +" "+ ar.get(i);
+        }
+        
+        final_arr.stripLeading(); // to remove namespace at start of string
+        final_arr.trim();
+        
+        
+        
+        System.out.println(final_arr);
     }
 }
 
