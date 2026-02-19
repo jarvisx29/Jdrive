@@ -13142,6 +13142,58 @@ class Sorting_the_Sentence // leetcode question : 100 % working for all testcase
 
 
 
+class Check_if_All_As_Appears_Before_All_Bs
+{
+    public static void main(String args [])
+    {
+        String s = "aaabbb";
+
+        for(int i=0;i<s.length();i++)
+        {
+            if(s.charAt(i) == "a" && arr[i+1] == "a" || s.charAt(i) == "a" && s.charAt(i+1) == "b")
+                {
+
+                }
+                
+                else
+                {
+                    System.out.println("false");
+                    return;
+
+                }
+        }
+    }
+}
+
+
+
+import java.util.*;
+class Longest_Substring_Without_Repeating_Characters
+{
+    public static void main(String args [])
+    {
+        String s = "abcabcbb";
+
+        String s_split [] = s.split("");
+
+        String str = "";
+
+        ArrayList<String> ar = new ArrayList<>();
+
+        for(String num : s_split)
+        {
+            if(!ar.contains(num))
+            {
+                ar.add(num);
+            }
+            else
+            {
+                s= s.substring(i,s.length());
+            }
+        }
+        System.out.println(ar);      
+    }
+}
 
     
 
