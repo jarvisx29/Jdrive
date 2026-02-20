@@ -1,8 +1,5 @@
 // linkedlist basics BASELINE (senthil sir basics see down for proper LinkedList start)
 
-
-
-// Online C++ compiler to run C++ program online
 #include <iostream>
 
     struct node 
@@ -522,6 +519,61 @@ int main()
 }
 
 
+//  SEARCH IN A LINKEDLIST
+
+
+#include <iostream>
+
+struct node //   so total 3 parameters in doubly linkedList (previous,data,next)
+{
+    int data;
+    node *next;
+};
+
+int main() 
+{
+    node *head = NULL;
+    
+    node *previous;
+    
+    for(int i=0;i<4;i++)
+    {
+        node *temp = (node *)malloc(sizeof(node));
+        temp->data = 200+i;
+        temp->next = NULL;
+        
+        
+        if(head == NULL)
+        {
+            head=temp;
+            previous=temp;
+        }
+        else
+        {
+            previous->next = temp;
+            previous = temp;
+        }
+    }
+    int k= 202;
+    
+    node * current = head;
+    
+    
+    while(current != NULL)
+    {
+        // printf("%d \n",current->data);
+        
+        if(current->data == k)
+        {
+            printf("XXXXXXXXXXX \n");
+            printf("element found : %d \n",current->data);
+            printf("XXXXXXXXXXX\n");
+        }
+        current = current->next;
+        
+    }
+}
+
 
 
 
@@ -536,6 +588,58 @@ int main()
 
 
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.   DOUBLE LINKEDLIST XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+#include <iostream>
+
+struct node //   so total 3 parameters in doubly linkedList (previous,data,next)
+{
+    node *previous; // here in doubly we have a new , one more parameter ; where we instead of going in one direction(uni-directional ; we go bi-directional here for this ; for ex if we have no. 1-10 and wanted to print 9 ; conventionally in single linkedlist we have do next next till we reach 9 ; but doubly is more efficient ; in this as we do in doubly have tail ; just do tail->previous and boom ! you have 9 ; HENCE DOUBLY IS BEST AND WAY MORE EFFICIENT !!)
+    int data;
+    node *next;
+};
+
+int main() 
+{
+    node *temp = (node *)malloc(sizeof(node));
+    temp->data = 100;
+    temp->next = NULL;
+    temp->previous = NULL;
+    
+    node *temp1 = (node *)malloc(sizeof(node));
+    temp1->data = 200;
+    temp1->next = NULL;
+    temp1->previous = NULL;
+    
+    node *temp2 = (node *)malloc(sizeof(node));
+    temp2->data = 300;
+    temp2->next = NULL;
+    temp2->previous = NULL;
+    
+    
+    
+    temp->next = temp1;         // THIS IS HOW WE DO IT IN DOUBLY !!! : after all the declarations (NULL) we link them at the end
+    temp1->previous = temp;
+    
+    temp1->next = temp2;
+    temp2->previous = temp1;
+    
+    node * head = temp;
+    
+    while(head != NULL)
+    {
+        printf("%d \n",head->data);
+        head = head->next;
+    }
+    
+    node * previous = temp2;          // this is how you traverse from back !!!!!!!!
+     while(previous != NULL)
+    {
+        printf("%d \n",previous->data);
+        previous = previous->previous;
+    }
+}
+
 
 
 
