@@ -13142,49 +13142,50 @@ class Sorting_the_Sentence // leetcode question : 100 % working for all testcase
 
 
 
-class Check_if_All_As_Appears_Before_All_Bs
-{
+class Check_if_All_As_Appears_Before_All_Bs // leetcode question : 100 % working for all testcases !
+{ 
     public static void main(String args [])
     {
-        String s = "aaabbb";
+        String s = "bbb";
 
-        for(int i=0;i<s.length();i++)
+        for(int i=0;i<s.length();i++) //. see the intial logic i went with it might work for few but now for all ; i didmt read the question properly ; it was an easy question ; since only a's and b's are there then you only need to check the after b if a appears then false return end ; somple only i feel dumb it was so easy if only i had read the question properly haha !!
         {
-            if(s.charAt(i) == "a" && arr[i+1] == "a" || s.charAt(i) == "a" && s.charAt(i+1) == "b")
+            // if(s.charAt(i) == 'a' && s.charAt(i+1) == 'a' || s.charAt(i) == 'a' && s.charAt(i+1) == 'b')
+            if( i+1 <s.length() && s.charAt(i) == 'b' && s.charAt(i+1) == 'a')
                 {
-
+                    
+                        System.out.println("false");
+                        return;
+                        // return;
+                        
+                    
+                
                 }
                 
-                else
-                {
-                    System.out.println("false");
-                    return;
-
-                }
         }
+        System.out.println("true");
     }
 }
 
 
 
-import java.util.*;
-class Longest_Substring_Without_Repeating_Characters
+import java.util.*;    
+class Longest_Substring_Without_Repeating_Characters // incomplete ; need to learn sliding window and then solve this
 {
     public static void main(String args [])
     {
-        String s = "abcabcbb";
+        String s = "pwwkew";
 
         String s_split [] = s.split("");
 
-        String str = "";
-
         ArrayList<String> ar = new ArrayList<>();
 
-        for(String num : s_split)
+        for(int i=0;i<s.length();i++)
         {
-            if(!ar.contains(num))
+            int idx = i;
+            if(!ar.contains(s_split[i]))
             {
-                ar.add(num);
+                ar.add(s_split[i]);
             }
             else
             {
