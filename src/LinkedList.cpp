@@ -68,7 +68,60 @@ int main()
             
             
         
+}
+
+
+
+
+
+
+
+// HOW TO CREATE LINKEDLIST USING FOR LOOP 
+
+#include <iostream>
+
+struct node
+{
+    int data;
+    node *next;
+};
+
+int main() 
+{
+    
+    node *head = NULL;
+    
+    node *previous;
+    
+    for(int i=0;i<5;i++)
+    {
+        node *temp;
+        temp = (node *)malloc(sizeof(node));
+        temp->data = 200+i;
+        temp->next = NULL;
+        
+        if(head == NULL)
+        {
+            head = temp; 
+            previous = temp;
+        }
+        else
+        {
+            previous->next=temp;
+            previous = temp;
+        }
     }
+
+
+    while(head != NULL)
+    {
+        printf("%d \n",head->data);
+        head = head->next;
+    }
+    
+    
+}
+
     
 
 
@@ -590,7 +643,7 @@ int main()
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.   DOUBLE LINKEDLIST XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
-#include <iostream>
+#include <iostream> //   BASICS (JUST CREATING BY MANUALLY HARDCODING IT !!!)
 
 struct node //   so total 3 parameters in doubly linkedList (previous,data,next)
 {
@@ -639,6 +692,59 @@ int main()
         previous = previous->previous;
     }
 }
+
+
+
+
+// TO CREATE DOUBLY LINKEDLIST USING FOR LOOP 
+
+
+#include <iostream>
+
+struct node 
+{
+    node *previous; 
+    int data;
+    node *next;
+};
+
+int main() 
+{
+    node *head = NULL;
+    node *tail = NULL;
+    
+    for(int i=0;i<5;i++)
+    {
+        node *temp = (node *)malloc(sizeof(node));
+        
+        temp->data = 200+i;
+        temp->next = NULL;
+        temp->previous = NULL;
+        
+        
+        if(head == NULL)
+        {
+            head = temp;
+            tail = temp;
+        }
+        else
+        {
+            tail->next = temp;
+            tail = temp;
+            
+        }
+    }
+    
+    
+     while(head != NULL)
+    {
+        printf("%d \n",head->data);
+        head = head->next;
+    }
+}
+
+
+
 
 
 
