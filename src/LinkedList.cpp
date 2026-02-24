@@ -696,6 +696,10 @@ int main()
 
 
 
+
+
+
+
 // TO CREATE DOUBLY LINKEDLIST USING FOR LOOP 
 
 
@@ -729,25 +733,272 @@ int main()
         }
         else
         {
-            tail->next = temp;
+            tail->next = temp;     // the logic works like this ; tail contains the last element ; and temp is the latest(new iteration) ; so first link the tail (contains the element before latest) as the previous of new iteration temp ; and then update tail as the new temp 
+            temp->previous = tail;
             tail = temp;
             
         }
     }
     
     
-     while(head != NULL)
+    // to see if it worked or not 
+
+
+    node * trav_forward = head;
+    printf("forward : \n");
+    
+    while(trav_forward != NULL)
     {
-        printf("%d \n",head->data);
-        head = head->next;
+        printf("%d \n",trav_forward->data);
+        trav_forward = trav_forward->next;
+    }
+
+    node * trav_backward = tail;
+    printf("backward : \n");
+
+    while(trav_backward != NULL)
+    {
+        printf("%d \n",trav_backward->data);
+        trav_backward = trav_backward->previous;
     }
 }
 
-//dd dd
+
+
+
+// INSERT AT START 
+
+#include <iostream>
+
+struct node //   so total 3 parameters in doubly linkedList (previous,data,next)
+{
+    node *previous; 
+    int data;
+    node *next;
+};
+
+int main() 
+{
+    node *head = NULL;  // IMPORTANT !!!!! always include these =NULL ; or else they wont work !
+    node *tail = NULL;
+    
+    for(int i=0;i<5;i++)
+    {
+        node *temp = (node *)malloc(sizeof(node));
+        
+        temp->data = 200+i;
+        temp->next = NULL;
+        temp->previous = NULL;
+        
+        
+        if(head == NULL)
+        {
+            head = temp;
+            tail = temp;
+        }
+        else
+        {
+            tail->next = temp;
+            temp->previous = tail;
+            tail = temp;
+            
+        }
+    }
+    
+    node *atbeggining = (node *)malloc(sizeof(node));
+    
+    atbeggining->data = 20;
+    atbeggining->next = head;
+    atbeggining->previous = NULL;
+    
+                                 // 20 ⇄ 201 ⇄ 202 ⇄ 203 ⇄ 204 ...
+    head->previous = atbeggining; // remember !!!!!! we keep forgetting to link the previous part always ; we need to start thinking bi-directionally like a doubly linkedlist  
+    head = atbeggining;
+    
+    // to see if it worked or not 
+
+
+    node * trav_forward = head;
+    printf("forward : \n");
+    
+    while(trav_forward != NULL)
+    {
+        printf("%d \n",trav_forward->data);
+        trav_forward = trav_forward->next;
+    }
+
+    node * trav_backward = tail;
+    printf("backward : \n");
+
+    while(trav_backward != NULL)
+    {
+        printf("%d \n",trav_backward->data);
+        trav_backward = trav_backward->previous;
+    }
+}
 
 
 
 
+
+
+// INSERT AT END 
+
+#include <iostream>
+
+struct node //   so total 3 parameters in doubly linkedList (previous,data,next)
+{
+    node *previous; 
+    int data;
+    node *next;
+};
+
+int main() 
+{
+   node * head =NULL;
+   node *tail =NULL;
+   
+   for(int i=0;i<5;i++)
+   {
+       node *temp = (node *)malloc(sizeof(node));
+       
+       temp->data = 200+i;
+       temp->next = NULL;
+       temp->previous = NULL;
+       
+       if(head ==NULL)
+       {
+           head = temp;
+           tail=temp;
+       }
+       else
+       {
+           tail->next = temp;
+           temp->previous = tail;
+           tail=temp;
+       }
+   }
+   
+   
+   node *atEND = (node *)malloc(sizeof(node));
+   
+   atEND->data = 2005;
+   atEND->next = NULL;
+   atEND->previous = tail;
+   
+   tail->next = atEND; // although you might have linked it one directionaly ; you need to update the current tail to new at the end ; before updating tail to atEND
+   tail=atEND;
+   
+   // to see if it worked or not 
+
+
+    node * trav_forward = head;
+    printf("forward : \n");
+    
+    while(trav_forward != NULL)
+    {
+        printf("%d \n",trav_forward->data);
+        trav_forward = trav_forward->next;
+    }
+
+    node * trav_backward = tail;
+    printf("backward : \n");
+
+    while(trav_backward != NULL)
+    {
+        printf("%d \n",trav_backward->data);
+        trav_backward = trav_backward->previous;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+// DELETE AT START 
+
+#include <iostream>
+
+struct node //   so total 3 parameters in doubly linkedList (previous,data,next)
+{
+    node *previous; 
+    int data;
+    node *next;
+};
+
+int main() 
+{
+   node * head =NULL;
+   node *tail =NULL;
+   
+   for(int i=0;i<5;i++)
+   {
+       node *temp = (node *)malloc(sizeof(node));
+       
+       temp->data = 200+i;
+       temp->next = NULL;
+       temp->previous = NULL;
+       
+       if(head ==NULL)
+       {
+           head = temp;
+           tail=temp;
+       }
+       else
+       {
+           tail->next = temp;
+           temp->previous = tail;
+           tail=temp;
+       }
+   }
+   
+   printf("original doubly : \n");
+   node * trav = head;
+   while(trav !=NULL)
+   {
+       printf("%d \n",trav->data);
+       trav = trav->next;
+   }
+   
+   
+   node * new_delete = head;
+   
+   head = head->next ;
+   head->previous =NULL;
+   
+   free(new_delete);
+   
+   // to see if it worked or not 
+
+
+    node * trav_forward = head;
+    printf("forward : \n");
+    
+    while(trav_forward != NULL)
+    {
+        printf("%d \n",trav_forward->data);
+        trav_forward = trav_forward->next;
+    }
+
+    node * trav_backward = tail;
+    printf("backward : \n");
+
+    while(trav_backward != NULL)
+    {
+        printf("%d \n",trav_backward->data);
+        trav_backward = trav_backward->previous;
+    }
+}
+
+
+
+// DELETE AT MIDDLE (DO THIS LATER !!!)
 
 
 
