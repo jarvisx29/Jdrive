@@ -1971,6 +1971,28 @@ class stack_basics_again
 }
 
 
+import java.util.*;
+class stack_basics_again
+{
+    public static void main (String args [])
+    {
+
+        int arr = {1,2,3,4,5};
+
+        Stack<Integer> st = new Stack<>();
+
+        for(int num : arr)
+        {
+            st.push(arr);
+        }
+        System.out.println(st);
+
+
+
+    }
+}
+
+
 
 
     for(int i=0;i<str1.length();i++)

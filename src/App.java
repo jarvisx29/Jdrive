@@ -7660,9 +7660,60 @@ class stack_basics
     }
 }
 
+import java.util.*;
+class stack_basics_again
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,2,3,4,5};
 
+        Stack <Integer> st = new Stack <>();
 
+        for(int num :arr)
+        {
+            st.push(num);
+        }
+        System.out.println(st);
+        
+        System.out.println(st.peek()); // to see only the top most element
+        
+        System.out.println(st.pop()); // deletes the topmost element
+        
+        System.out.println("after pop "+st);
+        
+        if(st.isEmpty())
+        {
+            System.out.println("true");
+            return;
+        }
+        System.out.println("false");
+        
+    }
+}
 
+import java.util.*;
+class stack_reverse
+{
+    public static void main (String args [])
+    {
+
+        int arr [] = {1,2,3,4,5};
+
+        Stack<Integer> st = new Stack<>();
+
+        for(int num : arr)
+        {
+            st.push(num);
+        }
+        System.out.println(st);
+        
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.println(st.peek());
+            st.pop();
+        }
+    }
+}
 
 
 

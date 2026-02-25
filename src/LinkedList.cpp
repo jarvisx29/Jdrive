@@ -76,51 +76,7 @@ int main()
 
 
 
-// HOW TO CREATE LINKEDLIST USING FOR LOOP 
 
-#include <iostream>
-
-struct node
-{
-    int data;
-    node *next;
-};
-
-int main() 
-{
-    
-    node *head = NULL;
-    
-    node *previous;
-    
-    for(int i=0;i<5;i++)
-    {
-        node *temp;
-        temp = (node *)malloc(sizeof(node));
-        temp->data = 200+i;
-        temp->next = NULL;
-        
-        if(head == NULL)
-        {
-            head = temp; 
-            previous = temp;
-        }
-        else
-        {
-            previous->next=temp;
-            previous = temp;
-        }
-    }
-
-
-    while(head != NULL)
-    {
-        printf("%d \n",head->data);
-        head = head->next;
-    }
-    
-    
-}
 
     
 
@@ -628,6 +584,11 @@ int main()
 }
 
 
+//REVERSE A LINKED LIST 
+
+
+
+
 
 
 
@@ -999,6 +960,58 @@ int main()
 
 
 // DELETE AT MIDDLE (DO THIS LATER !!!)
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+
+struct node
+{
+    int data;
+};
+
+int main()
+{
+    node *previous = NULL;
+    node *current;
+    node *nextnode = NULL;
+
+    for(int i=1;i<6;i++)
+    {
+        node *temp = (node *)malloc(sizeof(node));
+
+        temp->data = i;
+        temp->next = NULL;
+
+        if(head == NULL)
+        {
+            head = temp;
+            previous = temp;
+        }
+
+        else
+        {
+            previous->next = temp;
+            previous = temp;
+        }
+    }
+
+
+    node *trav = head
+    printf("orginal : \n");
+    while(trav != NULL)
+    {
+        printf("%d \n",trav->data);
+        trav = trav->next;
+    }
+}
 
 
 
