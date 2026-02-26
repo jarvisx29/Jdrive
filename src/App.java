@@ -7660,6 +7660,21 @@ class stack_basics
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import java.util.*;
 class stack_basics_again
 {
@@ -7691,6 +7706,9 @@ class stack_basics_again
     }
 }
 
+
+
+
 import java.util.*;
 class stack_reverse
 {
@@ -7716,6 +7734,61 @@ class stack_reverse
 }
 
 
+
+
+
+
+
+
+STACK IMPLEMENTATION IN LINKEDLIST (meaning simulate a stack in a linkedlist)
+
+#include <iostream>
+
+struct node
+{
+    int data;
+    node *next;
+};
+
+int main() 
+{
+    
+    node * head = NULL;
+    node *previous;
+    
+    int arr [] = {1,2,3,4,5};
+    
+    
+    
+    for(int i=0;i<5;i++)
+    {
+        node *temp = (node *)malloc(sizeof(node));
+        
+        temp->data = arr[i];
+        temp->next = NULL;
+        
+        if(head == NULL)
+        {
+            head = temp;
+            previous = temp;
+        }
+        // head = temp;
+        else
+        {
+            temp->next = previous;
+            previous = temp;
+            head = temp;
+            
+        }
+    }
+    
+    while(head != NULL)
+    {
+        printf("%d \n",head->data);
+        head = head->next;
+    }
+    
+}
 
 
  //       XXXXXXXXXXXXXXXXXXXXXXXXXXX    PRIORITY QUEUE basics      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -13247,7 +13320,87 @@ class Longest_Substring_Without_Repeating_Characters // incomplete ; need to lea
     }
 }
 
+
+
+
+
+Reverse_Linked_List // leetcode question : 100 % working : 1st LINKEDLIST question (good mano keep going !!!!1)
+
+#include <iostream>
+
+struct node
+{
+    int data;
+    node *next;
     
+};
+
+int main()
+{
+    node *head =NULL;
+    
+    node *previous = NULL;
+
+    for(int i=1;i<6;i++)
+    {
+        node *temp = (node *)malloc(sizeof(node));
+
+        temp->data = i;
+        temp->next = NULL;
+
+        if(head == NULL)
+        {
+            head = temp;
+            previous = temp;
+        }
+
+        else
+        {
+            previous->next = temp;
+            previous = temp;
+        }
+    }
+
+
+    node *trav = head;
+    
+    printf("original : \n");
+    while(trav != NULL)
+    {
+        printf("%d \n",trav->data);
+        trav = trav->next;
+    }
+    
+    printf("XXXXXXXXXXXX \n");
+    
+    
+    node *previous_1 = NULL;
+    node *current = head;
+    node *nextnode =NULL;
+    
+    
+    while(current != NULL)
+    {
+        nextnode = current->next;
+        current->next = previous_1;
+        previous_1 = current;
+        current = nextnode;
+    }
+    head = previous_1;
+    
+    printf("after reversal : \n");
+    
+    node *trav_rev = head;
+    
+    while(trav_rev != NULL)
+    {
+        printf("%d \n",trav_rev->data);
+        trav_rev = trav_rev->next;
+    }
+   
+    
+}
+
 
 
 
