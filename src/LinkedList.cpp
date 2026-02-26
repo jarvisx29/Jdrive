@@ -1049,7 +1049,7 @@ int main()
 
 
 
-Reverse_Linked_List // leetcode question : 100 % working : 1st LINKEDLIST question (good mano keep going !!!!1)
+Reverse_Linked_List // leetcode question : 100 % working : 1st LINKEDLIST question (good mano keep going !!!!)
 
 #include <iostream>
 
@@ -1129,6 +1129,102 @@ int main()
 
 
 
+
+
+
+
+
+
+
+// STACK IMPLEMENTATION IN LINKEDLIST (meaning we are simulating a stack inside the linkedlist)
+
+#include <iostream>
+
+struct node
+{
+    int data;
+    node *next;
+};
+
+int main() 
+{
+    
+    node * head = NULL;
+    node *previous;
+    
+    int arr [] = {1,2,3,4,5};
+    
+    
+    
+    for(int i=0;i<5;i++)
+    {
+        node *temp = (node *)malloc(sizeof(node));
+        
+        temp->data = arr[i];
+        temp->next = NULL;
+        
+        if(head == NULL)
+        {
+            head = temp;
+            previous = temp;
+        }
+        // head = temp;
+        else
+        {
+            temp->next = previous;
+            previous = temp;
+            head = temp;
+            
+        }
+    }
+    
+    while(head != NULL)
+    {
+        printf("%d \n",head->data);
+        head = head->next;
+    }
+    
+}
+
+ 
+
+
+#include <stdio.h>
+
+struct node
+{
+    int data;
+    node *next;
+};
+
+int main()
+{
+    node *head = NULL;
+    node *previous;
+
+
+    for(int i=1;i<5;i++)
+    {
+        node *temp = (node *)malloc(sizeof(node));
+
+        temp->data = i;
+        temp->next = NULL;
+
+
+        if(head == NULL)
+        {
+            head = temp;
+            previous = temp;
+        }
+
+        else
+        {
+            previous->next = temp;
+            previous = temp;
+        }
+    }
+
+}
 
 
 

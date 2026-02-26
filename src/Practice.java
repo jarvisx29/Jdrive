@@ -2052,6 +2052,24 @@ class stack_basics_again
         
 
 
+class Matrix_input  
+{
+    public static void main(String args[]){
+                                                      //matrix array with taking user input a[i][j]
+    int a[][]= new int[3][3];
+    Scanner scan = new Scanner(System.in);
+    for(int i=0;i<3;i++)
+    {
+        for(int j=0;j<3;j++)
+        {
+            System.out.print(" enter elements"+"("+i+","+j+"):");
+            a[i][j] = scan.nextInt();
+            
+  
+         
+        }
+    }        
+
 
 
 

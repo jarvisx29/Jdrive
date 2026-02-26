@@ -7835,7 +7835,41 @@ int main()
         
         
     }
- }
+}
+
+
+
+import java.util.*;
+class Array_implementation_in_queue
+{
+    public static void main(String args [])
+    {
+        int arr[] = new int [5];
+
+        Scanner scan = new Scanner(System.in);
+
+        int idx =0;
+
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.println("enter number :");
+            int a = scan.nextInt();
+
+            arr[idx] = a; // like we are simulating a queue inside an array like when ; try to imagine like you are standing in a line and when someone comes at the start they keep going back ; thats exactly how queue will work ; and that we have to simulate inside array ; so like whenever we take a new element we will add and index++ so that the next new element will go to next index
+            idx++;
+
+        }
+        
+        System.out.println(Arrays.toString(arr));
+        
+        int idx2=0;
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.println(arr[idx2]); // also we are simulating printing a queue ; like once the particular element is commences we will move onto the next element in the queue
+            idx2++;
+        }
+    }   
+}
 
 
 
@@ -13401,6 +13435,30 @@ int main()
     
 }
 
+
+
+import java.util.*;
+class Array_implementation_in_queue
+{
+    public static void main(String args [])
+    {
+        int arr[] = new int [5;]
+
+        Scanner scan = new Scanner(System.in);
+
+        int idx =0;
+
+        for(int i=0;i<arr.length;i++)
+        {
+            System.out.println("enter number :");
+            int a = scan.nextInt();
+
+            arr[idx] = a;
+            idx++;
+
+        }
+    }   
+}
 
 
 
