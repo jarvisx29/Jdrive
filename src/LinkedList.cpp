@@ -1247,4 +1247,35 @@ int main()
 
 
 
+#include <stdio.h>
+
+struct node
+{
+    int data;
+    node *left;
+    node *right;
+
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     

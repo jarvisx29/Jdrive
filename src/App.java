@@ -13438,6 +13438,165 @@ int main()
 
 
 import java.util.*;
+class Find_the_Difference
+{
+    public static void main (String args [])
+    {
+        String s= "";
+        String t = "y";
+
+        String s_split[] = s.split("");
+        String t_split[] = t.split("");
+
+        HashMap <String,Integer> hm = new HashMap<>();
+        HashMap <String,Integer> hm_2 = new HashMap<>();
+
+        for(String num : s_split)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+        for(String numm : t_split)
+        {
+            hm_2.put(numm,hm_2.getOrDefault(numm,0)+1);
+        }
+
+        String diff = "";
+
+        for(String key : hm_2.keySet())
+        {
+            if(!hm.containsKey(key))
+            {
+                diff = key;
+            }
+            else if(hm.containsKey(key) && hm_2.get(key)>1)
+            {
+                diff = key;
+            }
+        }
+
+        // System.out.println(diff);
+
+        // if(diff.length() != 0)
+        // {
+        //     diff_char = diff.charAt(0);
+        //     return diff_char;
+        // }
+        char diff_char = diff.charAt(0);
+        System.out.println(diff_char);
+
+    }        
+
+}
+
+import java.util.*;
+class Find_the_Difference
+{
+    public static void main (String args [])
+    {
+        String s= "";
+        String t = "y";
+
+        String s_split[] = s.split("");
+        String t_split[] = t.split("");
+
+        HashMap <String,Integer> hm = new HashMap<>();
+        HashMap <String,Integer> hm_2 = new HashMap<>();
+
+        for(String num : s_split)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+        for(String numm : t_split)
+        {
+            hm_2.put(numm,hm_2.getOrDefault(numm,0)+1);
+        }
+
+        String diff = "";
+
+        for(String key : hm_2.keySet())
+        {
+            if(!hm.containsKey(key))
+            {
+                diff = key;
+            }
+            else if(hm.containsKey(key) && hm_2.get(key)>1)
+            {
+                diff = key;
+            }
+        }
+
+        // System.out.println(diff);
+
+        // if(diff.length() != 0)
+        // {
+        //     diff_char = diff.charAt(0);
+        //     return diff_char;
+        // }
+        char diff_char = diff.charAt(0);
+        System.out.println(diff_char);
+
+    }        
+
+}
+
+import java.util.*;
+class Find_the_Difference
+{
+    public static void main (String args [])
+    {
+        String s= "";
+        String t = "y";
+
+        String s_split[] = s.split("");
+        String t_split[] = t.split("");
+
+        HashMap <String,Integer> hm = new HashMap<>();
+        HashMap <String,Integer> hm_2 = new HashMap<>();
+
+        for(String num : s_split)
+        {
+            hm.put(num,hm.getOrDefault(num,0)+1);
+        }
+
+        for(String numm : t_split)
+        {
+            hm_2.put(numm,hm_2.getOrDefault(numm,0)+1);
+        }
+
+        String diff = "";
+
+        for(String key : hm_2.keySet())
+        {
+            if(!hm.containsKey(key))
+            {
+                diff = key;
+            }
+            else if(hm.containsKey(key) && hm_2.get(key)>1)
+            {
+                diff = key;
+            }
+        }
+
+        // System.out.println(diff);
+
+        // if(diff.length() != 0)
+        // {
+        //     diff_char = diff.charAt(0);
+        //     return diff_char;
+        // }
+        char diff_char = diff.charAt(0);
+        System.out.println(diff_char);
+
+    }        
+
+}
+
+
+
+
+import java.util.*;
 class Array_implementation_in_queue
 {
     public static void main(String args [])
@@ -13459,17 +13618,5 @@ class Array_implementation_in_queue
         }
     }   
 }
-
-//dd dd dd dd dd dd dd dd dd dd dd dd dd 
-
-
-
-
-
-
-
-
-
-
 
 
