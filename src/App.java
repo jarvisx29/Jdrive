@@ -13542,7 +13542,7 @@ class Find_the_Difference
 }
 
 import java.util.*;
-class Find_the_Difference
+class Find_the_Difference // this logic is not working for this question ; like its an easy question but the testcases are weird ; so see down for the correct one
 {
     public static void main (String args [])
     {
@@ -13594,6 +13594,67 @@ class Find_the_Difference
 }
 
 
+import java.util.*;
+class Find_the_Difference // leetcode question : 100 % working for all testcases !
+{
+    public static void main (String args [])
+    {
+        String s= "ae";
+        String t = "aea";
+
+        String s_split[] = s.split("");
+        String t_split[] = t.split("");
+
+        HashMap <String,Integer> hm = new HashMap<>();
+        HashMap <String,Integer> hm_2 = new HashMap<>();
+
+        for(String num : s_split)
+        {
+            if(!num.equals(""))
+            {
+                hm_2.put(num,hm.getOrDefault(num,0)+1);
+            }
+        }
+
+        for(String numm : t_split)
+        {
+            if(!numm.equals(""))
+            {
+                hm.put(numm,hm.getOrDefault(numm,0)+1);
+            }
+        }
+
+        String diff = "";
+        System.out.println(hm);
+
+        for(String key : hm.keySet())
+        {
+            if(hm.get(key) != hm_2.getOrDefault(key,0))
+            {
+                diff = key;
+            }
+            // else if(hm_2.size()==1)
+            // {
+            //     diff = key;
+            // }
+        }
+
+        // System.out.println(diff);
+
+        // if(diff.length() != 0)
+        // {
+        //     diff_char = diff.charAt(0);
+        //     return diff_char;
+        // }
+        char diff_char = diff.charAt(0);
+        System.out.println(diff_char);
+
+    }        
+
+}
+
+
+
 
 
 import java.util.*;
@@ -13619,4 +13680,4 @@ class Array_implementation_in_queue
     }   
 }
 
-// dd dd dd 
+
