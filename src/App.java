@@ -13654,6 +13654,60 @@ class Find_the_Difference // leetcode question : 100 % working for all testcases
 }
 
 
+import java.util.*;
+class Permutation_Difference_between_Two_Strings // leetcode question : 100 % working for all testcases !
+{
+    public static void main (String args [])
+    {
+        String s = "abcde";
+        String t = "edbac";
+
+        String s_split [] = s.split("");
+        String t_split [] = t.split("");
+
+        ArrayList<String> ar = new ArrayList<>();
+        ArrayList<String> ar_2 = new ArrayList<>();
+
+
+        for (String num : s_split)
+        {
+            ar.add(num);
+        }
+        for(String numm : t_split)
+        {
+            ar_2.add(numm);
+        }
+        
+        int diff = 0;
+        int result=0;
+
+        for(int i =0;i<ar.size();i++)
+        {
+            String s_one = s_split[i];
+
+            int s_idx = ar.indexOf(s_one);
+            int t_idx = ar_2.indexOf(s_one);
+            
+            
+            
+            
+            diff = s_idx - t_idx;
+            
+            result = result + Math.abs(diff);
+
+            // System.out.println(s_idx + " "+ t_idx);
+            diff =0;
+
+        }
+        
+        System.out.println(result);
+
+    }
+}
+
+
+
+
 
 
 
