@@ -208,6 +208,178 @@ class Main
 
     }
 }
+
+
+
+
+    XXXXXXXXXXXXXXXXXXXXXX           OOPS IMPLEMENTATION.          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+
+
+ 
+
+import java.util.*;
+class Main //.                               matrix implementation using oops
+{
+  public static void main(String args [])
+  {
+    matrix obj1 = new matrix();
+    int arr[][] = new int[2][3];
+    
+    Scanner sc = new Scanner(System.in);
+    
+    for(int i=0;i<arr.length;i++)
+    {
+      for(int j=0;j<arr[i].length;j++)
+      {
+        System.out.println("enter number:");
+        arr[i][j] = sc.nextInt();
+      }
+    }
+    obj1.insert(arr);
+  }
+}
+
+class matrix
+{
+  void insert(int arr[][])
+  {
+    for(int i=0;i<arr.length;i++)
+    {
+      for(int j=0;j<arr[i].length;j++)
+      {
+        System.out.println(arr[i][j]);
+      }
+      
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+class Main.   // finding factorial using oops 
+{
+    public static void main (String args [])
+    {
+        factoriall obj1 = new factoriall();
+        int result = obj1.factorial(5);
+        
+        System.out.println(obj1.factorial(5)); // can do it like this too or you can print it inside implemenation class ; BUT !!!! you do need to print it return doesnt really work in java
+        
+    }
+}
+
+class factoriall
+{
+    static int factorial(int n)
+    {
+        int factt = 1;
+        
+        for(int i=1;i<n;i++)
+        {
+            factt = factt *i;
+        }
+        return factt;
+    }
+    
+}
+
+
+
+
+
+
+
+class Main. //.                             finding prime no. using oops
+{
+    public static void main(String args[])
+    {
+        find_prime obj1 = new find_prime();
+        obj1.prime(13);
+    }
+}
+
+class find_prime
+{
+    int count =0;
+    void prime(int n)
+    {
+        for(int i=1;i<=n;i++)
+        {
+            if(n% i ==0)
+            {
+                count++;
+            }
+        }
+        
+        if (count >=2)
+        {
+            System.out.println("prime");
+        }
+        else
+        {
+            System.out.println("not prime");
+        }
+    }
+}
+
+
+
+
+
+
+import java.util.*;
+
+class Main//.                              array sum using oops
+{
+    public static void main(String args [])
+    {
+        
+    
+    array_sum obj1 = new array_sum();
+    int arr[] = {1,2,3,4,5};
+    obj1.sum(arr);
+    }
+    
+}
+
+class array_sum 
+{
+    int summ = 0;
+    void sum(int arr[])
+    {
+        for(int num :arr)
+        {
+            summ = summ+num;
+        }
+        System.out.println(summ);
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
 
