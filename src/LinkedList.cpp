@@ -528,6 +528,93 @@ int main()
 }
 
 
+
+// SEARCH IN A SINGLE LINKEDLIST
+
+#include<iostream>
+
+struct node
+{
+    int data;
+    node *next = NULL;
+};
+int count =0;
+
+node *createList()
+{
+    node *head = NULL;
+    node*previous;
+    
+    
+    for(int i=0;i<6;i++)
+    {
+        node *temp = (node *)malloc(sizeof(node));
+        
+        temp->data = 200+i;
+        temp->next = NULL;
+        
+        if(head ==NULL)
+        {
+            head = temp;
+            previous = temp;
+        }
+        else
+        {
+            previous->next = temp;
+            previous = temp;
+        }
+        count++;
+    }
+    return head;
+}
+
+node *search(int value,node *head)
+{
+    node *trav = head;
+    while(trav != NULL)
+    {
+        if(trav->data = value)
+        {
+            printf("element found \n");
+            break;
+        }
+        trav = trav->next;
+    }
+    return head;
+    
+}
+
+
+int main()
+{
+    node *head = createList();
+    
+    head = search(202,head);
+    
+    // display(head);
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// this down here are doubly sums ; go directly to doubly and come back
+
+
+
+
+
+
+
 //  SEARCH IN A LINKEDLIST
 
 
