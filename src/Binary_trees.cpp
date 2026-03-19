@@ -1,4 +1,33 @@
 
+// RECURSION BASICS ( we will use this a lot in bianry trees)
+
+#include <iostream>
+using namespace std ;
+
+void rec(int num) // recursion is simple only dont be afraid : its basically a function that keeps on calling itself until a particular condition is satified ;
+{
+    if(num == 6)
+    {
+        return;
+    }
+    
+    printf("%d \n",num);
+    
+    rec(num+1); // for ex : here this rec will keep on calling void rec again and again until it reaches num ==6 ; then it hits return and stops ; so thats recursion for you simple
+}
+int main()
+
+{
+    rec(1);
+}
+
+
+
+
+
+
+
+
 // to create a Binary Tree manually 
 
 #include <iostream>
@@ -48,6 +77,9 @@ void where_to_place(node *r,node *newnode) // to create a Binary Tree manually
     {
         prev->right = newnode;
     }
+
+
+    // return head ;             // now you might be wondering why binary tree isnt returning head or something back to main ; you know thats how its done in linkedlist since main needs head since it needs to know whether head was altered before sending info for next iteration   ; but that doesnt work that way in binary tree ; since here the head is root !!!!!!! ; which always stays same &constant no matter what ; so no need to return head ; everything can function out of a single function (and if do need to return somehting to main we use reference &st or whatever ( see down for info on reference))  
 }
 
 void preorder_display(node *r) // this is one way of displaying the information like in LinkeList
@@ -93,6 +125,22 @@ int main()
     preorder_display(root);
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -165,7 +213,7 @@ void preorder_display(node *r,vector <int> &vec) // so the reason we are using v
     
 }
            !!!!!!!!!!!!!!!  IMP !!!     // &st is a reference that need to be there if you want your variable to be stored in main for future pursposes ; if you need to do somehting generic like print then no need to use &st or whatever it is you're using
-           
+
 
 void stack_push(vector <int> &vec, stack <int> &st) // you might be wondering why is there a stack in parameter we only need vector ; so that we will use this func like a normal standalone display func like in linkedlist ; BUTT !! we need to intialize the stack in main because we need to reference and send it to main ; so that it has a copy of it in main ; so that it will send that st copy to print fucntion to print it
 {
