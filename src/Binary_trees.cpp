@@ -14,7 +14,7 @@ void rec(int num) // recursion is simple only dont be afraid : its basically a f
     printf("%d \n",num);
     
     rec(num+1); // for ex : here this rec will keep on calling void rec again and again until it reaches num ==6 ; then it hits return and stops ; so thats recursion for you simple
-}
+}l
 int main()
 
 {
@@ -144,7 +144,7 @@ int main()
 
 
 
-// CREATE BINARY TREE AND IMPLEMENT ITS ELEMENTS IN A STACK
+// CREATE BINARY TREE AND IMPLEMENT ITS ELEMENTS IN A STACK (using vector not actual stack !!!!!!!!!!!!)
 
 
 #include <iostream>
@@ -278,14 +278,123 @@ int main()
     stack_push(vec,st);
     
     stack_print(st);
+}
+
+
+
+
+
+
+// BINARY TREE IMPLEMENTATION IN A STACKA( preorder using node* inside stack and node *cur )
+
+
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+struct node
+{
+    int data;
+    node *left = nullptr;
+    node *right = nullptr;
+};
+
+void where_to_place(node *r,node *newnode)
+{
+    node *prev = nullptr;
     
+    bool left_flag = false;
+    bool right_flag = false;
     
+    while(r != nullptr)
+    {
+        left_flag = false;
+        right_flag = false;
+        
+        if(newnode->data < r->data)
+        {
+            prev = r;
+            r = r->left;
+            left_flag = true;
+        }
+        else
+        {
+            prev = r;
+            r = r->right;
+            right_flag = true;
+        }
+    }
     
-    
-    
-    
+    if(left_flag == true)
+    {
+        prev->left = newnode;
+    }
+    else if(right_flag ==true)
+    {
+        prev->right = newnode;
+    }
     
 }
+
+void preorder_inside_stack(node *r,stack <node *> &st)
+{
+    
+    
+    
+    while(!st.empty())
+    {
+        node *cur = st.top();
+        st.pop();
+        
+        printf("%d \n",cur->data);
+        
+        if(cur->right != nullptr)
+        {
+            st.push(cur->right);
+        }
+        if(cur->left != nullptr)
+        {
+            st.push(cur->left);
+        }
+    }
+}
+
+
+int main()
+{
+    node *root =  new node();
+    root->data = 20;
+    
+    node * newnode_1 = new node();
+    newnode_1->data = 10;
+    
+    node *newnode_2 = new node();
+    newnode_2->data = 25;
+    
+    node *newnode_3 = new node();
+    newnode_3->data = 13;
+    
+    node *newnode_4 = new node();
+    newnode_4->data = 21;
+    
+    node *newnode_5 = new node();
+    newnode_5->data = 5;
+    
+    where_to_place(root,newnode_1);
+    where_to_place(root,newnode_2);
+    where_to_place(root,newnode_3);
+    where_to_place(root,newnode_4);
+    where_to_place(root,newnode_5);
+    
+    stack<node *> st;
+    st.push(root);
+    
+    preorder_inside_stack(root,st);
+    
+}
+
+
 
 
 
