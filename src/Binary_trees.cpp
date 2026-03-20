@@ -337,7 +337,7 @@ void where_to_place(node *r,node *newnode)
     
 }
 
-void preorder_inside_stack(node *r,stack <node *> &st)
+void preorder_inside_stack(node *r,stack <node *> &st) // 2026-03-20-15-24-59.png
 {
     
     
