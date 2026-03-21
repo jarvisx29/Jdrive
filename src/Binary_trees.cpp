@@ -82,7 +82,10 @@ void where_to_place(node *r,node *newnode) // to create a Binary Tree manually
     // return head ;             // now you might be wondering why binary tree isnt returning head or something back to main ; you know thats how its done in linkedlist since main needs head since it needs to know whether head was altered before sending info for next iteration   ; but that doesnt work that way in binary tree ; since here the head is root !!!!!!! ; which always stays same &constant no matter what ; so no need to return head ; everything can function out of a single function (and if do need to return somehting to main we use reference &st or whatever ( see down for info on reference))  
 }
 
-void preorder_display(node *r) // this is one way of displaying the information like in LinkeList
+
+// XXXXXXXXXXXXXXXXXXXXXXX.  PREORDER DISPLAY USING RECURSION     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+void preorder_display(node *r)                // this is one way of displaying the information like in LinkeList
 {
     if(r==nullptr)
     {
@@ -197,6 +200,11 @@ void where_to_place(node *r,node *newnode) // this whole thing is normal like be
     }
 }
 
+
+ XXXXXXXXXXXXXXXXXXXXXXX.   PREORDER DISPLAY USING VECTOR XXXXXXXXXXXXXXXXXXXXX
+
+
+
 void preorder_display(node *r,vector <int> &vec) // so the reason we are using vector here is beacuse ; we i want stack to exact same order as preorder or whatever traversal method we have chosen ; like if 123 in preorder then ehen stack printed then 123 also ; but since follows FILO ; so we need to reverse that order in order to push the reverse order into stack so that ; when printed the staright order will print ; so as temp arraylist we use vector ; since in cpp vector is arraylist
 {
     
@@ -285,7 +293,7 @@ int main()
 
 
 
-// BINARY TREE IMPLEMENTATION IN A STACKA( preorder using node* inside stack and node *cur )
+// BINARY TREE IMPLEMENTATION IN A STACK ( PREORDER using node* inside stack and node *cur )
 
 
 #include <iostream>
@@ -336,6 +344,12 @@ void where_to_place(node *r,node *newnode)
     }
     
 }
+
+
+
+XXXXXXXXXXXXXXXXXX.   PROPER PREORDER DISPLAY USING STACK (using stack <node *> st and node *cur) 
+
+
 
 void preorder_inside_stack(node *r,stack <node *> &st) // 2026-03-20-15-24-59.png
 {
@@ -397,6 +411,173 @@ int main()
 
 
 
+
+// POSTORDER DISPLAY USING 2 STACKS (stack <node *> st1,st2)
+
+#include <iostream>
+#include <stack>.     //         paste page pics immediately !!!!!!!!1!!!!     
+
+using namespace std;
+
+struct node
+{
+    int data;
+    node *left = nullptr;
+    node *right = nullptr;
+};
+
+void where_to_place(node *r,node *newnode)
+{
+    node *prev = nullptr;
+    
+    bool left_flag = false;
+    bool right_flag = false;
+    
+    while(r != nullptr)
+    {
+        left_flag = false;
+        right_flag = false;
+        
+        if(newnode->data < r->data)
+        {
+            prev = r;
+            r = r->left;
+            left_flag = true;
+        }
+        else
+        {
+            prev = r;
+            r = r->right;
+            right_flag = true;
+        }
+    }
+    
+    if(left_flag == true)
+    {
+        prev->left = newnode;
+    }
+    else if(right_flag ==true)
+    {
+        prev->right = newnode;
+    }
+    
+}
+
+void postorder_using_2stacks(node *r,stack<node *> &st1, stack <node *> &st2) // paste page pics immediately !!!!!!!1
+    {
+        node *cur = r;
+        while(!st1.empty())
+        {
+            cur = st1.top();
+            st2.push(cur);
+            st1.pop();
+            
+            if(cur->left != nullptr)
+            {
+                st1.push(cur->left);
+            }
+            
+            if(cur->right != nullptr)
+            {
+                st1.push(cur->right);
+            }
+            
+        }
+    }
+
+void postorder_print(stack<node *>st2)
+{
+    while(!st2.empty())
+    {
+        printf("%d \n",st2.top()->data);
+        st2.pop();
+    }
+}
+    
+
+
+int main()
+{
+    node *root =  new node();
+    root->data = 20;
+    
+    node * newnode_1 = new node();
+    newnode_1->data = 30;
+    
+    node *newnode_2 = new node();
+    newnode_2->data = 25;
+    
+    node *newnode_3 = new node();
+    newnode_3->data = 35;
+    
+    node *newnode_4 = new node();
+    newnode_4->data = 22;
+    
+    node *newnode_5 = new node();
+    newnode_5->data = 15;
+    
+    node *newnode_6 = new node();
+    newnode_6->data = 10;
+    
+    node *newnode_7 = new node();
+    newnode_7->data = 16;
+    
+    node *newnode_8 = new node();
+    newnode_8->data = 8;
+    
+    node *newnode_9 = new node();
+    newnode_9->data = 17;
+    
+    where_to_place(root,newnode_1);
+    where_to_place(root,newnode_2);
+    where_to_place(root,newnode_3);
+    where_to_place(root,newnode_4);
+    where_to_place(root,newnode_5);
+    where_to_place(root,newnode_6);
+    where_to_place(root,newnode_7);
+    where_to_place(root,newnode_8);
+    where_to_place(root,newnode_9);
+    
+   stack<node *> st1;
+   stack<node *>st2;
+   
+   st1.push(root);
+   
+   postorder_using_2stacks(root,st1,st2);
+   
+   postorder_print(st2);
+    
+}
+
+
+
+
+
+
+
+
+inOrder(Node* root) {
+    vector<int> ans;
+    stack<Node*> s;
+    Node* curr = root;
+
+    while (curr != nullptr || s.empty() == false) 
+    {
+        while (curr != nullptr) 
+        {
+            s.push(curr);
+            curr = curr->left;
+        }
+
+        curr = s.top();
+        s.pop();
+
+        ans.push_back(curr->data);
+        curr = curr->right;
+    }
+    
+    return ans;
+}
 
 
 
