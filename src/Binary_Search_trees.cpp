@@ -44,7 +44,7 @@ void where_to_place(node *r,node *newnode) // to create a Binary Tree manually
 
 // so this thing like lets think of it like in two parts : part 1 (it is for deciding the route to take(left or right) so thats what the first while loop (and its if and else will do) and Part 2 : is the one that actually assigns the values 
 {
-    node *prev = nullptr;
+    node *prev = nullptr; // here prev is kinda of like the temp variable that holds root postion and this will be used later for assigning
 
     bool left_flag = false;
     bool right_flag = false;
@@ -556,28 +556,6 @@ int main()
 
 
 
-inOrder(Node* root) {
-    vector<int> ans;
-    stack<Node*> s;
-    Node* curr = root;
-
-    while (curr != nullptr || s.empty() == false) 
-    {
-        while (curr != nullptr) 
-        {
-            s.push(curr);
-            curr = curr->left;
-        }
-
-        curr = s.top();
-        s.pop();
-
-        ans.push_back(curr->data);
-        curr = curr->right;
-    }
-    
-    return ans;
-}
 
 
 
