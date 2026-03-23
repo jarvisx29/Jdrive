@@ -201,6 +201,19 @@ void where_to_place(node *r,node *newnode) // this whole thing is normal like be
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
  XXXXXXXXXXXXXXXXXXXXXXX.   PREORDER DISPLAY USING VECTOR XXXXXXXXXXXXXXXXXXXXX
 
 
@@ -293,6 +306,9 @@ int main()
 
 
 
+
+
+
 // BINARY TREE IMPLEMENTATION IN A STACK ( PREORDER using node* inside stack and node *cur )
 
 
@@ -347,11 +363,24 @@ void where_to_place(node *r,node *newnode)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 XXXXXXXXXXXXXXXXXX.   PROPER PREORDER DISPLAY USING STACK (using stack <node *> st and node *cur) 
 
 
 
-void preorder_inside_stack(node *r,stack <node *> &st) // 2026-03-20-15-24-59.png
+
+
+void preorder_inside_stack(node *r,stack <node *> &st) // 2026-03-20-15-24-59.png , 
 {
     
     
