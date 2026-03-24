@@ -40,3 +40,6 @@ void create_binary_rec(node *r,node *newnode)
     }
 
 }
+
+
+// dd
