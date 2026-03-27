@@ -128,4 +128,184 @@ int main()
     print_level_Order(root);
 }
 
-//dd 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXX THIS IS WHERE THE ACTUAL STUFF BEGINS !!!! (dont see above its just BS)     XXXXXXXXXXXXXXXXXXXX
+
+
+
+
+
+
+
+
+
+
+// CREATING BINARY TREE MANUALLY in main()           2026-03-27-04-24-50.png
+
+
+#include <iostream>
+#include<queue>
+
+using namespace std;
+
+struct node
+{
+    int data;
+    node *left = nullptr;
+    node *right = nullptr;
+};
+
+
+void print_level_Order(node *r) // just printing ; no creating as dedicated function 
+{
+    if(r == nullptr)
+    {
+        return;
+    }
+    
+    queue<node *> q;
+    q.push(r);
+    
+    while(!q.empty())
+    {
+        node *cur = q.front();
+        q.pop();
+        
+        printf(" %d",cur->data);
+        
+        if(cur->left != nullptr)
+        {
+            q.push(cur->left);
+        }
+        if(cur->right != nullptr)
+        {
+            q.push(cur->right);
+        }
+    }
+}
+
+int main()
+{
+    node *root = (node *)malloc(sizeof(node));
+    root->data = 1;
+    root->left = nullptr;
+    root->right = nullptr;
+    
+    root->left = (node *)malloc(sizeof(node));
+    root->left->data = 2;
+    root->left->left = nullptr;
+    root->left->right = nullptr;
+    
+    root->right = (node *)malloc(sizeof(node));
+    root->right->data = 3;
+    root->right->left = nullptr;
+    root->right->right = nullptr;
+    
+    print_level_Order(root);
+}
+
+
+
+
+
+
+
+
+
+// BINARY TREE USING FUNCTION BUT [NOO BALANCING !!!!!!!]
+
+
+
+#include <iostream> //          PASTE IMAGE WHEN YOU GET HOME !!!1
+#include<queue>
+
+using namespace std;
+
+struct node
+{
+    int data;
+    node *left = nullptr;
+    node *right = nullptr;
+};
+
+void insert_binary(node * root, node *newnode)
+{
+    newnode->left = nullptr;
+    newnode->right = nullptr;
+    
+    if(root->left == nullptr)
+    {
+        root->left = newnode;
+    }
+    else if(root->right == nullptr)
+    {
+        root->right = newnode;
+    }
+}
+
+void print_level_Order(node *r)
+{
+    if(r == nullptr)
+    {
+        return;
+    }
+    
+    queue<node *> q;
+    q.push(r);
+    
+    while(!q.empty())
+    {
+        node *cur = q.front();
+        q.pop();
+        
+        printf(" %d",cur->data);
+        
+        if(cur->left != nullptr)
+        {
+            q.push(cur->left);
+        }
+        if(cur->right != nullptr)
+        {
+            q.push(cur->right);
+        }
+    }
+}
+
+
+
+int main()
+{
+    node *root = (node *)malloc(sizeof(node));
+    root->data = 1;
+    
+    node *newnode_1 = (node *)malloc(sizeof(node));
+    newnode_1->data = 2;
+    
+    node *newnode_2 = (node *)malloc(sizeof(node));
+    newnode_2->data = 3;
+    
+    
+    insert_binary(root,newnode_1);
+    insert_binary(root,newnode_2);
+    
+    print_level_Order(root);
+}
+
+
+
+
