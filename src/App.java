@@ -13908,6 +13908,18 @@ class Array_implementation_in_queue
 
 
 
+class Count_Primes
+{
+    public static void main (String args)
+    {
+        int n = 10;
+
+        
+    }
+}
+
+
+
 
 
 

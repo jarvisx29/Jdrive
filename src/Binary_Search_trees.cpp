@@ -14,7 +14,7 @@ void rec(int num) // recursion is simple only dont be afraid : its basically a f
     printf("%d \n",num);
     
     rec(num+1); // for ex : here this rec will keep on calling void rec again and again until it reaches num ==6 ; then it hits return and stops ; so thats recursion for you simple
-}l
+}
 int main()
 
 {
