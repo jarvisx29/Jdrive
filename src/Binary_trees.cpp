@@ -155,7 +155,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXX THIS IS WHERE THE ACTUAL STUFF BEGINS !!!! (dont see
 
 
 
-// CREATING BINARY TREE MANUALLY in main()           2026-03-27-04-24-50.png
+1. // CREATING BINARY TREE MANUALLY in main()           2026-03-27-04-24-50.png
 
 
 #include <iostream>
@@ -227,7 +227,7 @@ int main()
 
 
 
-// BINARY TREE USING FUNCTION BUT [NOO BALANCING !!!!!!!]
+2. // BINARY TREE USING FUNCTION BUT [NOO BALANCING !!!!!!!]
 
 
 
@@ -306,6 +306,124 @@ int main()
     print_level_Order(root);
 }
 
-//dd 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXX  CREATE BINARY TREE (THE PROPER WAY !!!!!!). XXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+
+using namespace std;
+
+struct node
+{
+    int data;
+    node *left = nullptr;
+    node *right = nullptr;
+};
+
+node *createNode(int data) // this is the function although put before the insert func ; but is only called when the initiated by the insert function ; its job is to create a node and put its left and right as nullptr ; think of it like this ; it creates it like a lego block that is the new element that is about to be inserted into the binary tree ; and it created it and gives it to the insert func to be inserted !!
+{
+    node *newnode = (node *)malloc(sizeof(node));
+    newnode->data = data;
+    newnode->left = nullptr;
+    newnode->right = nullptr;
+    
+    return newnode;
+}
+
+node *insert_binary(node *root,int data) // this function is where all the inserting of elements into the binary tree happens ; so like the main funda of this is like it will put the elememts in array and at each iteration the current pointer (front) will keep going ++ and the currents elements left and right will be checked ; also if null ; then will be inserted ; thats BINARY TREE BASICALLY !!!!
+{
+    if(root == nullptr)
+    {
+        return createNode(data);
+    }
+    
+    node * array[100];
+    int front =0; // this is like the current pointer ; which holds the current pointer and checks whether the current elements left or right is empty ; if so will insert where empty 
+    int rear = 0; // this is the pointer responsible for adding the new elements to the array ; so that we can keep checking when front comes to it and its left and right nodes are checked !
+    
+    array[rear++] = root;
+    
+    while(front < rear)
+    {
+        node *temp = array[front++];
+        
+        if(temp->left == nullptr)
+        {
+            temp->left = createNode(data);
+            return root;
+        }
+        else
+        {
+            array[rear++] = temp->left;
+        }
+        
+        if(temp->right == nullptr)
+        {
+            temp->right = createNode(data);
+            return root;
+        }
+        else
+        {
+            array[rear++] = temp->right;
+        }
+    }
+    
+    return root;
+}
+
+void print_inOrder(node *root) // simple inorder traversal like in linkedlist but using recursion
+{
+    if(root != nullptr)
+    {
+        print_inOrder(root->left);
+        printf("%d ",root->data);
+        print_inOrder(root->right);
+    }
+}
+
+
+int main()
+{
+    node *root = nullptr;
+    
+    int x;
+    for(int i=0;i<7;i++)
+    {
+        printf("Enter element to inserted into binary tree :");
+        scanf("%d",&x);
+        
+        root = insert_binary(root,x); // just like in linkedlist
+    }
+    
+    print_inOrder(root);
+    
+    return 0;
+}
+
+
+
+
+
+
 
 
