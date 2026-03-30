@@ -59,7 +59,7 @@ node *createList()
 
     return head;   // you might be thinking why is there a return here ; the thing is whenever a struct method is created ; you need to return something or it will give error ; also the reason being ; you need to also at each iteration send the head to the main so that it will know whether the head is altered and it will send the next element to be connected to properly ; also just head is enough since all the elementsa re connected to it so you will get the whole thing 
 }
-}
+
 
 void display(node *head)
 {
@@ -84,7 +84,7 @@ int main()
 
 
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX. you can do like this too but the above one is the industry standard like thats easier and how most things are done ; liek implementation in functiond and keeping the main clean
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX. you can do like this too but the above one is the industry standard like thats easier and how most things are done ; like implementation in functiond and keeping the main clean
 
 #include <iostream>
 

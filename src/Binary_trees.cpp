@@ -331,7 +331,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXX  CREATE BINARY TREE (THE PROPER WAY !!!!!!). XXXXX
 #include <stdlib.h>
 #include <iostream>
 
-using namespace std;
+using namespace std; //.        for explanation :  search "binary_tree PROPER using array front&rear" in problems folder in desktop 
 
 struct node
 {
@@ -419,6 +419,116 @@ int main()
     
     return 0;
 }
+
+
+
+
+
+//if you want this is sirs version (its exactly the same but using unneccesary struct everywhere )
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+
+using namespace std;
+
+struct node {
+    int data;
+    node* left = nullptr;
+    node* right = nullptr;
+};
+
+// Create new node
+struct node* createNode(int data) {
+    node* newNode = (node*)malloc(sizeof(struct node));
+    newNode->data = data;
+    newNode->left = NULL;
+    newNode->right = NULL;
+    return newNode;
+}
+
+// Insert node in Binary Tree (first empty place)
+ node* insert(node* root, int data) {
+    if (root == NULL)
+        return createNode(data);
+
+    node* array[100];
+    int front = 0; 
+    int rear = 0;
+
+    array[rear++] = root;
+
+    while (front < rear) {
+        node* temp = array[front++];
+
+        if (temp->left == NULL) {
+            temp->left = createNode(data);
+            return root;
+        }
+        else 
+        {
+            array[rear++] = temp->left;
+        }
+
+        if (temp->right == NULL) {
+            temp->right = createNode(data);
+            return root;
+        }
+        else {
+            array[rear++] = temp->right;
+        }
+    }
+
+    return root;
+}
+
+// Inorder traversal
+void inorder(node* root) {
+    if (root != NULL) {
+        inorder(root->left);
+        printf("%d ", root->data);
+        inorder(root->right);
+    }
+}
+
+int main() {
+    node* root = NULL;
+    int x;
+    for (int i = 0; i < 7; i++)
+    {
+		cout << "Enter the data to be inserted in the binary tree: ";
+        cin >> x;
+        root = insert(root, x);
+    }
+ 
+
+    printf("Inorder Traversal: ");
+    cout << "4 2 5 1 6 3 7" << endl;
+    inorder(root);
+
+   // printf("\nBalance of root = %d\n", getBalance(root));
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
