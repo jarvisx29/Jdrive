@@ -642,7 +642,7 @@ node *delEnd(node *head) // will remove 200 from start and will start from 200
     
     delEnd->next=head;
     head = head->next;
-    free(delEnd);
+    free(delEnd);           // here as you can see delEnd is the scarificial goat ; it is kinda like the temp variable we'll yse to get rid of current head
     
     return head;
 }

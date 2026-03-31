@@ -1151,6 +1151,7 @@ int main()
 {
     node *head =NULL;
     
+    
     node *previous = NULL;
 
     for(int i=1;i<6;i++)

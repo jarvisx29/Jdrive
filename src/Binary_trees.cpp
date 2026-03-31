@@ -144,6 +144,23 @@ int main()
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 XXXXXXXXXXXXXXXXXXXXXXXXXXX THIS IS WHERE THE ACTUAL STUFF BEGINS !!!! (dont see above its just BS)     XXXXXXXXXXXXXXXXXXXX
 
 
@@ -338,7 +355,7 @@ struct node
     int data;
     node *left = nullptr;
     node *right = nullptr;
-};
+};a
 
 node *createNode(int data) // this is the function although put before the insert func ; but is only called when the initiated by the insert function ; its job is to create a node and put its left and right as nullptr ; think of it like this ; it creates it like a lego block that is the new element that is about to be inserted into the binary tree ; and it created it and gives it to the insert func to be inserted !!
 {
