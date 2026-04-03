@@ -1,6 +1,8 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include <iostream>
+#include <queue>
 #include <stack>
-#include <vector>
 
 using namespace std;
 
@@ -11,110 +13,140 @@ struct node
     node *right = nullptr;
 };
 
-
-void where_to_place(node *r,node *newnode)
+node *createNode(int data)
 {
-    node *prev = nullptr;
+    node *newnode = (node *)malloc(sizeof(node));
+    newnode->data = data;
+    newnode->left = nullptr;
+    newnode->right = nullptr;
     
-    bool left_flag = false;
-    bool right_flag = false;
-    
-    while(r != nullptr)
+    return newnode;
+}
+
+node *insert_binary(node *root,int data)
+{
+    if(root == nullptr)
     {
-        left_flag = false;
-        right_flag = false;
+        return createNode(data);
+    }
+    
+    node *array[100];
+    int front = 0;
+    int rear = 0;
+    
+    array[rear++] = root;
+    
+    while(front < rear)
+    {
+        node *temp = array[front++];
         
-        if(newnode->data <r->data)
+        if(temp->left == nullptr)
         {
-            prev = r;
-            r= r->left;
-            left_flag = true;
+            temp->left = createNode(data);
+            return root;
         }
         else
         {
-            prev = r;
-            r = r->right;
-            right_flag = true;
-        }
-    }
-    
-    if(left_flag == true)
-    {
-        prev->left = newnode;
-    }
-    if(right_flag == true)
-    {
-        prev->right = newnode;
-    }
-}
-
-
-void inOrder(node *root)
-{
-    vector<int> vec;
-    stack<node *>st;
-    
-    node *cur = root;
-    
-    while(cur !=nullptr || st.empty() ==false)
-    {
-        while(cur !=nullptr)
-        {
-            st.push(cur);
-            cur = cur->left;
+            array[rear++] = temp->left;
         }
         
-        cur = st.top();
+        if(temp->right == nullptr)
+        {
+            temp->right = createNode(data);
+            return root;
+        }
+        else
+        {
+            array[rear++] = temp->right;
+        }
+    }
+    return root;
+    
+}
+
+node *modify_binary(node *root)
+{
+    
+    stack <node *> st;
+    st.push(root);
+    
+    while(root != NULL)
+    {
+        root = st.top();
         st.pop();
         
-        vec.push_back(cur->data);
-        cur = cur->right;
+        if(root != NULL && root->left != NULL && root->data < root->left->data)
+        {
+            int temp;
+            
+            st.push(root->left);
+            temp = root->data;
+            root->data = root->left->data;
+            root->left->data = temp;
+        }
+        else if(root != NULL && root->right != NULL && root->data < root->right->data)
+        {
+            int temp1;
+            
+            st.push(root->right);
+            temp1 = root->data;
+            root->data = root->right->data;
+            root->right->data = temp1;
+            
+        }
     }
-    for(int i=0;i<vec.size();i++)
-    {
-        printf("%d \n",vec[i]);
-    }
-    
+    return root;
     
 }
+
+void level_Order(node *r)
+{
+    if(r ==nullptr)
+    {
+        return;
+    }
+    
+    queue<node *> q;
+    q.push(r);
+    
+    while(!q.empty())
+    {
+        node *cur = q.front();
+        q.pop();
+        
+        printf(" %d",cur->data);
+        
+        if(cur->left != nullptr)
+        {
+            q.push(cur->left);
+        }
+        if(cur->right != nullptr)
+        {
+            q.push(cur->right);
+        }
+        
+    }
+    
+}
+
+
+
 
 int main()
 {
-    node * root = new node();
-    root->data = 50;
+    node *root = nullptr;
+    6
+    int x;
+    for(int i=0;i<4;i++)
+    {
+        printf("Enter element to be inserted : ");
+        scanf("%d",&x);
+        
+        root = insert_binary(root,x);
+    }
+    level_Order(root);
     
-    node *newnode_1 = new node();
-    newnode_1->data = 30;
+    modify_binary(root);
     
-    node *newnode_2 = new node();
-    newnode_2->data = 20;
-    
-    node *newnode_3 = new node();
-    newnode_3->data = 40;
-    
-    node *newnode_4 = new node();
-    newnode_4->data = 70;
-    
-    node *newnode_5 = new node();
-    newnode_5->data = 60;
-    
-    node *newnode_6 = new node();
-    newnode_6->data= 80;
-    
-    
-    where_to_place(root,newnode_1);
-    where_to_place(root,newnode_2);
-    where_to_place(root,newnode_3);
-    where_to_place(root,newnode_4);
-    where_to_place(root,newnode_5);
-    where_to_place(root,newnode_6);
-    
-    inOrder(root);
-    
+    level_Order(root);
 }
-
-
-
-
-
-
