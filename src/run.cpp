@@ -135,7 +135,7 @@ void level_Order(node *r)
 int main()
 {
     node *root = nullptr;
-    6
+    
     int x;
     for(int i=0;i<4;i++)
     {
@@ -150,3 +150,4 @@ int main()
     
     level_Order(root);
 }
+//dd 
