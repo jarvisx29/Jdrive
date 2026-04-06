@@ -13917,6 +13917,140 @@ class Array_implementation_in_queue
 
 
 
+
+
+import java.util.*;
+class Check_if_Strings_Can_be_Made_Equal_With_Operations_I //  leetcode question : 100 & working for all testcases !
+{
+    public static void main (String args []) // this question is easy only ; just that the q is explained poorly. ; it means that any number of operations ; in any order ; like swap(0,2) alone only or swap(1,3) alone only  ; or swap(0,2) and then swap(1,3) like that and so on   ; since the testcases are very small (4) we can hard code them ; so i used 3 arraylists for each possibility ; simple q shitty leetcode explanation as usual
+    {
+        String s1 = "bnxw";
+        String s2 = "bwxn";
+
+        String s1_split[] = s1.split("");
+        
+        boolean result = false;
+
+        ArrayList<String> ar = new ArrayList<>();
+        ArrayList<String> ar_1 = new ArrayList<>();
+        ArrayList<String> ar_2 = new ArrayList<>();
+
+        if(s1.equals(s2))
+        {
+            // return true;
+            System.out.println("true");
+            return;
+        }
+
+        for(String num : s1_split)
+        {
+            ar.add(num);
+            ar_1.add(num);
+            ar_2.add(num);
+        }
+        
+        String z1 = ar_1.get(1);
+        String z2 = ar_1.get(3);
+        
+
+        String t1 = ar.get(0);
+        String t2 = ar.get(2);
+        
+        System.out.println(ar_1);
+        
+        ar_2.set(0,t2);      // swap (0,2) standalone only
+        ar_2.set(2,t1);
+        String s_final_new = "";
+        
+        for(int i=0;i<ar_2.size();i++)
+        {
+            s_final_new = s_final_new + ar_2.get(i);
+        }
+        if(s_final_new.equals(s2))
+        {
+            // System.out.println("True");
+            result = true;
+        }
+        // else
+        // {
+        //     //System.out.println("False");
+        //     result = false;
+        // }
+        
+        
+        ar_1.set(1,z2);      // swap (1,3) standalone only
+        ar_1.set(3,z1);
+        String s_final_new2 = "";
+        
+        for(int i=0;i<ar_1.size();i++)
+        {
+            s_final_new2 = s_final_new2 + ar_1.get(i);
+        }
+        if(s_final_new2.equals(s2))
+        {
+            // System.out.println("True");
+            result = true ;
+        }
+        // // else
+        // // {
+        // //     // System.out.println("False");
+        // //     result = false ;
+        // }
+        
+        
+        
+        
+        
+        
+        
+        //XXXXXXXXXX old XXXXXXXX.  (swap(0,2) -> then swap(1,3) only)
+        
+        
+        ar.set(0,t2);
+        ar.set(2,t1);
+        System.out.println(ar);
+        
+        
+        
+        ar.set(1,z2);
+        ar.set(3,z1);
+        System.out.println(ar);
+        
+        String s_final = "";
+        
+        for(int i=0;i<ar.size();i++)
+        {
+            s_final = s_final + ar.get(i);
+        }
+        System.out.println(s_final);
+        
+        if(s_final.equals(s2))
+        {
+            // System.out.println("True");
+            result = true;
+        }
+        // else
+        // {
+        //     // System.out.println("False");
+        //     result = false;
+        // }
+
+        // return result;
+        System.out.println(result);
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 class Count_Primes
 {
     public static void main (String args)
