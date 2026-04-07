@@ -766,7 +766,7 @@ int main()
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.   DOUBLE LINKEDLIST XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
-#include <iostream> //   BASICS (JUST CREATING BY MANUALLY HARDCODING IT !!!)
+ //   BASICS (JUST CREATING BY MANUALLY HARDCODING IT !!!)
 
 struct node //   so total 3 parameters in doubly linkedList (previous,data,next)
 {
@@ -1323,27 +1323,6 @@ int main()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-#include <stdio.h>
-
-struct node
-{
-    int data;
-    node *left;
-    node *right;
-
-};
 
 
 
