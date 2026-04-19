@@ -261,11 +261,9 @@ int main()
     trav_backward(tail);
     printf("forward \n");
     trav_forward(head);
-    
-    
 }
 
 
-
+//dd 
 
 
