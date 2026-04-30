@@ -231,6 +231,7 @@ node *createList(node **tail)
     return head;
 }
 
+
 void trav_forward(node *head)
 {
     node *trav1 = head;
@@ -264,6 +265,7 @@ int main()
 }
 
 
-//dd dd dd dd dd dd dd dd dd dd dd
+// dd
+
 
 
