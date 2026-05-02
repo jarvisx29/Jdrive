@@ -204,7 +204,7 @@ struct node
     node *next;
 };
 
-node *createList(node **tail)
+node *createList(node **tail) //.  ohh okayy i get it i think ; so like since we have two pointers in doubly linkedlist ; unlike in in linekdlist just one pointer like next net and all ; but here although head is there the real work is done by tail ; so we refrence the tail to main   ; but here is the thing it still works like how you would expect the list to workv; just the thing is that in loops the tail part is more worked and used thats all !!! 
 {
     node *head = NULL;
     *tail = NULL;
@@ -265,4 +265,3 @@ int main()
 }
 
 
-// dd dd 
