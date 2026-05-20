@@ -265,3 +265,155 @@ int main()
 }
 
 // dd dd dd dd dd dd dd dd dd dd dd dd dd dd dd dd dd
+
+
+
+#include <iostream>
+
+struct node
+{
+    int data;
+    node *previous;
+    node *next;
+};
+
+node *createList(node **tail)
+{
+    node *head = NULL;
+    *tail = NULL;
+    
+    for(int i=0;i<6;i++)
+    {
+        node *temp = (node *)malloc(sizeof(node));
+        temp->data = 200+i;
+        temp->next = NULL;
+        temp->previous = NULL;
+        
+        if(head == NULL)
+        {
+            head = temp;
+            *tail = temp;
+        }
+        else
+        {
+            (*tail)->next = temp;
+            temp->previous = *tail;
+            *tail = temp;
+        }
+    }
+    return head;
+}
+
+void trav_forward(node *head)
+{
+    node *trav1 = head;
+    while(trav1 != NULL)
+    {
+        printf("%d \n",trav1->data);
+        trav1 = trav1->next;
+    }
+    
+}
+void trav_backward(node *tail)
+{
+    node *trav = tail;
+    while(trav != NULL)
+    {
+        printf("%d \n",trav->data);
+        trav = trav->previous;
+    }
+}
+
+
+int main()
+{
+    node *tail = NULL;
+    
+    node *head = createList(&tail);
+    
+    trav_backward(tail);
+    printf("forward \n");
+    trav_forward(head);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <iostream>
+
+struct node
+{
+    int data;
+    node *next;
+    node *previous;
+};
+
+node *createList(node **tail)
+{
+    node *head = NULL;
+    *tail = NULL;
+    
+    for(int i=0;i<6;i++)
+    {
+        node *temp = (node *)malloc(sizeof(node));
+        temp->data = 200+i;
+        temp->next = NULL;
+        temp->previous =NULL;
+        
+        if(head == NULL)
+        {
+            head = temp;
+            *tail = temp;
+        }
+        else
+        {
+            (*tail)->next = temp;
+            temp->previous = *tail;
+            *tail = temp;
+        }
+    }
+    
+    return head;
+    
+}
+
+void trav_forward(node *head)
+{
+    node *trav_forward = head;
+    while(trav_forward != NULL)
+    {
+        printf("%d \n",trav_forward->data);
+        trav_forward = trav_forward->next;
+    }
+}
+
+void trav_backward(node *tail)
+{
+    node *trav_backward = tail;
+    while(trav_backward != NULL)
+    {
+        printf("%d \n",trav_backward->data);
+        trav_backward = trav_backward->previous;
+    }
+}
+
+
+int main()
+{
+    node *tail = NULL;
+    
+    node *head = createList(&tail);
+    trav_forward(head);
+    printf("backward : \n");
+    trav_backward(tail);
+}

@@ -14043,24 +14043,34 @@ class Check_if_Strings_Can_be_Made_Equal_With_Operations_I //  leetcode question
 
 
 
-
-
-
-
-
-
-
-
-class Count_Primes
+import java.util.*;
+class Maximum_Repeating_Substring
 {
-    public static void main (String args)
+    String s1 = "ababc";
+    String s2 = "ab";
+
+    String s1_split [] = s1.split("");
+    String s2_split [] = s2.split("");
+
+    ArrayList <String> ar = new ArrayList<>();
+    ArrayList <String> ar_2 = new ArrayList<>();
+
+    for(String num : s1_split)
     {
-        int n = 10;
-
-        
+        ar.add(num);
     }
-}
 
+    for(String numm : s2_split)
+    {
+        ar_2.add(numm);
+    }
+
+    
+
+
+
+    
+}
 
 
 
