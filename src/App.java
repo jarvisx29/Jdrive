@@ -14046,32 +14046,43 @@ class Check_if_Strings_Can_be_Made_Equal_With_Operations_I //  leetcode question
 import java.util.*;
 class Maximum_Repeating_Substring
 {
-    String s1 = "ababc";
-    String s2 = "ab";
-
-    String s1_split [] = s1.split("");
-    String s2_split [] = s2.split("");
-
-    ArrayList <String> ar = new ArrayList<>();
-    ArrayList <String> ar_2 = new ArrayList<>();
-
-    for(String num : s1_split)
+    public static void main(String args [])
     {
-        ar.add(num);
+        String s1 = "ababc";
+        String s2 = "ab";
+        
+        String s1_split [] = s1.split("");
+        String s2_split [] = s2.split("");
+        
+        ArrayList <String> ar = new ArrayList<>();
+        ArrayList <String> ar_2 = new ArrayList<>();
+        
+        for(String num : s1_split)
+            {
+                ar.add(num);
+            }
+            
+            
+        for(String numm : s2_split)
+            {
+                ar_2.add(numm);
+            }
+            
+        for(int i =0;i< ar.length;i++)
+            {
+                if(ar.get(i) == ar.get(i+1))
+                    {
+                        System.out.println(i+" "+i+1);
+                        ar.remove(i);
+                        ar.remove(i+1);
+                        break;
+                    }
+                }
+
     }
-
-    for(String numm : s2_split)
-    {
-        ar_2.add(numm);
-    }
-
-    
-
-
-
     
 }
-
+dd
 
 
 
