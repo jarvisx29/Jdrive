@@ -14082,12 +14082,119 @@ class Maximum_Repeating_Substring
     }
     
 }
- // dd
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    SLIDING WINDOW            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+
+
+//FIXED SLIDING WINDOW 
+
+
+class sliding_window
+{
+    public static void main(String args [])
+    {
+        int arr [] = {2,1,5,1,3,2}; //.    Q : Maximum Sum Subarray of Size K 
+
+        int k=3;
+
+        int sum = 0;
+
+        for(int i=0;i<k;i++)
+        {
+            sum= sum + arr[i];
+        }
+        
+        int max = sum;
+
+        for(int i=k;i<arr.length;i++)
+        {
+            sum = sum - arr[i-k] + arr[i]; // here the arr[i-k]: is the main sliding window logic its the one that does the -1st and latest +1 stuff ; so like it waits until the first window is done and then starts the window shifting
+
+            if(sum > max)
+            {
+                max = sum;
+            }
+        }
+
+        System.out.println("highest in k ranges : "+max);
+    }
+}
+
+
+
+
+
+
+
+import java.util.*;
+class First_Negative_Number_in_Every_Window_of_Size_K // Golden rule question 
+{
+    public static void main (String args[])
+    {
+        int arr [] = {12,-1,-7,8,-15,30,16,28};
+
+        int k = 3;
+
+        Queue<Integer> q = new LinkedList<Integer>(); // we use queue here and not like sum like the above sum because here we need the order of negatives the q asks order of negatives in each iteration window ; so we need a structure which stores insertion order of negatives like a person in line using FIFO so i.e QUEUE !!!!!!!   and the +1 is done for you know the typical indexes start from 0 so as to make up for it !!!!
+
+        for(int i=0;i<arr.length;i++)
+        {
+
+            if(arr[i] <0)
+            {
+                q.add(arr[i]);
+            }
+
+
+            if(i>=k-1) // this is so that the first window is formed like you know the first k size window(12,-1,-7) is formed so that you can begin the window shifting and this if makes sure that the first k element is formed and only then start the shifting !!!!
+            {
+                if(q.isEmpty())
+                {
+                    System.out.println(0);
+                }
+                else
+                {
+                    System.out.println(q.peek());
+                }
+                if(!q.isEmpty() && arr[i-k+1] == q.peek()) // the arr[i-k+1] : here is the actual sliding window logic like the wait for the i to finish the first window i.e 2 and then once the conditio nis satisfies then slide the window -1 +1 stuff ; also the +1 again is the typical indexes start from 0 so +1 to make up for it !!!!!
+                {
+                    q.poll();
+                }
+            }
+        }
+
+    }
+}
+
+
+// things to kinda remmeber (dont worry through practice this will be second nature )
+
+| Problem            | Maintain    |
+| ------------------ | ----------- |
+| max sum            | running sum |
+| first negative     | queue       |
+| distinct elements  | hashmap     |
+| no repeating chars | hashset     |
+| max frequency      | hashmap     |
 
 
 
