@@ -14087,7 +14087,15 @@ class Maximum_Repeating_Substring
 
 
 
-
+🔥 Sliding Window Recognition Cheat Sheet
+Clue	    Likely Pattern
+“size k”	 fixed window
+“longest”	   variable
+“smallest”	   variable
+“substring”	    sliding window likely
+“contiguous”	sliding window likely
+“at most k”	    variable
+“without repeating”	  hashmap + variable
 
 
 
@@ -14100,6 +14108,11 @@ class Maximum_Repeating_Substring
 
 
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    SLIDING WINDOW            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+
+
+
 
 
 
@@ -14139,6 +14152,16 @@ class sliding_window
     }
 }
 
+
+// things to kinda remmeber (dont worry through practice this will be second nature )
+
+| Problem            | Maintain    |
+| ------------------ | ----------- |
+| max sum            | running sum |
+| first negative     | queue       |
+| distinct elements  | hashmap     |
+| no repeating chars | hashset     |
+| max frequency      | hashmap     |
 
 
 
@@ -14197,6 +14220,54 @@ class First_Negative_Number_in_Every_Window_of_Size_K // Golden rule question
 | max frequency      | hashmap     |
 
 
+
+
+class Maximum_Number_of_Vowels_in_Substring_of_Size_K
+{
+    public static boolean isVowel(char ch) // now you might be wondering why i chose to use booelan instead of like normal if else ; but i wanted to try soemthing else and ;  mano we are past that amateur shii ; time to go advanced like the pros !!!!1
+    {
+        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
+    }
+
+    public static void main(String args []) // funda here is that we will check if the elements leaving and getting added during the the shifting of window is vowel or not so count++ and count-- accordingly like in the we did in the first sliding window sum !!!!!!
+    {
+        String s = "abciiidef";
+
+        int k = 3;
+        int count = 0;
+
+
+        for(int i= 0 ;i<k;i++) // for the intial k size window
+        {
+            if(isVowel(s.charAt(i)))
+            {
+                count++;
+            }
+        }
+
+        int max = count;
+
+        for(int i=k;i<s.length();i++) // typical stuff like we did in the first question of max sum  of subarray k
+        {
+            if(isVowel(s.charAt(i-k))) // to check if the  element leaving the (-x at the start of window) stuff is vowel or not so count --
+            {
+                count--;
+            }
+
+            if(isVowel(s.charAt(i))) // to check if the current element we just added is vowel or not so count++
+            {
+                count++;
+            }
+
+            if(count>max)
+            {
+                max = count;
+            }
+        }
+
+        System.out.println(max);
+    }
+}
 
 
 
