@@ -14270,6 +14270,47 @@ class Maximum_Number_of_Vowels_in_Substring_of_Size_K
 }
 
 
+import java.util.*;
+class Count_Distinct_Elements_in_Every_Window
+{
+    public static void main (String args [])
+    {
+        int arr [] = {1,2,1,3,4,3};
+
+        int k= 4;
+
+        HashMap<Integer,Integer> hm = new HashMap<>();
+
+        for(int i=0;i<k;i++) // loop for the first window 
+        {
+            hm.put(arr[i],hm.getOrDefault(arr[i],0)+1);
+        }
+        
+        System.out.println(hm.size()); // distinct count of 1st window
+
+        // !!!! hm.getOrDefault : funny thing is that although i have used hashmap prolly a million times its my fav data structure i today only learnt that the getOrDefault 
+
+
+
+        for(int i=k;i<arr.length;i++) // maikn sliding loop
+        {
+            hm.put(arr[i-k],hm.get(arr[i-k])-1); // this will get the outgoing element and subtract the count since its leaving the window
+
+            if(hm.get(arr[i-k]) == 0) // if the leaving element gets its freq to 0 ; then its. no longer needed in the entire array since we according to q ; only the distinct elements in a window is needed !!!!
+            {
+                hm.remove(arr[i-k]);
+            }
+
+            hm.put(arr[i],hm.getOrDefault(arr[i],0)+1); // this one adds the element that is entering the window on sliding so we increase its value by 1
+
+            System.out.println(hm.size());
+        }
+
+
+    }
+}
+
+
 
 
 
