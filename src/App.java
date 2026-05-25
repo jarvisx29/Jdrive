@@ -14226,7 +14226,7 @@ class Maximum_Number_of_Vowels_in_Substring_of_Size_K
 {
     public static boolean isVowel(char ch) // now you might be wondering why i chose to use booelan instead of like normal if else ; but i wanted to try soemthing else and ;  mano we are past that amateur shii ; time to go advanced like the pros !!!!1
     {
-        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
+        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'; // also here we used direct return instead of if or else like we usually do ; the logic goes like if we did it did satify the condtions i.e the stuff in return then true is it goo ; if not in the return content automatically it will go false ; this is how pros do it ; time for us to upgrade too mano !!!!!1
     }
 
     public static void main(String args []) // funda here is that we will check if the elements leaving and getting added during the the shifting of window is vowel or not so count++ and count-- accordingly like in the we did in the first sliding window sum !!!!!!
@@ -14273,7 +14273,7 @@ class Maximum_Number_of_Vowels_in_Substring_of_Size_K
 import java.util.*;
 class Count_Distinct_Elements_in_Every_Window
 {
-    public static void main (String args [])
+    public static void main (String args []) // Count Distinct Elements in Every Window
     {
         int arr [] = {1,2,1,3,4,3};
 
@@ -14288,7 +14288,7 @@ class Count_Distinct_Elements_in_Every_Window
         
         System.out.println(hm.size()); // distinct count of 1st window
 
-        // !!!! hm.getOrDefault : funny thing is that although i have used hashmap prolly a million times its my fav data structure i today only learnt that the getOrDefault 
+        // !!!! hm.getOrDefault : funny thing is that although i have used hashmap prolly a million times its my fav data structure i today only learnt that in getOrDefault ; the get part gets if the value for the key exists and if not the default value i.e 0+1 !!!!!! lol jst now learnt it !!!
 
 
 
@@ -14311,6 +14311,152 @@ class Count_Distinct_Elements_in_Every_Window
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+class Maximum_Average_Subarray_I // leetcode question : 100 % working for all testcases ! ; also my first sliding window qurstion !!!!!
+{
+    public static void main (String args [])
+    {
+        int arr [] = {7,4,5,8,8,3,9,8,7,6};
+
+        int k = 7;
+
+        double sum =0;
+        
+        if(arr.length <=1)
+        {
+            System.out.println(arr[0]);
+            return;
+        }
+
+        for(int i=0;i<k;i++)
+        {
+            sum = sum +arr[i];
+        }
+        double avg = sum/k;
+
+        double max = avg;
+
+        for(int i=k;i<arr.length;i++)
+        {
+            sum = sum - arr[i-k] +arr[i];
+            //sum = sum/k; // small mistake i made whole thing mhy logic excpet here you need to like avg/k instead of sum ; beacuse you need the avg of the slinding window range and if at each iteration you /4 it then the range is screwed so that why !!!
+            avg = sum/k;
+
+            System.out.println(avg);
+
+            if(avg> max)
+            {
+                max = avg;
+            }
+        }
+
+        System.out.println("max avg : "+max);
+    }
+}
+
+
+
+class Maximum_Number_of_Vowels_in_a_Substring_of_Given_Length // leetcode question : 100 % working for all testcases !!
+{
+    public static boolean isVowel(char ch)
+    {
+        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch=='u';
+    }
+    public static void main (String args [])
+    {
+        String s = "abciiidef";
+
+        int k = 3;
+
+        int count = 0;
+
+        for(int i=0;i<k;i++)
+        {
+            if(isVowel(s.charAt(i)))
+            {
+                count++;
+            }
+        }
+
+        int max = count;
+
+        for(int i=k;i<arr.length;i++)
+        {
+            if(isVowel(s.charAt(i-k)))
+            {
+                count--;
+            }
+            
+            if(isVowel(s.charAt(i)))
+            {
+                count++;
+            }
+
+            if(count > max)
+            {
+                max = count;
+            }
+        }
+    }
+}
+
+
+class Maximum_Number_of_Vowels_in_a_Substring_of_Given_Length
+{
+    public static boolean isVowel(char ch)
+    {
+        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch=='u';
+    }
+    public static void main (String args [])
+    {
+        String s = "leetcode";
+
+        int k = 3;
+
+        int count = 0;
+
+        for(int i=0;i<k;i++)
+        {
+            if(isVowel(s.charAt(i)))
+            {
+                count++;
+            }
+        }
+
+        int max = count;
+
+        for(int i=k;i<s.length();i++)
+        {
+            if(isVowel(s.charAt(i-k)))
+            {
+                count--;
+            }
+            
+            if(isVowel(s.charAt(i)))
+            {
+                count++;
+            }
+
+            if(count > max)
+            {
+                max = count;
+            }
+        }
+        
+        System.out.println(max);
+    }
+}
 
 
 
