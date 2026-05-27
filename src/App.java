@@ -14275,12 +14275,12 @@ class Count_Distinct_Elements_in_Every_Window
 {
     public static void main (String args []) // Count Distinct Elements in Every Window
     {
-        int arr [] = {1,2,1,3,4,3};
+        int arr [] = {1,2,1,3,4,3};h
 
         int k= 4;
 
-        HashMap<Integer,Integer> hm = new HashMap<>();
-
+        HashMap<Integer,Integer> hm = new HashMap<>();      // using frequency hashmap 
+ 
         for(int i=0;i<k;i++) // loop for the first window 
         {
             hm.put(arr[i],hm.getOrDefault(arr[i],0)+1);
@@ -14309,6 +14309,24 @@ class Count_Distinct_Elements_in_Every_Window
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -14458,7 +14476,7 @@ class Maximum_Number_of_Vowels_in_a_Substring_of_Given_Length
     }
 }
 
-//dd 
+//dd dd
 
 
 
