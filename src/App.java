@@ -8095,16 +8095,16 @@ class Array_implementation_in_queue
 
 
 
- import java.util.*;
+ import java.
  class Hashmap_basics 
  {
     public static void main(String[] args) 
     {
-        HashMap <Integer,String> hm = new HashMap<Integer,String>();
+        HashMap <Integer,String = new HashMap<Integer,String>();
 
         hm.put(1,"mano");
         hm.put(2,"bruno");
-        hm.put(3,"kruno");
+.put(3,"kruno");
 
         //for(String,Integer : hq)  // like we normally did using for loopp it wont work for these ; (since they have dual values )
 
@@ -8115,11 +8115,11 @@ class Array_implementation_in_queue
         
         //e: is the object with which we will use functions inside the hashmap
         
-        // entryset() : will give us access to the contents of the hashmap
+        // entryset()  give us access to the contents of the hashmap
         
-        for(Map.Entry<Integer,String> e : hm.entrySet() )
+        for(Map.Entry<Integer> e : hm.entrySet() )
         {
-            System.out.println("key : "+ e.getKey()+ " Value : "+e.getValue());
+            System.out.println : "+ e.getKey()+ " Value : "+e.getValue());
         }
     }
  }
@@ -8139,7 +8139,7 @@ class FrequencyMap_Using_getOrDefault    // to find frequency of each element
         
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);  // getOrDefault : used to count how many times something has occured ; and +1 to increment each time you get
+            hm.put(num,hm(num,0)+1);  // getOrDefault : used to count how many times something has occured ; and +1 to increment each time you get
         }
         
         System.out.println(hm);
@@ -8157,10 +8157,6 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   HASHMAP PRACICE QUESTIONS     XXXXXXXXXXXXXX
 
 
 
-
-
-
-
 import java.util.*;
 class FrequencyMap_UsingGetOrDefault       // used to increment everytime a digit appears (to count frequency basically)
 {
@@ -8172,7 +8168,7 @@ class FrequencyMap_UsingGetOrDefault       // used to increment everytime a digi
         
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);  // 0 is the default value that will be returned if nothing is found and +1 to increment the count if found
+            hm.put(num,hm(num,0)+1);  // 0 is the default value that will be returned if nothing is found and +1 to increment the count if found
         }
         
         System.out.println
@@ -8187,8 +8183,7 @@ XXXXXXXXXXXXX SOME SIMPLE GPT INTIAL HashMap QUESTIONS XXXXXXXXXXXXXXXXXXXXXX
 check the hashmap gpt simple starter questions.txt file for the q and ans for these programs
 
 
-//what all we'll be using today 
-
+//what 'll be using 
 import java.util.*;
 class using_get_method       // how to use get() method
 {
@@ -8198,7 +8193,7 @@ class using_get_method       // how to use get() method
 
         hm.put(20,"plane");
 
-        System.out.println("value using key : "+ hm.get(20));   // get() : only takes key as parameter and returns its respective value
+        System.out.println using key : "+ hm.get(20));   // get() : only takes key as parameter and returns its respective value
 
 
 
@@ -8218,7 +8213,7 @@ class Most_frequent_element
 
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
 
@@ -8252,7 +8247,7 @@ class Check_if_array_has_any_duplicate
 
 
         for(int num : arr)
-        {
+
             hm.put(num,hm.getOrDefault(num,0)+1);
         }
 
@@ -8289,7 +8284,7 @@ class Count_pairs_with_sum_equal_to_k
 
         for(int num : arr)
         {
-            hm.put(num,getOrDefault(num,0)+1);
+            hm.put(num,getOrDefault,0)+1);
         }
 
         //int num+need = k     [WHERE num = the current element , need = the number added to num to get k]
@@ -8316,16 +8311,16 @@ class Character_frequency_in_String  //Golden rule question : how to use char in
 {
     public static void main(String[] args) 
     {
-        String s = "aabbbc";
+        String s = "
 
         HashMap <Character,Integer> hm = new HashMap <Character,Integer>();
 
         for(char ch : s.toCharArray())    // to convert String to char and do stuff ; (simply use s.toCharArray() function to split the string into multiple single characters and append them into the hashmap)
         {
-            hm.put(ch,hm.getOrDefault(ch,0)+1);
+            hm.put(ch,hm(ch,0)+1);
         }
 
-        for(char key : hm.keySet())
+        for(char  hm.keySet())
         {
             System.out.println(key+" : "+hm.get(key));
         }
@@ -8340,12 +8335,12 @@ class First_repeating_element_by_index  // important question : need to append a
 {
     public static void main(String[] args) 
     {
-        int arr[] = {4, 5, 1, 2, 5, 3, 1};
+        int arr[] = , 5, 1, 2, 5, 3, 1};
 
         HashMap <Integer,Integer> hm = new HashMap<Integer,Integer>();
         int first_index = 0;
 
-        for(int i = 0;i<arr.length;i++)
+        for(int i = 0;i.length;i++)
         {
             int num = arr[i];
 
@@ -8369,7 +8364,7 @@ class First_repeating_element_by_index  // important question : need to append a
 
 class find_pair_equal_to_sum_k_using_only_one_loop
 {
-    public static void main(String[] args) 
+    public static void main[] args) 
     {
         int arr[] = {1, 4, 2, 3};
 
@@ -8377,7 +8372,7 @@ class find_pair_equal_to_sum_k_using_only_one_loop
         
         for(int num :arr)
         {
-           // hm.put(num,hm.getOrDefault(num,0)+1);
+           // hm.put(num.getOrDefault(num,0)+1);
 
             int need = k-num;
             if(hm.containsKey(need))
@@ -8390,8 +8385,7 @@ class find_pair_equal_to_sum_k_using_only_one_loop
 
             // Example:
             //         arr = {3}
-            //         k = 6
-
+            //         k = 
             //     Step:
             //         num = 3
             //         You put 3 into hm
@@ -8424,7 +8418,6 @@ class using_containsKey_method       // how to use the containsKey() method (sim
 
         hm.put(1,"mano ");
         hm.put(2,"bruno");
-        
 
         if(hm.containsKey(2))      // containskey() : will check if the key is there in hashmap or not ; and then you could perform operations accordingly
         {
@@ -8432,7 +8425,7 @@ class using_containsKey_method       // how to use the containsKey() method (sim
         }
         else
         {
-            System.out.println("not found");
+            System.out("not found");
         }
         
         
@@ -8450,7 +8443,7 @@ class Count_frequency_of_each_number // using containskey() : (NO +1 HERE)  : TH
 
         for(int num :arr)
         {
-            if(!hm.containsKey(num))
+            if(!hm.containsKey))
             {
                 hm.put(num,1);
             }
@@ -8484,7 +8477,7 @@ class Count_frequency_of_each_number_in_array_and_increment_count  // using cont
 
 
 {
-    public static void main(String[] args) 
+    public  main(String[] args) 
     {
         int arr[] = {2,2, 3, 2, 5};
         
@@ -8492,7 +8485,7 @@ class Count_frequency_of_each_number_in_array_and_increment_count  // using cont
 
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
         System.out.println(hm);
@@ -8514,7 +8507,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  TRAVERSAL METHODS IN HASHMAP (3 METHODS)  XXXXXX
 
 hm.keySet()	All keys only (but can access values too using hm.get(key)   see line 8923)
 hm.values()	All values only
-hm.entrySet()	Both key + value together
+hm.entrySet()	 + value together
 
 
 
@@ -8533,7 +8526,7 @@ class Traverse_USING_keySet_method
         
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
         for(int key : hm.keySet())   //keySet() : for all Keys
@@ -8559,7 +8552,7 @@ class Traverse_USING_values_method
         
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
         for(int key : hm.values())
@@ -8587,7 +8580,7 @@ class Traverse_USING_entrySet_method
         
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
        for(Map.Entry <Integer,Integer> e : hm.entrySet())
@@ -9500,7 +9493,7 @@ class Two_Sum_II_Input_Array_Is_Sorted    //leetcode question : 100 % working bu
 {
     public static void main(String[] args) 
     {
-        int arr[] = {2,7,11,15};
+        int arr[] = ,7,11,15};
 
         int target = 9;
 
@@ -9553,7 +9546,7 @@ class Find_Subarrays_With_Equal_Sum
 
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
 
@@ -9580,10 +9573,6 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX   HASHMAP PRACICE QUESTIONS     XXXXXXXXXXXXXX
 
 
 
-
-
-
-
 import java.util.*;
 class FrequencyMap_UsingGetOrDefault       // used to increment everytime a digit appears (to count frequency basically)
 {
@@ -9595,7 +9584,7 @@ class FrequencyMap_UsingGetOrDefault       // used to increment everytime a digi
         
         for(int num : arr)  // use this (enhanced loop) this is easier and better !!!!!!!!!!!!!!!!!!!!!!!
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);  // 0 is the default value that will be returned if nothing is found and +1 to increment the count if found
+            hm.put(num,hm(num,0)+1);  // 0 is the default value that will be returned if nothing is found and +1 to increment the count if found
         }
 
         // for(int i=0;i<arr.length;i++)  // you can use the normal loops too ; but enhanced one is preferred in hm
@@ -9616,8 +9605,7 @@ XXXXXXXXXXXXX SOME SIMPLE GPT INTIAL HashMap QUESTIONS XXXXXXXXXXXXXXXXXXXXXX
 check the hashmap gpt simple starter questions.txt file for the q and ans for these programs
 
 
-//what all we'll be using today 
-
+//what 'll be using 
 import java.util.*;
 class using_get_method       // how to use get() method
 {
@@ -9627,7 +9615,7 @@ class using_get_method       // how to use get() method
 
         hm.put(20,"plane");
 
-        System.out.println("value using key : "+ hm.get(20));   // get() : only takes key as parameter and returns its respective value
+        System.out.println using key : "+ hm.get(20));   // get() : only takes key as parameter and returns its respective value
 
 
 
@@ -9647,7 +9635,7 @@ class Most_frequent_element
 
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
 
@@ -9681,7 +9669,7 @@ class Check_if_array_has_any_duplicate
 
 
         for(int num : arr)
-        {
+
             hm.put(num,hm.getOrDefault(num,0)+1);
         }
 
@@ -9718,7 +9706,7 @@ class Count_pairs_with_sum_equal_to_k
 
         for(int num : arr)
         {
-            hm.put(num,getOrDefault(num,0)+1);
+            hm.put(num,getOrDefault,0)+1);
         }
 
         //int num+need = k     [WHERE num = the current element , need = the number added to num to get k]
@@ -9745,16 +9733,16 @@ class Character_frequency_in_String  //Golden rule question : how to use char in
 {
     public static void main(String[] args) 
     {
-        String s = "aabbbc";
+        String s = "
 
         HashMap <Character,Integer> hm = new HashMap <Character,Integer>();
 
         for(char ch : s.toCharArray())    // to convert String to char and do stuff ; (simply use s.toCharArray() function to split the string into multiple single characters and append them into the hashmap)
         {
-            hm.put(ch,hm.getOrDefault(ch,0)+1);
+            hm.put(ch,hm(ch,0)+1);
         }
 
-        for(char key : hm.keySet())
+        for(char  hm.keySet())
         {
             System.out.println(key+" : "+hm.get(key));
         }
@@ -9769,12 +9757,12 @@ class First_repeating_element_by_index  // important question : need to append a
 {
     public static void main(String[] args) 
     {
-        int arr[] = {4, 5, 1, 2, 5, 3, 1};
+        int arr[] = , 5, 1, 2, 5, 3, 1};
 
         HashMap <Integer,Integer> hm = new HashMap<Integer,Integer>();
         int first_index = 0;
 
-        for(int i = 0;i<arr.length;i++)
+        for(int i = 0;i.length;i++)
         {
             int num = arr[i];
 
@@ -9798,7 +9786,7 @@ class First_repeating_element_by_index  // important question : need to append a
 
 class find_pair_equal_to_sum_k_using_only_one_loop
 {
-    public static void main(String[] args) 
+    public static void main[] args) 
     {
         int arr[] = {1, 4, 2, 3};
 
@@ -9806,7 +9794,7 @@ class find_pair_equal_to_sum_k_using_only_one_loop
         
         for(int num :arr)
         {
-           // hm.put(num,hm.getOrDefault(num,0)+1);
+           // hm.put(num.getOrDefault(num,0)+1);
 
             int need = k-num;
             if(hm.containsKey(need))
@@ -9819,8 +9807,7 @@ class find_pair_equal_to_sum_k_using_only_one_loop
 
             // Example:
             //         arr = {3}
-            //         k = 6
-
+            //         k = 
             //     Step:
             //         num = 3
             //         You put 3 into hm
@@ -9853,7 +9840,6 @@ class using_containsKey_method       // how to use the containsKey() method (sim
 
         hm.put(1,"mano ");
         hm.put(2,"bruno");
-        
 
         if(hm.containsKey(2))      // containskey() : will check if the key is there in hashmap or not ; and then you could perform operations accordingly
         {
@@ -9861,7 +9847,7 @@ class using_containsKey_method       // how to use the containsKey() method (sim
         }
         else
         {
-            System.out.println("not found");
+            System.out("not found");
         }
         
         
@@ -9879,7 +9865,7 @@ class Count_frequency_of_each_number // using containskey() : (NO +1 HERE)  : TH
 
         for(int num :arr)
         {
-            if(!hm.containsKey(num))
+            if(!hm.containsKey))
             {
                 hm.put(num,1);
             }
@@ -9913,7 +9899,7 @@ class Count_frequency_of_each_number_in_array_and_increment_count  // using cont
 
 
 {
-    public static void main(String[] args) 
+    public  main(String[] args) 
     {
         int arr[] = {2,2, 3, 2, 5};
         
@@ -9921,7 +9907,7 @@ class Count_frequency_of_each_number_in_array_and_increment_count  // using cont
 
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
         System.out.println(hm);
@@ -9943,7 +9929,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  TRAVERSAL METHODS IN HASHMAP (3 METHODS)  XXXXXX
 
 hm.keySet()	All keys only (but can access values too using hm.get(key)   see line 8923)
 hm.values()	All values only
-hm.entrySet()	Both key + value together
+hm.entrySet()	 + value together
 
 
 
@@ -9962,7 +9948,7 @@ class Traverse_USING_keySet_method
         
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
         for(int key : hm.keySet())   //keySet() : for all Keys
@@ -9988,7 +9974,7 @@ class Traverse_USING_values_method
         
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
         for(int key : hm.values())
@@ -10016,7 +10002,7 @@ class Traverse_USING_entrySet_method
         
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
        for(Map.Entry <Integer,Integer> e : hm.entrySet())
@@ -10044,7 +10030,7 @@ class Count_Character_Frequencies
         HashMap <Character,Integer> hm = new HashMap <Character,Integer>();
 
 
-        for(char ch : s.toCharArray())
+        for(char ch : s())
         {
             hm.put(ch,hm.getOrDefault(ch,0)+1);
         }
@@ -10073,7 +10059,7 @@ class First_Non_Repeating_Character
 
         for(char ch : s.toCharArray())
         {
-            hm.put(ch,hm.getOrDefault(ch,0)+1);
+            hm.put(ch,hm(ch,0)+1);
             
             // if(hm.get(ch)==1)          // the thing is you cannot do of this in the same list ; since entire string ahsnt yet been appended to the hm ; so we will do in a different loop
             // {
@@ -10114,7 +10100,7 @@ class Two_Sum_with_Indices
 
         for(int i=0;i<arr.length;i++)
         {
-            int num = arr[i];
+            int num = arr];
 
             hm.put(num,hm.getOrDefault(num,i)+1);  // IMPORTANT !!!!!!!!!!!!! (instead of 0 as the default value like we normally do ; i used i here which is also the index i ; since in this question they have asked us the index ; we use i insetad of conventional 0)
 
@@ -10144,7 +10130,7 @@ class Group_Anagrams  // the basic funda is that we use this kinda of like a sta
 
         for(char ch : str1.toCharArray())
         {
-            hm.put(ch,hm.getOrDefault(ch,0)+1);
+            hm.put(ch,hm(ch,0)+1);
         }
 
         for(char ch2 : str2.toCharArray())
@@ -10188,7 +10174,7 @@ class Top_K_Elements       // IMPORTANT QUESTION !!!!!!!!!!!!!!!!!!!
 
        
         for(int num : arr)
-        {
+
             hm.put(num,hm.getOrDefault(num,0)+1);
         }
 
@@ -10256,7 +10242,7 @@ class Word_Frequency_with_Case_Normalization_and_Removal  // Golden rule : not t
 
         for(String s1 : split_words)
         {
-            hm.put(s1,hm.getOrDefault(s1,0)+1);
+            hm.put(s1,hm(s1,0)+1);
         }
         
 
@@ -10301,7 +10287,7 @@ class find_Duplicate_Subarrays_of_Fixed_Length
 
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
         //System.out.println(hm);
 
@@ -10331,12 +10317,12 @@ class contains_duplicate_II // leetcode question 100 % working ; but failed last
 {
     public static void main(String[] args) 
     {
-        //int arr[] = {1,2,3,1,2,3};         // SEE DOWN 100 % WORKING WITH HASHMAP !!!!!1
+        //int arr {1,2,3,1,2,3};         // SEE DOWN 100 % WORKING WITH HASHMAP !!!!!1
         //int k =2;
 
         for(int i =0;i<nums.length;i++)
         {
-            for(int j =i+1;j<nums.length;j++)
+            for(int j +1;j<nums.length;j++)
             {
                 if(nums[i] ==nums[j] && Math.abs(i-j)<=k)
                 {
@@ -10362,7 +10348,7 @@ class Contains_Duplicate_II  // leetcode question : 100% working for all testcas
 
         for(int i = 0;i<arr.length;i++)
         {
-            int num = arr[i];
+            int num = arr];
 
             //hm.put(num,i);  // dont append right here itself ; MANO ! this is the wrong way of doing this !!!! ; (stop thinking hm like an array which must be filled 1st and then we will perform operations !!  ; noo hm is dynamically where it uses the concept of if seen then then ONLY PUT INSIDE THE hm !!!!11 ) 
 
@@ -10371,26 +10357,24 @@ class Contains_Duplicate_II  // leetcode question : 100% working for all testcas
 
 // Correct mindset:
 
-// ✔ HashMap is used to remember useful information while you are scanning the array/string only ONCE.
+// ✔   to remember useful information while you are scanning the array/string only ONCE.
 
 // This is the HEART of HashMap thinking.
 
 
-            if(hm.containsKey(num) && i- hm.get(num)<=k)  // we see if the hashmap contains the element in the key part ; if so in the same line we evaluate if it satifies the abs(i-j)<=k and if true the prints yes
+            if(hm.containsKey) &&  hm.get(num)<=k)  // we see if the hashmap contains the element in the key part ; if so in the same line we evaluate if it satifies the abs(i-j)<=k and if true the prints yes
             {
                 System.out.println("contains duplicates");
                 return;
             }
                 
 
-        hm.put(num,i);  // remember this is not an array but a simple funda of have i seen this element before or not ; and if so store it in hashmap 
+        hm(num,i);  // remember this is not an array but a simple funda of have i seen this element before or not ; and if so store it in hashmap 
             
         }
      System.out.println("no duplicates");
 }
 }
-
-
 
 
 import java.util.*;
@@ -10437,7 +10421,7 @@ class Contains_Duplicate_III     // leetcode question : 27/54 test cases passed 
 
         for(int i = 0;i<arr.length;i++)
         {
-            int num = arr[i];
+            int num = arr];
 
             //for(int j =i+1;j<arr.length;j++)
             
@@ -10468,7 +10452,7 @@ class Valid_Anagram   // leetcode question : 100 % working
         //System.out.println(s1.length()+" "+s2.length());
         if(s1.length()!= s2.length())
         {
-            System.out.println("not anagram");
+            System.out.println anagram");
             return;
         }
 
@@ -10514,7 +10498,7 @@ class Top_K_Frequent_Elements   // leetcode question : 100 % working for all tes
 
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
         int result[] = new int[k];
@@ -10556,7 +10540,7 @@ class Sort_Characters_By_Frequency   // leetcode question : 100 % working for al
 
         for(char ch : s.toCharArray())
         {
-            hm.put(ch,hm.getOrDefault(ch,0)+1);
+            hm.put(ch,hm(ch,0)+1);
         }
 
 
@@ -10599,7 +10583,7 @@ class First_Unique_Character_in_a_String  // leetcode question : 100 % working f
         
         for(char ch : hm.toCharArray())
         {
-            hm.put(ch,hm.getOrDefault(ch,0)+1);
+            hm.put(ch,hm(ch,0)+1);
         }
         int need = 1;
 
@@ -10661,7 +10645,7 @@ class Sort_Array_by_Increasing_Frequency  // im taking a break from this my head
 
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
         int index  = 0;
         int arr_final [] = new int [arr.length];
@@ -10704,7 +10688,7 @@ class Maximum_Number_of_Pairs_in_Array    // logic error !!!!!!! (see down for c
 
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
         for(int i =0;i<arr.length;i++)
@@ -10747,7 +10731,7 @@ class Maximum_Number_of_Pairs_in_Array   // leetcode question : 100 % working fo
 
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
         for(int i =0;i<arr.length;i++)
@@ -10927,7 +10911,7 @@ class Top_K_Frequent_Words   // leetcode question : 100 % working for all testca
         
         for(String num : words)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
         for(int i=0;i<k;i++)
@@ -10973,7 +10957,7 @@ class Most_Frequent_Even_Element   // leetcode question : 100 % working for all 
 
         for(int num :arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
         System.out.println(hm);
 
@@ -11072,7 +11056,7 @@ class Majority_Element_II // leetcode question : 100 % working for all testcases
 
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
         for(int key : hm.keySet())
@@ -11174,7 +11158,7 @@ class Find_Most_Frequent_Vowel_and_Consonant //  leetcode question : 100 % worki
 
         for(char ch : s.toCharArray())
         {
-            hm.put(ch,hm.getOrDefault(ch,0)+1);
+            hm.put(ch,hm(ch,0)+1);
         }
 
        // String vowels[] = {"a","e","i","o","u"};
@@ -11232,7 +11216,7 @@ class Sender_With_Largest_Word_Count // leetcode question : 100 % working for al
 
        for(int i =0;i<s1.length;i++)
        {
-        String sender = s2[i];
+        String sender = s2];
 
         int count = s1[i].split(" ").length;
         
@@ -11253,7 +11237,7 @@ class Sender_With_Largest_Word_Count // leetcode question : 100 % working for al
             //if(key == max_element)      // REMEMBER !!!!!!  in hashmap using == (in strings especially not int) can sometimes give false errors  SO ALWAYS USE equals func when using a String !!!!!!!!
             if(key.equals(max_element))
             {
-                hm.put(key,hm.get(key)+max_freq); // this loop adds the two counts if a duplicate arrives 
+                hm.put(key,hm.get(key)+max_freq); // this loop adds the two counts if  arrives 
             }
             if(hm.get(key)==max_freq  && key.compareTo(max_element)>0 ) // if two elements same freq this loop returns lexi greater one as q suggests
             {
@@ -11308,7 +11292,7 @@ import java.util.*;          // Golden rule question : (not really but mano plea
 
 class Distribute_Elements_Into_Two_Arrays_I    //leetcode question : 100% working for all testcases !!
 {
-    public static void main(String[] args) 
+    public static void main[] args) 
     {
         int arr[] = {2,1,3};
 
@@ -11377,7 +11361,7 @@ class Divide_Array_Into_Equal_Pairs  // leetcode question : 100 % working for al
 
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
         for(int key : hm.keySet())
@@ -11601,7 +11585,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX       ARRAYLIST ADVANCED  [HASHMAP L
                                      PASTE THESE ABOVE IN OG STUFF ONCE DONE !!!!!!!!!!!
 
 
-import java.util.*;
+import java.
 class ArrayList_basics
 {
     public static void main(String[] args) 
@@ -12138,7 +12122,7 @@ class Most_Frequent_Number_Following_Key_In_an_Array   // leetcode question : 10
 
         for(int i=0;i<arr.length-1;i++)
         {
-            int num = arr[i];
+            int num = arr];
             if(arr[i] == k)
             {
                 // int num = arr[i+1]; // you can do this too ; but lets go with how we normally do with num
@@ -12180,7 +12164,7 @@ class Sort_the_People
 
         for(int i=0;i<names.length;i++)
         {
-            hm.put(names[i],heights[i]);
+            hm.put(names[heights[i]);
         }
         System.out.println(hm);
     }
@@ -12222,7 +12206,7 @@ class Count_the_Number_of_Consistent_Strings   // leetcode question : 100 % work
     {
         String allowed = "abc";
 
-        String words [] = {"a","b","c","ab","ac","bc","abc"};
+        String words [] a","b","c","ab","ac","bc","abc"};
         ArrayList <String> ar = new ArrayList<>();
 
         int count;
@@ -12631,7 +12615,7 @@ class Count_Common_Words_With_One_Occurrence  // leetcode question : 100 % worki
         HashMap<String,Integer> hm_2 = new HashMap<>();
         
 
-        for(String num : s1)
+        for(String num 
         {
             hm.put(num,hm.getOrDefault(num,0)+1);
         }
@@ -12679,10 +12663,10 @@ class Uncommon_Words_from_Two_Sentences // leetcode question : 100% working for 
         HashMap <String,Integer> hm = new HashMap<>();
 
         // HashMap<String,Integer> hm_2 = new HashMap<>();
-        ArrayList <String> ar = new ArrayList<>();
+        ArrayList <String>  new ArrayList<>();
 
         for(String num : s_new)
-        {
+
             hm.put(num,hm.getOrDefault(num,0)+1);
         }
         System.out.println(hm);
@@ -12717,7 +12701,7 @@ class Kth_Distinct_String_in_an_Array
 
         for(String num : s1)
         {
-            System.out.println(num,hm.getOrDefault(num,0)+1);
+            System.out.println(num.getOrDefault(num,0)+1);
         }
         System.out.println(hm);
     }
@@ -12771,7 +12755,7 @@ class Set_Mismatch    // leetcode question : 100 % working for all testcases !
 
         for(int num : arr)
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
         System.out.println(hm);
 
@@ -12837,8 +12821,8 @@ class Find_the_Difference_of_Two_Arrays. // leetcode question : 100 % working fo
         HashMap<Integer,Integer> hm_2 = new HashMap <>();
 
         for(int num : arr_1)
-        {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+
+            hm.put(num,hm(num,0)+1);
         }
 
         for(int numm : arr_2)
@@ -13397,7 +13381,7 @@ class Sorting_the_Sentence // leetcode question : 100 % working for all testcase
         HashMap<Integer,String> hm = new HashMap <>();
         ArrayList<String> ar = new ArrayList<>();
 
-        for(int i=0;i<s_split.length;i++)
+        for(int i=0;i<s_split;i++)
         {
             String s_word = s_split[i];
 
@@ -13623,9 +13607,9 @@ class Find_the_Difference
         HashMap <String,Integer> hm = new HashMap<>();
         HashMap <String,Integer> hm_2 = new HashMap<>();
 
-        for(String num : s_split)
+        for(String num : 
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
         for(String numm : t_split)
@@ -13675,9 +13659,9 @@ class Find_the_Difference
         HashMap <String,Integer> hm = new HashMap<>();
         HashMap <String,Integer> hm_2 = new HashMap<>();
 
-        for(String num : s_split)
+        for(String num : 
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
         for(String numm : t_split)
@@ -13727,9 +13711,9 @@ class Find_the_Difference // this logic is not working for this question ; like 
         HashMap <String,Integer> hm = new HashMap<>();
         HashMap <String,Integer> hm_2 = new HashMap<>();
 
-        for(String num : s_split)
+        for(String num : 
         {
-            hm.put(num,hm.getOrDefault(num,0)+1);
+            hm.put(num,hm(num,0)+1);
         }
 
         for(String numm : t_split)
@@ -13780,9 +13764,9 @@ class Find_the_Difference // leetcode question : 100 % working for all testcases
         HashMap <String,Integer> hm = new HashMap<>();
         HashMap <String,Integer> hm_2 = new HashMap<>();
 
-        for(String num : s_split)
+        for(String num : 
         {
-            if(!num.equals(""))
+            if(!num.
             {
                 hm_2.put(num,hm.getOrDefault(num,0)+1);
             }
@@ -14105,8 +14089,6 @@ Clue	    Likely Pattern
 
 
 
-
-
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    SLIDING WINDOW            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
@@ -14166,9 +14148,7 @@ class sliding_window
 
 
 
-
-
-import java.util.*;
+.util.*;
 class First_Negative_Number_in_Every_Window_of_Size_K // Golden rule question 
 {
     public static void main (String args[])
@@ -14222,9 +14202,9 @@ class First_Negative_Number_in_Every_Window_of_Size_K // Golden rule question
 
 
 
-class Maximum_Number_of_Vowels_in_Substring_of_Size_K
+
 {
-    public static boolean isVowel(char ch) // now you might be wondering why i chose to use booelan instead of like normal if else ; but i wanted to try soemthing else and ;  mano we are past that amateur shii ; time to go advanced like the pros !!!!1
+ static boolean isVowel(char ch) // now you might be wondering why i chose to use booelan instead of like normal if else ; but i wanted to try soemthing else and ;  mano we are past that amateur shii ; time to go advanced like the pros !!!!1
     {
         return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'; // also here we used direct return instead of if or else like we usually do ; the logic goes like if we did it did satify the condtions i.e the stuff in return then true is it goo ; if not in the return content automatically it will go false ; this is how pros do it ; time for us to upgrade too mano !!!!!1
     }
@@ -14283,7 +14263,7 @@ class Count_Distinct_Elements_in_Every_Window
  
         for(int i=0;i<k;i++) // loop for the first window 
         {
-            hm.put(arr[i],hm.getOrDefault(arr[i],0)+1);
+            hm.put(arr[hm.getOrDefault(arr[i],0)+1);
         }
         
         System.out.println(hm.size()); // distinct count of 1st window
@@ -14292,7 +14272,7 @@ class Count_Distinct_Elements_in_Every_Window
 
 
 
-        for(int i=k;i<arr.length;i++) // maikn sliding loop
+        for(int i=k<arr.length;i++) // maikn sliding loop
         {
             hm.put(arr[i-k],hm.get(arr[i-k])-1); // this will get the outgoing element and subtract the count since its leaving the window
 
@@ -14476,7 +14456,214 @@ class Maximum_Number_of_Vowels_in_a_Substring_of_Given_Length
     }
 }
 
-//dd dd
+
+
+import java.util.*; // Golden rule question :
+class Find_All_Anagrams_in_a_String // leetcode question : 100 % working for all testcases !
+{
+    public static void main (String args [])
+    {
+        
+        if(p.length()>s.length()) // this is for the testcase where p is longer than s ; os return empty arr
+        {
+            return new ArrayList<>();
+        }
+        String s = "cbaebabacd";
+
+        String p = "abc";
+        
+        int k = p.length();
+
+        HashMap<Character,Integer> hm = new HashMap<>();
+        HashMap<Character,Integer> hm2 = new HashMap<>();
+
+
+        for(int i=0;i<p.length();i++)
+        {
+            hm.put(s.charAt(i),hm.getOrDefault(s.charAt(i),0)+1);
+        }
+
+        for(int i=0;i<p.length();i++)
+        {
+            hm2.put(p.charAt(i),hm2.getOrDefault(p.charAt(i),0)+1);
+        }
+
+        // System.out.println(hm);
+        // System.out.println(hm2);
+        
+        ArrayList<Integer> ar = new ArrayList<>();
+        
+        if(hm.equals(hm2))
+        {
+            ar.add(0);
+        }
+        
+        
+        for(int i=k;i<s.length();i++)
+        {
+            char remove = s.charAt(i-k);
+            
+            hm.put(remove,hm.get(remove) -1);
+            
+            if(hm.get(s.charAt(i-k)) == 0)
+            {
+                hm.remove(s.charAt(i-k));
+            }
+            
+            
+            char add = s.charAt(i);
+            
+            hm.put(s.charAt(i),hm.getOrDefault(s.charAt(i),0)+1);
+            
+            if(hm.equals(hm2))
+            {
+                ar.add(i-k+1);
+            }
+        }
+        
+        System.out.println(ar);
+    }
+}
+
+
+
+
+
+
+
+import java.util.*;
+class Permutation_in_String
+{
+    public static void main(String args [])
+    {
+        String s1 = "ab";
+
+        String s2 = "eidbaooo";
+
+        int k = s1.length();
+
+        HashMap<Character,Integer> hm = new HashMap<>();
+        HashMap<Character,Integer> hm2 = new HashMap<>();
+
+        
+
+        for(int i=0;i<s1.length();i++)
+        {
+            hm.put(s1.charAt(i),hm.getOrDefault(s1.charAt(i),0)+1);
+        }
+
+        for(int i=0;i<s1.length();i++)
+        {
+            hm.put(s2.charAt(i),hm.getOrDefault(s2.charAt(i),0)+1);
+        }
+
+        if(hm.equals(hm2))
+        {
+            System.out.println("True");
+        }
+
+        for(int i=k;i<s2.length;i++)
+        {
+            char remove = s1.charAt(i-k);
+
+            hm.put(remove,hm.getOrDefault(remove,0)+1);
+
+            if(hm.get(remove) == 0)
+            {
+                hm.remove(remove);
+            }
+
+            hm.put(s1.charAt(i),hm.getOrDefault(s1.charAt(i),0)+1);
+
+            if(hm.equlas(hm2))
+            {
+                System.out.println("True");
+            }
+        }
+
+        System.out.println("False");
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
