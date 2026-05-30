@@ -14100,6 +14100,75 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    SLIDING WINDOW            XXXXXXXXXXXXXXX
 
 
 
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    GOLDEN MASTER QUESTION TO REVISE EACH TIME !!!! XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+import java.util.*;
+class Permutation_in_String :    question :  https://leetcode.com/problems/permutation-in-string/description/
+{
+    public static void main(String args [])
+    {
+        String s1 = "ab";
+
+        String s2 = "eidboaoo";
+
+        int k = s1.length();
+
+        HashMap<Character,Integer> hm = new HashMap<>();
+        HashMap<Character,Integer> hm2 = new HashMap<>();
+
+        
+
+        for(int i=0;i<s1.length();i++)
+        {
+            hm.put(s1.charAt(i),hm.getOrDefault(s1.charAt(i),0)+1);
+        }
+
+        for(int i=0;i<s1.length();i++)
+        {
+            hm2.put(s2.charAt(i),hm2.getOrDefault(s2.charAt(i),0)+1);
+        }
+
+        if(hm.equals(hm2))
+        {
+            System.out.println("True");
+            return ;
+        }
+
+        for(int i=k;i<s2.length();i++)
+        {
+            char remove = s2.charAt(i-k);
+
+            hm2.put(remove,hm2.get(remove)-1);
+
+            if(hm2.get(remove) == 0)
+            {
+                hm2.remove(remove);
+            }
+
+            hm2.put(s2.charAt(i),hm2.getOrDefault(s2.charAt(i),0)+1);
+
+            if(hm.equals(hm2))
+            {
+                System.out.println("True");
+                return;
+            }
+        }
+
+        System.out.println("False");
+
+    }
+}
+
+
+
+// BASICS START FROM HERE 
+
+
+
+
+
+
 //FIXED SLIDING WINDOW 
 
 
@@ -14148,7 +14217,18 @@ class sliding_window
 
 
 
-.util.*;
+
+
+
+
+
+
+
+
+
+
+
+import java.util.*;
 class First_Negative_Number_in_Every_Window_of_Size_K // Golden rule question 
 {
     public static void main (String args[])
@@ -14532,13 +14612,146 @@ class Find_All_Anagrams_in_a_String // leetcode question : 100 % working for all
 
 
 import java.util.*;
+class Permutation_in_String // leetcode question : 100 % working for all testcases !
+{
+    public static void main(String args []) //   listen this is the leetcode solution ; there were the typical leetcode B.S ; like stupid testcases ; this is all working version of my logic by me
+    {
+        String s1 = "ab"; //.                   FOR PROPER CORE LOGIC LOOK DOWN BELOW !!!!
+
+        String s2 = "eidboaoo";
+
+        int k = s1.length();
+
+        HashMap<Character,Integer> hm = new HashMap<>();
+        HashMap<Character,Integer> hm2 = new HashMap<>();
+
+        if(s1.length()== s2.length())
+        {
+
+            for(int i=0;i<s1.length();i++)
+            {
+                hm.put(s1.charAt(i),hm.getOrDefault(s1.charAt(i),0)+1);
+                hm2.put(s2.charAt(i),hm2.getOrDefault(s2.charAt(i),0)+1);
+            }
+
+            if(hm.equals(hm2))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        
+        if(s1.length()<s2.length())
+        {
+
+        for(int i=0;i<s1.length();i++)
+        {
+            hm.put(s1.charAt(i),hm.getOrDefault(s1.charAt(i),0)+1);
+        }
+
+        for(int i=0;i<s1.length();i++)
+        {
+            hm2.put(s2.charAt(i),hm2.getOrDefault(s2.charAt(i),0)+1);
+        }
+
+        if(hm.equals(hm2))
+        {
+            // System.out.println("True");
+            return true ;
+        }
+
+        for(int i=k;i<s2.length();i++)
+        {
+            char remove = s2.charAt(i-k);
+
+            hm2.put(remove,hm2.get(remove)-1);
+
+            if(hm2.get(remove) == 0)
+            {
+                hm2.remove(remove);
+            }
+
+            hm2.put(s2.charAt(i),hm2.getOrDefault(s2.charAt(i),0)+1);
+
+            if(hm.equals(hm2))
+            {
+                // System.out.println("True");
+                return true;
+            }
+        }
+
+        // System.out.println("False");
+        return false;
+        }
+
+
+
+
+
+
+
+
+        if(s1.length()> s1.length())
+        {
+            for(int i=0;i<s1.length();i++)
+        {
+            hm.put(s1.charAt(i),hm.getOrDefault(s1.charAt(i),0)+1);
+        }
+
+        for(int i=0;i<s2.length();i++)
+        {
+            hm2.put(s2.charAt(i),hm2.getOrDefault(s2.charAt(i),0)+1);
+        }
+
+        if(hm.equals(hm2))
+        {
+            // System.out.println("True");
+            return true ;
+        }
+
+        for(int i=k;i<s1.length();i++)
+        {
+            char remove = s1.charAt(i-k);
+
+            hm2.put(remove,hm2.get(remove)-1);
+
+            if(hm2.get(remove) == 0)
+            {
+                hm2.remove(remove);
+            }
+
+            hm2.put(s1.charAt(i),hm2.getOrDefault(s1.charAt(i),0)+1);
+
+            if(hm.equals(hm2))
+            {
+                // System.out.println("True");
+                return true;
+            }
+        }
+
+        // System.out.println("False");
+        }
+        //return false;
+
+     return false;   
+
+    }
+}
+
+
+
+import java.util.*;
 class Permutation_in_String
 {
     public static void main(String args [])
     {
         String s1 = "ab";
 
-        String s2 = "eidbaooo";
+        String s2 = "eidboaoo";
 
         int k = s1.length();
 
@@ -14554,30 +14767,32 @@ class Permutation_in_String
 
         for(int i=0;i<s1.length();i++)
         {
-            hm.put(s2.charAt(i),hm.getOrDefault(s2.charAt(i),0)+1);
+            hm2.put(s2.charAt(i),hm2.getOrDefault(s2.charAt(i),0)+1);
         }
 
         if(hm.equals(hm2))
         {
             System.out.println("True");
+            return ;
         }
 
-        for(int i=k;i<s2.length;i++)
+        for(int i=k;i<s2.length();i++)
         {
-            char remove = s1.charAt(i-k);
+            char remove = s2.charAt(i-k);
 
-            hm.put(remove,hm.getOrDefault(remove,0)+1);
+            hm2.put(remove,hm2.get(remove)-1);
 
-            if(hm.get(remove) == 0)
+            if(hm2.get(remove) == 0)
             {
-                hm.remove(remove);
+                hm2.remove(remove);
             }
 
-            hm.put(s1.charAt(i),hm.getOrDefault(s1.charAt(i),0)+1);
+            hm2.put(s2.charAt(i),hm2.getOrDefault(s2.charAt(i),0)+1);
 
-            if(hm.equlas(hm2))
+            if(hm.equals(hm2))
             {
                 System.out.println("True");
+                return;
             }
         }
 
@@ -14588,10 +14803,148 @@ class Permutation_in_String
 
 
 
-//dd
 
 
 
+
+
+
+
+
+
+
+//1st
+
+#include <iostream>
+
+struct node
+{
+    int data;
+    node *next;
+    node *previous;
+};
+
+node *createList(node **tail)
+{
+    node *head = NULL;
+    *tail = NULL;
+    
+    for(int i=0;i<6;i++)
+    {
+        node *temp = (node *)malloc(sizeof(node));
+        temp->data = 200+i;
+        temp->next = NULL;
+        temp->previous =NULL;
+        
+        if(head == NULL)
+        {
+            head = temp;
+            *tail = temp;
+        }
+        else
+        {
+            (*tail)->next = temp;
+            temp->previous = *tail;
+            *tail = temp;
+        }
+    }
+    
+    return head;
+    
+}
+
+void trav_forward(node *head)
+{
+    node *trav_forward = head;
+    while(trav_forward != NULL)
+    {
+        printf("%d \n",trav_forward->data);
+        trav_forward = trav_forward->next;
+    }
+}
+
+void trav_backward(node *tail)
+{
+    node *trav_backward = tail;
+    while(trav_backward != NULL)
+    {
+        printf("%d \n",trav_backward->data);
+        trav_backward = trav_backward->previous;
+    }
+}
+
+
+int main()
+{
+    node *tail = NULL;
+    
+    node *head = createList(&tail);
+    trav_forward(head);
+    printf("backward : \n");
+    trav_backward(tail);
+}
+
+
+
+
+
+
+
+//2nd
+
+import java.util.*;
+class Maximum_Repeating_Substring
+{
+    public static void main(String args [])
+    {
+        String s1 = "a";
+        String s2 = "a";
+        
+        String s1_split [] = s1.split("");
+        String s2_split [] = s2.split("");
+        int count = 0;
+        
+        ArrayList <String> ar = new ArrayList<>();
+        ArrayList <String> ar_2 = new ArrayList<>();
+        
+        if(s1.length() <=1)
+        {
+            count++;
+            System.out.println(count);
+            return;
+        }
+        
+        for(String num : s1_split)
+            {
+                ar.add(num);
+            }
+            
+            
+        for(String numm : s2_split)
+            {
+                ar_2.add(numm);
+            }
+            System.out.println(ar);
+            System.out.println(ar_2);
+            
+        for(int i =0;i< ar.size()-1;i++)
+            {
+                if(ar.get(i).equals(ar_2.get(0)) && ar.get(i+1).equals(ar_2.get(1)))
+                    {
+                        System.out.println(ar.get(i)+" "+ar.get(i+1));
+                        //ar.remove(i);
+                        //ar.remove(i+1);
+                        //ar.remove(i);
+                        //break;
+                        count++;
+                    }
+            }
+            
+            System.out.println(count);
+
+    }
+    
+}
 
 
 
