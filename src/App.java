@@ -1,23 +1,5 @@
 
-import java.util.Scanner;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   /* 
+/* 
     public static void main (String [] args)       // vowel program
     {
          char ch= 'x';
@@ -6848,388 +6830,88 @@ class Longest_Consecutive_Sequence   // leetcode 128. Longest Consecutive Sequen
 
 */
 
+// this code right but will only work for positive matrixes ;not fot -ve values 
 
+//see downstairs for correct logic
 
-class Sort_Matrix_by_Diagonals
-{
-    public static void main(String[] args) 
-    {
-        int matrix [][] = {{1,7,3},
-                       {9,8,2},
-                       {4,5,6}
-        };
+//int matrix[][] = {{0,1}, {1,2}};
 
+// we use this so that all matrices of >=3 length will work
 
-        int i =0 ;
+//if(i<=1) // this will only work for 3x3 matrix since its harcoded to work only for that
 
-        if(i<=1)
-        {
-            if(matrix[i][i+1] > matrix[i+1][i+2])
-            {
-                int temp = matrix[i][i+1];
-                matrix[i][i+1] = matrix[i+1][i+2];
-            }
-            i++;
-        }
-        System.out.print(matrix[0][1] + " ");
-        System.out.print(matrix[1][2] + " ");
+// System.out.print(matrix[0][1] + " ");
+// System.out.print(matrix[1][2] + " ");
 
-    
-    }
-}
+//if(j<2). // wont work because it only runs once 
+//while(j<2). // this will only work for 3x3 matrix since i harcoded it initially for that only
 
+// System.out.print(matrix[0][0] + " ");
+// System.out.print(matrix[1][1] + " ");
+// System.out.print(matrix[2][2] + " ");
 
+//int temp_3 = 0;
 
+//if(matrix[z+1][z] < matrix[z+2][z+1])  // again will work only for 3x3 (just need to include n part thats all)
 
+// System.out.print(matrix[1][0] + " ");
+// System.out.print(matrix[2][1] + " ");
 
+// incomplete comeback later stronger
 
+// reset
 
+//int arr_2 []= new int [3];
 
-class Sort_Matrix_by_Diagonals    // this code right but will only work for positive matrixes ;not fot -ve values 
-{
-    public static void main(String[] args)   //see downstairs for correct logic
-    {
-        int matrix [][] = {{1,7,3},
-                          {9,8,2},
-                          {4,5,6}
-        };
-        //int matrix[][] = {{0,1}, {1,2}};
+// for(int i =0;i<arr_3.length;i++) // print arrays
+// {
+//     System.out.print(arr_3[i]);
+// }
 
-        int n = matrix.length; // we use this so that all matrices of >=3 length will work
-        int i =0 ;
+// for(int e=0;e<matrix.length;e++) // print matrix
+// {
+//     for(int g=0;g<matrix[0].length;g++)
+//     {
+//         System.out.print(matrix[e][g]+ " " );
+//     }
+//     System.out.println();
+// }
 
-        //if(i<=1) // this will only work for 3x3 matrix since its harcoded to work only for that
-        if(n>2 && i<=n-2)
-        {
-            if(matrix[i][i+1] > matrix[i+1][i+2])
-            {
-                int temp = matrix[i][i+1];
-                matrix[i][i+1] = matrix[i+1][i+2];
-                matrix[i+1][i+2] = temp;
-            }
-            i++;
-        }
-        // System.out.print(matrix[0][1] + " ");
-        // System.out.print(matrix[1][2] + " ");
-        int j=0;
-        
-        //if(j<2). // wont work because it only runs once 
-        //while(j<2). // this will only work for 3x3 matrix since i harcoded it initially for that only
-        while(j<n-1)
-        {
-        if(matrix[j][j] < matrix[j+1][j+1])
-        {
-            int temp_1 = matrix[j][j];
-            matrix[j][j] = matrix[j+1][j+1];
-            matrix[j+1][j+1] = temp_1;
-            
-        }
-        j++;
-        }
-        // System.out.print(matrix[0][0] + " ");
-        // System.out.print(matrix[1][1] + " ");
-        // System.out.print(matrix[2][2] + " ");
-        
-        int z=0;
-        //int temp_3 = 0;
-        
-            //if(matrix[z+1][z] < matrix[z+2][z+1])  // again will work only for 3x3 (just need to include n part thats all)
-            if(n>2 && matrix[z+1][z] < matrix[z+2][z+1])
-            {
-                int temp_3 = matrix[z+1][z];
-                matrix[z+1][z] = matrix[z+2][z+1];
-                matrix[z+2][z+1] = temp_3;
-            }
-        
-        
-        // System.out.print(matrix[1][0] + " ");
-        // System.out.print(matrix[2][1] + " ");
-        
-        for(int k=0;k<matrix.length;k++)
-        {
-            for(int l=0;l<matrix.length;l++)
-            {
-                System.out.print(matrix[k][l] + " ");
-            }
-            System.out.println();
-        }
-        
-    
-    }
-}
+// 100 % correct code for any 3x3 value (just need to configure for any length n matrix)
 
+// int matrix [][] = {{1,7,3},
+//                   {9,8,2},
+//                   {4,5,6}
+// };
 
-class Sort_Matrix_by_Diagonals   // incomplete comeback later stronger
-{
-    public static void main(String[] args) 
-    {
-        int matrix [][] = {{1,7,3},
-                          {9,8,2},
-                          {4,5,6}
-        };
+// loop for main diagonal
 
-        int arr_1[] = new int[3];
-        for(int i =0;i<=2;i++)
-        {
-            arr_1[i] = matrix[i][i] ;
-        }
-        Arrays.sort(arr_1);
-        for(int j=0;j<arr_1.length;j++)
-        {
-            System.out.print(arr_1[i]);
-        }
-        
-        
-    }
-}
+// feeding to be sorted 
 
+//int arr_2 []= new int [3];
 
+//feeding sorted array backwards for descending in main diagonal
 
+//feeding descending into arr_1 back so that it could be transfered to main diagonal( unncessary fixcc this later)
 
-class Length_of_the_Longest_Alphabetical_Continuous_Substring
-{
-    public static void main(String[] args) 
-    {
-        String str = "abacaba";
+//feeding des sorted to main
 
-        int count =0;
-        int max_count = 0;
+//feeding upper dia into arr_3
 
-        for(int i =0;i<str.length();i++)
-        {
-            if(str.charAt(i+1) - str.charAt(i) == 1)
-            {
-                count++;
-            }
-            else
-            {
-                count =0; // reset
-            }
+// sort arr_3(here it alredy wants ascending only so just put it directly in upper matrix)
 
-            if(count > max_count)
-            {
-                max_count = count;
-            }
-        }
+//feed ascen values into upper matrix
 
-        System.out.print(" length of longest substring : "+ max_count);
-        
-    }
-}
+//feed lower matrix values for sorting
 
+// for(int i =0;i<arr_3.length;i++) // print arrays
+// {
+//     System.out.print(arr_5[i]);
+// }
 
+// print matrix
 
-
-
-
-
-
-class Length_of_the_Longest_Alphabetical_Continuous_Substring
-{
-    public static void main(String[] args) 
-    {
-        String s = "abacaba";
-        int count = 1;
-        int max_count = 1;
-        for(int i =0;i<s.length() ;i++)
-        {
-            if(s.charAt(i+1) - s.charAt(i) == 1)
-            {
-                count++;
-            }
-            else
-            {
-                count = 1;
-            }
-        }
-        System.out.println("the length of the longest sequence : "+count);
-        
-    }
-}
-
-
-
-
-
-import java.util.Arrays;
-class Sort_Matrix_by_Diagonals 
-{
-    public static void main(String[] args) 
-    {
-        int matrix [][] = {{1,7,3},
-                          {9,8,2},
-                          {4,5,6}
-        };
-
-        int arr_1[] = new int[3];
-        int arr_2 [] = new int[3];
-        for(int i =0;i<=2;i++)
-        {
-            arr_1[i] = matrix[i][i] ;
-        }
-        Arrays.sort(arr_1);
-        
-        //int arr_2 []= new int [3];
-        int l=0;
-        for(int j=arr_1.length-1;j>=0;j--)
-        {
-            arr_2[l] = arr_1[j];
-            l++;
-        }
-        int k=0;
-        for(int i =0;i<=2;i++)
-        {
-            arr_1[i] = arr_2[k] ;
-            k++;
-        }
-        int p=0;
-        for(int i =0;i<=2;i++)
-        {
-            matrix[i][i] = arr_1[p];
-            p++;
-        }
-        int u=0;
-        int arr_3 [] = new int[2];
-        for(int i=0;i<2;i++)
-        {
-             arr_3[u] = matrix[i][i+1]  ;
-            u++;
-        }
-        
-        Arrays.sort(arr_3);
-        int y=0;
-        for(int i=0;i<2;i++)
-        {
-            matrix[i][i+1] = arr_3[y];
-            y++;
-        }
-        
-        
-        // for(int i =0;i<arr_3.length;i++) // print arrays
-        // {
-        //     System.out.print(arr_3[i]);
-        // }
-        
-        
-        // for(int e=0;e<matrix.length;e++) // print matrix
-        // {
-        //     for(int g=0;g<matrix[0].length;g++)
-        //     {
-        //         System.out.print(matrix[e][g]+ " " );
-        //     }
-        //     System.out.println();
-        // }
-        
-        
-        
-            
-        }
-}
-        
-        
-
-
-
-import java.util.Arrays;
-class Sort_Matrix_by_Diagonals    // 100 % correct code for any 3x3 value (just need to configure for any length n matrix)
-{
-    public static void main(String[] args) 
-    {
-        // int matrix [][] = {{1,7,3},
-        //                   {9,8,2},
-        //                   {4,5,6}
-        // };
-        int matrix[][] ={{-1,-2,-3},{-3,-3,-2},{-4,-4,0}
-        };
-
-        int arr_1[] = new int[3];
-        int arr_2 [] = new int[3];
-        for(int i =0;i<=2;i++) // loop for main diagonal
-        {
-            arr_1[i] = matrix[i][i] ;// feeding to be sorted 
-        }
-        Arrays.sort(arr_1);
-        
-        //int arr_2 []= new int [3];
-        int l=0;
-        for(int j=arr_1.length-1;j>=0;j--)
-        {
-            arr_2[l] = arr_1[j];//feeding sorted array backwards for descending in main diagonal
-            l++;
-        }
-        int k=0;
-        for(int i =0;i<=2;i++)
-        {
-            arr_1[i] = arr_2[k] ;//feeding descending into arr_1 back so that it could be transfered to main diagonal( unncessary fixcc this later)
-            k++;
-        }
-        int p=0;
-        for(int i =0;i<=2;i++)
-        {
-            matrix[i][i] = arr_1[p];//feeding des sorted to main
-            p++;
-        }
-        int u=0;
-        int arr_3 [] = new int[2];
-        for(int i=0;i<2;i++)//feeding upper dia into arr_3
-        {
-             arr_3[u] = matrix[i][i+1];
-            u++;
-        }
-        
-        Arrays.sort(arr_3); // sort arr_3(here it alredy wants ascending only so just put it directly in upper matrix)
-        int y=0;
-        for(int i=0;i<2;i++)
-        {
-            matrix[i][i+1] = arr_3[y];//feed ascen values into upper matrix
-            y++;
-        }
-        
-        int arr_4 [] = new int[2];
-        int q=0;
-        for(int i =1;i<3;i++)
-        {
-            arr_4[q] = matrix[i][i-1];//feed lower matrix values for sorting
-            q++;
-        }
-        Arrays.sort(arr_4);
-        
-        int v= 0;
-        int arr_5 [] = new int[2];
-        for(int i=arr_4.length-1;i>=0;i--)
-        {
-            arr_5[v] = arr_4[i];
-            v++;
-        }
-        
-        
-        
-        
-        // for(int i =0;i<arr_3.length;i++) // print arrays
-        // {
-        //     System.out.print(arr_5[i]);
-        // }
-        
-        
-        for(int e=0;e<matrix.length;e++) // print matrix
-        {
-            for(int g=0;g<matrix[0].length;g++)
-            {
-                System.out.print(matrix[e][g]+ " " );
-            }
-            System.out.println();
-        } 
-        
-        
-        
-            
-        }
-}
-
-
-
-import java.util.Arrays;
-class Sort_Matrix_by_Diagonals   // 100 % working for any n length matrix (any +ve or -ve values)      !!!!!!!!!!!!!!!!1
+// 100 % working for any n length matrix (any +ve or -ve values)      !!!!!!!!!!!!!!!!1
 {
     public static void main(String[] args) 
     {
@@ -14106,7 +13788,7 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX    GOLDEN MASTER QUESTION TO REVISE EAC
 import java.util.*;
 class Permutation_in_String :    question :  https://leetcode.com/problems/permutation-in-string/description/
 {
-    public static void main(String args [])
+    public static void main(String args []) // i know usually sliding window is done on like just one array thats it ; but here we have two elements(2 strings) ; the point is get the core idea and core logic and keywords used from AND APPLY MANO !!!!
     {
         String s1 = "ab";
 
@@ -14229,7 +13911,7 @@ class sliding_window
 
 
 import java.util.*;
-class First_Negative_Number_in_Every_Window_of_Size_K // Golden rule question 
+class First_Negative_Number_in_Every_Window_of_Size_K // Golden rule question !!!!!!!!!!!!!!!
 {
     public static void main (String args[])
     {
@@ -14237,7 +13919,7 @@ class First_Negative_Number_in_Every_Window_of_Size_K // Golden rule question
 
         int k = 3;
 
-        Queue<Integer> q = new LinkedList<Integer>(); // we use queue here and not like sum like the above sum because here we need the order of negatives the q asks order of negatives in each iteration window ; so we need a structure which stores insertion order of negatives like a person in line using FIFO so i.e QUEUE !!!!!!!   and the +1 is done for you know the typical indexes start from 0 so as to make up for it !!!!
+        Queue<Integer> q = new LinkedList<>(); // we use queue here and not like sum like the above sum because here we need the order of negatives the q asks order of negatives in each iteration window ; so we need a structure which stores insertion order of negatives like a person in line using FIFO so i.e QUEUE !!!!!!!   and the +1 is done for you know the typical indexes start from 0 so as to make up for it !!!!
 
         for(int i=0;i<arr.length;i++)
         {
@@ -14745,7 +14427,7 @@ class Permutation_in_String // leetcode question : 100 % working for all testcas
 
 
 import java.util.*;
-class Permutation_in_String
+class Permutation_in_String // proper core idea one
 {
     public static void main(String args [])
     {
@@ -14813,164 +14495,166 @@ class Permutation_in_String
 
 
 
-//1st
-
-#include <iostream>
-
-struct node
-{
-    int data;
-    node *next;
-    node *previous;
-};
-
-node *createList(node **tail)
-{
-    node *head = NULL;
-    *tail = NULL;
-    
-    for(int i=0;i<6;i++)
-    {
-        node *temp = (node *)malloc(sizeof(node));
-        temp->data = 200+i;
-        temp->next = NULL;
-        temp->previous =NULL;
-        
-        if(head == NULL)
-        {
-            head = temp;
-            *tail = temp;
-        }
-        else
-        {
-            (*tail)->next = temp;
-            temp->previous = *tail;
-            *tail = temp;
-        }
-    }
-    
-    return head;
-    
-}
-
-void trav_forward(node *head)
-{
-    node *trav_forward = head;
-    while(trav_forward != NULL)
-    {
-        printf("%d \n",trav_forward->data);
-        trav_forward = trav_forward->next;
-    }
-}
-
-void trav_backward(node *tail)
-{
-    node *trav_backward = tail;
-    while(trav_backward != NULL)
-    {
-        printf("%d \n",trav_backward->data);
-        trav_backward = trav_backward->previous;
-    }
-}
 
 
-int main()
-{
-    node *tail = NULL;
-    
-    node *head = createList(&tail);
-    trav_forward(head);
-    printf("backward : \n");
-    trav_backward(tail);
-}
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX              DEQUE BASICS             XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 
-
-
-
-
-
-//2nd
 
 import java.util.*;
-class Maximum_Repeating_Substring
+class Deque_basics
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {10,20,30};
+
+        Deque <Integer> dq = new ArrayDeque<>();
+        
+        for(int num : arr)
+        {
+            dq.addLast(num);
+        }
+        
+        
+        // Deque operations
+
+
+        dq.addFirst(5); // [5,10,20,30]
+        
+        dq.addLast(40);// [5,10,20,30,40]
+        
+        dq.pollFirst(); //remove first index : [10,20,30,40]
+        
+        dq.pollLast(); // remove last index : [10,20,30]
+
+
+        
+        System.out.println(dq.peekFirst()); // 10
+        
+        System.out.println(dq.peekLast()); // 30
+        
+        
+        
+        System.out.println(dq);
+        
+        
+    }
+}
+
+
+
+
+
+
+// MONOTONIC DEQUE BASICS 
+
+
+import java.util.*;
+class MONOTONIC_Deque_MAIN_PRINCIPLE //.                       2026-05-31-12-55-33.png  : see this for understanding
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {1,3,-1,-3,5};
+
+        Deque <Integer> dq = new ArrayDeque<>();
+        
+        for(int i=0;i<arr.length;i++)                // the whole point is to insert from back ; and see if each latest current last element ; can it be the MAX element ; if the the new element to be added is there in the arr ; meaning is the back element < incoming element ; if true then pop ; if not then just add !!!!
+        {
+            while(!dq.isEmpty() && dq.peekLast() < arr[i])
+            {
+                dq.pollLast(); // simple funda is : is backmost element < incoming element ; if true -> pop and keep popping until ; if false -> then add 
+            }
+            
+            dq.addLast(arr[i]);
+            
+            System.out.println(dq);
+        }                                    //  output :   [1]
+                                              //            [3]
+                                                //          [3, -1]
+                                                  //        [3, -1, -3]
+                                                    //      [5]
+             
+        
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import java.util.*;
+class Sliding_Window_Maximum
 {
     public static void main(String args [])
     {
-        String s1 = "a";
-        String s2 = "a";
-        
-        String s1_split [] = s1.split("");
-        String s2_split [] = s2.split("");
-        int count = 0;
-        
-        ArrayList <String> ar = new ArrayList<>();
-        ArrayList <String> ar_2 = new ArrayList<>();
-        
-        if(s1.length() <=1)
+        int arr [] = {1,3,-1,-3,5,3,6,7};
+
+        int k = 3;
+
+        int max = 0;
+
+        HashMap<Integer,Integer> = new HashMap<>();
+        // Queue <Integer> q = new LinkedList<>();
+        ArrayList<Integer> ar = new ArrayList<>();
+
+
+        for(int i=0;i<k;i++)
         {
-            count++;
-            System.out.println(count);
-            return;
+            hm.put(arr[i],hm.getOrDefault(arr[i],0)+1);
+
+            if(arr[i]>max)
+            {
+                max = arr[i];
+            }
         }
-        
-        for(String num : s1_split)
+
+        if(max != 0)
+        {
+            ar.add(max);
+        }
+
+
+        for(int i=k;i<arr.length;i++)
+        {
+            int remove = arr[i-k];
+            hm.put(remove,hm.get(remove)-1);
+
+            if(arr[i-k]>max)
             {
-                ar.add(num);
+                ar.add(arr[i-k]);
             }
-            
-            
-        for(String numm : s2_split)
+
+            if(hm.get(remove) == 0)
             {
-                ar_2.add(numm);
+                hm.remove(remove);
             }
-            System.out.println(ar);
-            System.out.println(ar_2);
-            
-        for(int i =0;i< ar.size()-1;i++)
-            {
-                if(ar.get(i).equals(ar_2.get(0)) && ar.get(i+1).equals(ar_2.get(1)))
-                    {
-                        System.out.println(ar.get(i)+" "+ar.get(i+1));
-                        //ar.remove(i);
-                        //ar.remove(i+1);
-                        //ar.remove(i);
-                        //break;
-                        count++;
-                    }
-            }
-            
-            System.out.println(count);
+
+            hm.put(arr[i],hm.getOrDefault(arr[i],0)+1);
+        }
+
 
     }
-    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
