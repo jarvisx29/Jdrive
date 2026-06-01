@@ -14603,7 +14603,7 @@ class MONOTONIC_Deque_MAIN_PRINCIPLE //.                       2026-05-31-12-55-
 
 
 import java.util.*;
-class Sliding_Window_Maximum
+class Sliding_Window_Maximum // wrong logic ; see down for the corrrect one
 {
     public static void main(String args [])
     {
@@ -14657,6 +14657,45 @@ class Sliding_Window_Maximum
 }
 
 
+
+import java.util.*; // Golden rule question : FIRST MONOTONIC DEQUE LEETCODE QUESTION  (keep goin mano on this !!!!)
+class Sliding_Window_Maximum // leetcode question : 100 % working for all testcases !
+{
+    public static void main(String args [])
+    {
+        int arr [] = {1,3,-1,-3,5,3,6,7};
+
+        int k = 3;
+
+        Deque<Integer> dq = new LinkedList<>();
+
+        ArrayList<Integer> ar = new ArrayList<>();
+
+        for(int i=0;i<arr.length;i++) // funda is simplw
+        {
+            while(!dq.isEmpty() && dq.peekFirst() <= i-k) // this loop is typical sliding window loop ; will remove the leaving (expired) indixes ; which are not needed in the next window
+            {
+                dq.pollFirst();
+            }
+
+            while(!dq.isEmpty() && arr[dq.peekLast()] < arr[i]) // this loop does the MONOTONIC REMOVAL !! ; removes the element if current element < incoming element (starts from the last one and works it way upto the first) ; until it finds an element bigger than the uncoming element if not ; then the incoming element itself becomes the max element in the next dq.addLast step !!!!1
+            {
+                dq.pollLast();
+            }
+
+
+            dq.addFirst(i); // since all the "weaker" i.e all the values that are smaller < than the incoming element are pruned ; or if there we any bigger than that ; then the incoming element will be added before that element ; but you might be wondering why da ; i thought this whole monotinic concept was ; max element at the start ; yes thats why you see in the next final if one ; we have added the dq.addLast() element ; its kinda confusing i know ; take a look at the handwritten notes man !!!! easy only 
+
+            if(i>=k-1)
+            {
+                ar.add(arr[dq.peekLast()]);
+            }
+        }
+
+        System.out.println(ar);
+
+    }
+}
 
 
 
