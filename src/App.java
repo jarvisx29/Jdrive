@@ -4317,7 +4317,7 @@ class sort_elements_in_descending_order_q12
 
 class binary_search
 {
-    public static void main(String[] args)      // explanation : 2025-08-10-11-48-58.png
+    public static void main(String[] args)      // explanation : 2025-08-10-11-48-58.png ( this file is corrupted ; look for the explanation in the old blue notepad copy of ours from senthil sirs)
     {
         int arr[] = {1,2,3,4,8,10,15,22,25,26,29,30,40,45};
 
@@ -14698,7 +14698,7 @@ class Sliding_Window_Maximum // leetcode question : 100 % working for all testca
 }
 
 
-
+// dd
 
 
 
