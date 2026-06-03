@@ -4319,7 +4319,8 @@ class binary_search
 {
     public static void main(String[] args)      // explanation : 2025-08-10-11-48-58.png ( this file is corrupted ; look for the explanation in the old blue notepad copy of ours from senthil sirs)
     {
-        int arr[] = {1,2,3,4,8,10,15,22,25,26,29,30,40,45};
+        int arr[] = {2
+        i};
 
         int beg=0;
         int last=arr.length-1;
@@ -4343,7 +4344,7 @@ class binary_search
         else
         {
             System.out.print("num found at index: "+ mid);
-            break;
+            return; // REMMEMBER !!!!! ; dont forget to put the return here ; IT WILL CAUSE INFINITE LOOPING !!!! ; and the program will crash 
         }
     }
         
@@ -14698,7 +14699,7 @@ class Sliding_Window_Maximum // leetcode question : 100 % working for all testca
 }
 
 
-// dd
+// dd dd
 
 
 
