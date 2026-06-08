@@ -84,7 +84,7 @@ int main()
 
 
 
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX. you can do like this too but the above one is the industry standard like thats easier and how most things are done ; like implementation in functiond and keeping the main clean
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX. you can do like this too but the above one is the industry standard like thats easier and how most things are done ; like implementation in functions and keeping the main clean
 
 #include <iostream>
 
@@ -233,6 +233,14 @@ int main()
     
     
 }
+
+
+
+
+
+
+
+
 
 
  XXXXXXXXXXXXXXXXXXXXXXXXXXXX. IMP STUFF FROM HERE   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -636,13 +644,13 @@ node *createList()
     return head;
 }
 
-node *delEnd(node *head) // will remove 200 from start and will start from 200
+node *delBeg(node *head) // will remove 200 from start and will start from 200
 {
-    node *delEnd = (node *)malloc(sizeof(node));
+    node *delBeg = (node *)malloc(sizeof(node));
     
-    delEnd->next=head;
+    delBeg->next=head;
     head = head->next;
-    free(delEnd);           // here as you can see delEnd is the scarificial goat ; it is kinda like the temp variable we'll yse to get rid of current head
+    free(delBeg);           // here as you can see delEnd is the scarificial goat ; it is kinda like the temp variable we'll yse to get rid of current head
     
     return head;
 }
@@ -661,7 +669,7 @@ int main()
 {
     node *head = createList();
     
-    head = delEnd(head);
+    head = delBeg(head);
     display(head);
 }
 
