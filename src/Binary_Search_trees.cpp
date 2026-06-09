@@ -57,7 +57,7 @@ void where_to_place(node *r,node *newnode) // to create a Binary Tree manually
         if(newnode->data <r->data)
         {
             prev = r;
-            r = r->left;
+            r = r->left;   // r here is the root 
             left_flag = true;
         }
         else
