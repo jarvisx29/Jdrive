@@ -13869,7 +13869,7 @@ class sliding_window
         {
             sum= sum + arr[i];
         }
-        
+
         int max = sum;
 
         for(int i=k;i<arr.length;i++)
@@ -13916,11 +13916,11 @@ class First_Negative_Number_in_Every_Window_of_Size_K // Golden rule question !!
 {
     public static void main (String args[])
     {
-        int arr [] = {12,-1,-7,8,-15,30,16,28};
+        int arr [] = {fo};
 
         int k = 3;
 
-        Queue<Integer> q = new LinkedList<>(); // we use queue here and not like sum like the above sum because here we need the order of negatives the q asks order of negatives in each iteration window ; so we need a structure which stores insertion order of negatives like a person in line using FIFO so i.e QUEUE !!!!!!!   and the +1 is done for you know the typical indexes start from 0 so as to make up for it !!!!
+        Queue<Integer> q = new LinkedList<>(); // we use queue here and not like sum like the above sum because here we need the order of negatives the q asks order of negatives in each iteration window ; so we need a structure which stores insertion order of negatives like a person in line using FIFO so i.e QUEUE !!!!!!!   and the -1 is done for you know the typical indexes start from 0 so as to make up for it !!!!
 
         for(int i=0;i<arr.length;i++)
         {
@@ -13937,11 +13937,11 @@ class First_Negative_Number_in_Every_Window_of_Size_K // Golden rule question !!
                 {
                     System.out.println(0);
                 }
-                else
+                else              
                 {
                     System.out.println(q.peek());
                 }
-                if(!q.isEmpty() && arr[i-k+1] == q.peek()) // the arr[i-k+1] : here is the actual sliding window logic like the wait for the i to finish the first window i.e 2 and then once the conditio nis satisfies then slide the window -1 +1 stuff ; also the +1 again is the typical indexes start from 0 so +1 to make up for it !!!!!
+                if(!q.isEmpty() && arr[i-k+1] == q.peek()) // the arr[i-k+1] : here is the actual sliding window logic like the wait for the i to finish the first window i.e 2 and then once the condition satisfies then slide the window -1 +1 stuff ; also the +1 again is the typical indexes start from 0 so +1 to make up for it !!!!!
                 {
                     q.poll();
                 }
@@ -13965,7 +13965,7 @@ class First_Negative_Number_in_Every_Window_of_Size_K // Golden rule question !!
 
 
 
-
+class max_count_of_vowel_in_all_windows
 {
  static boolean isVowel(char ch) // now you might be wondering why i chose to use booelan instead of like normal if else ; but i wanted to try soemthing else and ;  mano we are past that amateur shii ; time to go advanced like the pros !!!!1
     {
@@ -13980,7 +13980,7 @@ class First_Negative_Number_in_Every_Window_of_Size_K // Golden rule question !!
         int count = 0;
 
 
-        for(int i= 0 ;i<k;i++) // for the intial k size window
+        for(int i = 0 ;i<k;i++) // for the intial k size window
         {
             if(isVowel(s.charAt(i)))
             {
@@ -14018,7 +14018,7 @@ class Count_Distinct_Elements_in_Every_Window
 {
     public static void main (String args []) // Count Distinct Elements in Every Window
     {
-        int arr [] = {1,2,1,3,4,3};h
+        int arr [] = {1,2,1,3,4,3};
 
         int k= 4;
 
@@ -14026,7 +14026,7 @@ class Count_Distinct_Elements_in_Every_Window
  
         for(int i=0;i<k;i++) // loop for the first window 
         {
-            hm.put(arr[hm.getOrDefault(arr[i],0)+1);
+            hm.put(arr[hm.getOrDefault(arr[i],0)+1]);
         }
         
         System.out.println(hm.size()); // distinct count of 1st window
@@ -14035,7 +14035,7 @@ class Count_Distinct_Elements_in_Every_Window
 
 
 
-        for(int i=k<arr.length;i++) // maikn sliding loop
+        for(int i=k<;i<arr.length;i++) // main sliding loop 
         {
             hm.put(arr[i-k],hm.get(arr[i-k])-1); // this will get the outgoing element and subtract the count since its leaving the window
 
