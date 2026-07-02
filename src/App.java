@@ -14241,12 +14241,12 @@ class Find_All_Anagrams_in_a_String // leetcode question : 100 % working for all
         HashMap<Character,Integer> hm2 = new HashMap<>();
 
 
-        for(int i=0;i<p.length();i++)
+        for(int i=0;i<p.length();i++) // this will put the chars of the p in hm
         {
             hm.put(s.charAt(i),hm.getOrDefault(s.charAt(i),0)+1);
         }
 
-        for(int i=0;i<p.length();i++)
+        for(int i=0;i<p.length();i++) // this will put the chars of s in hm2 ; also this loop will run till p ; since p length is kinda like k length  here ; 
         {
             hm2.put(p.charAt(i),hm2.getOrDefault(p.charAt(i),0)+1);
         }
@@ -14256,15 +14256,15 @@ class Find_All_Anagrams_in_a_String // leetcode question : 100 % working for all
         
         ArrayList<Integer> ar = new ArrayList<>();
         
-        if(hm.equals(hm2))
+        if(hm.equals(hm2)) // this will see if we the first window has an anagram or not ; so it will put the start index of the start of it in ar that 0
         {
             ar.add(0);
         }
         
         
-        for(int i=k;i<s.length();i++)
+        for(int i=k;i<s.length();i++) // this all is the simple sliding window stuff 
         {
-            char remove = s.charAt(i-k);
+            char remove = s.charAt(i-k); // sliding window
             
             hm.put(remove,hm.get(remove) -1);
             
@@ -14274,10 +14274,13 @@ class Find_All_Anagrams_in_a_String // leetcode question : 100 % working for all
             }
             
             
-            char add = s.charAt(i);
+            char add = s.charAt(i);     // the new values added once widow shifts
             
             hm.put(s.charAt(i),hm.getOrDefault(s.charAt(i),0)+1);
             
+
+
+
             if(hm.equals(hm2))
             {
                 ar.add(i-k+1);
