@@ -14268,7 +14268,7 @@ class Find_All_Anagrams_in_a_String // leetcode question : 100 % working for all
             
             hm.put(remove,hm.get(remove) -1);
             
-            if(hm.get(s.charAt(i-k)) == 0)
+            if(hm.get(s.charAt(i-k)) == 0) // if the going out element has the value 0 ; then just remove it 
             {
                 hm.remove(s.charAt(i-k));
             }
@@ -14281,9 +14281,9 @@ class Find_All_Anagrams_in_a_String // leetcode question : 100 % working for all
 
 
 
-            if(hm.equals(hm2))
+            if(hm.equals(hm2)) // this one will check the anagrams ; since like cmon ; we cant work out all the possible word combinations to see anagrams or not ; but what we can do is see whether the letters match ; then obvi anagrams can be formed; so thats what this one does
             {
-                ar.add(i-k+1);
+                ar.add(i-k+1);   // you might be wondering why i-k+1 ; reason being i-k is is the index of the element leaving the window. ; and i-k+1 is s the index where the new window starts.
             }
         }
         
@@ -14707,7 +14707,19 @@ class Sliding_Window_Maximum // leetcode question : 100 % working for all testca
 
 
 
-// dd dd dd dd dd dd dd dd dd dd
+
+
+
+class K_Radius_Averages
+{
+    public static void main(String[] args) 
+    {
+        int arr[] = {7,4,3,9,1,8,5,2,6};
+
+        int k = 3;
+        
+    }
+}
 
 
 
